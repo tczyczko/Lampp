@@ -1,0 +1,179 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Coordinate Matrices and Change of Basis</title>
+<meta name="description" content="Coordinate matrices and change of Basis">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="previous" href="node36.html">
+<link rel="up" href="node30.html">
+<link rel="next" href="node38.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html717"
+  href="node38.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html711"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html707"
+  href="node36.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html713"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html715"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html718"
+  href="node38.html">The Geometric Product</a>
+<b> Up:</b> <a name="tex2html712"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html708"
+  href="node36.html">Bases, Linear Independence, Matrix</a>
+ &nbsp; <b>  <a name="tex2html714"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html716"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00870000000000000000">
+Coordinate Matrices and Change of Basis</a>
+</h1>
+Coordinates are often used to give directions. When we use a map, for instance, we transform the
+units and directions given on the map to match our physical surroundings. One centimeter on the map may
+correspond to one kilometer of a city and north on a map does not often physically match up with
+where we are standing (unless we rotate the map, of course). 
+
+<p>
+If we had a friend who is blind-folded, standing in a field some distance from an apple tree, we can
+give directions to them on how to find the tree. We know which is north and south, but this information
+would be useless to them. We cannot give them directions on how to move based on compass points and
+the length of our strides. We cannot say <span  class="textit">Take five steps north-east</span>, for instance. Those would be our
+coordinates. Knowing the length of their stride, we can transform our coordinates into coordinates
+which they can follow. For example, if we noticed that they are facing north-east, and the apple tree
+is directly north of them, we can tell them to turn left (their left) <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1825.gif"
+ ALT="$ 45^\circ$"></span>
+ and then walk so many
+paces (their paces). This is a very simple analogy of what controllers of spacecraft and other remote vehicles
+do.
+
+<p>
+We will endeavor to show how to specify coordinates in a mathematical way using basis vectors. We will then
+show how to give these coordinates in terms of a different basis. In a later section on applications, we
+will use this method for solving more serious problems than how to get a blind-folded friend to an apple
+tree (while avoiding any cow pats, naturally).
+
+<p>
+If the set of vectors <!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$"></span>
+ form a basis for a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+
+over a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, then
+any vector <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ can be written as a linear combination of these basis vectors
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{w}=c_1\Vec{v}_1+c_2\Vec{v}_2+\cdots+c_n\Vec{v}_n
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="204" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1826.gif"
+ ALT="$\displaystyle \Vec{w}=c_1\Vec{v}_1+c_2\Vec{v}_2+\cdots+c_n\Vec{v}_n$">
+</div><p>
+</p>
+for exactly one set of scalars <!-- MATH
+ $c_1,c_2,\ldots,c_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1827.gif"
+ ALT="$ c_1,c_2,\ldots,c_n$"></span>
+. The scalar <!-- MATH
+ $c_i\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1828.gif"
+ ALT="$ c_i\in\mathbb{F}$"></span>
+ is called the <span  class="textbf"><i>i</i>-th coordinate</span>
+of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ with respect to the given basis. 
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html717"
+  href="node38.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html711"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html707"
+  href="node36.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html713"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html715"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html718"
+  href="node38.html">The Geometric Product</a>
+<b> Up:</b> <a name="tex2html712"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html708"
+  href="node36.html">Bases, Linear Independence, Matrix</a>
+ &nbsp; <b>  <a name="tex2html714"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html716"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

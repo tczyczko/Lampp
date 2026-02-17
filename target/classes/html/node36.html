@@ -1,0 +1,4225 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Bases, Linear Independence, Matrix Rank</title>
+<meta name="description" content="Bases, linear Independence, matrix Rank">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node37.html">
+<link rel="previous" href="node35.html">
+<link rel="up" href="node30.html">
+<link rel="next" href="node37.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html705"
+  href="node37.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html699"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html693"
+  href="node35.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html701"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html703"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html706"
+  href="node37.html">Coordinate Matrices and Change</a>
+<b> Up:</b> <a name="tex2html700"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html694"
+  href="node35.html">Linear Spans</a>
+ &nbsp; <b>  <a name="tex2html702"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html704"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00860000000000000000">
+Bases, Linear Independence, Matrix Rank</a>
+</h1>
+
+<p>
+Suppose we have <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+, a list of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ vectors <!-- MATH
+ $\Vec{s}_1,\Vec{s}_2,\ldots ,\Vec{s}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1629.gif"
+ ALT="$ \Vec{s}_1,\Vec{s}_2,\ldots,\Vec{s}_n$"></span>
+.
+Furthermore, suppose <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+ spans a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+.
+In one of our problems in the preceding section, we have seen that adding more vectors to <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ still allows
+us to say that <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+ spans the vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+. In order to be conservative of
+our need to write out vectors, it would be nice to have some way of knowing what is the
+minimal number of vectors one needs to span a vector space. We can then use this
+minimum list to write a linear combination of these vectors which we can use as
+a representative of the vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+. We are then able to use this representative equation
+to prove many properties of <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+.
+
+<p>
+In order to weed out unnecessary vectors from a list that spans a vector space, we must first
+have a way of identifying them. We will call these vectors  <span  class="textbf">linearly dependent</span><a name="11118"></a>.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">17</span></b> &nbsp; 
+<i>A collection of vectors <!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$"></span>
+ of a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ are said to be
+linearly dependent if there exists <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1484.gif"
+ ALT="$ \;n$"></span>
+ scalars <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x_i$"></span>
+ in <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ such that 
+</i><p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^nx_i^2\ne 0\;\text{ and }\;\sum_{i=1}^nx_i\Vec{v}_i=\Vec{0}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="80" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1630.gif"
+ ALT="$\displaystyle \sum_{i=1}^nx_i^2\ne 0\;$"> and&nbsp;<IMG
+ WIDTH="91" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1631.gif"
+ ALT="$\displaystyle \;\sum_{i=1}^nx_i\Vec{v}_i=\Vec{0}$">
+</div><p>
+</p></div><p></p>
+
+<p>
+The first condition about the scalars, that <!-- MATH
+ $\sum_{i=1}^nx_i^2\ne 0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1632.gif"
+ ALT="$ \sum_{i=1}^nx_i^2\ne 0$"></span>
+, is just another way of saying that
+they all can't be zero. Another way of saying this, for vectors in the reals, would be that if
+<!-- MATH
+ $\Vec{x}=(x_1,x_2,\ldots,x_n)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="140" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1633.gif"
+ ALT="$ \Vec{x}=(x_1,x_2,\ldots,x_n)$"></span>
+, then <!-- MATH
+ $\Vec{x}\cdot\Vec{x}>0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="63" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1634.gif"
+ ALT="$ \Vec{x}\cdot\Vec{x}&gt;0$"></span>
+ or <!-- MATH
+ $\left\|\Vec{x}\right\|>0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1635.gif"
+ ALT="$ \left\Vert\Vec{x}\right\Vert&gt;0$"></span>
+.
+
+<p>
+Any list of vectors <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1636.gif"
+ ALT="$ \Vec{v}_i$"></span>
+ are called <span  class="textbf">linearly independent</span><a name="11136"></a> if they
+are not linearly dependent. In other words <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1636.gif"
+ ALT="$ \Vec{v}_i$"></span>
+ are linearly independent when
+<p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^nx_i\Vec{v}_i=\Vec{0}\;\text{ is true only if }\;x_1=x_2=\cdots=x_n=0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="91" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1637.gif"
+ ALT="$\displaystyle \sum_{i=1}^nx_i\Vec{v}_i=\Vec{0}\;$"> is true only if&nbsp;<IMG
+ WIDTH="170" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1638.gif"
+ ALT="$\displaystyle \;x_1=x_2=\cdots=x_n=0$">
+</div><p>
+</p>
+
+<p>
+Suppose we have <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1484.gif"
+ ALT="$ \;n$"></span>
+ vectors <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1639.gif"
+ ALT="$ \Vec{s}_i$"></span>
+ that span a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+. Then any vector <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ in
+<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ may be written as a linear combination of these vectors
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{u}=\sum_{i=1}^na_i\Vec{s}_i\;\text{ for }\;a_i\in\mathbb{F}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="91" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1640.gif"
+ ALT="$\displaystyle \Vec{u}=\sum_{i=1}^na_i\Vec{s}_i\;$"> for&nbsp;<IMG
+ WIDTH="51" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1641.gif"
+ ALT="$\displaystyle \;a_i\in\mathbb{F}$">
+</div><p>
+</p>
+Suppose that we could also write
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{u}=\sum_{i=1}^nc_i\Vec{s}_i\;\text{ for }\;c_i\in\mathbb{F}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="90" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1642.gif"
+ ALT="$\displaystyle \Vec{u}=\sum_{i=1}^nc_i\Vec{s}_i\;$"> for&nbsp;<IMG
+ WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1643.gif"
+ ALT="$\displaystyle \;c_i\in\mathbb{F}$">
+</div><p>
+</p>
+where not every <span class="MATH"><IMG
+ WIDTH="51" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1644.gif"
+ ALT="$ a_i=c_i$"></span>
+. Subtraction gives us
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{u}-\Vec{u}=\sum_{i=1}^n(a_i-c_i)\Vec{s}_i=\Vec{0}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="186" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1645.gif"
+ ALT="$\displaystyle \Vec{u}-\Vec{u}=\sum_{i=1}^n(a_i-c_i)\Vec{s}_i=\Vec{0}$">
+</div><p>
+</p>
+From this we can deduce that at least one of the <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1639.gif"
+ ALT="$ \Vec{s}_i$"></span>
+ may be written as a linear combination of the
+others. We do this by supposing <!-- MATH
+ $a_j-c_j\ne 0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="82" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1646.gif"
+ ALT="$ a_j-c_j\ne 0$"></span>
+. Then
+<p><!-- MATH
+ \begin{displaymath}
+-(a_j-c_j)\Vec{s}_j=\sum_{i=1}^{j-1}(a_i-c_i)\Vec{s}_i+\sum_{i=j+1}^{n}(a_i-c_i)\Vec{s}_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="332" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1647.gif"
+ ALT="$\displaystyle -(a_j-c_j)\Vec{s}_j=\sum_{i=1}^{j-1}(a_i-c_i)\Vec{s}_i+\sum_{i=j+1}^{n}(a_i-c_i)\Vec{s}_i$">
+</div><p>
+</p>
+
+<p>
+If the linear combination <p><!-- MATH
+ \begin{displaymath}
+\Vec{u}=\sum_{i=1}^na_i\Vec{s}_i\;\text{ for }\;a_i\in\mathbb{F}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="91" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1640.gif"
+ ALT="$\displaystyle \Vec{u}=\sum_{i=1}^na_i\Vec{s}_i\;$"> for&nbsp;<IMG
+ WIDTH="51" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1641.gif"
+ ALT="$\displaystyle \;a_i\in\mathbb{F}$">
+</div><p>
+</p>
+is composed of linearly independent vectors <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1639.gif"
+ ALT="$ \Vec{s}_i$"></span>
+, then each <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1648.gif"
+ ALT="$ a_i$"></span>
+ is <span  class="textit">unique</span>. We cannot have
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{u}=\sum_{i=1}^nc_i\Vec{s}_i\;\text{ for }\;c_i\in\mathbb{F}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="90" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1642.gif"
+ ALT="$\displaystyle \Vec{u}=\sum_{i=1}^nc_i\Vec{s}_i\;$"> for&nbsp;<IMG
+ WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1643.gif"
+ ALT="$\displaystyle \;c_i\in\mathbb{F}$">
+</div><p>
+</p>
+where not every <span class="MATH"><IMG
+ WIDTH="51" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1644.gif"
+ ALT="$ a_i=c_i$"></span>
+.
+
+<p>
+A linearly independent list of vectors from a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ which spans <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ is an important
+idea. It is so important that we give it it's own name. We call it a <span  class="textbf">basis</span><a name="11176"></a>.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">18</span></b> &nbsp; 
+<i>A basis for a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ is a finite collection of linearly independent vectors from
+<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ which spans <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+.</i></div><p></p>
+
+<p>
+From our previous discussion, we have seen that the scalar multiples of the vectors in a basis
+are unique, since the scalar multiples of any independent linear combination are unique.
+Of course, different vectors may form a basis for the same vector space. Also, as we noted earlier,
+not all vector spaces contain a basis as we have defined it.
+
+<p>
+One frequently occurring problem is to find out if a collection of vectors from a vector space forms a basis.
+We need to have some method of determining if the vectors are linearly independent.
+
+<p>
+As luck would have it, we can define an algorithm that will determine whether a list of vectors is
+a basis or not. It involves the solution of a homogeneous system of linear equations. We have already
+done this many times. We simply represent the system of linear equations in 
+terms of a matrix of coefficients <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and a matrix of variables <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ and then 
+solve <!-- MATH
+ $AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$ AX=\mathbf{0}$"></span>
+ using Gauss-Jordan elimination. 
+
+<p>
+Before we give this algorithm, let us return to the central questions we posed when we
+first introduced systems of equations. How is linear algebra used to discover if 
+solutions to systems of equations exist? If a solution exists, is it unique? How do we find all the solutions?
+We are just about in a position to answer all of these questions, which directly pertains to
+using Gauss-Jordan elimination to find out if certain vectors from a vector space form a basis.
+
+<p>
+We have seen that we can encounter systems of equations for which <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ has no
+solutions. We have said that these types of nonhomogeneous systems are inconsistent. Remembering
+our previous definition of rank, we can directly say that <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ is consistent if
+the rank of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is equal to the rank of the augmented matrix <span class="MATH"><IMG
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1649.gif"
+ ALT="$ (A\vert B)$"></span>
+. Our previous definition of
+rank was useful but not specific enough. We will strengthen the definition using some nice properties
+of bases of vector spaces and linearly independent vectors and by introducing the concept of the <span  class="textbf">dimension</span><a name="11180"></a>
+of a vector space. We will start with the <span  class="textbf">Exchange Theorem</span><a name="11182"></a>.
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">6</span></b> &nbsp; 
+<i>Suppose that a collection of <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1484.gif"
+ ALT="$ \;n$"></span>
+ vectors <!-- MATH
+ $\Vec{s}_1,\Vec{s}_2,\ldots,\Vec{s}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1629.gif"
+ ALT="$ \Vec{s}_1,\Vec{s}_2,\ldots,\Vec{s}_n$"></span>
+ of a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ spans <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+. Then any collection of linearly independent vectors from <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ must have  <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1650.gif"
+ ALT="$ m\le n$"></span>
+ vectors.</i></div><p></p>
+
+<p></p>
+<div><i>Proof</i>.
+
+Suppose that <!-- MATH
+ $\Vec{w}_1,\Vec{w}_2,\ldots,\Vec{w}_m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="107" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1651.gif"
+ ALT="$ \Vec{w}_1,\Vec{w}_2,\ldots,\Vec{w}_m$"></span>
+ is a collection of independent vectors from <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+
+where <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img503.gif"
+ ALT="$ m&gt;n$"></span>
+. Then we can break this into two collections of vectors. One collection of <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1484.gif"
+ ALT="$ \;n$"></span>
+
+vectors, any of which we will represent by <span class="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1652.gif"
+ ALT="$ \Vec{w}_j$"></span>
+ (where <!-- MATH
+ $1\le j\le n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="72" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img569.gif"
+ ALT="$ 1\le j\le n$"></span>
+) and another collection of <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1653.gif"
+ ALT="$ m-n$"></span>
+ vectors for which we will
+use <span class="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1654.gif"
+ ALT="$ \Vec{w}_k$"></span>
+ (where <!-- MATH
+ $n+1\le k\le m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="106" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1655.gif"
+ ALT="$ n+1\le k\le m$"></span>
+) to represent any one of them.
+
+<p>
+We know that any <span class="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1652.gif"
+ ALT="$ \Vec{w}_j$"></span>
+ is a linear combination of the vectors <!-- MATH
+ $\Vec{s}_1,\Vec{s}_2,\ldots,\Vec{s}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1629.gif"
+ ALT="$ \Vec{s}_1,\Vec{s}_2,\ldots,\Vec{s}_n$"></span>
+.
+Therefore, we can immediately state that the collection <!-- MATH
+ $\Vec{s}_1,\Vec{s}_2,\ldots,\Vec{s}_n,\Vec{w}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="118" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1656.gif"
+ ALT="$ \Vec{s}_1,\Vec{s}_2,\ldots,\Vec{s}_n,\Vec{w}_1$"></span>
+ 
+is linearly dependent and that it also spans <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ (this is a result from a problem from the previous section).
+From the definition of span and linear dependence, we know there are unique <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1648.gif"
+ ALT="$ a_i$"></span>
+ and a unique <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.gif"
+ ALT="$ c_1$"></span>
+, not all zero, such that
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{0}=c_1\Vec{w}_1+\sum_{i=1}^na_i\Vec{s}_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="137" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1657.gif"
+ ALT="$\displaystyle \Vec{0}=c_1\Vec{w}_1+\sum_{i=1}^na_i\Vec{s}_i$">
+</div><p>
+</p>
+All the <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1648.gif"
+ ALT="$ a_i$"></span>
+ cannot be zero, otherwise we would have <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1658.gif"
+ ALT="$ c_1=0$"></span>
+ and our collection would be linearly independent.
+By rearranging terms, if necessary, we can
+assume that <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1659.gif"
+ ALT="$ a_1\ne 0$"></span>
+. Therefore <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1537.gif"
+ ALT="$ \Vec{s}_1$"></span>
+ is dependent on the rest. Therefore we can remove it and still
+have that the collection <!-- MATH
+ $\Vec{w}_1,\Vec{s}_2,\ldots,\Vec{s}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="96" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1660.gif"
+ ALT="$ \Vec{w}_1,\Vec{s}_2,\ldots,\Vec{s}_n$"></span>
+ spans <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+.
+Since <!-- MATH
+ $1\le j\le n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="72" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img569.gif"
+ ALT="$ 1\le j\le n$"></span>
+ and <!-- MATH
+ $1\le i\le n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1661.gif"
+ ALT="$ 1\le i\le n$"></span>
+, we can continue in this way until we have exchanged all <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1639.gif"
+ ALT="$ \Vec{s}_i$"></span>
+
+for <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1662.gif"
+ ALT="$ \Vec{w}_i$"></span>
+ and have that the collection <!-- MATH
+ $\Vec{w}_1,\Vec{w}_2,\ldots,\Vec{w}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="104" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1663.gif"
+ ALT="$ \Vec{w}_1,\Vec{w}_2,\ldots,\Vec{w}_n$"></span>
+ spans <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+. (Notice that
+every time we introduce a new <span class="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1652.gif"
+ ALT="$ \Vec{w}_j$"></span>
+ into the collection, it must only be a linear combination of
+the remaining <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1639.gif"
+ ALT="$ \Vec{s}_i$"></span>
+, since the <span class="MATH"><IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1652.gif"
+ ALT="$ \Vec{w}_j$"></span>
+ is independent of the <span class="MATH"><IMG
+ WIDTH="80" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1664.gif"
+ ALT="$ (n-j-1)$"></span>
+ vectors, <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1662.gif"
+ ALT="$ \Vec{w}_i$"></span>
+,
+we already introduced.) Then any
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1654.gif"
+ ALT="$ \Vec{w}_k$"></span>
+ (where <!-- MATH
+ $n+1\le k\le m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="106" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1655.gif"
+ ALT="$ n+1\le k\le m$"></span>
+) must be a linear combination of these vectors so, therefore, dependent.
+This contradicts our assumption of <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img503.gif"
+ ALT="$ m&gt;n$"></span>
+ independent vectors.
+We can then say that <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+ cannot be greater than <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+.
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+This remarkable result leads directly to a proof of the following theorem.
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">7</span></b> &nbsp; 
+<i>If a vector space has a basis composed of a finite number of vectors, then any other
+basis for that vector space contains exactly the same number of vectors.</i></div><p></p>
+
+<p></p>
+<div><i>Proof</i>.
+
+Let <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ stand for a collection of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ vectors that form a basis for <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+. Let <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ stand for
+<span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+ vectors that form a basis for <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+. Then
+
+<ol>
+<li><!-- MATH
+ ${\cal{SP}}(A)={\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="84" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1665.gif"
+ ALT="$ {\cal{SP}}(A)={\cal{V}}$"></span>
+
+</li>
+<li>The vectors in <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ are linearly independent.
+</li>
+</ol>
+By the previous exchange theorem, <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1666.gif"
+ ALT="$ n\le m$"></span>
+.
+Similarly,
+
+<ol>
+<li><!-- MATH
+ ${\cal{SP}}(B)={\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1667.gif"
+ ALT="$ {\cal{SP}}(B)={\cal{V}}$"></span>
+
+</li>
+<li>The vectors in <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ are linearly independent.
+</li>
+</ol>
+Again, by the exchange theorem, <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1650.gif"
+ ALT="$ m\le n$"></span>
+.
+Therefore, <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1668.gif"
+ ALT="$ m=n$"></span>
+.
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+This theorem allows us to make the following definition which allows us to classify certain vector
+spaces.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">19</span></b> &nbsp; 
+<i>If <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ is a finite dimensional vector space, then <!-- MATH
+ $dim({{\cal{V}}})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1669.gif"
+ ALT="$ dim({{\cal{V}}})$"></span>
+, the dimension<a name="11233"></a> of <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+, is
+the number of vectors in a basis for <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+.</i></div><p></p>
+
+<p>
+So if a basis for a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ contained 4 vectors, then we would call <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ a 4-dimensional
+vector space or say that <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ has four dimensions. The classic example of a vector space that
+does not have a basis, as we define it, is <!-- MATH
+ $\mathbb{P}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1179.gif"
+ ALT="$ \mathbb{P}$"></span>
+, the vector space of polynomials of any degree.
+It is called infinite dimensional.
+
+<p>
+We will now show that for any matrix, the dimension of its row space is equal to the dimension of
+its column space. We will redefine the rank of a matrix to be this common dimension and then show 
+how the rank may be used to characterize all solutions of a system <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+. However, we have
+a bit of work ahead of us before we get there. We begin with a theorem about the dimension of a
+subspace of a finite dimensional vector space.
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">8</span></b> &nbsp; 
+<i>If <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is a subspace of a finite dimensional vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+, then
+</i><p><!-- MATH
+ \begin{displaymath}
+dim({{\cal{S}}})\le dim({{\cal{V}}})
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="128" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1670.gif"
+ ALT="$\displaystyle dim({{\cal{S}}})\le dim({{\cal{V}}})$">
+</div><p>
+</p></div><p></p>
+
+<p></p>
+<div><i>Proof</i>.
+
+Let <!-- MATH
+ $dim({{\cal{V}}})=n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="86" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1671.gif"
+ ALT="$ dim({{\cal{V}}})=n$"></span>
+. Any collection of linearly independent vectors in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ must also be
+a collection of linearly independent vectors in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+. By the exchange theorem and the fact
+that <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ contains a basis composed of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ linearly independent vectors that span <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+,
+any set of linearly independent vectors in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ can contain at most <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ vectors. Therefore 
+<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is finite dimensional and <!-- MATH
+ $dim({\cal{S}})\le n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="86" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1672.gif"
+ ALT="$ dim({\cal{S}})\le n$"></span>
+ because any basis in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is a set of 
+linearly independent vectors.
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+The preceding theorem lets us prove the following.
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">9</span></b> &nbsp; 
+<i>Any <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ linearly independent vectors in a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ of dimension <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ are a basis for <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+.</i></div><p></p>
+
+<p></p>
+<div><i>Proof</i>.
+
+Let <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ V$"></span>
+ be a set <!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$"></span>
+ of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ linearly independent vectors in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+. If they
+span <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+, then they form a basis. If not, then there is a vector <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ that is not in
+<!-- MATH
+ ${\cal{SP}}(V)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1673.gif"
+ ALT="$ {\cal{SP}}(V)$"></span>
+. Let <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.gif"
+ ALT="$ W$"></span>
+ be the set of <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1674.gif"
+ ALT="$ n+1$"></span>
+ linearly independent vectors <!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n,\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="112" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1675.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n,\Vec{w}$"></span>
+.
+We can say they are linearly independent because, if
+<p><!-- MATH
+ \begin{displaymath}
+a_1\Vec{v}_1+a_2\Vec{v}_2+\cdots+a_n\Vec{v}_n+a_{n+1}\Vec{w}=0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="269" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1676.gif"
+ ALT="$\displaystyle a_1\Vec{v}_1+a_2\Vec{v}_2+\cdots+a_n\Vec{v}_n+a_{n+1}\Vec{w}=0$">
+</div><p>
+</p>
+then <span class="MATH"><IMG
+ WIDTH="67" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1677.gif"
+ ALT="$ a_{n+1}=0$"></span>
+, otherwise we could write <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ as a linear combination of the other
+vectors (How?). Therefore, if <span class="MATH"><IMG
+ WIDTH="67" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1677.gif"
+ ALT="$ a_{n+1}=0$"></span>
+, then
+<p><!-- MATH
+ \begin{displaymath}
+a_1\Vec{v}_1+a_2\Vec{v}_2+\cdots+a_n\Vec{v}_n=0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="205" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1678.gif"
+ ALT="$\displaystyle a_1\Vec{v}_1+a_2\Vec{v}_2+\cdots+a_n\Vec{v}_n=0$">
+</div><p>
+</p>
+which means all <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1679.gif"
+ ALT="$ a_i=0$"></span>
+ since the <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1636.gif"
+ ALT="$ \Vec{v}_i$"></span>
+'s are linearly independent. Since all the vectors in <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.gif"
+ ALT="$ W$"></span>
+
+are in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+, then <!-- MATH
+ ${\cal{SP}}(W)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1680.gif"
+ ALT="$ {\cal{SP}}(W)$"></span>
+ is a subspace of <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+. Also, since all the vectors in <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.gif"
+ ALT="$ W$"></span>
+ are linearly
+independent, they form a basis for <!-- MATH
+ ${\cal{SP}}(W)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1680.gif"
+ ALT="$ {\cal{SP}}(W)$"></span>
+. This means <!-- MATH
+ $dim({\cal{SP}}(W))=n+1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="155" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1681.gif"
+ ALT="$ dim({\cal{SP}}(W))=n+1$"></span>
+. This contradicts the
+previous theorem, which says that <!-- MATH
+ $dim({\cal{SP}}(W))\le n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="128" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1682.gif"
+ ALT="$ dim({\cal{SP}}(W))\le n$"></span>
+. There can be no vector <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+
+that is not in <!-- MATH
+ ${\cal{SP}}(V)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1673.gif"
+ ALT="$ {\cal{SP}}(V)$"></span>
+. Thus, the vectors in <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ V$"></span>
+ span <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ and therefore satisfy the criteria
+for being a basis for <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+.
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+The reader should assure themselves that this theorem allows us to say that we can always extend a set
+of linearly independent vectors in a finite dimensional vector space into a basis by adding zero
+or more linearly independent vectors. Some thinking also allows one to see that almost any set of
+linearly dependent vectors that span a vector space contains a smaller set of linearly independent
+vectors that span the vector space. (Can you think of the one exception?)
+
+<p>
+We have two more major theorems to prove before we can start arranging our knowledge in order to define
+an algorithm to compute all solutions of a system <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ and the necessary and sufficient conditions
+for solutions to exist. The following theorem establishes an important relationship between the number of columns in
+a matrix and the dimension of its column space and the dimension of its null space.
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">10</span></b> &nbsp; 
+<i>For any <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, the number of columns of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ equals the sum of the dimensions of
+the column space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and the null space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+. That is
+</i><p><!-- MATH
+ \begin{displaymath}
+n=dim({\cal{NS}}(A))+dim({\cal{CS}}(A))
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="230" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1683.gif"
+ ALT="$\displaystyle n=dim({\cal{NS}}(A))+dim({\cal{CS}}(A))$">
+</div><p>
+</p><i>
+<a name="nnullcs"></a></i></div><p></p>
+
+<p></p>
+<div><i>Proof</i>.
+
+Let <!-- MATH
+ $s=dim({\cal{NS}}((A))$
+ -->
+<span class="MATH"><IMG
+ WIDTH="130" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1684.gif"
+ ALT="$ s=dim({\cal{NS}}((A))$"></span>
+. The null space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is all vectors <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ in <!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+ such that <!-- MATH
+ $AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$ AX=\mathbf{0}$"></span>
+.
+This means that <!-- MATH
+ ${\cal{NS}}((A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1686.gif"
+ ALT="$ {\cal{NS}}((A)$"></span>
+ is a subspace of the vector space <!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+. Thus we have that
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1687.gif"
+ ALT="$ s\le n$"></span>
+. If <span class="MATH"><IMG
+ WIDTH="68" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1688.gif"
+ ALT="$ n=s+t$"></span>
+, we need to prove that <!-- MATH
+ $t=dim({\cal{CS}}(A))$
+ -->
+<span class="MATH"><IMG
+ WIDTH="116" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1689.gif"
+ ALT="$ t=dim({\cal{CS}}(A))$"></span>
+. Since  <!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+ is a finite dimensional
+vector space, we can have a basis for <!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+ with at most <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.gif"
+ ALT="$ s$"></span>
+ vectors. Let 
+<!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_s$
+ -->
+<span class="MATH"><IMG
+ WIDTH="91" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1690.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_s$"></span>
+ be this basis. We can extend this basis by adding zero or more
+linearly independent vectors from <!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+ to get a basis for <!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+. Let 
+<!-- MATH
+ $\Vec{w}_1,\Vec{w}_2,\ldots,\Vec{w}_t$
+ -->
+<span class="MATH"><IMG
+ WIDTH="101" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1691.gif"
+ ALT="$ \Vec{w}_1,\Vec{w}_2,\ldots,\Vec{w}_t$"></span>
+ be these vectors. We now have that 
+<!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_s,\Vec{w}_1,\Vec{w}_2,\ldots,\Vec{w}_t$
+ -->
+<span class="MATH"><IMG
+ WIDTH="194" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1692.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_s,\Vec{w}_1,\Vec{w}_2,\ldots,\Vec{w}_t$"></span>
+ is a basis for <!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+.
+When <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ is in <!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+, then any matrix product <span class="MATH"><IMG
+ WIDTH="31" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1693.gif"
+ ALT="$ AX$"></span>
+ is in the column space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+. So, for
+any <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1302.gif"
+ ALT="$ \Vec{c}$"></span>
+ in <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+, we can find an <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ such that <!-- MATH
+ $\Vec{c}=AX$
+ -->
+<span class="MATH"><IMG
+ WIDTH="59" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1694.gif"
+ ALT="$ \Vec{c}=AX$"></span>
+. Using the basis we defined for
+<!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+, then 
+<p><!-- MATH
+ \begin{displaymath}
+X=a_1\Vec{v}_1+a_2\Vec{v}_2+\cdots+a_s\Vec{v}_s+c_1\Vec{w}_1+c_2\Vec{w}_2+\cdots+c_t\Vec{w}_t
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="398" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1695.gif"
+ ALT="$\displaystyle X=a_1\Vec{v}_1+a_2\Vec{v}_2+\cdots+a_s\Vec{v}_s+c_1\Vec{w}_1+c_2\Vec{w}_2+\cdots+c_t\Vec{w}_t$">
+</div><p>
+</p>
+for some scalars <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1648.gif"
+ ALT="$ a_i$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1696.gif"
+ ALT="$ c_i$"></span>
+ in <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+.
+Using the distributive law for matrix multiplication and summation notation, we can write <!-- MATH
+ $\Vec{c}=AX$
+ -->
+<span class="MATH"><IMG
+ WIDTH="59" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1694.gif"
+ ALT="$ \Vec{c}=AX$"></span>
+ as
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{c}=AX=\sum_{i=1}^sa_iA\Vec{v}_i+\sum_{i=1}^tc_iA\Vec{w}_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="230" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1697.gif"
+ ALT="$\displaystyle \Vec{c}=AX=\sum_{i=1}^sa_iA\Vec{v}_i+\sum_{i=1}^tc_iA\Vec{w}_i$">
+</div><p>
+</p>
+Since the <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1636.gif"
+ ALT="$ \Vec{v}_i$"></span>
+ form a basis for <!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+, then 
+<p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^sa_iA\Vec{v}_i=\mathbf{0}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="99" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1698.gif"
+ ALT="$\displaystyle \sum_{i=1}^sa_iA\Vec{v}_i=\mathbf{0}$">
+</div><p>
+</p>
+and then
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{c}=AX=\sum_{i=1}^tc_iA\Vec{w}_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="146" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1699.gif"
+ ALT="$\displaystyle \Vec{c}=AX=\sum_{i=1}^tc_iA\Vec{w}_i$">
+</div><p>
+</p>
+
+<p>
+We have said that <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1302.gif"
+ ALT="$ \Vec{c}$"></span>
+ is any vector in <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+, so the <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img116.gif"
+ ALT="$ t$"></span>
+ vectors of the form <!-- MATH
+ $A\Vec{w}_i$
+ -->
+<span class="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1700.gif"
+ ALT="$ A\Vec{w}_i$"></span>
+ span
+<!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+. If we can show that these vectors are linearly independent, then they form a basis for <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+.
+This will show that <!-- MATH
+ $dim({\cal{CS}}(A))=t$
+ -->
+<span class="MATH"><IMG
+ WIDTH="116" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1701.gif"
+ ALT="$ dim({\cal{CS}}(A))=t$"></span>
+ and complete the proof. 
+
+<p>
+Let us suppose that we have <!-- MATH
+ $b_i\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1702.gif"
+ ALT="$ b_i\in\mathbb{F}$"></span>
+ such that
+<p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^tb_iA\Vec{w}_i=\mathbf{0}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="101" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1703.gif"
+ ALT="$\displaystyle \sum_{i=1}^tb_iA\Vec{w}_i=\mathbf{0}$">
+</div><p>
+</p>
+which can be rewritten as 
+<p><!-- MATH
+ \begin{displaymath}
+A\sum_{i=1}^tb_i\Vec{w}_i=\mathbf{0}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="104" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1704.gif"
+ ALT="$\displaystyle A\sum_{i=1}^tb_i\Vec{w}_i=\mathbf{0}$">
+</div><p>
+</p>
+This means that
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{u}=\sum_{i=1}^tb_i\Vec{w}_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="89" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1705.gif"
+ ALT="$\displaystyle \Vec{u}=\sum_{i=1}^tb_i\Vec{w}_i$">
+</div><p>
+</p>
+is in <!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+. For some <!-- MATH
+ $d_i\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="47" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1706.gif"
+ ALT="$ d_i\in\mathbb{F}$"></span>
+, we can write <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ in terms of our basis for <!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+.
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{u}=\sum_{i=1}^sd_i\Vec{v}_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="87" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1707.gif"
+ ALT="$\displaystyle \Vec{u}=\sum_{i=1}^sd_i\Vec{v}_i$">
+</div><p>
+</p>
+Subtracting one form from the other gives
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{u}-\Vec{u}=\sum_{i=1}^sd_i\Vec{v}_i-\sum_{i=1}^tb_i\Vec{w}_i=\mathbf{0}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="220" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1708.gif"
+ ALT="$\displaystyle \Vec{u}-\Vec{u}=\sum_{i=1}^sd_i\Vec{v}_i-\sum_{i=1}^tb_i\Vec{w}_i=\mathbf{0}$">
+</div><p>
+</p>
+But we have seen that 
+<!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_s,\Vec{w}_1,\Vec{w}_2,\ldots,\Vec{w}_t$
+ -->
+<span class="MATH"><IMG
+ WIDTH="194" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1692.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_s,\Vec{w}_1,\Vec{w}_2,\ldots,\Vec{w}_t$"></span>
+ is a basis for <!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+.
+This means <!-- MATH
+ $b_1=b_2=\cdots=b_t=d_1=d_2=\cdots=d_s=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="305" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1709.gif"
+ ALT="$ b_1=b_2=\cdots=b_t=d_1=d_2=\cdots=d_s=0$"></span>
+, from the definition of linear independence.
+We can conclude that the vectors <!-- MATH
+ $A\Vec{w}_i$
+ -->
+<span class="MATH"><IMG
+ WIDTH="33" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1700.gif"
+ ALT="$ A\Vec{w}_i$"></span>
+ are linearly independent and we have completed our proof.
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+We have one more very important theorem with a long, but easy to follow, proof. 
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">11</span></b> &nbsp; 
+<i>For any <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, the  dimension of
+the column space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ equals the dimension of the row space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+. That is
+</i><p><!-- MATH
+ \begin{displaymath}
+dim({\cal{CS}}(A))=dim({\cal{RS}}(A))
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="199" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1710.gif"
+ ALT="$\displaystyle dim({\cal{CS}}(A))=dim({\cal{RS}}(A))$">
+</div><p>
+</p></div><p></p>
+
+<p></p>
+<div><i>Proof</i>.
+
+Let <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ be a <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ with <!-- MATH
+ $dim({\cal{RS}}(A))=r$
+ -->
+<span class="MATH"><IMG
+ WIDTH="122" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1711.gif"
+ ALT="$ dim({\cal{RS}}(A))=r$"></span>
+. If the set of vectors
+<!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_r$
+ -->
+<span class="MATH"><IMG
+ WIDTH="91" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1712.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_r$"></span>
+ is a basis for <!-- MATH
+ ${\cal{RS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1539.gif"
+ ALT="$ {\cal{RS}}(A)$"></span>
+, then each row <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ can
+be written as a row vector, <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1713.gif"
+ ALT="$ \Vec{r}_i$"></span>
+ in <!-- MATH
+ $\mathbb{F}^{1\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1714.gif"
+ ALT="$ \mathbb{F}^{1\times n}$"></span>
+, with <!-- MATH
+ $1\le i \le m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img568.gif"
+ ALT="$ 1\le i\le m$"></span>
+, 
+and as a linear combination of the basis vectors, for some <!-- MATH
+ $c_{i,j}\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1715.gif"
+ ALT="$ c_{i,j}\in\mathbb{F}$"></span>
+.
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{r}_i=\sum_{j=1}^rc_{i,j}\Vec{v}_j=(a_{i,1},a_{i,2},\ldots,a_{i,n})
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="249" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1716.gif"
+ ALT="$\displaystyle \Vec{r}_i=\sum_{j=1}^rc_{i,j}\Vec{v}_j=(a_{i,1},a_{i,2},\ldots,a_{i,n})$">
+</div><p>
+</p>
+As well, each <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1717.gif"
+ ALT="$ \Vec{v}_j$"></span>
+ is in <!-- MATH
+ $\mathbb{F}^{1\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1714.gif"
+ ALT="$ \mathbb{F}^{1\times n}$"></span>
+ so we can write, for <!-- MATH
+ $b_{j,i}\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1718.gif"
+ ALT="$ b_{j,i}\in\mathbb{F}$"></span>
+, 
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{v}_j=(b_{j,1},b_{j,2},\ldots,b_{j,n})
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="165" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1719.gif"
+ ALT="$\displaystyle \Vec{v}_j=(b_{j,1},b_{j,2},\ldots,b_{j,n})$">
+</div><p>
+</p>
+So <!-- MATH
+ $c_{i,j}\Vec{v}_j=(c_{i,j}b_{j,1},c_{i,j}b_{j,2},\ldots,c_{i,j}b_{j,n})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="252" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1720.gif"
+ ALT="$ c_{i,j}\Vec{v}_j=(c_{i,j}b_{j,1},c_{i,j}b_{j,2},\ldots,c_{i,j}b_{j,n})$"></span>
+, which gives the vector equation
+for each of the <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+ rows of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ as
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{r}_i=\left(\sum_{j=1}^rc_{i,j}b_{j,1},\sum_{j=1}^rc_{i,j}b_{j,2},\ldots,\sum_{j=1}^rc_{i,j}b_{j,n}\right)=(a_{i,1},a_{i,2},\ldots,a_{i,n})
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="470" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1721.gif"
+ ALT="$\displaystyle \Vec{r}_i=\left(\sum_{j=1}^rc_{i,j}b_{j,1},\sum_{j=1}^rc_{i,j}b_{j,2},\ldots,\sum_{j=1}^rc_{i,j}b_{j,n}\right)=(a_{i,1},a_{i,2},\ldots,a_{i,n})$">
+</div><p>
+</p>
+Equating entries gives us, with <!-- MATH
+ $1\le k\le n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="73" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1722.gif"
+ ALT="$ 1\le k\le n$"></span>
+ and <!-- MATH
+ $1\le i \le m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img568.gif"
+ ALT="$ 1\le i\le m$"></span>
+, 
+<p><!-- MATH
+ \begin{displaymath}
+a_{i,k}=\sum_{j=1}^rc_{i,j}b_{j,k}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="121" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1723.gif"
+ ALT="$\displaystyle a_{i,k}=\sum_{j=1}^rc_{i,j}b_{j,k}$">
+</div><p>
+</p>
+We use this to write a system of <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+ equations
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="31" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1724.gif"
+ ALT="$\displaystyle a_{1,k}$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="245" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1725.gif"
+ ALT="$\displaystyle = c_{1,1}b_{1,k}+c_{1,2}b_{2,k}+\cdots+c_{1,k}b_{r,k}$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="31" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1726.gif"
+ ALT="$\displaystyle a_{2,k}$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="245" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1727.gif"
+ ALT="$\displaystyle = c_{2,1}b_{1,k}+c_{2,2}b_{2,k}+\cdots+c_{2,k}b_{r,k}$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="8" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1728.gif"
+ ALT="$\displaystyle \vdots$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="36" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1729.gif"
+ ALT="$\displaystyle a_{m,k}$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="259" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1730.gif"
+ ALT="$\displaystyle = c_{m,1}b_{1,k}+c_{m,2}b_{2,k}+\cdots+c_{m,k}b_{r,k}$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+We can then write column <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.gif"
+ ALT="$ k$"></span>
+ of the matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ as a column vector and as a linear combination of <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ r$"></span>
+ vectors
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{c}_k=\left(
+\begin{array}{c}
+	a_{1,k} \\
+	a_{2,k} \\
+	\vdots \\
+	a_{m,k} \\
+\end{array}
+\right)=
+b_{1,k}
+\left(
+\begin{array}{c}
+	c_{1,1} \\
+	c_{2,1} \\
+	\vdots \\
+	c_{m,1} \\
+\end{array}
+\right)+
+b_{2,k}
+\left(
+\begin{array}{c}
+	c_{1,2} \\
+	c_{2,2} \\
+	\vdots \\
+	c_{m,2} \\
+\end{array}
+\right)+\cdots+
+b_{r,k}
+\left(
+\begin{array}{c}
+	c_{1,r} \\
+	c_{2,r} \\
+	\vdots \\
+	c_{m,r} \\
+\end{array}
+\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="505" HEIGHT="94" BORDER="0"
+ SRC="img1731.gif"
+ ALT="\begin{displaymath}\Vec{c}_k=\left(
+\begin{array}{c}
+a_{1,k} \\
+a_{2,k} \\
+...
+...} \\
+c_{2,r} \\
+\vdots \\
+c_{m,r} \\
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+Since <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1732.gif"
+ ALT="$ \Vec{c}_j$"></span>
+ is any column vector of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+, then we have <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ r$"></span>
+ vectors that span the column space.
+This implies that the <!-- MATH
+ $dim({\cal{CS}}(A))\le r$
+ -->
+<span class="MATH"><IMG
+ WIDTH="118" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1733.gif"
+ ALT="$ dim({\cal{CS}}(A))\le r$"></span>
+ and since <!-- MATH
+ $r = dim({\cal{RS}}(A))$
+ -->
+<span class="MATH"><IMG
+ WIDTH="122" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1734.gif"
+ ALT="$ r = dim({\cal{RS}}(A))$"></span>
+, then
+<p><!-- MATH
+ \begin{displaymath}
+dim({\cal{CS}}(A))\le dim({\cal{RS}}(A))
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="199" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1735.gif"
+ ALT="$\displaystyle dim({\cal{CS}}(A))\le dim({\cal{RS}}(A))$">
+</div><p>
+</p>
+We may repeat the same argument using the transpose of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ to obtain
+<p><!-- MATH
+ \begin{displaymath}
+dim({\cal{CS}}(A^T))\le dim({\cal{RS}}(A^T))
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="219" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1736.gif"
+ ALT="$\displaystyle dim({\cal{CS}}(A^T))\le dim({\cal{RS}}(A^T))$">
+</div><p>
+</p>
+The row space of <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1216.gif"
+ ALT="$ A^T$"></span>
+ is the column space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and the row space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is the column space of <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1216.gif"
+ ALT="$ A^T$"></span>
+. 
+So we must have that
+<p><!-- MATH
+ \begin{displaymath}
+dim({\cal{RS}}(A))\le dim({\cal{CS}}(A))
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="199" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1737.gif"
+ ALT="$\displaystyle dim({\cal{RS}}(A))\le dim({\cal{CS}}(A))$">
+</div><p>
+</p>
+Since <!-- MATH
+ $dim({\cal{CS}}(A))\le dim({\cal{RS}}(A))$
+ -->
+<span class="MATH"><IMG
+ WIDTH="199" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1738.gif"
+ ALT="$ dim({\cal{CS}}(A))\le dim({\cal{RS}}(A))$"></span>
+ and <!-- MATH
+ $dim({\cal{RS}}(A))\le dim({\cal{CS}}(A))$
+ -->
+<span class="MATH"><IMG
+ WIDTH="199" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1739.gif"
+ ALT="$ dim({\cal{RS}}(A))\le dim({\cal{CS}}(A))$"></span>
+, then we complete the proof.
+<p><!-- MATH
+ \begin{displaymath}
+dim({\cal{CS}}(A))=dim({\cal{RS}}(A))
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="199" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1710.gif"
+ ALT="$\displaystyle dim({\cal{CS}}(A))=dim({\cal{RS}}(A))$">
+</div><p>
+</p> <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+We now give a proper definition of the rank of a matrix.<a name="11478"></a>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">20</span></b> &nbsp; 
+<i>For any <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, the rank of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is given by
+<!-- MATH
+ $rank(A)=dim({\cal{RS}}(A))=dim({\cal{CS}}(A))$
+ -->
+<span class="MATH"><IMG
+ WIDTH="279" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1740.gif"
+ ALT="$ rank(A)=dim({\cal{RS}}(A))=dim({\cal{CS}}(A))$"></span>
+</i></div><p></p>
+
+<p>
+The dimension of the null space of an <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is often written as <!-- MATH
+ $nullity(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1741.gif"
+ ALT="$ nullity(A)$"></span>
+<a name="11483"></a>.
+We can now rewrite the result of Theorem&nbsp;<a href="#nnullcs">5.10</a> as
+<p><!-- MATH
+ \begin{displaymath}
+n=nullity(A)+rank(A)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="186" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1742.gif"
+ ALT="$\displaystyle n=nullity(A)+rank(A)$">
+</div><p>
+</p>
+
+<p>
+We now have a wealth of theorems which we can use to explore.
+
+<p>
+Recall that <!-- MATH
+ $\mathbf{I}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1544.gif"
+ ALT="$ \mathbf{I}_n$"></span>
+ is an <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1438.gif"
+ ALT="$ n\times n$"></span>
+ identity matrix. It should now be obvious that the rows
+of <!-- MATH
+ $\mathbf{I}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1544.gif"
+ ALT="$ \mathbf{I}_n$"></span>
+ are linearly independent and span the subspace <!-- MATH
+ $\mathbb{F}^{1\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1714.gif"
+ ALT="$ \mathbb{F}^{1\times n}$"></span>
+. Similarly, the columns
+of <!-- MATH
+ $\mathbf{I}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1544.gif"
+ ALT="$ \mathbf{I}_n$"></span>
+ span <!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+. This means that
+<!-- MATH
+ $rank(\mathbf{I}_n)=n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="97" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1743.gif"
+ ALT="$ rank(\mathbf{I}_n)=n$"></span>
+. Obviously  <!-- MATH
+ $nullity(\mathbf{I}_n)=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="110" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1744.gif"
+ ALT="$ nullity(\mathbf{I}_n)=0$"></span>
+, which means that the null space of <!-- MATH
+ $\mathbf{I}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1544.gif"
+ ALT="$ \mathbf{I}_n$"></span>
+ is a
+zero vector.
+
+<p>
+We proved that if <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is a nonsingular matrix and <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img609.gif"
+ ALT="$ BA$"></span>
+ exists, then <!-- MATH
+ ${\cal{CS}}(BA)={\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="127" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1745.gif"
+ ALT="$ {\cal{CS}}(BA)={\cal{CS}}(A)$"></span>
+. Immediately we
+have that <!-- MATH
+ $rank(BA)=rank(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="156" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1746.gif"
+ ALT="$ rank(BA)=rank(A)$"></span>
+. Similarly, if <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ is nonsingular and <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1587.gif"
+ ALT="$ AC$"></span>
+ exists, we can say that <!-- MATH
+ $rank(AC)=rank(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="155" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1747.gif"
+ ALT="$ rank(AC)=rank(A)$"></span>
+.
+So if <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1590.gif"
+ ALT="$ C^{-1}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1564.gif"
+ ALT="$ B^{-1}$"></span>
+ exist, then <!-- MATH
+ $rank(BAC)=rank(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="168" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1748.gif"
+ ALT="$ rank(BAC)=rank(A)$"></span>
+.
+
+<p>
+We can also see that any <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is equivalent to a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ of the form 
+<p><!-- MATH
+ \begin{displaymath}
+R=
+\left(
+\begin{array}{ccc}
+	\mathbf{I}_r & \vline&\mathbf{0}\\
+	\hline 
+	\mathbf{0}&  \vline&\mathbf{0}
+\end{array}
+\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="125" HEIGHT="55" BORDER="0"
+ SRC="img1749.gif"
+ ALT="\begin{displaymath}R=
+\left(
+\begin{array}{ccc}
+\mathbf{I}_r &amp; \vline&amp;\mathbf{0}\\
+\hline
+\mathbf{0}&amp; \vline&amp;\mathbf{0}
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+where <span class="MATH"><IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1750.gif"
+ ALT="$ r=rank(A)$"></span>
+. (Why is this?) Using the results of this discussion, we can show that
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">12</span></b> &nbsp; 
+<i>Given two <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrices <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is equivalent to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ if and only if
+<!-- MATH
+ $rank(A)=rank(B)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="144" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1751.gif"
+ ALT="$ rank(A)=rank(B)$"></span>
+.<a name="rankeq"></a></i></div><p></p>
+
+<p>
+The next theorem sums up our findings about square matrices. The proof can be obtained by carefully
+following the results of established theorems.
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">13</span></b> &nbsp; 
+<i>Given an <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1438.gif"
+ ALT="$ n\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, any of following statements implies the others.<a name="summarynn"></a></i>
+<ol>
+<li><span class="MATH"><IMG
+ WIDTH="94" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1752.gif"
+ ALT="$ rank(A)=n$"></span>
+
+</li>
+<li>The row vectors of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ are linearly independent.
+</li>
+<li><!-- MATH
+ ${\cal{RS}}(A)=\mathbb{F}^{1\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1753.gif"
+ ALT="$ {\cal{RS}}(A)=\mathbb{F}^{1\times n}$"></span>
+
+</li>
+<li>The column vectors of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ are linearly independent.
+</li>
+<li><!-- MATH
+ ${\cal{CS}}(A)=\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="105" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1754.gif"
+ ALT="$ {\cal{CS}}(A)=\mathbb{F}^{n\times 1}$"></span>
+
+</li>
+<li><span class="MATH"><IMG
+ WIDTH="33" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ A^{-1}$"></span>
+ exists.
+</li>
+</ol></div><p></p>
+
+<p>
+This next theorem sums up the information we will need to find if a linear system <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ has a solution.
+This is the theorem we will need to (finally) develop an algorithm for finding solutions to  <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+,
+if they exist.
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">14</span></b> &nbsp; 
+<i>Suppose we have <!-- MATH
+ $A_{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img542.gif"
+ ALT="$ A_{m\times n}$"></span>
+ and a linear system <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+. <a name="summarymn"></a>All of the following statements are true or they are all false.
+</i>
+<ol>
+<li><span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ has a solution.
+</li>
+<li><span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is in <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+
+</li>
+<li><!-- MATH
+ $rank(A)=rank(A|B)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="160" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1755.gif"
+ ALT="$ rank(A)=rank(A\vert B)$"></span>
+, where <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1756.gif"
+ ALT="$ A\vert B$"></span>
+ is the augmented matrix made from <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+.
+</li>
+</ol></div><p></p>
+
+<p></p>
+<div><i>Proof</i>.
+
+Recalling that <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+ is any matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ in <!-- MATH
+ $\mathbb{F}^{m\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1548.gif"
+ ALT="$ \mathbb{F}^{m\times 1}$"></span>
+ 
+such that <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ is solvable, the first
+two statements are obviously equivalent. Since the number of independent columns of <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1756.gif"
+ ALT="$ A\vert B$"></span>
+ is equal
+to the rank of <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1756.gif"
+ ALT="$ A\vert B$"></span>
+, we can see that the second statement implies the third. To see that the
+third statement implies the second, notice that the only way we can add another column <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ to <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ to get
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1649.gif"
+ ALT="$ (A\vert B)$"></span>
+ and have that <!-- MATH
+ $rank(A)=rank(A|B)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="160" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1755.gif"
+ ALT="$ rank(A)=rank(A\vert B)$"></span>
+ is if <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is in <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+. We have shown that any of the
+three statements implies the others, so that they are all true or all false.
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+Please do not confuse the augmented matrix <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1756.gif"
+ ALT="$ A\vert B$"></span>
+ with the product of two matrices <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img705.gif"
+ ALT="$ AB$"></span>
+. 
+
+<p>
+Let us now look at a scheme to find solutions of a linear system <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ where <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is in <!-- MATH
+ $\mathbb{F}^{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1173.gif"
+ ALT="$ \mathbb{F}^{m\times n}$"></span>
+
+and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is in <!-- MATH
+ $\mathbb{F}^{m\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1548.gif"
+ ALT="$ \mathbb{F}^{m\times 1}$"></span>
+. (This means, of course, that <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ is in <!-- MATH
+ $\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ \mathbb{F}^{n\times 1}$"></span>
+.) We divide
+up our scheme into different tasks.
+
+<p>
+
+<ol>
+<li>[Task 1.] Determining if a given <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is a solution to <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+.
+
+<p>
+Evaluate <span class="MATH"><IMG
+ WIDTH="63" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1757.gif"
+ ALT="$ rank(A)$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="80" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1758.gif"
+ ALT="$ rank(A\vert B)$"></span>
+. If they are not equal, then there
+	are no solutions for this system (see Theorem&nbsp;<a href="#summarymn">5.14</a>).
+	The easiest way to find out if they are equal is to create
+	an <!-- MATH
+ $m\times (n+1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="87" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1759.gif"
+ ALT="$ m\times (n+1)$"></span>
+ augmented matrix, <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1756.gif"
+ ALT="$ A\vert B$"></span>
+, and use row operations to reduce it to reduced row echelon form.
+	If there is a row of all zeroes except for the column <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1594.gif"
+ ALT="$ (n+1)$"></span>
+ entry, then the ranks are <span  class="textit">not</span> equal.
+	The system is inconsistent and
+	<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is not a solution to the system. 	If the ranks are equal, then
+	<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is in <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+ and is a solution to the system. Furthermore, if <!-- MATH
+ $m=n=rank(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="129" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1760.gif"
+ ALT="$ m=n=rank(A)$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+
+	is invertible and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is the only solution (recall Theorem&nbsp;<a href="#summarynn">5.13</a>.)
+
+<p>
+</li>
+<li>[Task 2.] Finding all <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is a solution to <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+.
+
+<p>
+The following procedure is an extended form of what we did in Task 1.
+	First, instead of reducing <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1756.gif"
+ ALT="$ A\vert B$"></span>
+, we will reduce <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1761.gif"
+ ALT="$ A\vert C$"></span>
+ where <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ is
+	an <span class="MATH"><IMG
+ WIDTH="52" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img769.gif"
+ ALT="$ m\times m$"></span>
+ matrix such that <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ is zero  except  for its diagonal entries, which
+	are <!-- MATH
+ $c_{i,i}=b_i$
+ -->
+<span class="MATH"><IMG
+ WIDTH="58" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1762.gif"
+ ALT="$ c_{i,i}=b_i$"></span>
+. 
+	This is easy to do with Lamp. Then use row operations to reduce <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1761.gif"
+ ALT="$ A\vert C$"></span>
+ to reduced row echelon form.
+	If there any rows with only zero entries except in the column entries with indices <span class="MATH"><IMG
+ WIDTH="31" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1763.gif"
+ ALT="$ &gt;n$"></span>
+, then
+	the system is inconsistent. This is the same information we had before, but now we have the bonus
+	of being able to say why it is inconsistent and for what values of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1363.gif"
+ ALT="$ b_i$"></span>
+ it can be made consistent.
+
+<p>
+For example, let us examine the system
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="196" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1764.gif"
+ ALT="$\displaystyle [lrr] -x_1-2x_2-x_3 -\;5x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.gif"
+ ALT="$\displaystyle =b_1$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"> &nbsp; <IMG
+ WIDTH="156" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1765.gif"
+ ALT="$\displaystyle 2x_1+4x_2+x_3 +\;8x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img463.gif"
+ ALT="$\displaystyle =b_2$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"> &nbsp; <IMG
+ WIDTH="128" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1766.gif"
+ ALT="$\displaystyle 4x_1+8x_2 \;+12x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1767.gif"
+ ALT="$\displaystyle = b_3$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+This gives us a matrix equation <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ which we can also represent as <!-- MATH
+ $AX=\mathbf{I}B$
+ -->
+<span class="MATH"><IMG
+ WIDTH="72" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1768.gif"
+ ALT="$ AX=\mathbf{I}B$"></span>
+. 
+	We do this for reasons which will	become apparent as we proceed.
+	We write <!-- MATH
+ $A|\mathbf{I}_m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1769.gif"
+ ALT="$ A\vert\mathbf{I}_m$"></span>
+ for this system as the augmented matrix
+	<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{rrrr|ccc}
+	  -1&  -2& -1& -5& 1& 0&  0\\
+	  2&  4& 1& 8&0 &1  &  0\\
+	  4&  8& 0& 12&0 &0 & 1
+\end{array}
+	\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="236" HEIGHT="74" BORDER="0"
+ SRC="img1770.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{rrrr\vert ccc}
+-1&amp; -2&amp; -1&amp; -5&amp; 1&amp; 0&amp; 0\...
+...4&amp; 1&amp; 8&amp;0 &amp;1 &amp; 0\\
+4&amp; 8&amp; 0&amp; 12&amp;0 &amp;0 &amp; 1
+\end{array} \right)
+\end{displaymath}">
+</div><p>
+</p>
+Each column of <!-- MATH
+ $\mathbf{I}_m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1543.gif"
+ ALT="$ \mathbf{I}_m$"></span>
+ represents the coefficients for <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1363.gif"
+ ALT="$ b_i$"></span>
+.	We row reduce this matrix to reduced echelon form to get
+	<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{cccc|rrc}
+	  1&  2& 0& 3& 1& 1&  0\\
+	  0&  0& 1& 2&-2 &-1  &  0\\
+	  0&  0& 0& 0&-4 &-4& 1
+\end{array}
+	\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="212" HEIGHT="74" BORDER="0"
+ SRC="img1771.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{cccc\vert rrc}
+1&amp; 2&amp; 0&amp; 3&amp; 1&amp; 1&amp; 0\\
+...
+... 1&amp; 2&amp;-2 &amp;-1 &amp; 0\\
+0&amp; 0&amp; 0&amp; 0&amp;-4 &amp;-4&amp; 1
+\end{array} \right)
+\end{displaymath}">
+</div><p>
+</p>
+The only way that this system can be consistent is if the bottom row is all zero so that
+	<!-- MATH
+ $rank(A|\mathbf{I}_m)=2=rank(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="195" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1772.gif"
+ ALT="$ rank(A\vert\mathbf{I}_m)=2=rank(A)$"></span>
+. This happens when <!-- MATH
+ $-4b_1-4b_2+b_3=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="142" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1773.gif"
+ ALT="$ -4b_1-4b_2+b_3=0$"></span>
+. So any <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ which has entries that satisfy
+	this equation will have a solution for <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+. It is possible to find an <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ which makes <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ true.
+	We can have a solution space.
+
+<p>
+For example, if <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1774.gif"
+ ALT="$ b_1=1$"></span>
+,<span class="MATH"><IMG
+ WIDTH="60" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1775.gif"
+ ALT="$ b_2=-2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="60" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1776.gif"
+ ALT="$ b_3=-4$"></span>
+, then the system 
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="160" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1777.gif"
+ ALT="$\displaystyle -x_1-2x_2-x_3 -\;5x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.gif"
+ ALT="$\displaystyle =1$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"> &nbsp; <IMG
+ WIDTH="156" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1765.gif"
+ ALT="$\displaystyle 2x_1+4x_2+x_3 +\;8x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1505.gif"
+ ALT="$\displaystyle = -2$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"> &nbsp; <IMG
+ WIDTH="128" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1766.gif"
+ ALT="$\displaystyle 4x_1+8x_2 \;+12x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1778.gif"
+ ALT="$\displaystyle = -4$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+has a solution. We can immediately go to the reduced row echelon representation
+	<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{cccc|r}
+	  1&  2& 0& 3& -1\\
+	  0&  0& 1& 2&0 \\
+	  0&  0& 0& 0&0 
+\end{array}
+	\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="152" HEIGHT="74" BORDER="0"
+ SRC="img1779.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{cccc\vert r}
+1&amp; 2&amp; 0&amp; 3&amp; -1\\
+0&amp; 0&amp; 1&amp; 2&amp;0 \\
+0&amp; 0&amp; 0&amp; 0&amp;0
+\end{array} \right)
+\end{displaymath}">
+</div><p>
+</p>
+using the equations obtained from our previous row reduction, that is
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"> &nbsp;  &nbsp; <IMG
+ WIDTH="93" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1780.gif"
+ ALT="$\displaystyle 1(1)+1(-2)$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1781.gif"
+ ALT="$\displaystyle = -1$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="105" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1782.gif"
+ ALT="$\displaystyle -2(1)-1(-2)$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.gif"
+ ALT="$\displaystyle = 0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="165" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1783.gif"
+ ALT="$\displaystyle -4(1)-4(-2)+1(-4)$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.gif"
+ ALT="$\displaystyle = 0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+Using parameters, we let <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1784.gif"
+ ALT="$ x_2=s$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img536.gif"
+ ALT="$ x_4=t$"></span>
+ so that any solution is of the form
+	<p><!-- MATH
+ \begin{displaymath}
+X=\left(
+\begin{array}{c}
+	  -2s-3t-1\\
+	  s \\
+	  -2t \\
+	  t 
+\end{array}
+	\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="164" HEIGHT="92" BORDER="0"
+ SRC="img1785.gif"
+ ALT="\begin{displaymath}X=\left(
+\begin{array}{c}
+-2s-3t-1\\
+s \\
+-2t \\
+t
+\end{array} \right)
+\end{displaymath}">
+</div><p>
+</p>
+</li>
+<li>[Task 3.] Finding all <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ such that <!-- MATH
+ $AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$ AX=\mathbf{0}$"></span>
+.
+
+<p>
+If <!-- MATH
+ $X=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1786.gif"
+ ALT="$ X=\mathbf{0}$"></span>
+, then this is a solution. It is called the <span  class="textbf">trivial solution</span><a name="11553"></a>.
+	We are interested in finding <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ when <!-- MATH
+ $X\ne\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1787.gif"
+ ALT="$ X\ne\mathbf{0}$"></span>
+. We have already seen one method using parameters. We
+	will show an alternate method.
+	We have to find a basis for <!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+. 
+	We begin by adding an identity matrix  to the bottom of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ 
+	to get the augmented matrix 
+	<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{c}
+	A \\
+	\hline
+	\mathbf{I}_n 
+\end{array}
+	\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="50" HEIGHT="55" BORDER="0"
+ SRC="img1788.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{c}
+A \\
+\hline
+\mathbf{I}_n
+\end{array} \right)
+\end{displaymath}">
+</div><p>
+</p>
+and then use <span  class="textit">column</span> operations to reduce the augmented matrix to <span  class="textbf">reduced column echelon form</span>
+	<a name="11560"></a>.
+A matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is in  reduced column echelon form if
+
+<ol>
+<li>Any columns consisting entirely of <span class="MATH">0</span>
+'s appear at the right of the matrix.
+</li>
+<li>For any column, the leading entry (if it exists) is a <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+.
+</li>
+<li>For any two consecutive columns with leading entries, the leading entry of the column to the right is below
+ the leading entry of the column to its left.
+</li>
+<li>Any row containing a leading entry has zeros for entries everywhere else in the row.
+</li>
+</ol>
+In other words, if <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ is in reduced row echelon form, then <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1789.gif"
+ ALT="$ R^T$"></span>
+ is in reduced column echelon form.
+So for our example we write
+	<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{rrrr}
+	  -1&  -2& -1& -5\\
+	  2&  4& 1& 9\\
+	  4&  8& 0& 12\\
+	  \hline
+	   1&  0& 0& 0\\
+	  0&  1& 0& 0\\
+	  0&  0& 1& 0\\
+	  0&  0& 0& 1\\
+\end{array}
+	\right)\text{ column equivalent to }
+\left(\begin{array}{crcr}
+	   1&  0& 0& 0\\
+	  0&  0& 1& 0\\
+	  0&  0& 0& 0\\
+	  \hline
+	   1&  -2& 0& -3\\
+	  0&  1& 0& 0\\
+	  0&  0& 1& -2\\
+	  0&  0& 0& 1\\
+\end{array}
+	\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="474" HEIGHT="150" BORDER="0"
+ SRC="img1790.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{rrrr}
+-1&amp; -2&amp; -1&amp; -5\\
+2&amp; 4&amp; 1&amp; 9\\
+...
+...&amp; 0&amp; 0\\
+0&amp; 0&amp; 1&amp; -2\\
+0&amp; 0&amp; 0&amp; 1\\
+\end{array} \right)
+\end{displaymath}">
+</div><p>
+</p>
+The two columns of the bottom portion of the reduced, augmented matrix which do not correspond
+	to leading entries in the top portion are two independent vectors which span <!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+.
+	Therefore, any <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ which satisfies <!-- MATH
+ $AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$ AX=\mathbf{0}$"></span>
+ must be a linear combination of these two vectors. For
+	arbitrary <!-- MATH
+ $s,t\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1791.gif"
+ ALT="$ s,t\in\mathbb{F}$"></span>
+
+	<p><!-- MATH
+ \begin{displaymath}
+X=s
+\left(\begin{array}{r}
+-2\\
+1\\
+0\\
+0
+\end{array}
+	\right)	+ t
+\left(\begin{array}{r}
+-3\\
+0\\
+-2\\
+1
+\end{array}
+	\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="206" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1792.gif"
+ ALT="$\displaystyle X=s
+\left(\begin{array}{r}
+-2\\
+1\\
+0\\
+0
+\end{array} \right) + t
+\left(\begin{array}{r}
+-3\\
+0\\
+-2\\
+1
+\end{array} \right)
+$">
+</div><p>
+</p>
+
+<p>
+Note: We could just have easily started with the reduced row echelon form of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ which
+	we calculated in Task 2 as the top
+	matrix in our augmented matrix. (Why?)
+
+<p>
+</li>
+<li>[Task 4.] Finding all <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+. 
+
+<p>
+We begin by adding an identity matrix and a column of zeros to the bottom of <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1756.gif"
+ ALT="$ A\vert B$"></span>
+ 
+	to get the augmented matrix 
+	<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{c|c}
+	A & B\\
+	\hline
+	\mathbf{I}_n & \mathbf{0}
+\end{array}
+	\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="78" HEIGHT="55" BORDER="0"
+ SRC="img1793.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{c\vert c}
+A &amp; B\\
+\hline
+\mathbf{I}_n &amp; \mathbf{0}
+\end{array} \right)
+\end{displaymath}">
+</div><p>
+</p>
+and then follow the procedure outlined in Task 1 to determine if a solution is possible.
+	If <!-- MATH
+ $m=n=rank(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="129" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1760.gif"
+ ALT="$ m=n=rank(A)$"></span>
+, then there is only one solution, which we can read off directly from
+	the reduced row echelon equivalent matrix we obtained from <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1756.gif"
+ ALT="$ A\vert B$"></span>
+.
+	If an infinite number of solutions are possible, where <span class="MATH"><IMG
+ WIDTH="94" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1794.gif"
+ ALT="$ rank(A)&lt;n$"></span>
+, 
+	we can then continue as we did in Task 3 and find a basis for the null space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+. 
+
+<p>
+With this basis and one particular solution, we can then define all solutions.
+
+<p>
+For our example we have <!-- MATH
+ $B=(1,-2,-4)^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="123" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1795.gif"
+ ALT="$ B=(1,-2,-4)^T$"></span>
+ and
+	<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{rrrr|r}
+	  -1&  -2& -1& -5 & 1\\
+	  2&  4& 1& 9 & -2\\
+	  4&  8& 0& 12 & -4 \\
+	  \hline
+	  1 & 0 & 0 & 0 & 0 \\
+	  0 & 1 & 0 & 0 & 0 \\
+	  0 & 0 & 1 & 0 & 0 \\
+	  0 & 0 & 0 & 1 & 0 
+\end{array}
+	\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="201" HEIGHT="150" BORDER="0"
+ SRC="img1796.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{rrrr\vert r}
+-1&amp; -2&amp; -1&amp; -5 &amp; 1\\
+2&amp; ...
+...
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
+\end{array} \right)\end{displaymath}">
+</div><p>
+</p>
+which we can row  and column reduce to
+	<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{rrrr|r}
+	   1&  0& 0& 0 & -1\\
+	  0&  0& 1& 0 & 0\\
+	  0&  0& 0& 0 & 0\\
+	  \hline
+	   1&  -2& 0& -3 & 0\\
+	  0&  1& 0& 0 & 0\\
+	  0&  0& 1& -2 & 0\\
+	  0&  0& 0& 1 & 0\\
+\end{array}
+	\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="176" HEIGHT="150" BORDER="0"
+ SRC="img1797.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{rrrr\vert r}
+1&amp; 0&amp; 0&amp; 0 &amp; -1\\
+0&amp; 0&amp; ...
+...0\\
+0&amp; 0&amp; 1&amp; -2 &amp; 0\\
+0&amp; 0&amp; 0&amp; 1 &amp; 0\\
+\end{array} \right)\end{displaymath}">
+</div><p>
+</p>
+Letting <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1784.gif"
+ ALT="$ x_2=s$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img536.gif"
+ ALT="$ x_4=t$"></span>
+, if we have <span class="MATH"><IMG
+ WIDTH="68" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1798.gif"
+ ALT="$ s=t=0$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="62" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1799.gif"
+ ALT="$ x_1=-1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="50" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1800.gif"
+ ALT="$ x_3=0$"></span>
+, which gives
+ us one solution <!-- MATH
+ $X=(-1,0,0,0)^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1801.gif"
+ ALT="$ X=(-1,0,0,0)^T$"></span>
+. Therefore, any solution <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ is of the form	
+	<p><!-- MATH
+ \begin{displaymath}
+X= s
+\left(\begin{array}{r}
+-2\\
+1\\
+0\\
+0
+\end{array}
+	\right)	+ t
+\left(\begin{array}{r}
+-3\\
+0\\
+-2\\
+1
+\end{array}\right)
++ 
+\left(\begin{array}{r}
+-1\\
+0\\
+0\\
+0
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="289" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1802.gif"
+ ALT="$\displaystyle X= s
+\left(\begin{array}{r}
+-2\\
+1\\
+0\\
+0
+\end{array} \right)...
+...d{array}\right)
++
+\left(\begin{array}{r}
+-1\\
+0\\
+0\\
+0
+\end{array}\right) $">
+</div><p>
+</p>
+for any <!-- MATH
+ $s,t\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1791.gif"
+ ALT="$ s,t\in\mathbb{F}$"></span>
+.
+
+<p>
+Notice that this is the same solution as the one we found using parameters in Task 2.
+
+<p>
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">5</span>.<span class="arabic">6</span></span></big>
+
+<ol>
+<li>Prove that any set (any list) of vectors containing the zero vector is linearly dependent.
+</li>
+<li>Show that any set of vectors containing just one non-zero vector is linearly
+	independent.
+</li>
+<li>Prove that if <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ refers to a set of vectors such that <!-- MATH
+ ${\cal{SP}}(S)={\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="83" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1803.gif"
+ ALT="$ {\cal{SP}}(S)={\cal{V}}$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ must contain a basis for <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+,
+	provided that <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ does not simply contain only a zero vector.
+</li>
+<li>Prove that, if <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+, then <!-- MATH
+ $m=nullity(A^T)+rank(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="200" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1804.gif"
+ ALT="$ m=nullity(A^T)+rank(A)$"></span>
+.
+</li>
+<li>Show that <!-- MATH
+ $rank(AB)\le rank(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="156" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1805.gif"
+ ALT="$ rank(AB)\le rank(A)$"></span>
+ and also that <!-- MATH
+ $rank(AB)\le rank(B)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="156" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1806.gif"
+ ALT="$ rank(AB)\le rank(B)$"></span>
+.
+</li>
+<li>Prove that for any two <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrices <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is equivalent to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+,
+	then <!-- MATH
+ $rank(A)=rank(B)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="144" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1751.gif"
+ ALT="$ rank(A)=rank(B)$"></span>
+.
+</li>
+<li>Prove that for any two <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrices <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ such that <!-- MATH
+ $rank(A)=rank(B)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="144" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1751.gif"
+ ALT="$ rank(A)=rank(B)$"></span>
+,
+	then <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is equivalent to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+. Combined with the result of the previous problem, this proves
+	Theorem&nbsp;<a href="#rankeq">5.12</a>.
+</li>
+<li>Show that <!-- MATH
+ $rank(A)=rank(A^T)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="153" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1807.gif"
+ ALT="$ rank(A)=rank(A^T)$"></span>
+ for any matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ over a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+.
+</li>
+<li>What would be a basis for the vector space composed of all diagonal <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1438.gif"
+ ALT="$ n\times n$"></span>
+ matrices?
+	What is the dimension of this vector space?
+</li>
+<li>Suppose we are given a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ of dimension <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ and we also have <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+ independent
+	vectors from this vector space,
+	<!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="96" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1808.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_m$"></span>
+, such that <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img862.gif"
+ ALT="$ m&lt;n$"></span>
+. Show that we can add <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ n-m$"></span>
+ vectors
+	to this set of vectors to create a basis for <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+.
+</li>
+<li>If we have <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ vectors which span a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+, show that <!-- MATH
+ $dim({\cal{V}})\le n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="86" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1810.gif"
+ ALT="$ dim({\cal{V}})\le n$"></span>
+.
+</li>
+<li>Suppose that <!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$"></span>
+ form a basis for a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+.
+	Let <p><!-- MATH
+ \begin{displaymath}
+\Vec{u}_i=\sum_{j=1}^i\Vec{v}_j
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="80" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1811.gif"
+ ALT="$\displaystyle \Vec{u}_i=\sum_{j=1}^i\Vec{v}_j$">
+</div><p>
+</p>
+for <!-- MATH
+ $1\le i\le n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1661.gif"
+ ALT="$ 1\le i\le n$"></span>
+. Show that the set containing the
+	vectors <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1812.gif"
+ ALT="$ \Vec{u}_i$"></span>
+ is also a basis for <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+.
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">5</span>.<span class="arabic">6</span></span></big>
+
+<ol>
+<li>Show that the given lists of vectors over <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+ are dependent or independent.
+
+<ol>
+<li>
+<br>
+<IMG
+ WIDTH="134" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1813.gif"
+ ALT="\begin{picture}(28,3)
+\begin{displaymath}\left( 1,2 \right)^T\end{displaymath}\b...
+...isplaymath}\begin{displaymath}\left( 2,3 \right)^T\end{displaymath}\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="192" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1814.gif"
+ ALT="\begin{picture}(28,3)
+\begin{displaymath}\left( 1, 3, 2 \right)^T\end{displaymat...
+...aymath}\begin{displaymath}\left( 3, 1, 2 \right)^T\end{displaymath}\end{picture}">
+<br>
+<br>
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="203" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1815.gif"
+ ALT="\begin{picture}(28,3)
+\begin{displaymath}\left( 1, 3, 3 \right)^T\end{displaymat...
+...2, 1 \right)^T\end{displaymath}\begin{displaymath}\end{displaymath}\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="325" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1816.gif"
+ ALT="\begin{picture}(28,3)
+\begin{displaymath}\left( -1, 5, 6 , 2 \right)^T\end{displ...
+...ath}\begin{displaymath}\left( 3, 1, 2 , 0\right)^T\end{displaymath}\end{picture}">
+<br>
+<br>
+<br></li>
+</ol>  
+</li>
+<li>Show that the given lists of vectors over <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+ are dependent or independent.
+
+<ol>
+<li>
+<br>
+<IMG
+ WIDTH="767" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1817.gif"
+ ALT="\begin{picture}(28,4)
+$\left( -6+2i, -15-9i, 4i, 8-2i \right)^T$\\
+$\left( -2-6...
+... 0, 2, -6i \right)^T$\\
+$\left( -1-3i, -9+9i, -2, -2+8i\right)^T$
+\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="585" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1818.gif"
+ ALT="\begin{picture}(28,4)
+$\left( 4-6i, 3-6i, 3, 3-6i \right)^T$\\
+$\left( 8-2i, 1,...
+... 6+4i, 8-i, 3i, 8-i \right)^T$\\
+$\left( 4+4i, i, 3i, i\right)^T$
+\end{picture}">
+<br>
+<br>
+<br></li>
+</ol>  
+</li>
+<li>Show that the given sets of vectors over <!-- MATH
+ $\mathbb{Z}_7$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1819.gif"
+ ALT="$ \mathbb{Z}_7$"></span>
+ are dependent or independent.
+
+<ol>
+<li>
+<br>
+<IMG
+ WIDTH="300" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1820.gif"
+ ALT="\begin{picture}(28,4)
+$\left( 3, 6, 3, 0 \right)^T$\\
+$\left( 6, 1, 6, 5 \right)^T$\\
+$\left( 1, 5, 1, 4 \right)^T$\\
+$\left( 3, 1, 3, 6\right)^T$
+\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="300" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1821.gif"
+ ALT="\begin{picture}(28,4)
+$\left( 1, 6, 0, 3\right)^T$\\
+$\left( 2, 1, 3, 6 \right)^T$\\
+$\left( 3, 4, 1, 2 \right)^T$\\
+$\left( 2, 2, 2, 0 \right)^T$
+\end{picture}">
+<br>
+<br>
+<br></li>
+</ol>  
+</li>
+<li>Show that the given lists of vectors over <!-- MATH
+ $\mathbb{Z}_{11}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="28" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1822.gif"
+ ALT="$ \mathbb{Z}_{11}$"></span>
+ are dependent or independent.
+
+<ol>
+<li>
+<br>
+<IMG
+ WIDTH="300" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1820.gif"
+ ALT="\begin{picture}(28,4)
+$\left( 3, 6, 3, 0 \right)^T$\\
+$\left( 6, 1, 6, 5 \right)^T$\\
+$\left( 1, 5, 1, 4 \right)^T$\\
+$\left( 3, 1, 3, 6\right)^T$
+\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="300" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1821.gif"
+ ALT="\begin{picture}(28,4)
+$\left( 1, 6, 0, 3\right)^T$\\
+$\left( 2, 1, 3, 6 \right)^T$\\
+$\left( 3, 4, 1, 2 \right)^T$\\
+$\left( 2, 2, 2, 0 \right)^T$
+\end{picture}">
+<br>
+<br>
+<br></li>
+</ol>
+</li>
+<li>Determine if the following systems of equations have solutions.
+<br>
+
+<p>
+
+<br>
+<IMG
+ WIDTH="426" HEIGHT="144" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1823.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...icture}\newline\mbox{}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>Given the following matrices <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+, for what <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ will the matrix 
+	products <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ have solutions? Assume <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ are column matrices.
+<br>
+
+<p>
+
+<br>
+<IMG
+ WIDTH="482" HEIGHT="227" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1824.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...icture}\newline\mbox{}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>Determine all <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ such that <!-- MATH
+ $AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$ AX=\mathbf{0}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ is a column matrix.
+	Also, find a basis for the row space and give the rank of each matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+.
+<br>
+
+<p>
+
+<br>
+<IMG
+ WIDTH="482" HEIGHT="227" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1824.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...icture}\newline\mbox{}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html705"
+  href="node37.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html699"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html693"
+  href="node35.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html701"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html703"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html706"
+  href="node37.html">Coordinate Matrices and Change</a>
+<b> Up:</b> <a name="tex2html700"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html694"
+  href="node35.html">Linear Spans</a>
+ &nbsp; <b>  <a name="tex2html702"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html704"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

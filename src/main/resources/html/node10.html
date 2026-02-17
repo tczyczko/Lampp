@@ -1,0 +1,547 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Systems of Linear Equations</title>
+<meta name="description" content="Systems of Linear Equations">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node11.html">
+<link rel="previous" href="node9.html">
+<link rel="up" href="node4.html">
+<link rel="next" href="node11.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html327"
+  href="node11.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html321"
+  href="node4.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html315"
+  href="node9.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html323"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html325"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html328"
+  href="node11.html">Linear Inequalities</a>
+<b> Up:</b> <a name="tex2html322"
+  href="node4.html">Matrices and Analytic Geometry</a>
+<b> Previous:</b> <a name="tex2html316"
+  href="node9.html">Using Lamp to Graph</a>
+ &nbsp; <b>  <a name="tex2html324"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html326"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00460000000000000000">
+Systems of Linear Equations</a>
+</h1>
+
+<p>
+As remarked earlier, a linear equation in <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ variables is an equation of the
+form <!-- MATH
+ $a_1x_1+a_2x_2+\cdots +a_nx_n=b$
+ -->
+<span class="MATH"><IMG
+ WIDTH="207" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.gif"
+ ALT="$ a_1x_1+a_2x_2+\cdots +a_nx_n=b$"></span>
+.<a name="831"></a> When we have two or more of these equations, each one
+using the <span  class="textit">same</span> variables <!-- MATH
+ $x_1,x_2,\ldots ,x_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="97" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.gif"
+ ALT="$ x_1,x_2,\ldots,x_n$"></span>
+, we have a <span  class="textbf">system</span> of <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+ linear
+equations, where <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+ is the number of such equations.
+
+<p>
+For the fields <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+ and <!-- MATH
+ $\mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \mathbb{Q}$"></span>
+ we can represent two-variable linear equations geometrically as
+lines on the plane. For example,
+<p><!-- MATH
+ \begin{displaymath}
+x  -   y   = 1
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img376.gif"
+ ALT="$\displaystyle x - y = 1 $">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+3x +  2y   = 0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="86" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img377.gif"
+ ALT="$\displaystyle 3x + 2y = 0 $">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+2x  +   y   = 3
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="78" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img378.gif"
+ ALT="$\displaystyle 2x + y = 3 $">
+</div><p>
+</p>
+represents three lines on the plane. A solution of this system would be all the pairs of numbers
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$ (x,y)$"></span>
+ that
+satisfy all of the equations. Geometrically this would be all the points that the
+ three lines have in common. This would happen when all three lines meet at a single point or
+all three equations represent the same line (the lines <span  class="textbf">coincide</span> or are <span  class="textbf">coincident</span>).
+
+<p>
+A solution for a system of equations can be obtained algebraically. For instance, suppose the first two
+equations in the example above were a system. We would take the first equation <span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img379.gif"
+ ALT="$ x-y=3$"></span>
+ and
+transform it into <span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img380.gif"
+ ALT="$ x=y+3$"></span>
+. Now we replace all occurrences of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ in the second equation
+with <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img381.gif"
+ ALT="$ y+3$"></span>
+. We would get <!-- MATH
+ $3(y+3)+2y=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="125" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img382.gif"
+ ALT="$ 3(y+3)+2y=0$"></span>
+ which we could write as <span class="MATH"><IMG
+ WIDTH="113" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.gif"
+ ALT="$ 3y+9+2y=0$"></span>
+ or <!-- MATH
+ $y=\frac{-9}{5}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img384.gif"
+ ALT="$ y=\frac{-9}{5}$"></span>
+.
+We then take this value of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ and put it in <span  class="textit">either</span> of the two equations to get a value
+for <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+. The first equation would give us <!-- MATH
+ $x-\frac{-9}{5}=3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img385.gif"
+ ALT="$ x-\frac{-9}{5}=3$"></span>
+ which we could manipulate to
+give <!-- MATH
+ $x=\frac{15}{5}-\frac{9}{5}=\frac{6}{5}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="112" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.gif"
+ ALT="$ x=\frac{15}{5}-\frac{9}{5}=\frac{6}{5}$"></span>
+. (Using the second equation will give us
+the same answer.) So we know that the two lines <span  class="textbf">intersect</span> 
+at the point <!-- MATH
+ $(\frac{6}{5},\frac{-9}{5})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.gif"
+ ALT="$ (\frac{6}{5},\frac{-9}{5})$"></span>
+. 
+
+<p>
+
+<div align="CENTER"><a name="fig:figure9"></a><a name="855"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.12:</strong>
+A 3-dimensional coordinate system</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="301" HEIGHT="302" ALIGN="BOTTOM" BORDER="0"
+ SRC="img388.gif"
+ ALT="\includegraphics[width=6.7cm,height=6.7cm]{figure9.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+A linear equation in three variables <span class="MATH"><IMG
+ WIDTH="44" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.gif"
+ ALT="$ x,y,z$"></span>
+ can be drawn as a <span  class="textbf">plane</span> in three-dimensional space.
+We add the <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ z$"></span>
+-coordinate to the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ coordinates. This is easy to visualize. A box has
+width (<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis), height (<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+-axis) and depth (<span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ z$"></span>
+-axis). A two-dimensional representation of these three
+coordinates is given in Figure&nbsp;<a href="#fig:figure9">1.12</a>. A solution of a system of linear equations in three
+variables can be thought of geometrically as the point or points where all three planes meet. If they don't
+have points in common, we don't have a solution. A system of equations that has 
+no solutions is called <span  class="textbf">inconsistent</span><a name="861"></a>. If it has one or more solutions then
+it is called <span  class="textbf">consistent</span><a name="863"></a>.
+
+<p>
+Geometry fails us when we deal with more than three variables. In fact it is not uncommon for people
+to deal with thousands of linear equations in thousands of variables. Linear algebra is used to discover if
+solutions to these systems exist, if a solution which exists is unique and how to find all the solutions.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">1</span>.<span class="arabic">6</span></span></big>
+
+<ol>
+<li>Show that the system defined by
+<p><!-- MATH
+ \begin{displaymath}
+5x  +  10y   =15
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="102" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img389.gif"
+ ALT="$\displaystyle 5x + 10y =15 $">
+</div><p>
+</p>
+  <p><!-- MATH
+ \begin{displaymath}
+x +   2y  =3
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="78" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img390.gif"
+ ALT="$\displaystyle x + 2y =3$">
+</div><p>
+</p>
+is inconsistent. What does this mean geometrically?
+</li>
+<li>Geometrically, what are the two ways a system of linear equations with
+three variables can have solutions?
+</li>
+<li>Give equations for three lines that intersect at one point. In other words, give
+a system of linear equations in two variables that have a unique solution.
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">1</span>.<span class="arabic">6</span></span></big>
+
+<p>
+
+<center>
+<applet code = "LampApp" codebase="./LampApp" width = 320 HEIGHT = 210>
+<param name = "img" value ="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10">
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+</applet>
+</center>
+
+<ol>
+<li>Use Lamp to create a <!-- MATH
+ $2 \, \times \, 3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img391.gif"
+ ALT="$ 2   \times   3$"></span>
+ matrix corresponding to a system of the
+first two linear equations from the example in this section. Graph the two lines.
+</li>
+<li>Create a <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.gif"
+ ALT="$ 3$"></span>
+ <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img392.gif"
+ ALT="$ \times$"></span>
+ <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.gif"
+ ALT="$ 3$"></span>
+ rational matrix with entries as in the first exercise using
+all three of the linear equations. Graph these three lines.
+Alter the values of the entries in the third row to try and get the three lines to meet at one point.
+What would be the linear equations for these lines?
+</li>
+<li>Create a <!-- MATH
+ $1 \, \times \, 4$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img393.gif"
+ ALT="$ 1   \times   4$"></span>
+ matrix with the values
+ <!-- MATH
+ $\left(\begin{array}{cccc} -1 & 1 & 1 & 0 \end{array}\right)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img394.gif"
+ ALT="$ \left(\begin{array}{cccc} -1 &amp; 1 &amp; 1 &amp; 0 \end{array}\right)$"></span>
+.
+Graph this matrix. Make the first entry <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ and the second <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ -1$"></span>
+ and graph it again. Make the third entry
+ <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ -1$"></span>
+ and
+the first two equal to <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+. What does this graph look like?
+</li>
+<li>Create a <!-- MATH
+ $2 \, \times \, 4$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img395.gif"
+ ALT="$ 2   \times   4$"></span>
+ matrix so that all the entries are non-zero. Graph the matrix. Try and
+alter the entries so that the two planes never meet.
+</li>
+<li>Give an example of two linear equations for coincident lines. Use Lamp to graph these equations.
+</li>
+<li>Solve the following system of equations:
+<p><!-- MATH
+ \begin{displaymath}
+5x  + 2y +  2z  = 14
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="130" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img396.gif"
+ ALT="$\displaystyle 5x + 2y + 2z = 14 $">
+</div><p>
+</p>
+  <p><!-- MATH
+ \begin{displaymath}
+4x  -   y  +  z  =12
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="114" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img397.gif"
+ ALT="$\displaystyle 4x - y + z =12 $">
+</div><p>
+</p>
+  <p><!-- MATH
+ \begin{displaymath}
+3x     +   z  =9
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="78" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img398.gif"
+ ALT="$\displaystyle 3x + z =9 $">
+</div><p>
+</p>
+(<span  class="textbf">HINT</span>: First find <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ in terms of <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ z$"></span>
+ in the third equation. Then put this into the second
+equation. Then find <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ in terms of <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ z$"></span>
+ in the transformed second equation. Then put the value of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+
+and the value of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ (both in terms of <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ z$"></span>
+) into the first equation. Solve this for <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ z$"></span>
+. Then use
+this number to calculate <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+).
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html327"
+  href="node11.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html321"
+  href="node4.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html315"
+  href="node9.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html323"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html325"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html328"
+  href="node11.html">Linear Inequalities</a>
+<b> Up:</b> <a name="tex2html322"
+  href="node4.html">Matrices and Analytic Geometry</a>
+<b> Previous:</b> <a name="tex2html316"
+  href="node9.html">Using Lamp to Graph</a>
+ &nbsp; <b>  <a name="tex2html324"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html326"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

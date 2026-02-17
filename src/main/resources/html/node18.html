@@ -1,0 +1,688 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Matrix Addition and Scalar Multiplication</title>
+<meta name="description" content="Matrix addition and scalar Multiplication">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node19.html">
+<link rel="previous" href="node17.html">
+<link rel="up" href="node17.html">
+<link rel="next" href="node19.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html444"
+  href="node19.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html438"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html432"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html440"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html442"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html445"
+  href="node19.html">Matrix Multiplication</a>
+<b> Up:</b> <a name="tex2html439"
+  href="node17.html">Matrix Arithmetic</a>
+<b> Previous:</b> <a name="tex2html433"
+  href="node17.html">Matrix Arithmetic</a>
+ &nbsp; <b>  <a name="tex2html441"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html443"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00610000000000000000">
+Matrix Addition and Scalar Multiplication</a>
+</h1>
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">3</span>..<span class="arabic">1</span></b> &nbsp; 
+<i>For any two <!-- MATH
+ $m \; \times \; n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ m \; \times \; n$"></span>
+ matrices <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+, the <span  class="textbf">sum</span>
+<a name="4866"></a> of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+
+is a matrix <!-- MATH
+ $C_{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img566.gif"
+ ALT="$ C_{m\times n}$"></span>
+ with entries <!-- MATH
+ $c_{(i,j)}=a_{(i,j)}+b_{(i,j)}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="142" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img567.gif"
+ ALT="$ c_{(i,j)}=a_{(i,j)}+b_{(i,j)}$"></span>
+ for <!-- MATH
+ $1\le i \le m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img568.gif"
+ ALT="$ 1\le i\le m$"></span>
+
+and <!-- MATH
+ $1\le j\le n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="72" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img569.gif"
+ ALT="$ 1\le j\le n$"></span>
+. </i></div><p></p>
+
+<p>
+One example should suffice. Suppose we had the two matrices
+<p><!-- MATH
+ \begin{displaymath}
+A=\left( \begin{array}{cccc}
+ 1 & 2 & 3 & 1 \\
+ 2 & 3 & 1 & 2 \\
+ 3 & 1 & 2 & 3 \\
+ 0 & 0 & 0 & 0
+\end{array}\right)\;\;
+B=\left( \begin{array}{cccc}
+ 2 & 4 & 6 & 8 \\
+ 1 & 3 & 5 & 0 \\
+ 3 & 1 & 2 & 4 \\
+ 1 & 2 & 4 & 3
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="330" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img570.gif"
+ ALT="$\displaystyle A=\left( \begin{array}{cccc}
+1 &amp; 2 &amp; 3 &amp; 1 \\
+2 &amp; 3 &amp; 1 &amp; 2 \\...
+... 8 \\
+1 &amp; 3 &amp; 5 &amp; 0 \\
+3 &amp; 1 &amp; 2 &amp; 4 \\
+1 &amp; 2 &amp; 4 &amp; 3
+\end{array}\right)
+$">
+</div><p>
+</p>
+Then <span class="MATH"><IMG
+ WIDTH="82" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img571.gif"
+ ALT="$ A+B=C$"></span>
+ would mean
+<p><!-- MATH
+ \begin{displaymath}
+C=\left( \begin{array}{cccc}
+ 3 & 6 & 9 & 9 \\
+ 3 & 6 & 6 & 2 \\
+ 6 & 2 & 4 & 7 \\
+ 1 & 2 & 4 & 3
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="161" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img572.gif"
+ ALT="$\displaystyle C=\left( \begin{array}{cccc}
+3 &amp; 6 &amp; 9 &amp; 9 \\
+3 &amp; 6 &amp; 6 &amp; 2 \\
+6 &amp; 2 &amp; 4 &amp; 7 \\
+1 &amp; 2 &amp; 4 &amp; 3
+\end{array}\right)
+$">
+</div><p>
+</p>
+
+<p>
+It is easy to see that matrix addition is commutative (<span class="MATH"><IMG
+ WIDTH="148" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img573.gif"
+ ALT="$ A+B=B+A=C$"></span>
+). It should
+be equally apparent that matrix addition is associative (<!-- MATH
+ $(A+B)+C=A+(B+C)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="202" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img574.gif"
+ ALT="$ (A+B)+C=A+(B+C)$"></span>
+).
+If we had a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and a second matrix of the same order with all of its
+entries equal to zero, the second matrix has all the properties of an identity
+for matrix addition. We reserve the bold symbol <!-- MATH
+ $\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.gif"
+ ALT="$ \mathbf{0}$"></span>
+ for such a matrix and have 
+<!-- MATH
+ $A+\mathbf{0}=\mathbf{0}+A=A$
+ -->
+<span class="MATH"><IMG
+ WIDTH="140" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img576.gif"
+ ALT="$ A+\mathbf{0}=\mathbf{0}+A=A$"></span>
+. The order of <!-- MATH
+ $\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.gif"
+ ALT="$ \mathbf{0}$"></span>
+ is usually determined by
+its use in an equation to save us from having to write <!-- MATH
+ $\textbf{0}_{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img577.gif"
+ ALT="$ \textbf{0}_{m\times n}$"></span>
+. 
+
+<p>
+We define the <span  class="textbf">product</span> of a <span  class="textbf">scalar</span>  <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.gif"
+ ALT="$ s$"></span>
+ and a <span  class="textbf">matrix</span> <!-- MATH
+ $A_{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img542.gif"
+ ALT="$ A_{m\times n}$"></span>
+
+<a name="4891"></a>
+as the matrix <!-- MATH
+ $B_{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img578.gif"
+ ALT="$ B_{m\times n}$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="58" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img579.gif"
+ ALT="$ sA=B$"></span>
+ if and only if <!-- MATH
+ $s*a_{i,j}=b_{i,j}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img580.gif"
+ ALT="$ s*a_{i,j}=b_{i,j}$"></span>
+ for any
+pair  <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+ such that <!-- MATH
+ $1\le i\le m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img568.gif"
+ ALT="$ 1\le i\le m$"></span>
+ and <!-- MATH
+ $1\le j\le n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="72" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img569.gif"
+ ALT="$ 1\le j\le n$"></span>
+.
+
+<p>
+If we have <span class="MATH"><IMG
+ WIDTH="98" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img582.gif"
+ ALT="$ (-1)*A=B$"></span>
+ then <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is the unique additive inverse of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <!-- MATH
+ $A+B=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="79" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img583.gif"
+ ALT="$ A+B=\mathbf{0}$"></span>
+.
+ (2)of our row operations is simply the product of a nonzero scalar
+and a matrix of one row.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">3</span>.<span class="arabic">1</span></span></big>
+
+<ol>
+<li>How would you define matrix subtraction?
+</li>
+<li>For a scalar <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ r$"></span>
+ and two matrices <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ with orders such that addition
+is defined, is <!-- MATH
+ $r(A+B)=rA+rB$
+ -->
+<span class="MATH"><IMG
+ WIDTH="149" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img584.gif"
+ ALT="$ r(A+B)=rA+rB$"></span>
+?
+</li>
+<li>Show that <span class="MATH"><IMG
+ WIDTH="57" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img585.gif"
+ ALT="$ 1A=A$"></span>
+ and that <!-- MATH
+ $0A=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img586.gif"
+ ALT="$ 0A=\mathbf{0}$"></span>
+.
+</li>
+<li>Show that <!-- MATH
+ $r(sA)=(rs)A$
+ -->
+<span class="MATH"><IMG
+ WIDTH="104" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img587.gif"
+ ALT="$ r(sA)=(rs)A$"></span>
+.
+</li>
+<li>If <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ have the same rank, is <span class="MATH"><IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img588.gif"
+ ALT="$ A+B$"></span>
+ necessarily defined?
+</li>
+<li>If <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.gif"
+ ALT="$ r\ne 0$"></span>
+, is the rank of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ the same as the rank of <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img589.gif"
+ ALT="$ rA$"></span>
+? 
+</li>
+<li>If <!-- MATH
+ $A_{2\times 2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img590.gif"
+ ALT="$ A_{2\times 2}$"></span>
+ and <!-- MATH
+ $B_{2\times 2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img591.gif"
+ ALT="$ B_{2\times 2}$"></span>
+ are in row reduced echelon form, what
+can you say about the rank of <span class="MATH"><IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img588.gif"
+ ALT="$ A+B$"></span>
+?
+</li>
+<li>Show that if <span class="MATH"><IMG
+ WIDTH="82" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img571.gif"
+ ALT="$ A+B=C$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.gif"
+ ALT="$ D+B=C$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="51" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img593.gif"
+ ALT="$ A=D$"></span>
+.
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">3</span>.<span class="arabic">1</span></span></big>
+
+<p>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>Assume that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ are over <!-- MATH
+ $\mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \mathbb{Q}$"></span>
+. Find <span class="MATH"><IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img588.gif"
+ ALT="$ A+B$"></span>
+. Find <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img594.gif"
+ ALT="$ (-2)A$"></span>
+. 
+ <p><!-- MATH
+ \begin{displaymath}
+A=\left(\begin{array}{rcc}
+    -2  & 1  & 4  \\
+     2  & 3  & 5 
+  \end{array}\right)\;\;\;\;
+ B=\left(\begin{array}{ccc}
+    2  &  4    &  4   \\
+    1  &  3    &  2
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="294" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img595.gif"
+ ALT="$\displaystyle A=\left(\begin{array}{rcc}
+-2 &amp; 1 &amp; 4 \\
+2 &amp; 3 &amp; 5
+\end{arra...
+...;\;\;
+B=\left(\begin{array}{ccc}
+2 &amp; 4 &amp; 4 \\
+1 &amp; 3 &amp; 2
+\end{array}\right)$">
+</div><p>
+</p> 
+</li>
+<li>Assume that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ are over the binary field. Find <span class="MATH"><IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img588.gif"
+ ALT="$ A+B$"></span>
+. Find <span class="MATH"><IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img596.gif"
+ ALT="$ A-B$"></span>
+.
+ <p><!-- MATH
+ \begin{displaymath}
+A=\left(\begin{array}{ccc}
+     1  & 1  & 0  \\
+     1  & 0  & 1  \\
+     0  & 1  & 0
+  \end{array}\right)\;\;\;\;
+ B=\left(\begin{array}{ccc}
+    1  &  0    &  1   \\
+    1  &  1    &  0   \\
+    1  &  1    &  0
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="291" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img597.gif"
+ ALT="$\displaystyle A=\left(\begin{array}{ccc}
+1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp;...
+...\begin{array}{ccc}
+1 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 0 \\
+1 &amp; 1 &amp; 0
+\end{array}\right)$">
+</div><p>
+</p>
+(<span  class="textbf">HINT</span>: You can use Lamp to do this by creating a <!-- MATH
+ $6 \; \times \; 3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="48" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img598.gif"
+ ALT="$ 6 \; \times \; 3$"></span>
+ matrix<a name="4916"></a>
+with the first three rows being <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and the bottom three rows being <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+. Then use
+row Operation 3 to add the rows of <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ to <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+.)
+</li>
+<li>Assume that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ are over <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+. Find <span class="MATH"><IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img588.gif"
+ ALT="$ A+B$"></span>
+. Find <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img599.gif"
+ ALT="$ 3A$"></span>
+. Find <span class="MATH"><IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ iA$"></span>
+. Find <span class="MATH"><IMG
+ WIDTH="62" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img601.gif"
+ ALT="$ (1-i)B$"></span>
+.
+(Note that, in this case, <!-- MATH
+ $i=\sqrt{-1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="64" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.gif"
+ ALT="$ i=\sqrt{-1}$"></span>
+.)
+ <p><!-- MATH
+ \begin{displaymath}
+A=\left(\begin{array}{cc}
+     1  & i    \\
+     0  & 2     
+  \end{array}\right)\;\;\;\;
+ B=\left(\begin{array}{rc}
+    -1+i  & 4       \\
+    1-i  &  1-2i           
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="304" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img602.gif"
+ ALT="$\displaystyle A=\left(\begin{array}{cc}
+1 &amp; i \\
+0 &amp; 2
+\end{array}\right)\;\;\;\;
+B=\left(\begin{array}{rc}
+-1+i &amp; 4 \\
+1-i &amp; 1-2i
+\end{array}\right)$">
+</div><p>
+</p>
+
+<p>
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html444"
+  href="node19.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html438"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html432"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html440"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html442"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html445"
+  href="node19.html">Matrix Multiplication</a>
+<b> Up:</b> <a name="tex2html439"
+  href="node17.html">Matrix Arithmetic</a>
+<b> Previous:</b> <a name="tex2html433"
+  href="node17.html">Matrix Arithmetic</a>
+ &nbsp; <b>  <a name="tex2html441"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html443"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

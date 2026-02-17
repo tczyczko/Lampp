@@ -1,0 +1,1850 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Subspaces</title>
+<meta name="description" content="Subspaces">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node35.html">
+<link rel="previous" href="node33.html">
+<link rel="up" href="node30.html">
+<link rel="next" href="node35.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html677"
+  href="node35.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html671"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html665"
+  href="node33.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html673"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html675"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html678"
+  href="node35.html">Linear Spans</a>
+<b> Up:</b> <a name="tex2html672"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html666"
+  href="node33.html">The Outer Product</a>
+ &nbsp; <b>  <a name="tex2html674"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html676"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00840000000000000000">
+Subspaces</a>
+</h1>
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">10</span></b> &nbsp; 
+<i>Suppose we use <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ to name a collection of one or more vectors picked from a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+. 
+Using the same addition and multiplication as for vectors in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is called
+a <span  class="textbf">subspace</span><a name="10516"></a> of <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ if <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is also a vector space over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+.</i></div><p></p>
+
+<p>
+The manipulative properties which define a vector space are carried over from <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ to <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+, so
+the associative, commutative and distributive properties for vectors in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ still apply. We
+therefore only have to check for the existence of certain vectors in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+. Specifically, we need to
+check
+
+<ol>
+<li>Is <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ closed under vector addition? In other words, for every <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+, <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ in
+	<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+, is <!-- MATH
+ $\Vec{u}+\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1390.gif"
+ ALT="$ \Vec{u}+\Vec{w}$"></span>
+ in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+?
+</li>
+<li>Is <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ closed under scalar multiplication? For every <!-- MATH
+ $c\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1083.gif"
+ ALT="$ c\in\mathbb{F}$"></span>
+ and every <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+,
+	is <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1391.gif"
+ ALT="$ c\Vec{u}$"></span>
+ in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+?
+</li>
+</ol>
+
+<p>
+If the answer to any one of these questions is no, then <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is not a subspace and we cannot treat it
+as a vector space over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+. 
+
+<p>
+Notice that the second condition assures us that <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1297.gif"
+ ALT="$ \Vec{0}$"></span>
+ is in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+. It also assures us that
+if <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ is in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+, then <!-- MATH
+ $-1\Vec{w}=-\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="82" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1392.gif"
+ ALT="$ -1\Vec{w}=-\Vec{w}$"></span>
+ is in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+.
+
+<p>
+We can use a theorem to give us a test to see if a collection of vectors from a vector space
+is really a subspace.
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">2</span></b> &nbsp; 
+<i>Let <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ be a vector space over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is a collection of one or more vectors from
+<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is a subspace of <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ if and only if any linear combination of any two
+vectors in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is also in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+. In other words, if <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+,<!-- MATH
+ $b\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1393.gif"
+ ALT="$ b\in\mathbb{F}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+, <!-- MATH
+ $\Vec{w}\in{\cal{S}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1394.gif"
+ ALT="$ \Vec{w}\in{\cal{S}}$"></span>
+,
+then <!-- MATH
+ $a\Vec{u}+b\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1395.gif"
+ ALT="$ a\Vec{u}+b\Vec{w}$"></span>
+ must also be in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+.
+<a name="thm:sublin"></a></i></div><p></p>
+
+<p>
+<p></p>
+<div><i>Proof</i>.
+
+If <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is a vector space, then it certainly satisfies this property, since we have <!-- MATH
+ $(a+b)(\Vec{u}+\Vec{w})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="104" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1396.gif"
+ ALT="$ (a+b)(\Vec{u}+\Vec{w})$"></span>
+
+must also be in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+. Assuming that this closure property holds, then <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ must be a vector
+space since it satisfies the two tests given. If <span class="MATH"><IMG
+ WIDTH="70" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1397.gif"
+ ALT="$ a=b=1$"></span>
+, then the first test is satisfied.
+If <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img306.gif"
+ ALT="$ a=0$"></span>
+, then the second test is satisfied.
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+Any vector space is a subspace of itself. There is certainly no need to check its properties.
+
+<p>
+The simplest example of a subspace is just the vector <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1297.gif"
+ ALT="$ \Vec{0}$"></span>
+. The properties of a vector space
+assures us that this subspace is a subspace of <span  class="textit">every</span> subspace. This subspace is called
+the <span  class="textbf">zero subspace</span><a name="10544"></a>.
+
+<p>
+Any subspace of a vector space other than the vector space itself or
+the zero subspace is called a <span  class="textbf">proper subspace</span>
+<a name="10546"></a>. 
+
+<p>
+Suppose we had several subspaces of a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+. Combining all vectors that are common
+to all subspaces is called taking the <span  class="textbf">intersection</span><a name="10548"></a> of
+the subspaces. We use the symbol <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1398.gif"
+ ALT="$ \cap$"></span>
+ to refer to the intersection of two subspaces so that
+<!-- MATH
+ ${{\cal{S}}}={{\cal{S}}}_1\cap{{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="87" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1399.gif"
+ ALT="$ {{\cal{S}}}={{\cal{S}}}_1\cap{{\cal{S}}}_2$"></span>
+ means that <!-- MATH
+ ${{\cal{S}}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1400.gif"
+ ALT="$ {{\cal{S}}}$"></span>
+ contains all vectors common to the two subspaces <!-- MATH
+ ${{\cal{S}}}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.gif"
+ ALT="$ {{\cal{S}}}_1$"></span>
+ and
+<!-- MATH
+ ${{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1402.gif"
+ ALT="$ {{\cal{S}}}_2$"></span>
+.
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">3</span></b> &nbsp; 
+<i>If <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ is a vector space over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ and <!-- MATH
+ ${{\cal{S}}}_1,{{\cal{S}}}_2,{{\cal{S}}}_3,\ldots,{{\cal{S}}}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="122" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1403.gif"
+ ALT="$ {{\cal{S}}}_1,{{\cal{S}}}_2,{{\cal{S}}}_3,\ldots,{{\cal{S}}}_n$"></span>
+ are subspaces of <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+, then
+so is </i><p><!-- MATH
+ \begin{displaymath}
+{{\cal{S}}}=\cap_{i=1}^n{{\cal{S}}}_i={{\cal{S}}}_1\cap{{\cal{S}}}_2\cap\cdots\cap{{\cal{S}}}_n
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="228" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1404.gif"
+ ALT="$\displaystyle {{\cal{S}}}=\cap_{i=1}^n{{\cal{S}}}_i={{\cal{S}}}_1\cap{{\cal{S}}}_2\cap\cdots\cap{{\cal{S}}}_n$">
+</div><p>
+</p></div><p></p>
+
+<p>
+<p></p>
+<div><i>Proof</i>.
+
+If <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ are in <!-- MATH
+ ${{\cal{S}}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1400.gif"
+ ALT="$ {{\cal{S}}}$"></span>
+, then they are also members of each <!-- MATH
+ ${{\cal{S}}}_i$
+ -->
+<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1405.gif"
+ ALT="$ {{\cal{S}}}_i$"></span>
+, for <!-- MATH
+ $i=1,2,\ldots,n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="99" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1406.gif"
+ ALT="$ i=1,2,\ldots,n$"></span>
+.
+Since each <!-- MATH
+ ${{\cal{S}}}_i$
+ -->
+<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1405.gif"
+ ALT="$ {{\cal{S}}}_i$"></span>
+ is a subspace, then for <!-- MATH
+ $a,c\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1407.gif"
+ ALT="$ a,c\in\mathbb{F}$"></span>
+, <!-- MATH
+ $a\Vec{u}+c\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1408.gif"
+ ALT="$ a\Vec{u}+c\Vec{w}$"></span>
+ are also in <!-- MATH
+ ${{\cal{S}}}_i$
+ -->
+<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1405.gif"
+ ALT="$ {{\cal{S}}}_i$"></span>
+, for <!-- MATH
+ $i=1,2,\ldots,n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="99" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1406.gif"
+ ALT="$ i=1,2,\ldots,n$"></span>
+.
+Therefore <!-- MATH
+ $a\Vec{u}+c\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1408.gif"
+ ALT="$ a\Vec{u}+c\Vec{w}$"></span>
+ is in <!-- MATH
+ ${{\cal{S}}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1400.gif"
+ ALT="$ {{\cal{S}}}$"></span>
+. By the previous theorem, this assures us that <!-- MATH
+ ${{\cal{S}}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1400.gif"
+ ALT="$ {{\cal{S}}}$"></span>
+ is a subspace.
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+Recall that we can write a system of equations in the form <span class="MATH"><IMG
+ WIDTH="66" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1409.gif"
+ ALT="$ AX=K$"></span>
+ where <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is an <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix and
+<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1410.gif"
+ ALT="$ K$"></span>
+ is an <span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1411.gif"
+ ALT="$ m\times 1$"></span>
+ matrix. The <span  class="textbf">solution space</span><a name="10582"></a> of this system is all
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1412.gif"
+ ALT="$ n\times 1$"></span>
+ matrices <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ which satisfies this equation. If <!-- MATH
+ $K=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1413.gif"
+ ALT="$ K=\mathbf{0}$"></span>
+, then this matrix equation is called
+a <span  class="textbf">homogeneous system</span><a name="10584"></a>. Otherwise it is referred to as nonhomogeneous.
+
+<p>
+The solution space of the homogeneous system <!-- MATH
+ $AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$ AX=\mathbf{0}$"></span>
+ is often called the <span  class="textbf">null space</span><a name="10586"></a>
+of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and we refer to it as <!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+. If <!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+ exists, then it forms a subspace. This subspace is
+the most important subspace we will encounter. To prove that it is a subspace we will use the
+result of a previous problem where we proved that <!-- MATH
+ $\mathbb{F}^{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1173.gif"
+ ALT="$ \mathbb{F}^{m\times n}$"></span>
+, all <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrices over a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+,
+is a vector space. (If you didn't do the problem, shame on you. Go back and do it now.) Obviously
+<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ is a vector in this vector space. Suppose we have <!-- MATH
+ $AX_1=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="67" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ AX_1=\mathbf{0}$"></span>
+ and <!-- MATH
+ $AX_2=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="67" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1417.gif"
+ ALT="$ AX_2=\mathbf{0}$"></span>
+ are any solutions to the
+homogeneous system. For any <!-- MATH
+ $a,b\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1089.gif"
+ ALT="$ a,b\in\mathbb{F}$"></span>
+, <!-- MATH
+ $aAX_1=A(aX_1)=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="149" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1418.gif"
+ ALT="$ aAX_1=A(aX_1)=\mathbf{0}$"></span>
+ and, similarly, <!-- MATH
+ $A(bX_2)=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="86" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1419.gif"
+ ALT="$ A(bX_2)=\mathbf{0}$"></span>
+. Then <!-- MATH
+ $A(aX_1)+A(bX_2)=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="159" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1420.gif"
+ ALT="$ A(aX_1)+A(bX_2)=\mathbf{0}$"></span>
+
+and <!-- MATH
+ $A(aX_1+bX_2)=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="134" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1421.gif"
+ ALT="$ A(aX_1+bX_2)=\mathbf{0}$"></span>
+. (Again, showing that matrix multiplication is associative was an assigned problem.)
+Therefore <!-- MATH
+ $(aX_1+bX_2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1422.gif"
+ ALT="$ (aX_1+bX_2)$"></span>
+ is a vector in the solution space, so we have shown <!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+ is a subspace.
+<!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+ is sometimes also referred to as the <span  class="textbf">kernel</span><a name="10593"></a> of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+.
+
+<p>
+There exists a very nice relationship between homogeneous and nonhomogeneous systems. Suppose we have a 
+nonhomogeneous system <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ and two solutions, <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1423.gif"
+ ALT="$ X_1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1424.gif"
+ ALT="$ X_2$"></span>
+. By the distributive law of matrix
+multiplication, we have <!-- MATH
+ $A(X_1-X_2)=AX_1-AX_2=B-B=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="290" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1425.gif"
+ ALT="$ A(X_1-X_2)=AX_1-AX_2=B-B=\mathbf{0}$"></span>
+. This means that <span class="MATH"><IMG
+ WIDTH="98" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1426.gif"
+ ALT="$ Y=X_1-X_2$"></span>
+ is a solution of the
+homogeneous system <!-- MATH
+ $AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$ AX=\mathbf{0}$"></span>
+. Looking at this another way, if  <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1423.gif"
+ ALT="$ X_1$"></span>
+ is a particular solution of the nonhomogeneous system <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1424.gif"
+ ALT="$ X_2$"></span>
+ is any other solution of <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+, then there exists a <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img712.gif"
+ ALT="$ Y$"></span>
+, a solution of the 
+homogeneous system <!-- MATH
+ $AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$ AX=\mathbf{0}$"></span>
+, such that <span class="MATH"><IMG
+ WIDTH="98" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1427.gif"
+ ALT="$ X_2=X_1+Y$"></span>
+. This means that we can get all solutions to
+<span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ by finding one particular solution and then finding <span  class="textit">all</span> solutions to <!-- MATH
+ $AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$ AX=\mathbf{0}$"></span>
+.
+
+<p>
+One geometric example of this would be the intersection of two planes which do not go through the origin.
+We would first use the same translation to move the planes so that they go through the origin. Then
+we would find the line of intersection, then translate this line back.
+
+<p>
+It is important to remember that a vector space is not simply a collection of vectors, but that it must also have
+two binary operations defined. These operations are `inherited' by a subspace. For example,
+the vector space <!-- MATH
+ $\mathbb{Z}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1428.gif"
+ ALT="$ \mathbb{Z}_2$"></span>
+ is simply composed
+of the two integers <span class="MATH">0</span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+. Yet <!-- MATH
+ $\mathbb{Z}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1428.gif"
+ ALT="$ \mathbb{Z}_2$"></span>
+ is not a subspace of <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+, even though <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+ contains 
+these two integers, since addition is defined differently for these two vector spaces.                                     
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">5</span>.<span class="arabic">4</span></span></big>
+
+<ol>
+<li>Show that the solution space of the nonhomogeneous system <span class="MATH"><IMG
+ WIDTH="66" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1409.gif"
+ ALT="$ AX=K$"></span>
+, where <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1410.gif"
+ ALT="$ K$"></span>
+ is not
+	the zero subspace, is not a subspace.
+</li>
+<li>Suppose we have <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is all real points <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$ (x,y)$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="57" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1228.gif"
+ ALT="$ y=mx$"></span>
+ for one particular <!-- MATH
+ $m\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1429.gif"
+ ALT="$ m\in\mathbb{R}$"></span>
+.
+	This is a line in the Euclidean plane that passes through the origin. Show that <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is a
+	subspace of <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+. Is <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ a proper subspace of <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+? (<span  class="textbf">HINT</span>: Any point <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$ (x,y)$"></span>
+ on the
+	plane can be represented as a vector in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ with its terminal point at <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$ (x,y)$"></span>
+).
+</li>
+<li>Show that any line in the Euclidean plane that does not go through the origin cannot be
+	a subspace of <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+. (<span  class="textbf">HINT</span>: Consider the existence of <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1297.gif"
+ ALT="$ \Vec{0}$"></span>
+.)
+</li>
+<li>Let <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ be all the points <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1430.gif"
+ ALT="$ (x,y,z)$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1431.gif"
+ ALT="$ x=at$"></span>
+, <span class="MATH"><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1432.gif"
+ ALT="$ y=bt$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1433.gif"
+ ALT="$ z=ct$"></span>
+ where <!-- MATH
+ $a,b,c,t\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1434.gif"
+ ALT="$ a,b,c,t\in\mathbb{R}$"></span>
+.
+	Then <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ consists of the vectors in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ lying on a straight line passing through the origin.
+	Let <!-- MATH
+ $\Vec{u}=(at_1,bt_1,ct_1)\in{\cal{S}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="152" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1435.gif"
+ ALT="$ \Vec{u}=(at_1,bt_1,ct_1)\in{\cal{S}}$"></span>
+ and <!-- MATH
+ $\Vec{w}=(at_2,bt_2,ct_2)\in{\cal{S}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="155" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1436.gif"
+ ALT="$ \Vec{w}=(at_2,bt_2,ct_2)\in{\cal{S}}$"></span>
+. Use these two vectors
+	to show that <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ {\cal{S}}$"></span>
+ is a subspace of <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+.
+</li>
+<li>Show that the set of points in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ lying on a plane passing through the origin is a vector space.
+	(<span  class="textbf">HINT</span>: We want to show that the points <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1430.gif"
+ ALT="$ (x,y,z)$"></span>
+ such that <!-- MATH
+ $ax+by+cz=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="120" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1437.gif"
+ ALT="$ ax+by+cz=0$"></span>
+ are a subspace
+	of <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+.)
+</li>
+<li>A <span  class="textbf">diagonal matrix</span><a name="10603"></a> is an <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1438.gif"
+ ALT="$ n\times n$"></span>
+ matrix with all of its
+	off-diagonal entries equal to zero. Prove that <!-- MATH
+ ${\cal{D}}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1439.gif"
+ ALT="$ {\cal{D}}_n$"></span>
+, all <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1438.gif"
+ ALT="$ n\times n$"></span>
+ diagonal matrices over a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+,
+	is a subspace of <!-- MATH
+ $\mathbb{F}^{n\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1440.gif"
+ ALT="$ \mathbb{F}^{n\times n}$"></span>
+.
+</li>
+<li>An <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1438.gif"
+ ALT="$ n\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img859.gif"
+ ALT="$ U$"></span>
+ is called <span  class="textbf">upper triangular</span><a name="10607"></a>
+	if <span class="MATH"><IMG
+ WIDTH="57" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1441.gif"
+ ALT="$ u_{i,j}=0$"></span>
+ whenever <span class="MATH"><IMG
+ WIDTH="38" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1442.gif"
+ ALT="$ i&gt;j$"></span>
+. Show that <!-- MATH
+ ${\cal{U}}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1443.gif"
+ ALT="$ {\cal{U}}_n$"></span>
+, all such matrices <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img859.gif"
+ ALT="$ U$"></span>
+ over a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, is a subspace
+	of <!-- MATH
+ $\mathbb{F}^{n\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1440.gif"
+ ALT="$ \mathbb{F}^{n\times n}$"></span>
+. If <span class="MATH"><IMG
+ WIDTH="59" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1444.gif"
+ ALT="$ L=U^T$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ is a <span  class="textbf">lower triangular</span><a name="10612"></a> matrix.
+	Show that <!-- MATH
+ ${\cal{L}}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1445.gif"
+ ALT="$ {\cal{L}}_n$"></span>
+, all such matrices <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ over a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, is also a subspace
+	of <!-- MATH
+ $\mathbb{F}^{n\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1440.gif"
+ ALT="$ \mathbb{F}^{n\times n}$"></span>
+.
+</li>
+<li>Prove that <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+ has no proper subspace.
+</li>
+<li>A polynomial is said to have degree <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ if <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ is the
+	largest exponent in the polynomial. Let <!-- MATH
+ $\mathbb{P}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1446.gif"
+ ALT="$ \mathbb{P}^n$"></span>
+ be all polynomials of degree less than or equal to
+	to <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+. Prove that <!-- MATH
+ $\mathbb{P}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1446.gif"
+ ALT="$ \mathbb{P}^n$"></span>
+ is a subspace of <!-- MATH
+ $\mathbb{P}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1179.gif"
+ ALT="$ \mathbb{P}$"></span>
+, the vector space of all polynomials.
+</li>
+<li>Prove that <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+ is a proper subspace of <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+.
+</li>
+<li>Show that <!-- MATH
+ $\mathbb{Z}_p$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img815.gif"
+ ALT="$ \mathbb{Z}_p$"></span>
+, for <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+ a prime, does not have a proper subspace.
+</li>
+</ol>
+
+<p>
+This section may appear a bit abstract and far removed from many of the ideas of matrix manipulation which we
+have covered. This is not true at all and we will discuss a situation which will begin to tie together many
+of the concepts we have already seen.
+
+<p>
+We will examine two particular subspaces of <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ and show that their intersection is also a subspace. In <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+
+let <!-- MATH
+ ${{\cal{S}}}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.gif"
+ ALT="$ {{\cal{S}}}_1$"></span>
+ be all points <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1430.gif"
+ ALT="$ (x,y,z)$"></span>
+ that satisfies the equation <!-- MATH
+ $x+\frac{3}{2}y+z=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="108" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1447.gif"
+ ALT="$ x+\frac{3}{2}y+z=0$"></span>
+. We have seen that this
+equation determines a plane in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ that passes through the origin. This means <!-- MATH
+ ${{\cal{S}}}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.gif"
+ ALT="$ {{\cal{S}}}_1$"></span>
+ is a subspace of <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+
+(from the result of a problem in this section). We also let <!-- MATH
+ ${{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1402.gif"
+ ALT="$ {{\cal{S}}}_2$"></span>
+ be a subspace of <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ defined as 
+all points <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1430.gif"
+ ALT="$ (x,y,z)$"></span>
+ that satisfies the equation <span class="MATH"><IMG
+ WIDTH="114" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1448.gif"
+ ALT="$ 2x+2y+z=0$"></span>
+. Then the intersection of these two subspaces,
+<!-- MATH
+ ${{\cal{S}}}_1\cap{{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1449.gif"
+ ALT="$ {{\cal{S}}}_1\cap{{\cal{S}}}_2$"></span>
+, is all points <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1430.gif"
+ ALT="$ (x,y,z)$"></span>
+ which satisfies both equations. We can write this as a homogeneous
+system of equations.
+<p><!-- MATH
+ \begin{displaymath}
+x  + \frac{3}{2}y +  z  = 0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="110" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1450.gif"
+ ALT="$\displaystyle x + \frac{3}{2}y + z = 0 $">
+</div><p>
+</p>
+  <p><!-- MATH
+ \begin{displaymath}
+2x  +  2y  +  z  =0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="114" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1451.gif"
+ ALT="$\displaystyle 2x + 2y + z =0 $">
+</div><p>
+</p>
+We can represent this system of equations by the matrix equation <span class="MATH"><IMG
+ WIDTH="66" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1409.gif"
+ ALT="$ AX=K$"></span>
+ such that
+<p><!-- MATH
+ \begin{displaymath}
+A=\left(\begin{array}{ccc}
+  1 &  \frac{3}{2} & 1  \\
+  2 &  2 & 1 
+  \end{array}\right)\;\;\;X=\left(\begin{array}{c}
+  x \\y \\z  
+  \end{array}\right)\;\;\;K=\left(\begin{array}{c}
+  0 \\
+  0  
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="338" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1452.gif"
+ ALT="$\displaystyle A=\left(\begin{array}{ccc}
+1 &amp; \frac{3}{2} &amp; 1 \\
+2 &amp; 2 &amp; 1
+...
+...\end{array}\right)\;\;\;K=\left(\begin{array}{c}
+0 \\
+0
+\end{array}\right)$">
+</div><p>
+</p>
+We use an augmented matrix containing
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1410.gif"
+ ALT="$ K$"></span>
+ to create the associated matrix for this system.
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{cccc}
+  1 &  \frac{3}{2} & 1  & 0\\
+  2 &  2 & 1 & 0
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="125" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1453.gif"
+ ALT="$\displaystyle \left(\begin{array}{cccc}
+1 &amp; \frac{3}{2} &amp; 1 &amp; 0\\
+2 &amp; 2 &amp; 1 &amp; 0
+\end{array}\right)$">
+</div><p>
+</p>
+This matrix can be row reduced (using Lamp, perhaps) to get 
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccrc}
+  1 &  0 & -\frac{1}{2}  & 0\\
+  0 &  1 & 1 & 0
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="138" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1454.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccrc}
+1 &amp; 0 &amp; -\frac{1}{2} &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 0
+\end{array}\right)$">
+</div><p>
+</p>
+All solutions to this homogeneous system are given by <!-- MATH
+ $(\frac{1}{2}z,-z,z)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1455.gif"
+ ALT="$ (\frac{1}{2}z,-z,z)$"></span>
+. This is <!-- MATH
+ ${\cal{NS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {\cal{NS}}(A)$"></span>
+.
+Setting <span class="MATH"><IMG
+ WIDTH="39" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1456.gif"
+ ALT="$ t=z$"></span>
+, we get the parametric equation of a line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1457.gif"
+ ALT="$ \cal{L}$"></span>
+ in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+: <!-- MATH
+ $x=\frac{1}{2}t,y=-t,z=t$
+ -->
+<span class="MATH"><IMG
+ WIDTH="147" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1458.gif"
+ ALT="$ x=\frac{1}{2}t,y=-t,z=t$"></span>
+. 
+When <span class="MATH"><IMG
+ WIDTH="39" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1459.gif"
+ ALT="$ t=0$"></span>
+, it is obvious that this line passes through the origin, so the line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1457.gif"
+ ALT="$ \cal{L}$"></span>
+ is a subspace
+of <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ (the result of a previous problem).
+
+<p>
+One can use Lamp to visualize the intersection of these two subspaces by entering the associated matrix
+in a <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1460.gif"
+ ALT="$ 4\times 4$"></span>
+ matrix with zeros in the last two rows and graphing the system. Then one can enter
+the row reduced form in the bottom two rows and graph the resulting system. Using the Segment button,
+we can see that the intersection of the four planes is on the line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1457.gif"
+ ALT="$ \cal{L}$"></span>
+.
+
+<p>
+Suppose we wanted to find the intersection of two planes which do not go through the origin. We
+could have, for example, the nonhomogeneous system:
+<p><!-- MATH
+ \begin{displaymath}
+2x  + 4y +  z  = 18
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="122" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1461.gif"
+ ALT="$\displaystyle 2x + 4y + z = 18 $">
+</div><p>
+</p>
+  <p><!-- MATH
+ \begin{displaymath}
+x  -  y  -  z  =-16
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="118" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1462.gif"
+ ALT="$\displaystyle x - y - z =-16 $">
+</div><p>
+</p>
+To get a particular solution we start by writing the associated matrix.
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{crrr}
+  2 &  4 & 1  & 18\\
+  1 &  -1 & -1 & -16
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="168" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1463.gif"
+ ALT="$\displaystyle \left(\begin{array}{crrr}
+2 &amp; 4 &amp; 1 &amp; 18\\
+1 &amp; -1 &amp; -1 &amp; -16
+\end{array}\right)$">
+</div><p>
+</p>
+This matrix can be row reduced  to get 
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccrr}
+  1 & 0 & -\frac{1}{2}  & -\frac{23}{3}\\
+  0 &  1 & \frac{1}{2} & \frac{25}{3}
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="159" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1464.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccrr}
+1 &amp; 0 &amp; -\frac{1}{2} &amp; -\frac{23}{3}\\
+0 &amp; 1 &amp; \frac{1}{2} &amp; \frac{25}{3}
+\end{array}\right)$">
+</div><p>
+</p>
+There are an infinite number of solutions. If we let <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1465.gif"
+ ALT="$ z=0$"></span>
+, then one solution
+is <!-- MATH
+ $(-\frac{23}{3} , \frac{25}{3} ,0)^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="94" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1466.gif"
+ ALT="$ (-\frac{23}{3} , \frac{25}{3} ,0)^T$"></span>
+.
+
+<p>
+The associated homogeneous system reduces to
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccrr}
+  1 & 0 & -\frac{1}{2}  & 0\\
+  0 &  1 & \frac{1}{2} & 0
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="138" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1467.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccrr}
+1 &amp; 0 &amp; -\frac{1}{2} &amp; 0\\
+0 &amp; 1 &amp; \frac{1}{2} &amp; 0
+\end{array}\right)$">
+</div><p>
+</p>
+If we let <span class="MATH"><IMG
+ WIDTH="39" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1456.gif"
+ ALT="$ t=z$"></span>
+, then we have all solutions given by <!-- MATH
+ $t(\frac{1}{2},-\frac{1}{2},1)^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="87" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1468.gif"
+ ALT="$ t(\frac{1}{2},-\frac{1}{2},1)^T$"></span>
+.
+So, all solutions of the nonhomogeneous system is given as a linear combination
+<p><!-- MATH
+ \begin{displaymath}
+X=\left(\begin{array}{c}
+  -\frac{23}{3} \\
+  \frac{25}{3} \\
+  0
+  \end{array}\right)+t\left(\begin{array}{r}
+  \frac{1}{2} \\
+  -\frac{1}{2} \\
+  1
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="207" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1469.gif"
+ ALT="$\displaystyle X=\left(\begin{array}{c}
+-\frac{23}{3} \\
+\frac{25}{3} \\
+0
+...
+...left(\begin{array}{r}
+\frac{1}{2} \\
+-\frac{1}{2} \\
+1
+\end{array}\right)$">
+</div><p>
+</p>
+which, as we have seen, is a vector equation for a line in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+. It is interesting to
+graph all three matrices using Lamp.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">5</span>.<span class="arabic">4</span></span></big>
+
+<ol>
+<li>In <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+, let <!-- MATH
+ ${{\cal{S}}}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.gif"
+ ALT="$ {{\cal{S}}}_1$"></span>
+ be the plane defined by <span class="MATH"><IMG
+ WIDTH="106" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1470.gif"
+ ALT="$ 2x-y-z=0$"></span>
+, 
+	let <!-- MATH
+ ${{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1402.gif"
+ ALT="$ {{\cal{S}}}_2$"></span>
+ be the plane defined by <span class="MATH"><IMG
+ WIDTH="114" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1471.gif"
+ ALT="$ x+2y+3z=0$"></span>
+ and
+	let <!-- MATH
+ ${{\cal{S}}}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1472.gif"
+ ALT="$ {{\cal{S}}}_3$"></span>
+ be the plane defined by <span class="MATH"><IMG
+ WIDTH="78" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1473.gif"
+ ALT="$ 5x+z=0$"></span>
+. Find <!-- MATH
+ ${{\cal{S}}}_1\cap{{\cal{S}}}_2\cap{{\cal{S}}}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1474.gif"
+ ALT="$ {{\cal{S}}}_1\cap{{\cal{S}}}_2\cap{{\cal{S}}}_3$"></span>
+.
+</li>
+<li>In <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+, let <!-- MATH
+ ${{\cal{S}}}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.gif"
+ ALT="$ {{\cal{S}}}_1$"></span>
+ be the plane defined by <span class="MATH"><IMG
+ WIDTH="106" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1470.gif"
+ ALT="$ 2x-y-z=0$"></span>
+, 
+	let <!-- MATH
+ ${{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1402.gif"
+ ALT="$ {{\cal{S}}}_2$"></span>
+ be the plane defined by <span class="MATH"><IMG
+ WIDTH="114" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1471.gif"
+ ALT="$ x+2y+3z=0$"></span>
+ and
+	let <!-- MATH
+ ${{\cal{S}}}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1472.gif"
+ ALT="$ {{\cal{S}}}_3$"></span>
+ be the plane defined by <span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1475.gif"
+ ALT="$ x+y=0$"></span>
+. Find <!-- MATH
+ ${{\cal{S}}}_1\cap{{\cal{S}}}_2\cap{{\cal{S}}}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1474.gif"
+ ALT="$ {{\cal{S}}}_1\cap{{\cal{S}}}_2\cap{{\cal{S}}}_3$"></span>
+.
+</li>
+<li>Find a vector equation for the line of intersection of the following planes (if it exists).
+ <p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="92" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1476.gif"
+ ALT="$\displaystyle x_1+ x_2- x_3$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1477.gif"
+ ALT="$\displaystyle = 2$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="108" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1478.gif"
+ ALT="$\displaystyle 2x_1+ x_2+ 2x_3$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1479.gif"
+ ALT="$\displaystyle =4$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="108" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1480.gif"
+ ALT="$\displaystyle x_1- 4x_2- 5x_3$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1477.gif"
+ ALT="$\displaystyle = 2$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html677"
+  href="node35.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html671"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html665"
+  href="node33.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html673"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html675"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html678"
+  href="node35.html">Linear Spans</a>
+<b> Up:</b> <a name="tex2html672"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html666"
+  href="node33.html">The Outer Product</a>
+ &nbsp; <b>  <a name="tex2html674"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html676"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

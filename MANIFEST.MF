@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Created-By: Maven JAR Plugin 3.3.0
+Build-Jdk-Spec: 25
+Class-Path: lib/javafx-base-25.0.2.jar lib/javafx-base-25.0.2-linux.jar 
+ lib/javafx-controls-25.0.2.jar lib/javafx-controls-25.0.2-linux.jar lib
+ /javafx-graphics-25.0.2.jar lib/javafx-graphics-25.0.2-linux.jar lib/ja
+ vafx-web-25.0.2.jar lib/javafx-web-25.0.2-linux.jar lib/javafx-media-25
+ .0.2.jar lib/javafx-media-25.0.2-linux.jar lib/jdk-jsobject-25.0.2.jar 
+ lib/jdk-jsobject-25.0.2-linux.jar
+Main-Class: ca.linalg.lampp.LamppLauncher
+

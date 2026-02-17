@@ -1,0 +1,787 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Linear Inequalities</title>
+<meta name="description" content="Linear Inequalities">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="previous" href="node10.html">
+<link rel="up" href="node4.html">
+<link rel="next" href="node12.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html339"
+  href="node12.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html333"
+  href="node4.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html329"
+  href="node10.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html335"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html337"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html340"
+  href="node12.html">Row Operations</a>
+<b> Up:</b> <a name="tex2html334"
+  href="node4.html">Matrices and Analytic Geometry</a>
+<b> Previous:</b> <a name="tex2html330"
+  href="node10.html">Systems of Linear Equations</a>
+ &nbsp; <b>  <a name="tex2html336"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html338"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00470000000000000000">
+Linear Inequalities</a>
+</h1>
+
+<p>
+When we defined the absolute value of a real number, we said that <span class="MATH"><IMG
+ WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img399.gif"
+ ALT="$ \vert a\vert=a$"></span>
+ if <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ is greater than 
+or equal to 0 and
+<span class="MATH"><IMG
+ WIDTH="64" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img400.gif"
+ ALT="$ \vert a\vert=-a$"></span>
+ if <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ is less than 0. Thus <!-- MATH
+ $|-7|=|7|=7$
+ -->
+<span class="MATH"><IMG
+ WIDTH="108" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img401.gif"
+ ALT="$ \vert-7\vert=\vert 7\vert=7$"></span>
+, for instance.
+We will use the symbols <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img402.gif"
+ ALT="$ &gt;$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img403.gif"
+ ALT="$ &lt;$"></span>
+ to stand for <span  class="textit">greater than</span> and
+<span  class="textit">less than</span>, respectively. Thus <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img404.gif"
+ ALT="$ 4&gt;2$"></span>
+ is true, but <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img405.gif"
+ ALT="$ -2&gt;0$"></span>
+ is a false statement. We also use the
+symbol <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img406.gif"
+ ALT="$ \ge$"></span>
+ to mean <span  class="textit">greater than or equal to</span> and the symbol <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img407.gif"
+ ALT="$ \le$"></span>
+ for <span  class="textit">less than or equal to</span>.
+Statements involving these four symbols are called <span  class="textbf">inequalities</span><a name="883"></a>. A 
+<span  class="textbf">linear inequality</span> is a linear equation with one of the four inequality symbols used instead of
+an equals sign. 
+
+<p>
+
+<div align="CENTER"><a name="fig:li0"></a><a name="1025"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.13:</strong>
+ <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ a&gt;0$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="145" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img408.gif"
+ ALT="\includegraphics[width=3.3cm,height=0.8cm]{li0.eps}"></td></tr>
+</table>
+</div>
+A linear inequality in one variable describes part of the line formed by the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis
+on the graph of a plane. For example, <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ a\ge 3$"></span>
+ would mean all the points to the right of 3 and the number 3 itself.
+The inequality <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img410.gif"
+ ALT="$ a&gt;3$"></span>
+ would look the same except that it would not contain 3.
+Figure&nbsp;<a href="#fig:li0">1.13</a> is what we usually would draw for a one-variable linear inequality. We use a
+<span class="MATH"><IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img411.gif"
+ ALT="$ \bigcirc$"></span>
+ at 0 on the line to indicate that <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ does not refer to zero. Figure&nbsp;<a href="#fig:li1">1.14</a> shows the
+inequality <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ a\le 0$"></span>
+ where <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ can equal zero. 
+
+<div align="CENTER"><a name="fig:li1"></a><a name="1026"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.14:</strong>
+ <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ a\le 0$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="144" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img412.gif"
+ ALT="\includegraphics[width=3.3cm,height=0.8cm]{li1.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+
+<div align="CENTER"><a name="fig:li2"></a><a name="1027"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.15:</strong>
+ <span class="MATH"><IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ x\ge -1$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="171" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img413.gif"
+ ALT="\includegraphics[width=3.9cm,height=0.8cm]{li2.eps}"></td></tr>
+</table>
+</div>
+Figure&nbsp;<a href="#fig:li2">1.15</a> is an example of a linear inequality using the variable <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ as we
+would normally draw it on the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis. Figure&nbsp;<a href="#fig:li3">1.16</a> uses the variable <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ in the inequality
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$ y\ge 1$"></span>
+ as it is drawn on the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+-axis. We are free to draw on any line in whatever direction we choose 
+as long as we are careful to label our diagram properly. Usually, though, we stick to conventions and
+use the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis to draw one-variable inequalities.
+
+<div align="CENTER"><a name="fig:li3"></a><a name="1028"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.16:</strong>
+ <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$ y\ge 1$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="31" HEIGHT="172" ALIGN="BOTTOM" BORDER="0"
+ SRC="img414.gif"
+ ALT="\includegraphics[width=0.7cm,height=3.9cm]{li3.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+As with linear equations, we can have a system of linear inequalities. In one variable this sytem gives
+a solution when the inequalities overlap. Figure&nbsp;<a href="#fig:li4">1.17</a> displays all the points that satisfies
+the system of inequalities given by <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$ x&gt;2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$ x\le 5$"></span>
+. It is easy to see that 3 satisfies this system but
+that -1 or <!-- MATH
+ $7\frac{1}{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img415.gif"
+ ALT="$ 7\frac{1}{2}$"></span>
+ would not. 
+
+<div align="CENTER"><a name="fig:li4"></a><a name="1029"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.17:</strong>
+ <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$ x&gt;2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$ x\le 5$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="230" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img416.gif"
+ ALT="\includegraphics[width=5.2cm,height=0.8cm]{li4.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+
+<div align="CENTER"><a name="fig:li5"></a><a name="1030"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.18:</strong>
+ <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$ x&lt;2$"></span>
+ or <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ x\ge 5$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="276" HEIGHT="35" ALIGN="BOTTOM" BORDER="0"
+ SRC="img417.gif"
+ ALT="\includegraphics[width=6.2cm,height=0.8cm]{li5.eps}"></td></tr>
+</table>
+</div>
+When a system of inequalities does not have a solution, we say it is inconsistent<a name="923"></a>. Figure&nbsp;<a href="#fig:li5">1.18</a>
+is an example of an inconsistent system of linear inequalities. We cannot have that <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ is less than 2 <span  class="textit">and</span>
+be greater than or equal to 5 at the same time.
+
+<p>
+We sketch one-variable systems of inequalities on a line. Two-variable systems are drawn on a plane where
+each of the variables refers to an axis. The procedure to do this is quite simple. Suppose we had the
+linear inequality <span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img418.gif"
+ ALT="$ y&gt;x+1$"></span>
+. First we would draw the line for the <span  class="textit">equality</span> <span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img419.gif"
+ ALT="$ y=x+1$"></span>
+. Since <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ must
+be greater than this line, all the pairs of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ points which satisfy the inequality would lie
+in the section of the plane above the line. A solution to a system of inequalities would be all the
+points in a region of a plane which satisfy all the inequalities, if such an area exists. We will examine
+one such system.
+
+  <center>
+
+<div align="CENTER"><a name="fig:li6"></a><a name="1031"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.19:</strong>
+ <span class="MATH"><IMG
+ WIDTH="78" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ y&lt;2x+1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$ y\ge x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$ x&gt;1$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="276" HEIGHT="411" ALIGN="BOTTOM" BORDER="0"
+ SRC="img420.gif"
+ ALT="\includegraphics[width=6.2cm,height=9.2cm]{li6.eps}"></td></tr>
+</table>
+</div>
+
+
+  </center>
+
+<p>
+Figure&nbsp;<a href="#fig:li6">1.19</a> gives us the solution to the system of inequalities
+<p><!-- MATH
+ \begin{displaymath}
+y  <  2x+1
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="78" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img421.gif"
+ ALT="$\displaystyle y &lt; 2x+1 $">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+y  \ge  x
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img422.gif"
+ ALT="$\displaystyle y \ge x $">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+x  >  1
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img423.gif"
+ ALT="$\displaystyle x &gt; 1 $">
+</div><p>
+</p>
+We might start to draw such a graph by first drawing the line <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img308.gif"
+ ALT="$ x=1$"></span>
+, which is parallel to
+the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+-axis and cuts the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis at 1. Our inequality is <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$ x&gt;1$"></span>
+ so we draw this line with dashes
+to indicate that points on this line are not to be included. Then we would shade the region of
+the plane to the right of this line. This shaded area contains all pairs of points <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$ (x,y)$"></span>
+ where
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ is greater than one. We next draw the <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img424.gif"
+ ALT="$ y=x$"></span>
+ with a solid line because our inequality, <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$ y\ge x$"></span>
+,
+contains all the points on this line. We pick a point, say <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.gif"
+ ALT="$ y=1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img425.gif"
+ ALT="$ x=2$"></span>
+, which falls below
+the line <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img424.gif"
+ ALT="$ y=x$"></span>
+.
+For these coordinates <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.gif"
+ ALT="$ 1&lt;2$"></span>
+, so obviously this point does not satisfy the inequality <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$ y\ge x$"></span>
+.
+We then shade the region above the line <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img424.gif"
+ ALT="$ y=x$"></span>
+. Finally we draw a
+dashed line for <span class="MATH"><IMG
+ WIDTH="78" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.gif"
+ ALT="$ y=2x+1$"></span>
+ and shade the graph under this line (Why?). The area which is overlapped
+by all of this shading is the portion of the plane with points <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$ (x,y)$"></span>
+ which satisfy all of the
+inequalities.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">1</span>.<span class="arabic">7</span></span></big>
+
+<ol>
+<li>We can rewrite the inequality <span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img428.gif"
+ ALT="$ x+1&gt;2$"></span>
+ by adding -1 to both
+  sides of the inequality sign. We would have <!-- MATH
+ $x+1+(-1)>2+(-1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="174" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img429.gif"
+ ALT="$ x+1+(-1)&gt;2+(-1)$"></span>
+ which would give us the same results
+  as <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$ x&gt;1$"></span>
+. We can add or subtract the same term to both sides of an inequality without affecting
+  it. The same can be said for multiplying each side of the inequality by a positive scalar.
+  Show that multiplying both sides of inequalities by a zero or a negative scalar <span  class="textit">does</span>
+  affect the inequalities. How does it affect it?
+</li>
+<li>Multiplying both sides of an inequality by a negative number switches the direction of the'
+  inequality. Multiplying both sides of <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img430.gif"
+ ALT="$ y&gt;3$"></span>
+ by -1 would give us <span class="MATH"><IMG
+ WIDTH="66" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img431.gif"
+ ALT="$ -y&lt;-3$"></span>
+. Multiplying both
+  sides of an inequality by 0 will either give us a trivial or wrong result. Multiplying both sides
+  by a positive scalar does not affect the inequality. Why, then, can we not multiply both sides
+  of an inequality by a variable?
+</li>
+<li>The absolute value of a variable in an inequality, <span class="MATH"><IMG
+ WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img432.gif"
+ ALT="$ \vert x\vert&lt;1$"></span>
+, for instance, actually gives rise
+	to a system of <span  class="textit">two</span> inequalities, <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img433.gif"
+ ALT="$ x&lt;1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img434.gif"
+ ALT="$ x&gt;-1$"></span>
+. What would be the two inequalities
+	generated by <span class="MATH"><IMG
+ WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img435.gif"
+ ALT="$ \vert x\vert\ge 3$"></span>
+? What would be the two inequalities generated by <span class="MATH"><IMG
+ WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img436.gif"
+ ALT="$ \vert y+3\vert&gt;-3$"></span>
+? What about
+	<!-- MATH
+ $|a|\ge |-3|$
+ -->
+<span class="MATH"><IMG
+ WIDTH="79" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img437.gif"
+ ALT="$ \vert a\vert\ge \vert-3\vert$"></span>
+?
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">1</span>.<span class="arabic">7</span></span></big>
+
+ <center>
+<applet code = "LampApp" codebase="./LampApp" width = 320 HEIGHT = 210>
+<param name = "img" value ="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10">
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+</applet>
+</center>
+
+<ol>
+<li>Graph the following inequalities (<span  class="textbf">HINT</span>: Use Lamp to
+	graph the <span  class="textit">equalities</span>, redraw these on paper and shade the correct regions.)
+<br>
+
+<ol>
+<li>
+<br>
+<IMG
+ WIDTH="65" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img438.gif"
+ ALT="\begin{picture}(30,1)
+$\;\;\;\;\;\; x+y\le 2$
+\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="65" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img439.gif"
+ ALT="\begin{picture}(30,1)
+$\;\;\;\;\;\; x\ge y-2$
+\end{picture}">
+<br>
+<br>
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="102" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="\begin{picture}(30,1)
+$\;\;\;\;\;\; 2x_1-x_2&gt;-3$
+\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="102" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img441.gif"
+ ALT="\begin{picture}(30,1)
+$\;\;\;\;\;\; x&lt;y+3x+1$
+\end{picture}">
+<br>
+<br>
+</li>
+</ol>
+</li>
+<li>Graph the following systems of inequalities <br>
+
+<ol>
+<li>
+<br>
+<IMG
+ WIDTH="131" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img442.gif"
+ ALT="\begin{picture}(30,3)
+$\;\;\;\;\;\; x&lt;y+5$\ \indent $\;\;\;\;\;\; x\ge y$
+\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="166" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img443.gif"
+ ALT="\begin{picture}(30,2)
+$\;\;\;\;\;\; x&gt;2y-1$\ \indent $\;\;\;\;\;\; x-4\le y$
+\end{picture}">
+<br>
+<br>
+<br>
+<br>
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="206" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img444.gif"
+ ALT="\begin{picture}(30,4)
+$\;\;\;\;\;\; y&lt;x+5$ \ \indent $\;\;\;\;\;\; y&gt; 3$ \ \indent $\;\;\;\;\;\; x\ge -2$
+\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="260" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img445.gif"
+ ALT="\begin{picture}(30,4)
+$\;\;\;\;\;\; x\ge y-1$\ \indent $\;\;\;\;\;\; x&gt; y$ \ \indent $\;\;\;\;\;\; x&lt;5$
+\ \indent $\;\;\;\;\;\; y\ge 0$
+\end{picture}">
+<br>
+<br>
+<br>
+</li>
+</ol> 
+</li>
+<li>Graph the following systems of inequalities
+<br>
+
+<ol>
+<li>
+<br>
+<IMG
+ WIDTH="73" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img446.gif"
+ ALT="\begin{picture}(30,1)
+$\;\;\;\;\;\; \vert x\vert&gt;y-3$
+\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="135" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img447.gif"
+ ALT="\begin{picture}(30,1)
+$\;\;\;\;\;\; \vert y-2\vert\ge 2y+x+1$
+\end{picture}">
+<br>
+<br>
+<br>
+<br>
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="88" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img448.gif"
+ ALT="\begin{picture}(30,2)
+$\;\;\;\;\;\; y&lt;\vert \vert x\vert-2 \vert$ \ \mbox{}
+\end{picture}">
+<br>
+</li>
+<li>
+<br>
+<IMG
+ WIDTH="178" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img449.gif"
+ ALT="\begin{picture}(30,2)
+$\;\;\;\;\;\; -2x\ge -4y+8$\ \indent $\;\;\;\;\;\; x&lt; \vert y\vert$
+\end{picture}">
+<br>
+</li>
+</ol>
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html339"
+  href="node12.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html333"
+  href="node4.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html329"
+  href="node10.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html335"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html337"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html340"
+  href="node12.html">Row Operations</a>
+<b> Up:</b> <a name="tex2html334"
+  href="node4.html">Matrices and Analytic Geometry</a>
+<b> Previous:</b> <a name="tex2html330"
+  href="node10.html">Systems of Linear Equations</a>
+ &nbsp; <b>  <a name="tex2html336"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html338"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

@@ -1,0 +1,2053 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Matrix Multiplication</title>
+<meta name="description" content="Matrix Multiplication">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node20.html">
+<link rel="previous" href="node18.html">
+<link rel="up" href="node17.html">
+<link rel="next" href="node20.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html458"
+  href="node20.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html452"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html446"
+  href="node18.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html454"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html456"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html459"
+  href="node20.html">Matrix Inverses, Part A</a>
+<b> Up:</b> <a name="tex2html453"
+  href="node17.html">Matrix Arithmetic</a>
+<b> Previous:</b> <a name="tex2html447"
+  href="node18.html">Matrix Addition and Scalar</a>
+ &nbsp; <b>  <a name="tex2html455"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html457"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00620000000000000000">
+Matrix Multiplication</a>
+</h1>
+
+<p>
+Matrix multiplication is not so straightforward. We do not simply multiply each corresponding
+pairs of entries. We will use the <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.gif"
+ ALT="$ \sum$"></span>
+ notation we introduced earlier and give the complete
+definition. Then we will give special examples that will make the definition clearer.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">3</span>..<span class="arabic">2</span></b> &nbsp; 
+<i>For two matrices <!-- MATH
+ $A_{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img542.gif"
+ ALT="$ A_{m\times n}$"></span>
+ and <!-- MATH
+ $B_{n\times p}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img603.gif"
+ ALT="$ B_{n\times p}$"></span>
+ over some field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+,
+ the <span  class="textbf">product</span> of<a name="4931"></a>
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is a matrix <!-- MATH
+ $C_{m\times p}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img604.gif"
+ ALT="$ C_{m\times p}$"></span>
+ such that 
+</i><p><!-- MATH
+ \begin{displaymath}
+c_{i,j}=\sum_{k=1}^n a_{i,k}*b_{k,j}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="137" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img605.gif"
+ ALT="$\displaystyle c_{i,j}=\sum_{k=1}^n a_{i,k}*b_{k,j}$">
+</div><p>
+</p><i>
+for all pairs of <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img606.gif"
+ ALT="$ i,j$"></span>
+ such that <!-- MATH
+ $1\le i \le m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img568.gif"
+ ALT="$ 1\le i\le m$"></span>
+ and <!-- MATH
+ $1\le j\le p$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img607.gif"
+ ALT="$ 1\le j\le p$"></span>
+.</i></div><p></p>
+We would say that <span class="MATH"><IMG
+ WIDTH="63" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img608.gif"
+ ALT="$ AB=C$"></span>
+.
+
+<p>
+First notice that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ has the same number of columns as <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ has rows. This means that
+<span class="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img609.gif"
+ ALT="$ BA$"></span>
+ is <span  class="textbf">not defined</span> unless <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img610.gif"
+ ALT="$ m=p$"></span>
+. Thus matrix multiplication
+is <span  class="textbf">not</span> commutative in general.
+
+<p>
+Let's look at an example when <span class="MATH"><IMG
+ WIDTH="77" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img611.gif"
+ ALT="$ m=p=1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img612.gif"
+ ALT="$ n=3$"></span>
+. Let
+<p><!-- MATH
+ \begin{displaymath}
+A_{1\times 3}=\left(\begin{array}{ccc} 2 & 3 & 5 \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="147" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img613.gif"
+ ALT="$\displaystyle A_{1\times 3}=\left(\begin{array}{ccc} 2 &amp; 3 &amp; 5 \end{array}\right)$">
+</div><p>
+</p>
+and let
+<p><!-- MATH
+ \begin{displaymath}
+B_{3\times 1}= \left(\begin{array}{r} -1 \\1 \\0 \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="125" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img614.gif"
+ ALT="$\displaystyle B_{3\times 1}= \left(\begin{array}{r} -1 \ 1 \ 0 \end{array}\right)$">
+</div><p>
+</p>
+then
+<p><!-- MATH
+ \begin{displaymath}
+AB=c_{1,1}=\sum_{k=1}^3 a_{1,k}*b_{k,1}=(2*(-1))+(3*1)+(5*0)=1
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="432" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img615.gif"
+ ALT="$\displaystyle AB=c_{1,1}=\sum_{k=1}^3 a_{1,k}*b_{k,1}=(2*(-1))+(3*1)+(5*0)=1$">
+</div><p>
+</p>
+
+<p>
+Since we refer to any <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img392.gif"
+ ALT="$ \times$"></span>
+ <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ matrix as just a scalar, we could write
+<span class="MATH"><IMG
+ WIDTH="86" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img616.gif"
+ ALT="$ AB=c=1$"></span>
+. Multiplying any matrix of just one row and a matrix of just one
+column (when they are of the proper order for multiplication to be defined)
+ will result in one scalar.
+
+<p>
+Let's redefine <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ so that
+<p><!-- MATH
+ \begin{displaymath}
+A=\left(\begin{array}{cc} 1 & 2 \\3 & 4 \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="109" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img617.gif"
+ ALT="$\displaystyle A=\left(\begin{array}{cc} 1 &amp; 2 \ 3 &amp; 4 \end{array}\right)$">
+</div><p>
+</p>
+and
+<p><!-- MATH
+ \begin{displaymath}
+B=\left(\begin{array}{c} x \\y \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="87" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img618.gif"
+ ALT="$\displaystyle B=\left(\begin{array}{c} x \ y \end{array}\right)$">
+</div><p>
+</p>
+We would then have 
+<p><!-- MATH
+ \begin{displaymath}
+AB=\left(\begin{array}{cc} 1 & 2 \\3 & 4 \end{array}\right)
+\left(\begin{array}{c} x \\y \end{array}\right)=
+\left(\begin{array}{c} \sum_{k=1}^2 a_{1,k}*b_{k,1} \\
+\sum_{k=1}^2 a_{2,k}*b_{k,1}\end{array}\right) =
+\left(\begin{array}{c} 1x+2y \\3x+4y \end{array}\right)=C
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="490" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img619.gif"
+ ALT="$\displaystyle AB=\left(\begin{array}{cc} 1 &amp; 2 \ 3 &amp; 4 \end{array}\right)
+\lef...
+...\end{array}\right) =
+\left(\begin{array}{c} 1x+2y \ 3x+4y \end{array}\right)=C$">
+</div><p>
+</p>
+It is apparent that <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.gif"
+ ALT="$ c_1$"></span>
+ is an entry made up of the matrix product of
+row 1 of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and column 1 of <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ (the only entry that column <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ has).
+
+<p>
+We can see now that the system of linear equations
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="100" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img621.gif"
+ ALT="$\displaystyle x_1 - 2x_3 + x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img530.gif"
+ ALT="$\displaystyle =5$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="100" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img531.gif"
+ ALT="$\displaystyle x_2 + 3x_3 + x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img532.gif"
+ ALT="$\displaystyle =8$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+could be written as <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ AX=B$"></span>
+ where
+<p><!-- MATH
+ \begin{displaymath}
+A=\left(\begin{array}{ccrc}
+1 & 0 & -2 & 1 \\
+0 & 1 &  1 & 1 \end{array} \right) \;\;\;\;
+ X=\left(\begin{array}{c} x_1 \\x_2 \\x_3 \\x_4\end{array}\right)
+ \text { and }
+ B=\left( \begin{array}{c} 5 \\8 \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="284" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img623.gif"
+ ALT="$\displaystyle A=\left(\begin{array}{ccrc}
+1 &amp; 0 &amp; -2 &amp; 1 \\
+0 &amp; 1 &amp; 1 &amp; 1 \end...
+...) \;\;\;\;
+X=\left(\begin{array}{c} x_1 \ x_2 \ x_3 \ x_4\end{array}\right)$"><IMG
+ WIDTH="122" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img624.gif"
+ ALT="$\displaystyle \text { and }
+B=\left( \begin{array}{c} 5 \  8 \end{array}\right)
+$">
+</div><p>
+</p>
+So that
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccrc}
+1 & 0 & -2 & 1 \\
+0 & 1 &  1 & 1 \end{array}\right)
+\left(\begin{array}{c} x_1 \\x_2 \\x_3 \\x_4\end{array}\right)=
+\left( \begin{array}{c} 5 \\8 \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="267" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img625.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccrc}
+1 &amp; 0 &amp; -2 &amp; 1 \\
+0 &amp; 1 &amp; 1 &amp; 1 \end{a...
+..._3 \ x_4\end{array}\right)=
+\left( \begin{array}{c} 5 \ 8 \end{array}\right)
+$">
+</div><p>
+</p>
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ would be the matrix of coefficients and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ would be the matrix of constant terms.
+
+<p>
+When we used Gauss-Jordan elimination, we put the matrix of coefficients
+together with the matrix of constant terms to create
+what is called an <span  class="textbf">augmented</span> matrix.<a name="4998"></a>
+ Some people will draw a line between
+columns to distinguish the matrix of coefficients from the matrix of constant terms.
+This is a special example of a <span  class="textbf">partitioned</span> matrix, one where parts of the matrix<a name="5000"></a>
+are sectioned off to form <span  class="textbf">submatrices</span>.<a name="5002"></a>
+
+<p>
+Following are examples of an augmented and a partitioned matrix.
+<p><!-- MATH
+ \begin{displaymath}
+T=\left(\begin{array}{cccc}
+1 & 2 &\vline & 3 \\
+4 & 5 &\vline & 6
+\end{array}\right)
+\;\;\;\;
+S=\left(\begin{array}{ccccc}
+2 & 4 &\vline & 6 & 8 \\
+1 & 3 &\vline & 1 & 4 \\
+3 & 9 &\vline & 2 & 2  \\
+\hline
+3 & 8 &\vline & 1 & 0 \\
+1 & 0 &\vline & 7 & 6
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="341" HEIGHT="112" ALIGN="MIDDLE" BORDER="0"
+ SRC="img626.gif"
+ ALT="$\displaystyle T=\left(\begin{array}{cccc}
+1 &amp; 2 &amp;\vline &amp; 3 \\
+4 &amp; 5 &amp;\vline &amp;...
+... \\
+\hline
+3 &amp; 8 &amp;\vline &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp;\vline &amp; 7 &amp; 6
+\end{array}\right)
+$">
+</div><p>
+</p>
+The partitioned matrix <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ could also be written as a matrix with
+each submatrix indicated. For example
+<p><!-- MATH
+ \begin{displaymath}
+S=\left(\begin{array}{cc}
+S_{1,1} & S_{1,2} \\
+S_{2,1} & S_{2,2}
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="145" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img628.gif"
+ ALT="$\displaystyle S=\left(\begin{array}{cc}
+S_{1,1} &amp; S_{1,2} \\
+S_{2,1} &amp; S_{2,2}
+\end{array}\right)
+$">
+</div><p>
+</p>
+Note that <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img629.gif"
+ ALT="$ S_{i,j}$"></span>
+ refers to a submatrix of <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img630.gif"
+ ALT="$ s_{i,j}$"></span>
+ refers to a scalar
+entry of <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+.
+
+<p>
+The use of augmented and partitioned matrices is a convenience we will take advantage of
+from time to time. 
+
+<p>
+Matrix multiplication, like matrix addition, also has an identity. We give it the
+special symbol <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+. It has the properties that <!-- MATH
+ $A\mathbf{I}=A$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img632.gif"
+ ALT="$ A\mathbf{I}=A$"></span>
+ and <!-- MATH
+ $\mathbf{I}A=A$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img633.gif"
+ ALT="$ \mathbf{I}A=A$"></span>
+.
+Like the <!-- MATH
+ $\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.gif"
+ ALT="$ \mathbf{0}$"></span>
+ matrix, <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ takes on the order necessary to make the
+preceding properties true. This was why we were careful to give both examples. For instance,
+if <!-- MATH
+ $A_{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img542.gif"
+ ALT="$ A_{m\times n}$"></span>
+, then <!-- MATH
+ $A\mathbf{I}=A$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img632.gif"
+ ALT="$ A\mathbf{I}=A$"></span>
+ implies that <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ is, in this case,
+ <!-- MATH
+ $n \; \times \; n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img634.gif"
+ ALT="$ n \; \times \; n$"></span>
+. If <!-- MATH
+ $\mathbf{I}A=A$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img633.gif"
+ ALT="$ \mathbf{I}A=A$"></span>
+, then <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ is <!-- MATH
+ $m \; \times \; m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="60" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img635.gif"
+ ALT="$ m \; \times \; m$"></span>
+. So what does
+<!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ look like?
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">3</span>..<span class="arabic">3</span></b> &nbsp; 
+<i><!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ is an <!-- MATH
+ $m \; \times \; m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="60" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img635.gif"
+ ALT="$ m \; \times \; m$"></span>
+ matrix such that <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img636.gif"
+ ALT="$ i_{j,j}=1$"></span>
+ for <!-- MATH
+ $1\le j\le m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="76" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img637.gif"
+ ALT="$ 1\le j\le m$"></span>
+
+and <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img638.gif"
+ ALT="$ i_{j,k}=0$"></span>
+ for all <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img639.gif"
+ ALT="$ j\ne k$"></span>
+ and <!-- MATH
+ $1\le j\le m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="76" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img637.gif"
+ ALT="$ 1\le j\le m$"></span>
+ and <!-- MATH
+ $1\le k\le m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="77" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img640.gif"
+ ALT="$ 1\le k\le m$"></span>
+.</i></div><p></p>
+
+<p>
+An example would be
+<p><!-- MATH
+ \begin{displaymath}
+\mathbf{I}=\left(\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="156" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img641.gif"
+ ALT="$\displaystyle \mathbf{I}=\left(\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)
+$">
+</div><p>
+</p>
+We can see that <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ is a <span  class="textbf">square</span> matrix<a name="5028"></a> (a matrix with the 
+same number of rows as it has columns)
+which has ones for its diagonal entries and is zero everywhere else.
+
+<p>
+For <span  class="textit">some</span> square matrices <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+, there exists a matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ such that
+<!-- MATH
+ $AB=BA=\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="103" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img642.gif"
+ ALT="$ AB=BA=\mathbf{I}$"></span>
+. We call <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ the <span  class="textbf">inverse</span> of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+.<a name="5031"></a> The inverse
+of a matrix is very important and deserves its own section.
+
+<p>
+Accomplishing matrix multiplication by hand can be very messy unless care
+is taken to eliminate arithmetic mistakes. We can define a procedure
+to multiply two matrices that involves a bit of writing but helps us
+keep track of each step. Suppose we wanted the product 
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{cc}
+ a & b \\
+ c & d
+\end{array}\right)
+\left(\begin{array}{ccc}
+ e & f & g \\
+ h & i & j
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="177" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img643.gif"
+ ALT="$\displaystyle \left(\begin{array}{cc}
+a &amp; b \\
+c &amp; d
+\end{array}\right)
+\left(\begin{array}{ccc}
+e &amp; f &amp; g \\
+h &amp; i &amp; j
+\end{array}\right)$">
+</div><p>
+</p>
+Since we are multiplying a <!-- MATH
+ $2 \; \times \; 2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="48" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img644.gif"
+ ALT="$ 2 \; \times \; 2$"></span>
+ matrix with a <!-- MATH
+ $2 \; \times \; 3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="48" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img645.gif"
+ ALT="$ 2 \; \times \; 3$"></span>
+ matrix,
+the product will be a <!-- MATH
+ $2 \; \times \; 3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="48" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img645.gif"
+ ALT="$ 2 \; \times \; 3$"></span>
+ matrix, a matrix with <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img646.gif"
+ ALT="$ 6$"></span>
+ entries.
+Let's create a table with <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.gif"
+ ALT="$ 3$"></span>
+ rows and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img646.gif"
+ ALT="$ 6$"></span>
+ columns
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="CENTER"><span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img647.gif"
+ ALT="$ e$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="14" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img648.gif"
+ ALT="$ f$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img649.gif"
+ ALT="$ g$"></span>
+</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img650.gif"
+ ALT="$ h$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+</td>
+</tr>
+<tr><td align="CENTER"><span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+</td>
+</tr>
+<tr><td align="CENTER"><span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.gif"
+ ALT="$ d$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.gif"
+ ALT="$ d$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.gif"
+ ALT="$ d$"></span>
+</td>
+</tr>
+</table>
+</div>
+Multiply every entry in each column by the top entry in its column
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="CENTER"><span class="MATH"><IMG
+ WIDTH="34" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img651.gif"
+ ALT="$ e*e$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img652.gif"
+ ALT="$ f*f$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="36" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img653.gif"
+ ALT="$ g*g$"></span>
+</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img654.gif"
+ ALT="$ h*h$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="30" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img655.gif"
+ ALT="$ i*i$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="34" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img656.gif"
+ ALT="$ j*j$"></span>
+</td>
+</tr>
+<tr><td align="CENTER"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img657.gif"
+ ALT="$ a*e$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img658.gif"
+ ALT="$ a*f$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="36" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img659.gif"
+ ALT="$ a*g$"></span>
+</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img660.gif"
+ ALT="$ b*h$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="31" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img661.gif"
+ ALT="$ b*i$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="33" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img662.gif"
+ ALT="$ b*j$"></span>
+</td>
+</tr>
+<tr><td align="CENTER"><span class="MATH"><IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img663.gif"
+ ALT="$ c*e$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="36" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img664.gif"
+ ALT="$ c*f$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="34" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img665.gif"
+ ALT="$ c*g$"></span>
+</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img666.gif"
+ ALT="$ d*h$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img667.gif"
+ ALT="$ d*i$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img668.gif"
+ ALT="$ d*j$"></span>
+</td>
+</tr>
+</table>
+</div>
+Then for each row, add the entry that is three columns over to each of
+the first three column entries.
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="CENTER"><span class="MATH"><IMG
+ WIDTH="87" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img669.gif"
+ ALT="$ e*e+h*h$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img670.gif"
+ ALT="$ f*f+i*i$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="85" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img671.gif"
+ ALT="$ g*g+j*j$"></span>
+</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img650.gif"
+ ALT="$ h$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+</td>
+</tr>
+<tr><td align="CENTER"><span class="MATH"><IMG
+ WIDTH="86" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img672.gif"
+ ALT="$ a*e+b*h$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img673.gif"
+ ALT="$ a*f+b*i$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="85" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img674.gif"
+ ALT="$ a*g+b*j$"></span>
+</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img660.gif"
+ ALT="$ b*h$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="31" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img661.gif"
+ ALT="$ b*i$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="33" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img662.gif"
+ ALT="$ b*j$"></span>
+</td>
+</tr>
+<tr><td align="CENTER"><span class="MATH"><IMG
+ WIDTH="85" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img675.gif"
+ ALT="$ c*e+d*h$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img676.gif"
+ ALT="$ c*f+d*i$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img677.gif"
+ ALT="$ c*g+d*j$"></span>
+</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img666.gif"
+ ALT="$ d*h$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img667.gif"
+ ALT="$ d*i$"></span>
+</td>
+<td align="CENTER"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img668.gif"
+ ALT="$ d*j$"></span>
+</td>
+</tr>
+</table>
+</div>
+The matrix made up of the first three columns of the bottom two rows
+is the product of the two matrices.
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{cc}
+ a & b \\
+ c & d
+\end{array}\right)
+\left(\begin{array}{ccc}
+ e & f & g \\
+ h & i & j
+\end{array}\right)=
+\left(\begin{array}{ccc}
+ a*e+b*h & a*f+b*i & a*g+b*j \\
+ c*e+d*h & c*f+d*i & c*g+d*j
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="510" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img678.gif"
+ ALT="$\displaystyle \left(\begin{array}{cc}
+a &amp; b \\
+c &amp; d
+\end{array}\right)
+\lef...
+...*e+b*h &amp; a*f+b*i &amp; a*g+b*j \\
+c*e+d*h &amp; c*f+d*i &amp; c*g+d*j
+\end{array}\right)
+$">
+</div><p>
+</p>
+A numerical example would be
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccc}
+ 1 & 2 & 4\\
+ 2 & 3 & 5
+\end{array}\right)
+\left(\begin{array}{cc}
+ 4 & 6 \\
+ 7 & 5 \\
+ 1 & 4
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="177" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img679.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccc}
+1 &amp; 2 &amp; 4\\
+2 &amp; 3 &amp; 5
+\end{array}\right)
+\left(\begin{array}{cc}
+4 &amp; 6 \\
+7 &amp; 5 \\
+1 &amp; 4
+\end{array}\right)$">
+</div><p>
+</p>
+Write the rows of the right matrix across the top. Underline it.
+Then place the first column of the left matrix under each entry for the
+first row of the right matrix. Then place the second column of the left
+matrix under each of the entries for the second row of the right matrix.
+Then the same for the third column.
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="CENTER">4</td>
+<td align="CENTER">6</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">7</td>
+<td align="CENTER">5</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">1</td>
+<td align="CENTER">4</td>
+</tr>
+<tr><td align="CENTER">1</td>
+<td align="CENTER">1</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">2</td>
+<td align="CENTER">2</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">4</td>
+<td align="CENTER">4</td>
+</tr>
+<tr><td align="CENTER">2</td>
+<td align="CENTER">2</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">3</td>
+<td align="CENTER">3</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">5</td>
+<td align="CENTER">5</td>
+</tr>
+</table>
+</div>
+Multiply down each column by the topmost entry.
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="CENTER">16</td>
+<td align="CENTER">36</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">49</td>
+<td align="CENTER">25</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">1</td>
+<td align="CENTER">16</td>
+</tr>
+<tr><td align="CENTER">4</td>
+<td align="CENTER">6</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">14</td>
+<td align="CENTER">10</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">4</td>
+<td align="CENTER">16</td>
+</tr>
+<tr><td align="CENTER">8</td>
+<td align="CENTER">12</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">21</td>
+<td align="CENTER">15</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">5</td>
+<td align="CENTER">20</td>
+</tr>
+</table>
+</div>
+Then add the entries from column <span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img680.gif"
+ ALT="$ i+2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img681.gif"
+ ALT="$ i+4$"></span>
+ to column <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ for <!-- MATH
+ $1\le i\le 2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="68" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img682.gif"
+ ALT="$ 1\le i\le 2$"></span>
+
+for each of the rows. Example: <span class="MATH"><IMG
+ WIDTH="112" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img683.gif"
+ ALT="$ 4+14+4=22$"></span>
+.
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="CENTER">66</td>
+<td align="CENTER">77</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">7</td>
+<td align="CENTER">5</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">1</td>
+<td align="CENTER">4</td>
+</tr>
+<tr><td align="CENTER">22</td>
+<td align="CENTER">32</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">14</td>
+<td align="CENTER">10</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">4</td>
+<td align="CENTER">16</td>
+</tr>
+<tr><td align="CENTER">34</td>
+<td align="CENTER">47</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">21</td>
+<td align="CENTER">15</td>
+<td align="CENTER">&nbsp;</td>
+<td align="CENTER">5</td>
+<td align="CENTER">20</td>
+</tr>
+</table>
+</div>
+This gives us the product matrix
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccc}
+ 1 & 2 & 4\\
+ 2 & 3 & 5
+\end{array}\right)
+\left(\begin{array}{cc}
+ 4 & 6 \\
+ 7 & 5 \\
+ 1 & 4
+\end{array}\right)=
+\left(\begin{array}{cc}
+ 22 & 32 \\
+ 34 & 47
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="286" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img684.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccc}
+1 &amp; 2 &amp; 4\\
+2 &amp; 3 &amp; 5
+\end{array}\rig...
+...rray}\right)=
+\left(\begin{array}{cc}
+22 &amp; 32 \\
+34 &amp; 47
+\end{array}\right)
+$">
+</div><p>
+</p>
+
+<p>
+We can use Lamp to emulate this process. For instance, if we wanted the product<a name="5095"></a>
+<p><!-- MATH
+ \begin{displaymath}
+A_{n\times m}B_{m\times p}=C_{n\times p}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="144" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img685.gif"
+ ALT="$\displaystyle A_{n\times m}B_{m\times p}=C_{n\times p}$">
+</div><p>
+</p>
+we would use Lamp to create a <!-- MATH
+ $(n+1) \; \times \; (m*p)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="131" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img686.gif"
+ ALT="$ (n+1) \; \times \; (m*p)$"></span>
+ matrix, putting in all the
+rows of <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ into the first row. The other <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ rows would be filled with <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+ repeated
+columns of each column of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ as in our examples. Then we would use
+<span  class="textbf">column</span> operations to accomplish the remaining calculations.
+Column operations are the same as row operations except that, of course, they
+act on columns. To get Lamp to use column operations, use the mouse to depress
+the arrowed row button in the Operation Editor. The button will change to
+an arrowed column button. Use Operation (2) and Operation (3) as appropriate. 
+Note that Operation (2) does <span  class="textit">not</span> let you multiply by a zero scalar. You
+must accomplish this kind of multiplication by selecting all entries of a column which
+has a zero in the first row entry and setting them to zero. You can do this very
+easily by sending the zero to the Scalar Editor with the right mouse button, selecting
+the entries with the left mouse button and then clicking the Enter button in the
+Scalar Editor.
+
+<p>
+Lamp is limited to creating <!-- MATH
+ $10 \; \times \; 10$
+ -->
+<span class="MATH"><IMG
+ WIDTH="64" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img687.gif"
+ ALT="$ 10 \; \times \; 10$"></span>
+ matrices so it can only be used for
+multiplying small matrices. However, if you were stuck on a desert island without
+enough bamboo and coconuts to build a computer and if you had a burning
+need to multiply two matrices, you should now be able to do so.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">3</span>.<span class="arabic">2</span></span></big>
+
+<ol>
+<li>Matrix multiplication is not commutative, but it is associative. In
+other words, <!-- MATH
+ $(AB)C=A(BC)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="125" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img688.gif"
+ ALT="$ (AB)C=A(BC)$"></span>
+ provided all products are defined. We can
+show this by letting <!-- MATH
+ $A_{m\times n}B_{n\times p}=D_{m\times p}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="146" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img689.gif"
+ ALT="$ A_{m\times n}B_{n\times p}=D_{m\times p}$"></span>
+ and
+ <!-- MATH
+ $B_{n\times p}C_{p\times r}=E_{n\times r}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="134" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img690.gif"
+ ALT="$ B_{n\times p}C_{p\times r}=E_{n\times r}$"></span>
+. We want
+to show that all of the entries of <span class="MATH"><IMG
+ WIDTH="30" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img691.gif"
+ ALT="$ DC$"></span>
+ are identical to the entries
+of <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img692.gif"
+ ALT="$ AE$"></span>
+. We start by showing what the entries of <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ are.
+<p><!-- MATH
+ \begin{displaymath}
+d_{i,j}=\sum_{k=1}^n a_{i,k}*b_{k,j}\;\;\;\;\;\text{Why? What values can }i\text{ and }
+j\text{ have?}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="160" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img694.gif"
+ ALT="$\displaystyle d_{i,j}=\sum_{k=1}^n a_{i,k}*b_{k,j}\;\;\;\;\;$">Why? What values can&nbsp;<IMG
+ WIDTH="10" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img695.gif"
+ ALT="$\displaystyle i$"> and&nbsp;<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img696.gif"
+ ALT="$\displaystyle j$"> have?
+</div><p>
+</p>
+Similarly,
+<p><!-- MATH
+ \begin{displaymath}
+e_{i,j}=\sum_{k=1}^r b_{i,k}*c_{k,j}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="136" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img697.gif"
+ ALT="$\displaystyle e_{i,j}=\sum_{k=1}^r b_{i,k}*c_{k,j}$">
+</div><p>
+</p>
+What values can <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+ have in this statement?
+<br>
+Then since <span class="MATH"><IMG
+ WIDTH="101" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img698.gif"
+ ALT="$ (AB)C=DC$"></span>
+ we can let <span class="MATH"><IMG
+ WIDTH="64" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img699.gif"
+ ALT="$ F=DC$"></span>
+ and write
+<p><!-- MATH
+ \begin{displaymath}
+f_{i,j}=\sum_{s=1}^p d_{i,s}*c_{s,j}=\sum_{s=1}^p \left( \sum_{k=1}^n a_{i,k}*b_{k,j}
+\right) *c_{s,j}=\sum_{s=1}^p \sum_{k=1}^n a_{i,k}*b_{k,j}*c_{s,j}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="511" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img700.gif"
+ ALT="$\displaystyle f_{i,j}=\sum_{s=1}^p d_{i,s}*c_{s,j}=\sum_{s=1}^p \left( \sum_{k=...
+...i,k}*b_{k,j}
+\right) *c_{s,j}=\sum_{s=1}^p \sum_{k=1}^n a_{i,k}*b_{k,j}*c_{s,j}$">
+</div><p>
+</p>
+Why can we make this last statement?
+<br>
+Similarly if we let <!-- MATH
+ $A_{m\times n}E_{n\times r}=G_{m\times r}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="145" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img701.gif"
+ ALT="$ A_{m\times n}E_{n\times r}=G_{m\times r}$"></span>
+ we have
+<p><!-- MATH
+ \begin{displaymath}
+g_{i,j}=\sum_{k=1}^n a_{i,k}*e_{k,j}=\sum_{k=1}^n a_{i,k}*\left(
+\sum_{s=1}^p b_{i,s}*c_{s,j} \right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="336" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img702.gif"
+ ALT="$\displaystyle g_{i,j}=\sum_{k=1}^n a_{i,k}*e_{k,j}=\sum_{k=1}^n a_{i,k}*\left(
+\sum_{s=1}^p b_{i,s}*c_{s,j} \right)$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+\qquad\qquad=\sum_{k=1}^n \sum_{s=1}^p a_{i,k}*b_{i,s}*c_{s,j}=
+\sum_{s=1}^p \sum_{k=1}^n a_{i,k}*b_{k,j}*c_{s,j}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="411" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img703.gif"
+ ALT="$\displaystyle \qquad\qquad=\sum_{k=1}^n \sum_{s=1}^p a_{i,k}*b_{i,s}*c_{s,j}=
+\sum_{s=1}^p \sum_{k=1}^n a_{i,k}*b_{k,j}*c_{s,j}$">
+</div><p>
+</p>
+Why can we interchange the <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.gif"
+ ALT="$ \sum$"></span>
+ signs in this last statement?
+<br>
+We have shown that <!-- MATH
+ $f_{i,j}=g_{i,j}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="71" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img704.gif"
+ ALT="$ f_{i,j}=g_{i,j}$"></span>
+ so that <!-- MATH
+ $(AB)C=A(BC)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="125" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img688.gif"
+ ALT="$ (AB)C=A(BC)$"></span>
+.
+</li>
+<li>If <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img705.gif"
+ ALT="$ AB$"></span>
+ is defined, show that <!-- MATH
+ $A(rB)=r(AB)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="115" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img706.gif"
+ ALT="$ A(rB)=r(AB)$"></span>
+.
+</li>
+<li>Show that <!-- MATH
+ $A(B+C)=AB+AC$
+ -->
+<span class="MATH"><IMG
+ WIDTH="163" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img707.gif"
+ ALT="$ A(B+C)=AB+AC$"></span>
+. Assume that all matrix sums and products are defined.
+</li>
+<li>Let
+<p><!-- MATH
+ \begin{displaymath}
+X=\left(\begin{array}{rc}
+0 & 1 \\
+-1 & 0\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="123" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img708.gif"
+ ALT="$\displaystyle X=\left(\begin{array}{rc}
+0 &amp; 1 \\
+-1 &amp; 0\end{array}\right)$">
+</div><p>
+</p>
+Show that if <span class="MATH"><IMG
+ WIDTH="78" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img709.gif"
+ ALT="$ AX=XA$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="80" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img710.gif"
+ ALT="$ BX=XB$"></span>
+ for two matrices <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+,
+then <span class="MATH"><IMG
+ WIDTH="75" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img711.gif"
+ ALT="$ AB=BA$"></span>
+.
+</li>
+<li>Show that it is impossible to have a matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img712.gif"
+ ALT="$ Y$"></span>
+ such that
+<p><!-- MATH
+ \begin{displaymath}
+XY=YX=\mathbf{I}\text{  when  }X=\left(\begin{array}{rr}
+-2 & -6 \\
+ 3 & 9 \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="108" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img713.gif"
+ ALT="$\displaystyle XY=YX=\mathbf{I}$"> when &nbsp;<IMG
+ WIDTH="136" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img714.gif"
+ ALT="$\displaystyle X=\left(\begin{array}{rr}
+-2 &amp; -6 \\
+3 &amp; 9 \end{array}\right)$">
+</div><p>
+</p>
+</li>
+<li>Evaluate the following matrix product
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccc} x & y & z\end{array}\right)
+\left(\begin{array}{rrc}
+ 3 & -1 & 2 \\
+-1 & 0 & 1 \\
+ 2 & 1 & 0 \end{array}\right)
+\left(\begin{array}{c}
+ x \\y \\z\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="274" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img715.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccc} x &amp; y &amp; z\end{array}\right)
+\left(\begin...
+... 1 &amp; 0 \end{array}\right)
+\left(\begin{array}{c}
+x \ y \ z\end{array}\right)$">
+</div><p>
+</p>
+</li>
+<li>For the field <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+, evaluate the following product
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{cc}
+ \frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}i & 0\\
+ 0 &  \frac{1}{\sqrt{2}}-\frac{1}{\sqrt{2}}i \end{array}\right)
+\left(\begin{array}{cc} \frac{1}{\sqrt{2}}-\frac{1}{\sqrt{2}}i & 0\\
+ 0 &  \frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}i \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="386" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img716.gif"
+ ALT="$\displaystyle \left(\begin{array}{cc}
+\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}i &amp;...
+...sqrt{2}}i &amp; 0\\
+0 &amp; \frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}i \end{array}\right)$">
+</div><p>
+</p>
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">3</span>.<span class="arabic">2</span></span></big>
+
+<p>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>Show how the following systems of equations can be
+written as arithmetical statements using matrices.
+
+<br>
+<IMG
+ WIDTH="444" HEIGHT="88" ALIGN="BOTTOM" BORDER="0"
+ SRC="img717.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,2)
+\begin{minipage}{17e...
+...{tabular} \end{minipage}\end{picture}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>The following matrices are over the field <!-- MATH
+ $\mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \mathbb{Q}$"></span>
+. Find the products.
+
+<p>
+
+<br>
+<IMG
+ WIDTH="485" HEIGHT="617" ALIGN="BOTTOM" BORDER="0"
+ SRC="img718.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...icture}\newline\mbox{}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>The following matrices are over the field <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+. Find the products.
+
+<br>
+<IMG
+ WIDTH="390" HEIGHT="120" ALIGN="BOTTOM" BORDER="0"
+ SRC="img719.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(25,1)
+\begin{minipage}{25e...
+...minipage}\end{picture}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>The following matrices are over the binary field. Find the products.
+<br>
+
+<br>
+<IMG
+ WIDTH="488" HEIGHT="64" ALIGN="BOTTOM" BORDER="0"
+ SRC="img720.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...\mbox{}\newline\mbox{}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>For a square matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+, <span class="MATH"><IMG
+ WIDTH="68" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img721.gif"
+ ALT="$ A^2=AA$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="80" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img722.gif"
+ ALT="$ A^3=AAA$"></span>
+. In general, <span class="MATH"><IMG
+ WIDTH="25" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img723.gif"
+ ALT="$ A^n$"></span>
+ is
+called a <span  class="textbf">power</span><a name="5546"></a> of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and is simply equal to the matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ multiplied by
+itself <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ times. For matrices over <!-- MATH
+ $\mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \mathbb{Q}$"></span>
+, find <span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img724.gif"
+ ALT="$ A^2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img725.gif"
+ ALT="$ A^3$"></span>
+.
+
+<br>
+<IMG
+ WIDTH="419" HEIGHT="120" ALIGN="BOTTOM" BORDER="0"
+ SRC="img726.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...icture}\newline\mbox{}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>For matrices over the binary field, find <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img727.gif"
+ ALT="$ B^2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img728.gif"
+ ALT="$ B^3$"></span>
+. What would
+<span class="MATH"><IMG
+ WIDTH="26" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img729.gif"
+ ALT="$ B^n$"></span>
+ be for some positive <!-- MATH
+ $n\in \mathbb{Z}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img730.gif"
+ ALT="$ n\in \mathbb{Z}$"></span>
+?
+
+<br>
+<IMG
+ WIDTH="419" HEIGHT="120" ALIGN="BOTTOM" BORDER="0"
+ SRC="img726.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...icture}\newline\mbox{}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>For matrices over <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+, find <span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img724.gif"
+ ALT="$ A^2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img725.gif"
+ ALT="$ A^3$"></span>
+.
+
+<br>
+<IMG
+ WIDTH="419" HEIGHT="120" ALIGN="BOTTOM" BORDER="0"
+ SRC="img726.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...icture}\newline\mbox{}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>For matrices <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img712.gif"
+ ALT="$ Y$"></span>
+ over <!-- MATH
+ $\mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \mathbb{Q}$"></span>
+, graph <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img712.gif"
+ ALT="$ Y$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="31" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img731.gif"
+ ALT="$ XY$"></span>
+.
+<p><!-- MATH
+ \begin{displaymath}
+Y=\left(\begin{array}{ccr} 1 & 1 & 2\\
+ 0 & 1 & -1\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="146" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img732.gif"
+ ALT="$\displaystyle Y=\left(\begin{array}{ccr} 1 &amp; 1 &amp; 2\\
+0 &amp; 1 &amp; -1\end{array}\right)$">
+</div><p>
+</p>
+
+<br>
+<IMG
+ WIDTH="419" HEIGHT="120" ALIGN="BOTTOM" BORDER="0"
+ SRC="img726.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...icture}\newline\mbox{}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>For matrices <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img712.gif"
+ ALT="$ Y$"></span>
+ over <!-- MATH
+ $\mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \mathbb{Q}$"></span>
+, graph <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img712.gif"
+ ALT="$ Y$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="31" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img731.gif"
+ ALT="$ XY$"></span>
+.
+<p><!-- MATH
+ \begin{displaymath}
+Y=\left(\begin{array}{cccc} 1 & 0 & 0 & 1\\
+ 0 & 1 & 0 & 1\\0 & 0 & 1 & 1\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="161" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img733.gif"
+ ALT="$\displaystyle Y=\left(\begin{array}{cccc} 1 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 0 &amp; 1\ 0 &amp; 0 &amp; 1 &amp; 1\end{array}\right)$">
+</div><p>
+</p>
+
+<p>
+
+<br>
+<IMG
+ WIDTH="437" HEIGHT="141" ALIGN="BOTTOM" BORDER="0"
+ SRC="img734.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...nd{minipage}\end{picture}\vspace{4em}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html458"
+  href="node20.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html452"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html446"
+  href="node18.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html454"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html456"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html459"
+  href="node20.html">Matrix Inverses, Part A</a>
+<b> Up:</b> <a name="tex2html453"
+  href="node17.html">Matrix Arithmetic</a>
+<b> Previous:</b> <a name="tex2html447"
+  href="node18.html">Matrix Addition and Scalar</a>
+ &nbsp; <b>  <a name="tex2html455"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html457"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

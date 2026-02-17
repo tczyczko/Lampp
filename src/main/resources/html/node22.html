@@ -1,0 +1,1210 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Matrix Inverses, Part B</title>
+<meta name="description" content="Matrix Inverses, part B">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="previous" href="node21.html">
+<link rel="up" href="node17.html">
+<link rel="next" href="node23.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html498"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html492"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html488"
+  href="node21.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html494"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html496"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html499"
+  href="node23.html">Applications</a>
+<b> Up:</b> <a name="tex2html493"
+  href="node17.html">Matrix Arithmetic</a>
+<b> Previous:</b> <a name="tex2html489"
+  href="node21.html">Elementary Matrices</a>
+ &nbsp; <b>  <a name="tex2html495"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html497"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00650000000000000000">
+Matrix Inverses, Part B</a>
+</h1>
+
+<p>
+If we interchange any two rows of <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ to get <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ and then interchange the same rows of <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+, we
+will obviously obtain <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ again. Since <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ is an elementary matrix of type (1), this means that
+<!-- MATH
+ $EE=\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="58" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img779.gif"
+ ALT="$ EE=\mathbf{I}$"></span>
+. Obviously <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ of type (1) is its own inverse.<a name="5952"></a>
+
+<p>
+An elementary matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ of type (2) is identical to <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ except that <span class="MATH"><IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img780.gif"
+ ALT="$ e_{i,i}=a$"></span>
+ for exactly one index
+value <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ and for some scalar <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.gif"
+ ALT="$ a\ne 0$"></span>
+. Let us say that the inverse of a type (2) <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ is equal to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img781.gif"
+ ALT="$ F$"></span>
+. This means that
+<!-- MATH
+ $f_{i,i}=(e_{i,i})^{-1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="97" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img782.gif"
+ ALT="$ f_{i,i}=(e_{i,i})^{-1}$"></span>
+ for all values of <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+. It is easy to show that <!-- MATH
+ $EF=FE=\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="104" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img783.gif"
+ ALT="$ EF=FE=\mathbf{I}$"></span>
+ so that <span class="MATH"><IMG
+ WIDTH="68" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img784.gif"
+ ALT="$ F=E^{-1}$"></span>
+. This
+also makes it easy to calculate <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img785.gif"
+ ALT="$ E^{-1}$"></span>
+ for a type (2) elementary matrix. An example of a type
+ (2) elementary matrix
+and its inverse are given below.
+<p><!-- MATH
+ \begin{displaymath}
+E=\left(\begin{array}{rrr}
+	1 & 0 & 0 \\
+	0 & a & 0 \\
+	0 & 0 & 1 
+\end{array}\right)\;\;\;
+E^{-1}=\left(\begin{array}{rrr}
+	1 & 0 & 0 \\
+	0 & \frac{1}{a} & 0 \\
+	0 & 0 & 1 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="307" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img786.gif"
+ ALT="$\displaystyle E=\left(\begin{array}{rrr}
+1 &amp; 0 &amp; 0 \\
+0 &amp; a &amp; 0 \\
+0 &amp; 0 &amp;...
+...ay}{rrr}
+1 &amp; 0 &amp; 0 \\
+0 &amp; \frac{1}{a} &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}\right)$">
+</div><p>
+</p>
+
+<p>
+An elementary matrix of type (3) <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ is identical to <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ except that <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img787.gif"
+ ALT="$ e_{i,j}=a$"></span>
+ for some scalar <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ and
+for one specific index value <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ and one specific index value <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img788.gif"
+ ALT="$ i\ne j$"></span>
+. We say that <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ has
+one non-zero, <span  class="textbf">off-diagonal</span> entry. The <span  class="textbf">diagonal</span>
+<a name="5971"></a> entries, <span class="MATH"><IMG
+ WIDTH="30" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img789.gif"
+ ALT="$ e_{k,k}$"></span>
+, are all equal
+to one. All other entries are zero.
+
+<p>
+If we add a multiple of a row to another row and then subtract that multiple of a row from the same row,
+the matrix is left unchanged. This simple fact allows us to generate the inverse for any type (3) elementary
+matrix. Suppose <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ is a type (3) elementary matrix and <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img787.gif"
+ ALT="$ e_{i,j}=a$"></span>
+ is the off-diagonal, non-zero entry, 
+and further suppose that <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img781.gif"
+ ALT="$ F$"></span>
+ is the inverse of <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+. Then <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img781.gif"
+ ALT="$ F$"></span>
+ is equal to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ except for the one entry 
+<!-- MATH
+ $f_{i,j}=-a$
+ -->
+<span class="MATH"><IMG
+ WIDTH="69" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img790.gif"
+ ALT="$ f_{i,j}=-a$"></span>
+. An example of a type (3) elementary matrix
+and its inverse are given below.
+<p><!-- MATH
+ \begin{displaymath}
+E=\left(\begin{array}{rrr}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	a & 0 & 1 
+\end{array}\right)\;\;\;
+E^{-1}=\left(\begin{array}{rrr}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	-a & 0 & 1 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="317" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img791.gif"
+ ALT="$\displaystyle E=\left(\begin{array}{rrr}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+a &amp; 0 &amp;...
+...begin{array}{rrr}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+-a &amp; 0 &amp; 1
+\end{array}\right)$">
+</div><p>
+</p>
+
+<p>
+From the previous discussion we can see that all elementary matrices have inverses. 
+We can also calculate them. 
+
+<p>
+Recall that a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ can be put in reduced echelon form by applying a finite
+series of row operations. Since multiplication by elementary matrices is the same
+as row operations, we can write
+<p><!-- MATH
+ \begin{displaymath}
+E_kE_{k-1}\cdots E_2E_1A=R
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="167" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img792.gif"
+ ALT="$\displaystyle E_kE_{k-1}\cdots E_2E_1A=R$">
+</div><p>
+</p>
+where <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ is the reduced echelon form of a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.gif"
+ ALT="$ k$"></span>
+ is the number of row operations needed.
+This lets us prove the following theorem:
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">3</span>..<span class="arabic">1</span></b> &nbsp; 
+<i>A square matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ has an inverse if and only if its reduced echelon form <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+
+is an identity matrix.</i></div><p></p>
+
+<p>
+<p></p>
+<div><i>Proof</i>.
+ First suppose that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is invertible. Then we know that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ is invertible. This comes
+from the equation <!-- MATH
+ $E_kE_{k-1}\cdots E_2E_1A=R$
+ -->
+<span class="MATH"><IMG
+ WIDTH="167" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img793.gif"
+ ALT="$ E_kE_{k-1}\cdots E_2E_1A=R$"></span>
+. Each of the elementary matrices <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ is invertible
+and we have the left side of the equation being the product of invertible matrices, which is also
+invertible (why?). Therefore, <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ is a square matrix that  is invertible and in reduced echelon
+form. Such a matrix must be the identity matrix (since <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ is square and, by definition, the
+leading entries are equal to one).
+
+<p>
+Alternatively, suppose <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ is an identity matrix. This gives us
+<p><!-- MATH
+ \begin{displaymath}
+E_kE_{k-1}\cdots E_2E_1A=\mathbf{I}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="161" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img794.gif"
+ ALT="$\displaystyle E_kE_{k-1}\cdots E_2E_1A=\mathbf{I}$">
+</div><p>
+</p>
+Multiplying on the left of both sides of the equation, we have
+<p><!-- MATH
+ \begin{displaymath}
+E_1^{-1}E_2^{-1}\cdots E_{k-1}^{-1}E_k^{-1}E_kE_{k-1}\cdots E_2E_1A=E_1^{-1}E_2^{-1}\cdots E_{k-1}^{-1}E_k^{-1}\mathbf{I}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="459" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img795.gif"
+ ALT="$\displaystyle E_1^{-1}E_2^{-1}\cdots E_{k-1}^{-1}E_k^{-1}E_kE_{k-1}\cdots E_2E_1A=E_1^{-1}E_2^{-1}\cdots E_{k-1}^{-1}E_k^{-1}\mathbf{I}$">
+</div><p>
+</p>
+Which collapses to
+<p><!-- MATH
+ \begin{displaymath}
+A=E_1^{-1}E_2^{-1}\cdots E_{k-1}^{-1}E_k^{-1}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="186" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img796.gif"
+ ALT="$\displaystyle A=E_1^{-1}E_2^{-1}\cdots E_{k-1}^{-1}E_k^{-1}$">
+</div><p>
+</p>
+The product on the right of the equation is the product of the inverses of elementary matrices and we
+can easily show that the inverse of an elementary matrix is also an elementary matrix. Therefore, the
+product on the right is itself an invertible matrix, so <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is invertible and that
+<p><!-- MATH
+ \begin{displaymath}
+A^{-1}=E_kE_{k-1}\cdots E_2E_1
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="171" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img797.gif"
+ ALT="$\displaystyle A^{-1}=E_kE_{k-1}\cdots E_2E_1$">
+</div><p>
+</p> <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+This theorem gives us a recipe (or <span  class="textbf">algorithm</span>)<a name="6008"></a> that will let us calculate the inverse of
+of matrix because it shows that the same row operations that reduces a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ to <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ will,
+when applied to <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+, change <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ into <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ A^{-1}$"></span>
+. It also shows that if <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ cannot be row reduced
+into <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ has no inverse.
+
+<p>
+The easy way to calculate the inverse of a matrix <!-- MATH
+ $A_{m\times m}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img798.gif"
+ ALT="$ A_{m\times m}$"></span>
+ is to create a <!-- MATH
+ $(m\times 2m)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="72" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img799.gif"
+ ALT="$ (m\times 2m)$"></span>
+ matrix
+such that the left half is the matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and the right half is <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+. Then apply row operations to this matrix
+which will reduce <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ to <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+. When this is done, the right half of the matrix will contain <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ A^{-1}$"></span>
+.
+
+<p>
+For example, let us find the inverse of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ when
+<p><!-- MATH
+ \begin{displaymath}
+A=\left(\begin{array}{rrr}
+2 & 4 & 8 \\
+1 & 3 & 4 \\
+3 & 9 & 2  
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="137" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img800.gif"
+ ALT="$\displaystyle A=\left(\begin{array}{rrr}
+2 &amp; 4 &amp; 8 \\
+1 &amp; 3 &amp; 4 \\
+3 &amp; 9 &amp; 2
+\end{array}\right)$">
+</div><p>
+</p>
+Write the augmented matrix <!-- MATH
+ $\left(A|\mathbf{I}\right)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img801.gif"
+ ALT="$ \left(A\vert\mathbf{I}\right)$"></span>
+.
+ <p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrcrrr}
+2 & 4 & 8 &\vline & 1 & 0 & 0\\
+1 & 3 & 4 &\vline & 0 & 1 & 0\\
+3 & 9 & 2 &\vline & 0 & 0 & 1
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="192" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img802.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrcrrr}
+2 &amp; 4 &amp; 8 &amp;\vline &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 3 &amp; 4 &amp;\vline &amp; 0 &amp; 1 &amp; 0\\
+3 &amp; 9 &amp; 2 &amp;\vline &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)$">
+</div><p>
+</p>
+Interchange rows 1 and 2
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrcrrr}
+1 & 3 & 4 &\vline & 0 & 1 & 0\\
+2 & 4 & 8 &\vline & 1 & 0 & 0\\
+3 & 9 & 2 &\vline & 0 & 0 & 1
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="192" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img803.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrcrrr}
+1 &amp; 3 &amp; 4 &amp;\vline &amp; 0 &amp; 1 &amp; 0\\
+2 &amp; 4 &amp; 8 &amp;\vline &amp; 1 &amp; 0 &amp; 0\\
+3 &amp; 9 &amp; 2 &amp;\vline &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)$">
+</div><p>
+</p>
+Add <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img804.gif"
+ ALT="$ -2$"></span>
+ times row 1 to row 2
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrcrrr}
+1 & 3 & 4 &\vline & 0 & 1 & 0\\
+0 & -2 & 0 &\vline & 1 & -2 & 0\\
+3 & 9 & 2 &\vline & 0 & 0 & 1
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="216" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img805.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrcrrr}
+1 &amp; 3 &amp; 4 &amp;\vline &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; -2 &amp; 0 &amp;\vline &amp; 1 &amp; -2 &amp; 0\\
+3 &amp; 9 &amp; 2 &amp;\vline &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)$">
+</div><p>
+</p>
+Add <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img480.gif"
+ ALT="$ -3$"></span>
+ times row 1 to row 3
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrcrrr}
+1 & 3 & 4 &\vline & 0 & 1 & 0\\
+0 & -2 & 0 &\vline & 1 & -2 & 0\\
+0 & 0 & -10 &\vline & 0 & -3 & 1
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="237" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img806.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrcrrr}
+1 &amp; 3 &amp; 4 &amp;\vline &amp; 0 &amp; 1 &amp; 0\\
+0 &amp;...
+...&amp; 0 &amp;\vline &amp; 1 &amp; -2 &amp; 0\\
+0 &amp; 0 &amp; -10 &amp;\vline &amp; 0 &amp; -3 &amp; 1
+\end{array}\right)$">
+</div><p>
+</p>
+Multiply row 2 by <!-- MATH
+ $-\frac{1}{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="27" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img807.gif"
+ ALT="$ -\frac{1}{2}$"></span>
+
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrcrrr}
+1 & 3 & 4 &\vline & 0 & 1 & 0\\
+0 & 1 & 0 &\vline & -\frac{1}{2} & 1 & 0\\
+0 & 0 & -10 &\vline & 0 & -3 & 1
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="239" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img808.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrcrrr}
+1 &amp; 3 &amp; 4 &amp;\vline &amp; 0 &amp; 1 &amp; 0\\
+0 &amp;...
+...e &amp; -\frac{1}{2} &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; -10 &amp;\vline &amp; 0 &amp; -3 &amp; 1
+\end{array}\right)$">
+</div><p>
+</p>
+Multiply row 3 by <!-- MATH
+ $-\frac{1}{10}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="33" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img809.gif"
+ ALT="$ -\frac{1}{10}$"></span>
+
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrcrrr}
+1 & 3 & 4 &\vline & 0 & 1 & 0\\
+0 & 1 & 0 &\vline & -\frac{1}{2} & 1 & 0\\
+0 & 0 & 1 &\vline & 0 & \frac{3}{10} & -\frac{1}{10}
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="236" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img810.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrcrrr}
+1 &amp; 3 &amp; 4 &amp;\vline &amp; 0 &amp; 1 &amp; 0\\
+0 &amp;...
+... &amp; 0\\
+0 &amp; 0 &amp; 1 &amp;\vline &amp; 0 &amp; \frac{3}{10} &amp; -\frac{1}{10}
+\end{array}\right)$">
+</div><p>
+</p>
+Add <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img480.gif"
+ ALT="$ -3$"></span>
+ times row 2 to row 1
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrcrrr}
+1 & 0 & 4 &\vline & \frac{3}{2} & -2 & 0\\
+0 & 1 & 0 &\vline & -\frac{1}{2} & 1 & 0\\
+0 & 0 & 1 &\vline & 0 & \frac{3}{10} & -\frac{1}{10}
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="240" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img811.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrcrrr}
+1 &amp; 0 &amp; 4 &amp;\vline &amp; \frac{3}{2} &amp; -2...
+... &amp; 0\\
+0 &amp; 0 &amp; 1 &amp;\vline &amp; 0 &amp; \frac{3}{10} &amp; -\frac{1}{10}
+\end{array}\right)$">
+</div><p>
+</p>
+Add <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img812.gif"
+ ALT="$ -4$"></span>
+ times row 3 to row 1
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrcrrr}
+1 & 0 & 0 &\vline & \frac{3}{2} & -\frac{16}{5} & \frac{2}{5}\\
+0 & 1 & 0 &\vline & -\frac{1}{2} & 1 & 0\\
+0 & 0 & 1 &\vline & 0 & \frac{3}{10} & -\frac{1}{10}
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="248" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img813.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrcrrr}
+1 &amp; 0 &amp; 0 &amp;\vline &amp; \frac{3}{2} &amp; -\...
+... &amp; 0\\
+0 &amp; 0 &amp; 1 &amp;\vline &amp; 0 &amp; \frac{3}{10} &amp; -\frac{1}{10}
+\end{array}\right)$">
+</div><p>
+</p>
+This shows us that
+<p><!-- MATH
+ \begin{displaymath}
+A^{-1}=\left(\begin{array}{rrr}
+  \frac{3}{2} & -\frac{16}{5} & \frac{2}{5}\\
+ -\frac{1}{2} & 1             & 0\\
+  0           & \frac{3}{10}  & -\frac{1}{10} 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="210" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img814.gif"
+ ALT="$\displaystyle A^{-1}=\left(\begin{array}{rrr}
+\frac{3}{2} &amp; -\frac{16}{5} &amp; \f...
+...
+-\frac{1}{2} &amp; 1 &amp; 0\\
+0 &amp; \frac{3}{10} &amp; -\frac{1}{10}
+\end{array}\right)$">
+</div><p>
+</p>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">3</span>.<span class="arabic">5</span></span></big>
+
+<ol>
+<li>Prove that the product of invertible matrices is invertible.
+</li>
+<li>Show that the inverse of an elementary matrix is also an elementary matrix.
+</li>
+<li>The field <!-- MATH
+ $\mathbb{Z}_p$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img815.gif"
+ ALT="$ \mathbb{Z}_p$"></span>
+ is called <span  class="textbf">integers modulo a prime</span>
+  <a name="6089"></a>, or integers mod <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+.
+  For a given prime number <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+, <!-- MATH
+ $\mathbb{Z}_p$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img815.gif"
+ ALT="$ \mathbb{Z}_p$"></span>
+ consists of the integers <!-- MATH
+ $0,1,\ldots,(p-1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="110" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img816.gif"
+ ALT="$ 0,1,\ldots,(p-1)$"></span>
+. For example,
+  <!-- MATH
+ $\mathbb{Z}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img817.gif"
+ ALT="$ \mathbb{Z}_3$"></span>
+ consists of the integers <span class="MATH">0</span>
+,<span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ 2$"></span>
+. 
+
+<p>
+For a field <!-- MATH
+ $\mathbb{Z}_p$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img815.gif"
+ ALT="$ \mathbb{Z}_p$"></span>
+, the binary operations of addition and multiplication
+  are the same as for integers except that the result is defined to be <span  class="textbf">the remainder after 
+  the absolute value of the result is divided by <!-- MATH
+ $\mathbf{p}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img818.gif"
+ ALT="$ \mathbf{p}$"></span>
+</span>. (There are other ways of defining  the integers that make up <!-- MATH
+ $\mathbb{Z}_p$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img815.gif"
+ ALT="$ \mathbb{Z}_p$"></span>
+.)
+ The number <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+ is called the
+   <span  class="textbf">modulus</span>.<a name="6092"></a> The remainder is called a <a name="6093"></a><span  class="textbf">residue</span>.
+  For example, in <!-- MATH
+ $\mathbb{Z}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img817.gif"
+ ALT="$ \mathbb{Z}_3$"></span>
+, <span class="MATH"><IMG
+ WIDTH="69" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img819.gif"
+ ALT="$ 2+2=1$"></span>
+ because <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.gif"
+ ALT="$ 4$"></span>
+ divided by <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.gif"
+ ALT="$ 3$"></span>
+ leaves
+  a remainder (or residue) of <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+. Similarly, <span class="MATH"><IMG
+ WIDTH="64" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img820.gif"
+ ALT="$ 2*2=1$"></span>
+.<a name="tex2html27"
+  href="#foot6095"><sup><span class="arabic">3</span>.<span class="arabic">1</span></sup></a>
+<p>
+What would be the additive inverses for the scalars that make up <!-- MATH
+ $\mathbb{Z}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img817.gif"
+ ALT="$ \mathbb{Z}_3$"></span>
+? What would be
+  the multiplicative inverses?
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">3</span>.<span class="arabic">5</span></span></big>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>Multiply <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ A^{-1}$"></span>
+ from our example.
+</li>
+<li>Create the elementary matrices that correspond to the row operations of our
+	example. Evaluate their product to show that it is equal to <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+. Remember that 
+	matrix multiplication is not necessarily commutative so the
+	order of multiplication is important.
+</li>
+<li>Does the matrix
+<p><!-- MATH
+ \begin{displaymath}
+B=\left(\begin{array}{rrr}
+2 & 4 & 8 \\
+1 & 2 & 4 \\
+3 & 9 & 2  
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="138" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img821.gif"
+ ALT="$\displaystyle B=\left(\begin{array}{rrr}
+2 &amp; 4 &amp; 8 \\
+1 &amp; 2 &amp; 4 \\
+3 &amp; 9 &amp; 2
+\end{array}\right)$">
+</div><p>
+</p>
+have an inverse? (<span  class="textbf">HINT</span>: Row reduce <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ to reduced echelon form.)
+</li>
+<li>For the matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img822.gif"
+ ALT="$ P$"></span>
+ over the field <!-- MATH
+ $\mathbb{Z}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img817.gif"
+ ALT="$ \mathbb{Z}_3$"></span>
+, find <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img823.gif"
+ ALT="$ P^{-1}$"></span>
+.
+<p><!-- MATH
+ \begin{displaymath}
+P=\left(\begin{array}{rrr}
+2 & 1 & 1 \\
+0 & 2 & 0 \\
+1 & 2 & 2  
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="137" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img824.gif"
+ ALT="$\displaystyle P=\left(\begin{array}{rrr}
+2 &amp; 1 &amp; 1 \\
+0 &amp; 2 &amp; 0 \\
+1 &amp; 2 &amp; 2
+\end{array}\right)$">
+</div><p>
+</p>	(<span  class="textbf">HINT</span>: Use Lamp and select the correct field.)
+</li>
+<li>Lamp can be used to examine what happens to lines and planes as we use row operations. Use Lamp
+to create the following rational matrix:
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrrrr}
+2 & 1 & 0 & 1 & 0 & 0\\
+0 & 2 & 0 & 0 & 1 & 0
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="171" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img825.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrrrr}
+2 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 0 &amp; 0 &amp; 1 &amp; 0
+\end{array}\right)$">
+</div><p>
+</p>
+Then graph this matrix. A button will appear which will allow you to switch the columns you
+wish to graph. Close the graph and use row operations to put this matrix in reduced row echelon
+form. Graph the matrix after each row operation and observe the changes to the lines.
+</li>
+<li>Create the following <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img826.gif"
+ ALT="$ 3\times 8$"></span>
+ matrix using Lamp.
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrrrrrr}
+1 & 1 & 0 & 0 & 1 & 0 & 0 & 0\\
+1 & 0 & 1 & 0 & 0 & 1 & 0 & 0\\
+0 & 1 & 1 & 0 & 0 & 0 & 1 & 0
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="223" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img827.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrrrrrr}
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
+\end{array}\right)$">
+</div><p>
+</p>
+Graph this matrix. Switch between columns. Reduce the matrix to row reduced echelon form.
+Graph the matrix after each row operation. (<span  class="textbf">NOTE</span>: A plane which is on edge to the
+viewer is assumed to have zero thickness and is not drawn.)
+</li>
+<li>Create the following <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img826.gif"
+ ALT="$ 3\times 8$"></span>
+ matrix using Lamp.
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrrrrrr}
+1 & 1 & 0 & 8 & 1 & 0 & 0 & 8\\
+1 & 0 & 1 & 8 & 0 & 1 & 0 & 8\\
+0 & 1 & 1 & 8 & 0 & 0 & 1 & 8
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="223" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img828.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrrrrrr}
+1 &amp; 1 &amp; 0 &amp; 8 &amp; 1 &amp; 0 &amp; 0 &amp; 8\\
+1 &amp; 0 &amp; 1 &amp; 8 &amp; 0 &amp; 1 &amp; 0 &amp; 8\\
+0 &amp; 1 &amp; 1 &amp; 8 &amp; 0 &amp; 0 &amp; 1 &amp; 8
+\end{array}\right)$">
+</div><p>
+</p>
+Graph this matrix. Switch between columns. Reduce the matrix to row reduced echelon form.
+Graph the matrix after each row operation. 
+</li>
+</ol>
+<br><hr><h4>Footnotes</h4>
+<dl>
+<dt><a name="foot6095">....</a><A
+ HREF="node22.html#tex2html27"><sup><span class="arabic">3</span>.<span class="arabic">1</span></sup></a></dt>
+<dd>There are other ways of defining  the integers that make up <!-- MATH
+ $\mathbb{Z}_p$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img815.gif"
+ ALT="$ \mathbb{Z}_p$"></span>
+.
+
+</dd>
+</dl>
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html498"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html492"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html488"
+  href="node21.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html494"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html496"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html499"
+  href="node23.html">Applications</a>
+<b> Up:</b> <a name="tex2html493"
+  href="node17.html">Matrix Arithmetic</a>
+<b> Previous:</b> <a name="tex2html489"
+  href="node21.html">Elementary Matrices</a>
+ &nbsp; <b>  <a name="tex2html495"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html497"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Elementary Matrices</title>
+<meta name="description" content="Elementary Matrices">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node22.html">
+<link rel="previous" href="node20.html">
+<link rel="up" href="node17.html">
+<link rel="next" href="node22.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html486"
+  href="node22.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html480"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html474"
+  href="node20.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html482"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html484"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html487"
+  href="node22.html">Matrix Inverses, Part B</a>
+<b> Up:</b> <a name="tex2html481"
+  href="node17.html">Matrix Arithmetic</a>
+<b> Previous:</b> <a name="tex2html475"
+  href="node20.html">Matrix Inverses, Part A</a>
+ &nbsp; <b>  <a name="tex2html483"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html485"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00640000000000000000">
+Elementary Matrices</a>
+</h1>
+
+<p>
+Row operations, as we have seen, are extremely useful (and <span  class="textit">fun</span>). They are
+also easy to use, especially when we have software like Lamp to take away some of the
+pain of arithmetic. However, it is difficult to <span  class="textit">prove</span> much about the results
+of row operations in the form in which we actually use them. Luckily there is an
+equivalent way to represent row operations on a matrix using identity matrices,
+scalar multiplication and matrix multiplication. Since we have already started to
+prove properties of matrices, this representation will allow us to use our skills
+to prove results involving row operations.
+
+<p>
+A matrix obtained from an identity matrix by a single row operation is called an <span  class="textbf">elementary matrix</span>.
+<a name="5873"></a>
+We usually represent such a matrix as <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+. Since there are three row operations, we have three
+types of elementary matrices. 
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">3</span>..<span class="arabic">5</span></b> &nbsp; 
+<i><span  class="textbf">Elementary Matrices for Row Operations</span>
+</i><dl>
+<dt><strong><!-- MATH
+ $\mathbf{E}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img763.gif"
+ ALT="$ \mathbf{E}$"></span>
+ Type (1)</strong></dt>
+<dd>Interchange any two rows of <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+.
+</dd>
+<dt><strong><!-- MATH
+ $\mathbf{E}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img763.gif"
+ ALT="$ \mathbf{E}$"></span>
+ Type (2)</strong></dt>
+<dd>Multiply any row of <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ by a nonzero scalar.
+</dd>
+<dt><strong><!-- MATH
+ $\mathbf{E}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img763.gif"
+ ALT="$ \mathbf{E}$"></span>
+ Type (3)</strong></dt>
+<dd>Add a scalar multiple of any row of <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ to a different row.
+</dd>
+</dl></div><p></p>
+
+<p>
+Examples of type (1) elementary matrices:
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrr}
+	1 & 0 & 0 \\
+	0 & 0 & 1 \\
+	0 & 1 & 0
+\end{array}\right)\;\;\;\;
+\left(\begin{array}{rr}
+	0 & 1 \\
+	1 & 0 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="195" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img764.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrr}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0...
+...}\right)\;\;\;\;
+\left(\begin{array}{rr}
+0 &amp; 1 \\
+1 &amp; 0
+\end{array}\right)
+$">
+</div><p>
+</p>
+
+<p>
+Examples of type (2) elementary matrices:
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rr}
+	2 & 0 \\
+	0 & 1 
+\end{array}\right)\;\;\;\;
+\left(\begin{array}{rrr}
+	1 & 0 & 0 \\
+	0 & -5 & 0 \\
+	0 & 0 & 1
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="207" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img765.gif"
+ ALT="$\displaystyle \left(\begin{array}{rr}
+2 &amp; 0 \\
+0 &amp; 1
+\end{array}\right)\;\;...
+...begin{array}{rrr}
+1 &amp; 0 &amp; 0 \\
+0 &amp; -5 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}\right)
+$">
+</div><p>
+</p>
+
+<p>
+Examples of type (3) elementary matrices:
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rr}
+	1 & 1 \\
+	0 & 1 
+\end{array}\right)\;\;\;\;
+\left(\begin{array}{rrr}
+	1 & 2 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1
+\end{array}\right)\;\;\;\;
+\left(\begin{array}{rrr}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	3 & 0 & 1
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="315" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img766.gif"
+ ALT="$\displaystyle \left(\begin{array}{rr}
+1 &amp; 1 \\
+0 &amp; 1
+\end{array}\right)\;\;...
+...\begin{array}{rrr}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+3 &amp; 0 &amp; 1
+\end{array}\right)
+$">
+</div><p>
+</p>
+
+<p>
+Multiplying a matrix <span  class="textit">on the left</span> by an elementary matrix has the same effect
+as the equivalent row operation. In mathematical notation <span class="MATH"><IMG
+ WIDTH="63" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img767.gif"
+ ALT="$ EA=B$"></span>
+ means that <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is
+the matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ after one row operation. It is obvious that <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is row equivalent to <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">3</span>.<span class="arabic">4</span></span></big>
+
+<ol>
+<li>Which of the following is an elementary matrix? If not, why not?
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rr}
+	1 & 0 \\
+	0 & 1 
+\end{array}\right)\;\;\;\;
+\left(\begin{array}{rrr}
+	1 & 2 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1 \\
+	0 & 0 & 0
+\end{array}\right)\;\;\;\;
+\left(\begin{array}{rrr}
+	1 & 2 & 0 \\
+	0 & 1 & 0 \\
+	3 & 0 & 1
+\end{array}\right)\;\;\;\;
+\left(\begin{array}{rrrr}
+	0 & 1 & 0 & 0\\
+	1 & 0 & 0 & 0\\
+	0 & 0 & 0 & 1\\
+	0 & 0 & 1 & 0
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="459" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img768.gif"
+ ALT="$\displaystyle \left(\begin{array}{rr}
+1 &amp; 0 \\
+0 &amp; 1
+\end{array}\right)\;\;...
+...0 &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{array}\right)
+$">
+</div><p>
+</p>
+</li>
+<li>We had previously stated that <!-- MATH
+ $\mathbf{I}A=A$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img633.gif"
+ ALT="$ \mathbf{I}A=A$"></span>
+ for <!-- MATH
+ $A_{m \times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img542.gif"
+ ALT="$ A_{m\times n}$"></span>
+. Of course, <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+
+is <!-- MATH
+ $m \times m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img769.gif"
+ ALT="$ m\times m$"></span>
+ in this case. We can prove this using brute calculation. Since <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ is
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img636.gif"
+ ALT="$ i_{j,j}=1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img638.gif"
+ ALT="$ i_{j,k}=0$"></span>
+ whenever <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img639.gif"
+ ALT="$ j\ne k$"></span>
+, then if <!-- MATH
+ $\mathbf{I}A=B$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img770.gif"
+ ALT="$ \mathbf{I}A=B$"></span>
+, by the definition 
+of matrix multiplication <p><!-- MATH
+ \begin{displaymath}
+b_{j,k}=\sum_{l=1}^m i_{j,l}*a_{l,k}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="133" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img771.gif"
+ ALT="$\displaystyle b_{j,k}=\sum_{l=1}^m i_{j,l}*a_{l,k}$">
+</div><p>
+</p>
+Since <!-- MATH
+ $i_{j,l}= 1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img772.gif"
+ ALT="$ i_{j,l}= 1$"></span>
+ only if <span class="MATH"><IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img773.gif"
+ ALT="$ j=l$"></span>
+ and otherwise it is zero, then <!-- MATH
+ $b_{j,k}=a_{j,k}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img774.gif"
+ ALT="$ b_{j,k}=a_{j,k}$"></span>
+. So <span class="MATH"><IMG
+ WIDTH="50" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img775.gif"
+ ALT="$ B=A$"></span>
+ and
+<!-- MATH
+ $\mathbf{I}A=A$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img633.gif"
+ ALT="$ \mathbf{I}A=A$"></span>
+.
+
+<p>
+Use a similar argument to show that <!-- MATH
+ $A\mathbf{I}=A$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img632.gif"
+ ALT="$ A\mathbf{I}=A$"></span>
+.
+</li>
+<li>Show that <span  class="textbf">premultiplying</span><a name="5928"></a>
+ a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ by an elementary matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ of type (1) corresponds
+to a type (1) row operation. (Premultiplying means to multiply on the left, i.e. <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img776.gif"
+ ALT="$ EA$"></span>
+.) Do the same
+for the other two row operations.
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">3</span>.<span class="arabic">4</span></span></big>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>Show that
+	<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rr}
+	-1 & 0 \\
+	0 & 1 
+\end{array}\right)\left(\begin{array}{rr}
+	1 & 0 \\
+	1 & 1 
+\end{array}\right)\left(\begin{array}{rr}
+	1 & -1 \\
+	0 & 1 
+\end{array}\right)\left(\begin{array}{rr}
+	1 & 0 \\
+	1 & 1 
+\end{array}\right)=\left(\begin{array}{rr}
+	0 & 1 \\
+	1 & 0 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="414" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img777.gif"
+ ALT="$\displaystyle \left(\begin{array}{rr}
+-1 &amp; 0 \\
+0 &amp; 1
+\end{array}\right)\le...
+...end{array}\right)=\left(\begin{array}{rr}
+0 &amp; 1 \\
+1 &amp; 0
+\end{array}\right)$">
+</div><p>
+</p>
+What are the corresponding row operations for each of these five elementary matrices?
+</li>
+<li>If <p><!-- MATH
+ \begin{displaymath}
+A=\left(\begin{array}{rrr}
+	1 & 0 & 0 \\
+	0 & 0 & 1 \\
+	0 & 1 & 0 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="137" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img778.gif"
+ ALT="$\displaystyle A=\left(\begin{array}{rrr}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0
+\end{array}\right)$">
+</div><p>
+</p>
+What is <span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img724.gif"
+ ALT="$ A^2$"></span>
+? What is <span class="MATH"><IMG
+ WIDTH="25" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img723.gif"
+ ALT="$ A^n$"></span>
+ if <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ is even? If <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ is odd? What does this mean in terms of
+row operations?
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html486"
+  href="node22.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html480"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html474"
+  href="node20.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html482"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html484"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html487"
+  href="node22.html">Matrix Inverses, Part B</a>
+<b> Up:</b> <a name="tex2html481"
+  href="node17.html">Matrix Arithmetic</a>
+<b> Previous:</b> <a name="tex2html475"
+  href="node20.html">Matrix Inverses, Part A</a>
+ &nbsp; <b>  <a name="tex2html483"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html485"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

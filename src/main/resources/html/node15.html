@@ -1,0 +1,550 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Reduced Row Echelon Form</title>
+<meta name="description" content="Reduced row Echelon Form">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node16.html">
+<link rel="previous" href="node14.html">
+<link rel="up" href="node12.html">
+<link rel="next" href="node16.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html399"
+  href="node16.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html393"
+  href="node12.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html387"
+  href="node14.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html395"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html397"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html400"
+  href="node16.html">Parameters</a>
+<b> Up:</b> <a name="tex2html394"
+  href="node12.html">Row Operations</a>
+<b> Previous:</b> <a name="tex2html388"
+  href="node14.html">Row Operations and Lamp</a>
+ &nbsp; <b>  <a name="tex2html396"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html398"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00530000000000000000">
+Reduced Row Echelon Form</a>
+</h1>
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">2</span>..<span class="arabic">2</span></b> &nbsp; 
+<i>A matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is in <span  class="textbf"> reduced row echelon form</span><a name="3949"></a> if
+</i>
+<ol>
+<li>Any rows consisting entirely of <span class="MATH">0</span>
+'s appear at the bottom of the matrix.
+</li>
+<li>For any two consecutive rows with one or more nonzero entries, the leftmost nonzero entry 
+(also called the <span  class="textbf">leading entry</span><a name="3952"></a> or 
+<span  class="textbf">pivot</span><a name="3954"></a>) of the lower row is to
+the right of the upper row leading entry.
+</li>
+<li>In any row, the leading entry is a <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+. 
+</li>
+<li>Any column containing a pivot has zeros for entries everywhere else in the column.
+</li>
+</ol></div><p></p>
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">2</span>..<span class="arabic">3</span></b> &nbsp; 
+<i>If a matrix has the first two properties, it is in <span  class="textbf">row echelon form</span><a name="3959"></a>.</i></div><p></p>
+
+<p>
+Once we have a few examples these definitions will not seem so daunting.
+<br>
+<br>
+<IMG
+ WIDTH="372" HEIGHT="58" ALIGN="BOTTOM" BORDER="0"
+ SRC="img493.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+... &amp; 0 &amp; 0 &amp; 1 &amp; 2
+\end{array}\right)\end{displaymath}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+Some examples of matrices that are <span  class="textbf">not</span> in reduced row echelon form are
+<br>
+<br>
+<IMG
+ WIDTH="372" HEIGHT="77" ALIGN="BOTTOM" BORDER="0"
+ SRC="img494.gif"
+ ALT="\begin{picture}(30,4)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+... &amp; 0 &amp; 1 &amp; 0 &amp; 9
+\end{array}\right)\end{displaymath}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+We can see that the example on the left has a <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.gif"
+ ALT="$ 3$"></span>
+ in the column containing
+a leading entry, so this violates condition 4. This matrix is, however, 
+in row echelon form. The example on the right
+violates condition 2 as the leading entry in row 2 is further to the right
+of the leading entry in row 3.
+
+<p>
+Since a field always has a <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ and a <span class="MATH">0</span>
+, we can see that the definition
+of reduced row echelon form will apply to any matrices in any field. Let's look
+at an example<a name="tex2html23"
+  href="#foot3994"><sup><span class="arabic">2</span>.<span class="arabic">1</span></sup></a> of a matrix in the binary field.
+
+<p>
+Recall that the binary field consists solely of the numbers <span class="MATH">0</span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ and
+obeys the same laws of addition and multiplication as do the integers except
+that <span class="MATH"><IMG
+ WIDTH="69" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ 1+1=0$"></span>
+. We will use these scalars to represent logical values (true or false).
+Let's say we have four characters, Larry, Moe, Curly and Shemp. They sometimes
+get into pie fights. We know from past experience that pie fights broke out among the
+four when we had the following conditions:
+
+<ol>
+<li>Both Larry and Shemp have pies.
+</li>
+<li>Only Moe and Curly have pies.
+</li>
+<li>Only Moe doesn't have a pie.
+</li>
+<li>Only Larry doesn't have a pie.
+</li>
+</ol>
+We are interested in finding out who are the pie-throwing fiends who start all
+the trouble. We assume that the first person to throw a pie in one situation was
+also first in every other situation, provided that they had a pie.
+
+<p>
+We will create <!-- MATH
+ $A_{4\times 5}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img496.gif"
+ ALT="$ A_{4\times 5}$"></span>
+ with scalars <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img497.gif"
+ ALT="$ a_{i,j}$"></span>
+ from the binary field. The columns
+of the coefficients will refer to Larry, Moe, Curly and Shemp. 
+In other words, <span class="MATH"><IMG
+ WIDTH="59" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img498.gif"
+ ALT="$ a_{3,1}=1$"></span>
+ means that Larry (column 1)
+has a pie in the third condition (row 3). The last column will
+be used to indicate that a pie fight has started. The variables will indicate
+whether or not a person threw a pie first.
+<br>
+<br>
+<IMG
+ WIDTH="528" HEIGHT="87" ALIGN="BOTTOM" BORDER="0"
+ SRC="img499.gif"
+ ALT="\begin{picture}(34,4)
+\begin{minipage}[lb]{10em}
+\begin{displaymath}\left(\beg...
+...d Shemp have pies, we have a pie fight$\mathstrut$.
+\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+
+<p>
+Now let's use the <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.gif"
+ ALT="$ *$"></span>
+ compositions for the binary field to
+put this matrix in reduced row echelon form. First we add row 1 to row 3 (we
+use Operation 3 to first multiply row 1 by <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ and then add this row to row 3).
+
+<br>
+<IMG
+ WIDTH="528" HEIGHT="87" ALIGN="BOTTOM" BORDER="0"
+ SRC="img499.gif"
+ ALT="\begin{picture}(34,4)
+\begin{minipage}[lb]{10em}
+\begin{displaymath}\left(\beg...
+...d Shemp have pies, we have a pie fight$\mathstrut$.
+\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+<br>
+Then we add row 2 to row 4
+<br>
+<br>
+<IMG
+ WIDTH="514" HEIGHT="87" ALIGN="BOTTOM" BORDER="0"
+ SRC="img500.gif"
+ ALT="\begin{picture}(34,4)
+\begin{minipage}[lb]{10em}
+\begin{displaymath}\left(\begi...
+...an have a pie when no pie fight occurs.$\mathstrut$
+\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+
+<p>
+Our final two row operations would be to add row 3 to row 2 and
+to add row 4 to row 1.
+<br>
+<br>
+<IMG
+ WIDTH="484" HEIGHT="87" ALIGN="BOTTOM" BORDER="0"
+ SRC="img501.gif"
+ ALT="\begin{picture}(34,4)
+\begin{minipage}[lb]{10em}
+\begin{displaymath}\left(\begi...
+...an have a pie when no pie fight occurs.$\mathstrut$
+\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+
+<p>
+We can see from this that pie fights occur only when either Larry 
+(and not Moe) or Moe (and not Larry)
+throw pies first. They are the instigators. 
+If we want to avoid sticky messes, we only have to keep all
+pies from Larry and Moe or, possibly, make sure they both have pies.<a name="tex2html24"
+  href="#foot4058"><sup><span class="arabic">2</span>.<span class="arabic">2</span></sup></a>
+<p>
+This is a trivial example of the use of binary numbers to answer a question
+in logic. Actually just this type of problem occurs in the design
+of circuits and networks (although the problems are enormously
+more complicated and involve solution techniques beyond linear algebra).
+ It is possible for companies to save millions of
+dollars in production costs by identifying the minimum conditions necessary to
+obtain certain results.
+
+<p>
+In each step of the Gauss-Jordan elimination we come up with a new
+matrix. Although they are not the same we say that a matrix is <span  class="textbf">row equivalent</span><a name="4060"></a>
+to another matrix if it is possible to produce one matrix from another using
+a finite number of row operations.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">2</span>.<span class="arabic">3</span></span></big>
+
+<ol>
+<li>Write out a procedure for using row operations to put a matrix
+in reduced row echelon form. You might start with:
+
+<ol type="a">
+<li>Move all zero rows (rows with only <span class="MATH">0</span>
+ in its entries) to the
+bottom of the matrix using Operation (1).
+</li>
+</ol>
+</li>
+<li>For a matrix <!-- MATH
+ $R_{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img502.gif"
+ ALT="$ R_{m\times n}$"></span>
+ in reduced row echelon form and 
+where <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img503.gif"
+ ALT="$ m&gt;n$"></span>
+, what
+is the least number of zero rows that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ can have?
+</li>
+<li>If we had the matrix
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{cc}
+  a &  b    \\
+  c &  d  
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="76" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img505.gif"
+ ALT="$\displaystyle \left(\begin{array}{cc}
+a &amp; b \\
+c &amp; d
+\end{array}\right)$">
+</div><p>
+</p>
+where <!-- MATH
+ $ad-bc\ne 0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="83" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img506.gif"
+ ALT="$ ad-bc\ne 0$"></span>
+, show that the reduced row echelon form is
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{cc}
+  1 &  0    \\
+  0 &  1  
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="75" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img507.gif"
+ ALT="$\displaystyle \left(\begin{array}{cc}
+1 &amp; 0 \\
+0 &amp; 1
+\end{array}\right)$">
+</div><p>
+</p>
+
+<p>
+</li>
+<li>If we had a matrix composed of only nonnegative real numbers, 
+each of whose rows and columns sums to 1, why would such a matrix have 
+to be square?
+<a name="tex2html25"
+  href="#foot4234"><sup><span class="arabic">2</span>.<span class="arabic">3</span></sup></a>
+<p>
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">2</span>.<span class="arabic">3</span></span></big>
+
+<p>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>Put the following matrices in reduced row echelon form. Assume
+that all entries of <!-- MATH
+ $A,B,C\in \mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="87" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img508.gif"
+ ALT="$ A,B,C\in \mathbb{Q}$"></span>
+.
+<br>
+<br>
+<IMG
+ WIDTH="475" HEIGHT="76" ALIGN="BOTTOM" BORDER="0"
+ SRC="img509.gif"
+ ALT="\begin{picture}(30,4)
+\begin{minipage}[rb]{10em}
+\begin{displaymath}A=\left(\be...
+...&amp; 0
+\end{array}\right)\end{displaymath}\smallskip
+\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+</li>
+<li>Use Gauss-Jordan elimination to solve the following systems of equations
+<br>
+<IMG
+ WIDTH="418" HEIGHT="38" ALIGN="BOTTOM" BORDER="0"
+ SRC="img510.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{10em}
+\begin{align*}
+3x - 2y &amp; =25 ...
+...gn*}
+2x - 3y &amp; =25 \\
+9x - 6y &amp; =75
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+</li>
+<li>In regards to the matrices associated with the systems of linear equations in
+the previous problem, what row operations were used to transform the first matrix
+into the second? The second into the third?
+</li>
+<li>Use Lamp to create the binary matrix of the example of the pie fight.
+ To do this click on <span  class="textbf">FIELD</span><a name="4123"></a>
+in the menu bar and select <span  class="textbf">Int Mod P</span>. When it asks for the modulus accept the default, which
+is <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ 2$"></span>
+. Create the matrix as you would for the rational field.
+Send values to the
+Scalar Editor and use the <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img368.gif"
+ ALT="$ +^{-1}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img367.gif"
+ ALT="$ *^{-1}$"></span>
+ buttons to send appropriate values to
+the Operation Editor in order to put the matrix in reduced row echelon form. Can you (3)? Why or why not?
+</li>
+<li>The following problem comes from a Chinese text over 2000 years old. Use Gauss-Jordan elimination
+to solve it.
+<blockquote>
+There are three types of corn, of which three bundles of the first, two of the second, and one
+of the third make 39 measures. Two of the first, three of the second and one of the third make 34 measures.
+And one of the first, two of the second and three of the third make 26 measures. How many measures of corn
+are contained of one bundle of each type?
+
+</blockquote>
+</li>
+</ol>
+
+<p>
+<br><hr><h4>Footnotes</h4>
+<dl>
+<dt><a name="foot3994">... example</a><A
+ HREF="node15.html#tex2html23"><sup><span class="arabic">2</span>.<span class="arabic">1</span></sup></a></dt>
+<dd>A very artificial example with
+a lot of the gory details left out.
+
+</dd>
+<dt><a name="foot4058">... pies.</a><A
+ HREF="node15.html#tex2html24"><sup><span class="arabic">2</span>.<span class="arabic">2</span></sup></a></dt>
+<dd>
+This logic is sometimes referred to as the doctrine of Mutually Assured Destruction.
+
+</dd>
+<dt><a name="foot4234">... square?</a><A
+ HREF="node15.html#tex2html25"><sup><span class="arabic">2</span>.<span class="arabic">3</span></sup></a></dt>
+<dd>In mathematics, especially in probability and combinatorics, such
+a matrix is called a <span  class="textbf">doubly stochastic matrix</span><a name="4072"></a>
+(also called <span  class="textbf">bistochastic</span><a name="4074"></a>). Can you think what just
+a <span  class="textbf">stochastic matrix</span><a name="4076"></a> would be?
+
+</dd>
+</dl>
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html399"
+  href="node16.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html393"
+  href="node12.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html387"
+  href="node14.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html395"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html397"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html400"
+  href="node16.html">Parameters</a>
+<b> Up:</b> <a name="tex2html394"
+  href="node12.html">Row Operations</a>
+<b> Previous:</b> <a name="tex2html388"
+  href="node14.html">Row Operations and Lamp</a>
+ &nbsp; <b>  <a name="tex2html396"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html398"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

@@ -1,0 +1,548 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Electrical Circuits</title>
+<meta name="description" content="Electrical Circuits">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node26.html">
+<link rel="previous" href="node24.html">
+<link rel="up" href="node23.html">
+<link rel="next" href="node26.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html546"
+  href="node26.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html540"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html534"
+  href="node24.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html542"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html544"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html547"
+  href="node26.html">Cryptography</a>
+<b> Up:</b> <a name="tex2html541"
+  href="node23.html">Applications</a>
+<b> Previous:</b> <a name="tex2html535"
+  href="node24.html">Graph Theory and Networks</a>
+ &nbsp; <b>  <a name="tex2html543"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html545"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00720000000000000000">
+Electrical Circuits</a>
+</h1>
+
+<p>
+Analysis of electrical circuits is an extension of the ideas of networks of the previous section. We don't have
+to learn any new mathematics (<span  class="textit">Alas!</span>), just the physical properties of electricity called <span  class="textbf">Kirchhoff's Laws</span>.
+<a name="7920"></a> These laws are usually stated as:
+
+<ol>
+<li>The current flowing into a junction equals the current flowing out of the junction.
+</li>
+<li>The sum of the products of the current and resistance around a closed path is equal to the
+	total voltage in the path.
+</li>
+</ol>
+We have already remarked that the networks we deal with already satisfy the first law. In order to make sense
+of the second law, we need to learn a little bit about electricity and a little more about flow.
+
+<p>
+Flow is a measure of how many things pass or how much of a thing passes through a branch or junction
+during a given interval of time. The number
+of cars per hour which travel along a road or pass through an intersection is a flow. The liters of water
+which makes its way through a tap in a second is a flow. The amount of stocks traded in a day, oil pumped
+through a pipeline in an hour, water down a river in a year, the number of library books
+checked out in a month, ..., flow,flow,flow,flow. The flow of electricity through
+a wire is called the <span  class="textbf">current</span><a name="7924"></a>. It is measured in units called <span  class="textit">amperes</span> (or amp).
+
+<p>
+Flow can (and often does) change with time. Flow may vary in a cyclical way, as it does with electricity when
+we have <span  class="textit">alternating current</span>. If the flow remains a constant (the rate never changes), we have
+<span  class="textit">direct current</span>. The circuits we consider will be direct current networks.
+
+<p>
+Pressure is usually what causes flow. In plumbing, a water pump can be the source of the pressure. 
+In electrical circuits, the source could be a battery. 
+The battery gives a fixed pressure called the <span  class="textbf">voltage</span><a name="7929"></a>. This
+is given in units called <span  class="textit">volts</span>. Pressure in a direct current electrical circuit is applied in 
+a direction. In electrical circuits we say
+that voltage is applied from the negative to the positive (from - to +). In other words, current will
+flow from the negative pole (cathode) of a battery to the positive pole (anode).<a name="tex2html34"
+  href="#foot7931"><sup><span class="arabic">4</span>.<span class="arabic">1</span></sup></a> 
+
+<p>
+Current can be inhibited completely if there are no wires connecting the cathode to the anode of a battery.
+A <span  class="textbf">closed path</span><a name="7933"></a> is a path which connects a vertex back to itself. A closed
+path is also called a <span  class="textbf">loop</span><a name="7935"></a>. If the path is
+open, no current can flow. Current can be partially inhibited by a resistance to its flow. A <span  class="textbf">resistor</span>
+<a name="7937"></a> is a piece of material which converts some of the electricity to heat. Resistance is given in units
+called <span  class="textit">ohms</span>. The voltage measured on each side of a resistor obviously cannot be the same. Since the
+resistor consumes some of the current, we say there is a <span  class="textit">voltage drop</span> across the resistor. Each resistor
+in a circuit produces a voltage drop equal to the product of its resistance and the current that flows through it.
+We write this algebraically as
+<p><!-- MATH
+ \begin{displaymath}
+V=IR
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="59" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img903.gif"
+ ALT="$\displaystyle V=IR$">
+</div><p>
+</p>
+where <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ V$"></span>
+ is voltage, <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img904.gif"
+ ALT="$ I$"></span>
+ is current and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ is resistance. This formula is called Ohm's Law.
+
+<p>
+
+<div align="CENTER"><a name="fig:elec0"></a><a name="7942"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 4.7:</strong>
+A Simple Closed Circuit</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="283" HEIGHT="220" ALIGN="BOTTOM" BORDER="0"
+ SRC="img905.gif"
+ ALT="\includegraphics[width=6.3cm,height=4.9cm]{elec0.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+Figure&nbsp;<a href="#fig:elec0">4.7</a> shows a closed circuit containing one battery and three resistors. The battery is
+drawn as
+
+<div align="CENTER">
+  <div align="CENTER">
+
+</div>  <IMG
+ WIDTH="42" HEIGHT="57" ALIGN="BOTTOM" BORDER="0"
+ SRC="img906.gif"
+ ALT="\includegraphics[width=1.0cm,height=1.3cm]{battery.eps}">
+
+</div>
+
+<p>
+and the resistors are each represented by the symbol
+
+<div align="CENTER">
+  <div align="CENTER">
+
+</div>  <IMG
+ WIDTH="64" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img907.gif"
+ ALT="\includegraphics[width=1.5cm,height=0.4cm]{resistor.eps}">
+
+</div>
+
+<p>
+The current flow is labeled <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img904.gif"
+ ALT="$ I$"></span>
+ and shown by an arc in the clockwise direction.
+We now have enough information to use Kirchhoff's second law to find the current and the voltage drop
+across each resistor.
+
+<p>
+We start by assigning variable names to each of the elements of the circuit. <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ V$"></span>
+ would be the voltage
+induced by the battery so that <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img908.gif"
+ ALT="$ V=45$"></span>
+ volts. Each resistor will be called <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ with a subscript
+indicating its rating in ohms, so that we have <span class="MATH"><IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img909.gif"
+ ALT="$ R_2$"></span>
+,<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img910.gif"
+ ALT="$ R_6$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img911.gif"
+ ALT="$ R_7$"></span>
+. <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img904.gif"
+ ALT="$ I$"></span>
+ will stand for the current
+we will calculate, in amperes. From the second law we can write
+<p><!-- MATH
+ \begin{displaymath}
+V=IR_2+IR_6+IR_7
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="160" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img912.gif"
+ ALT="$\displaystyle V=IR_2+IR_6+IR_7$">
+</div><p>
+</p>
+Plugging in the numbers gives us
+<p><!-- MATH
+ \begin{displaymath}
+45=2I+6I+7I=15I
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="174" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img913.gif"
+ ALT="$\displaystyle 45=2I+6I+7I=15I$">
+</div><p>
+</p>
+so <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img914.gif"
+ ALT="$ I=3$"></span>
+ amp. We can then work back and show that the voltage drop across <span class="MATH"><IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img909.gif"
+ ALT="$ R_2$"></span>
+, for instance, is
+<!-- MATH
+ $IR_2=3*2=18$
+ -->
+<span class="MATH"><IMG
+ WIDTH="121" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img915.gif"
+ ALT="$ IR_2=3*2=18$"></span>
+ volts. 
+
+<p>
+A more complicated system is given in Figure&nbsp;<a href="#fig:elec1">4.8</a>.
+
+<div align="CENTER"><a name="fig:elec1"></a><a name="7955"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 4.8:</strong>
+Two Batteries and Three Resistors</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="272" HEIGHT="118" ALIGN="BOTTOM" BORDER="0"
+ SRC="img916.gif"
+ ALT="\includegraphics[width=6.0cm,height=2.6cm]{elec1.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+To evaluate this circuit, we start by applying Kirchhoff's first law to junction <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ to get
+<p><!-- MATH
+ \begin{displaymath}
+i_1+i_2=i_3
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="83" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$\displaystyle i_1+i_2=i_3$">
+</div><p>
+</p>
+or
+<p><!-- MATH
+ \begin{displaymath}
+i_1+i_2-i_3=0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="110" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img918.gif"
+ ALT="$\displaystyle i_1 + i_2 - i_3 =0 $">
+</div><p>
+</p>
+Applying the first law to junction <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ will give the same result. We now use the second law
+to write equations for each of the loops. Starting with the left-hand loop, we can observe
+that the battery supplies 4 volts to the loop and the resistors have voltage drops of <span class="MATH"><IMG
+ WIDTH="25" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img919.gif"
+ ALT="$ 2i_1$"></span>
+ and
+<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img920.gif"
+ ALT="$ 2i_3$"></span>
+, since both resistances equal 2 ohms. Therefore we have
+<p><!-- MATH
+ \begin{displaymath}
+4-2i_1-2i_3=0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="121" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img921.gif"
+ ALT="$\displaystyle 4-2i_1-2i_3=0$">
+</div><p>
+</p>
+or
+<p><!-- MATH
+ \begin{displaymath}
+2i_1+2i_3=4
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="94" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img922.gif"
+ ALT="$\displaystyle 2i_1+2i_3=4$">
+</div><p>
+</p>
+For the right-hand loop we have
+<p><!-- MATH
+ \begin{displaymath}
+i_2+2i_3=6
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="86" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img923.gif"
+ ALT="$\displaystyle i_2 + 2i_3 =6 $">
+</div><p>
+</p>
+This gives us a system of linear equations
+<p><!-- MATH
+ \begin{displaymath}
+i_1  +  i_2  -  i_3  =0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="110" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img918.gif"
+ ALT="$\displaystyle i_1 + i_2 - i_3 =0 $">
+</div><p>
+</p>
+  <p><!-- MATH
+ \begin{displaymath}
+2i_1  + 2i_3   =4
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="94" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img922.gif"
+ ALT="$\displaystyle 2i_1+2i_3=4$">
+</div><p>
+</p>
+  <p><!-- MATH
+ \begin{displaymath}
+i_2   +  2i_3  =6
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="86" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img923.gif"
+ ALT="$\displaystyle i_2 + 2i_3 =6 $">
+</div><p>
+</p>
+Using Gauss-Jordan we can then find that <span class="MATH"><IMG
+ WIDTH="46" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img924.gif"
+ ALT="$ i_1=2$"></span>
+ amp, <span class="MATH"><IMG
+ WIDTH="46" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img925.gif"
+ ALT="$ i_2=2$"></span>
+ amp and <span class="MATH"><IMG
+ WIDTH="46" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img926.gif"
+ ALT="$ i_3=2$"></span>
+ amp.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">4</span>.<span class="arabic">2</span></span></big>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>Find the voltage for the battery on the right. (Solve for <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+.)
+
+<div align="CENTER">
+  <div align="CENTER">
+
+</div>  <IMG
+ WIDTH="272" HEIGHT="118" ALIGN="BOTTOM" BORDER="0"
+ SRC="img927.gif"
+ ALT="\includegraphics[width=6.0cm,height=2.6cm]{elec2.eps}">
+
+</div>
+</li>
+<li>Find the currents <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img928.gif"
+ ALT="$ i_1$"></span>
+, <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img929.gif"
+ ALT="$ i_2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img930.gif"
+ ALT="$ i_3$"></span>
+ for the following circuit.
+
+<div align="CENTER">
+  <div align="CENTER">
+
+</div>  <IMG
+ WIDTH="272" HEIGHT="118" ALIGN="BOTTOM" BORDER="0"
+ SRC="img931.gif"
+ ALT="\includegraphics[width=6.0cm,height=2.6cm]{elec3.eps}">
+
+</div>
+</li>
+<li>Find values for all six currents for the following circuit. (<span  class="textbf">HINT</span>:
+	When batteries are connected so that a positive terminal is connected directly
+	to the negative terminal of the second battery, the result is like having one
+	battery with a voltage value equal to the <span  class="textit">sum</span> of the voltages of the two
+	batteries. Connecting two nodes of the same sign would have the opposite effect.)
+
+<div align="CENTER">
+  <div align="CENTER">
+
+</div>  <IMG
+ WIDTH="411" HEIGHT="150" ALIGN="BOTTOM" BORDER="0"
+ SRC="img932.gif"
+ ALT="\includegraphics[width=9.06cm,height=3.3cm]{elec4.eps}">
+
+</div>
+</li>
+</ol>
+
+<p>
+<br><hr><h4>Footnotes</h4>
+<dl>
+<dt><a name="foot7931">... (anode).</a><A
+ HREF="node25.html#tex2html34"><sup><span class="arabic">4</span>.<span class="arabic">1</span></sup></a></dt>
+<dd>The poles
+of batteries are also called terminals or nodes. The fact that we say current flows from the negative
+to the positive is an historical precedent set by Benjamin Franklin.
+
+</dd>
+</dl>
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html546"
+  href="node26.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html540"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html534"
+  href="node24.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html542"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html544"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html547"
+  href="node26.html">Cryptography</a>
+<b> Up:</b> <a name="tex2html541"
+  href="node23.html">Applications</a>
+<b> Previous:</b> <a name="tex2html535"
+  href="node24.html">Graph Theory and Networks</a>
+ &nbsp; <b>  <a name="tex2html543"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html545"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

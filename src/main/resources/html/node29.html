@@ -1,0 +1,665 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Chemical Reactions (Stoichiometry)</title>
+<meta name="description" content="Chemical reactions (Stoichiometry)">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="previous" href="node28.html">
+<link rel="up" href="node23.html">
+<link rel="next" href="node30.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html600"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html594"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html590"
+  href="node28.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html596"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html598"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html601"
+  href="node30.html">Vector Spaces</a>
+<b> Up:</b> <a name="tex2html595"
+  href="node23.html">Applications</a>
+<b> Previous:</b> <a name="tex2html591"
+  href="node28.html">Leontif Economic Models</a>
+ &nbsp; <b>  <a name="tex2html597"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html599"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00760000000000000000">
+Chemical Reactions (Stoichiometry)</a>
+</h1>
+
+<p>
+Chemistry is the branch of science concerning the composition, structure and properties of matter and the 
+transformations that matter undergoes. Stoichiometry (pronounced <span  class="textit">stoy-kee-OM-uh-tree</span>) is the branch of
+chemistry which deals with the quantitative relationships derived from chemical equations and formulas. 
+Ordinary matter is composed of atoms which are conserved in chemical reactions. Atoms may join together to form
+particles called molecules which share certain properties.
+Chemical reactions often involve the
+transformation of different types of molecules. Since the number of atoms are conserved, chemists express
+this equality as balanced equations. An example might be:
+<p><!-- MATH
+ \begin{displaymath}
+2\text{Na} + 2\text{H}_2\text{O} \rightarrow 2\text{NaOH} + \text{H}_2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.gif"
+ ALT="$\displaystyle 2$">Na<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1008.gif"
+ ALT="$\displaystyle + 2$">H<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1009.gif"
+ ALT="$\displaystyle _2 $">O<IMG
+ WIDTH="32" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1010.gif"
+ ALT="$\displaystyle \rightarrow 2$">NaOH<IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img457.gif"
+ ALT="$\displaystyle +$">&nbsp; &nbsp;H<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1009.gif"
+ ALT="$\displaystyle _2 $">
+</div><p>
+</p>
+The balanced equation states that 2 molecules of sodium (Na) mixed with two molecules of water (H<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1011.gif"
+ ALT="$ _2$"></span>
+O) will
+produce 2 molecules of sodium hydroxide (NaOH) and one molecule of hydrogen gas (H<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1011.gif"
+ ALT="$ _2$"></span>
+).
+One molecule of sodium contains one atom of sodium. One molecule of water is composed of 2 atoms of 
+hydrogen (H) for every atom of oxygen (O). The white, caustic sodium hydroxide is made up of one atom each
+of sodium, oxygen and hydrogen. Hydrogen molecules are usually composed of two atoms of hydrogen. We can
+therefore write the balanced equation as a system of linear equations.
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.gif"
+ ALT="$\displaystyle 2$">Na</span></td>
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1008.gif"
+ ALT="$\displaystyle + 2$">H<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1009.gif"
+ ALT="$\displaystyle _2 $">O</span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1012.gif"
+ ALT="$\displaystyle \rightarrow$"></span></td>
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.gif"
+ ALT="$\displaystyle 2$">NaOH</span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img457.gif"
+ ALT="$\displaystyle +$">&nbsp; &nbsp;H<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1009.gif"
+ ALT="$\displaystyle _2 $"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH">Na<IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1013.gif"
+ ALT="$\displaystyle \;\;\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="30" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1014.gif"
+ ALT="$\displaystyle \;\;\; 2\;$"></span></td>
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="62" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1015.gif"
+ ALT="$\displaystyle \;\;\;\;\;\;\;\;\;\;\;\;\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1016.gif"
+ ALT="$\displaystyle =$"></span></td>
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1017.gif"
+ ALT="$\displaystyle 2\;\;\;\;\;\;\;$"></span></td>
+<td>&nbsp;</td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH">H<IMG
+ WIDTH="22" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1018.gif"
+ ALT="$\displaystyle \;\;\;\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="31" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1019.gif"
+ ALT="$\displaystyle \;\;\;\;\;\;$"></span></td>
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="65" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1020.gif"
+ ALT="$\displaystyle \;\;\;\;\;\;\;\;4\;\;\;\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1016.gif"
+ ALT="$\displaystyle =$"></span></td>
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="30" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1021.gif"
+ ALT="$\displaystyle \;\; \;\; 2$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1022.gif"
+ ALT="$\displaystyle + \;2$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH">O<IMG
+ WIDTH="22" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1018.gif"
+ ALT="$\displaystyle \;\;\;\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="31" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1019.gif"
+ ALT="$\displaystyle \;\;\;\;\;\;$"></span></td>
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="65" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1023.gif"
+ ALT="$\displaystyle \;\;\;\;\;\;\;\;\;\; \;2\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1016.gif"
+ ALT="$\displaystyle =$"></span></td>
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1024.gif"
+ ALT="$\displaystyle \;\; \; 2 \;\; \;\;$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+Or, using familiar notation:
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="28" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1025.gif"
+ ALT="$\displaystyle 2x_1$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1026.gif"
+ ALT="$\displaystyle = 2x_3$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="28" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1027.gif"
+ ALT="$\displaystyle 4x_2$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="89" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1028.gif"
+ ALT="$\displaystyle = 2x_3 + 2x_4$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="28" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1029.gif"
+ ALT="$\displaystyle 2x_2$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1030.gif"
+ ALT="$\displaystyle = 2x_4$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+It should be obvious which values of <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x_i$"></span>
+ correspond to which number of molecules.
+
+<p>
+Usually we have an unbalanced equation which we would like to put into a balanced form. For example,
+given the following unbalanced equation:
+<p><!-- MATH
+ \begin{displaymath}
+\text{Cl}_2 + \text{NaBr} \rightarrow \text{Br}_2 + \text{NaCl}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+Cl<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1031.gif"
+ ALT="$\displaystyle _2 +$">&nbsp; &nbsp;NaBr<IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1012.gif"
+ ALT="$\displaystyle \rightarrow$">&nbsp; &nbsp;Br<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1031.gif"
+ ALT="$\displaystyle _2 +$">&nbsp; &nbsp;NaCl<IMG
+ WIDTH="4" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1032.gif"
+ ALT="$\displaystyle $">
+</div><p>
+</p>
+To balance this equation, we assign appropriate <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x_i$"></span>
+ variables and write out the system of
+linear equations. Then we solve the system and write out the balanced equation. We would start with:
+<p><!-- MATH
+ \begin{displaymath}
+x_1\text{Cl}_2 + x_2\text{NaBr} \rightarrow x_3\text{Br}_2 + x_4\text{NaCl}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img537.gif"
+ ALT="$\displaystyle x_1$">Cl<IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1033.gif"
+ ALT="$\displaystyle _2 + x_2$">NaBr<IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1034.gif"
+ ALT="$\displaystyle \rightarrow x_3$">Br<IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1035.gif"
+ ALT="$\displaystyle _2 + x_4$">NaCl<IMG
+ WIDTH="4" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1032.gif"
+ ALT="$\displaystyle $">
+</div><p>
+</p>
+which gives us 
+
+<p>
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH">chlorine (Cl)<IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1036.gif"
+ ALT="$\displaystyle \;\;2x_1$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$\displaystyle = x_4$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH">sodium (Na)<IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1038.gif"
+ ALT="$\displaystyle \;\;x_2$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$\displaystyle = x_4$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH">bromine (Br)<IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1038.gif"
+ ALT="$\displaystyle \;\;x_2$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1026.gif"
+ ALT="$\displaystyle = 2x_3$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+which can also be written:
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="64" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1039.gif"
+ ALT="$\displaystyle 2x_1- x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.gif"
+ ALT="$\displaystyle = 0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1040.gif"
+ ALT="$\displaystyle x_2 -x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.gif"
+ ALT="$\displaystyle = 0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="64" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1041.gif"
+ ALT="$\displaystyle x_2-2x_3$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.gif"
+ ALT="$\displaystyle = 0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+where <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img884.gif"
+ ALT="$ x_1$"></span>
+ is the number of molecules of chlorine, <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1042.gif"
+ ALT="$ x_2$"></span>
+ is the number of molecules of sodium bromide,
+<span class="MATH"><IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img533.gif"
+ ALT="$ x_3$"></span>
+ is the molecules of bromine and <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img534.gif"
+ ALT="$ x_4$"></span>
+ is the molecules of sodium chloride (salt).
+
+<p>
+We write this as an array and solve it using Gauss-Jordan elimination.
+<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{rrrr}
+	2 & 0& 0& -1 \\
+	0 & 1& 0 & -1 \\
+	0 & 1&-2& 0
+\end{array}\right)\text{ which reduces to }\left(
+\begin{array}{rrrr}
+	1 & 0& 0& -\frac{1}{2} \\
+	0 & 1& 0 & -1 \\
+	0 & 0&1& -\frac{1}{2}   	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="410" HEIGHT="74" BORDER="0"
+ SRC="img1043.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{rrrr}
+2 &amp; 0&amp; 0&amp; -1 \\
+0 &amp; 1&amp; 0 &amp; -1 \...
+...
+0 &amp; 1&amp; 0 &amp; -1 \\
+0 &amp; 0&amp;1&amp; -\frac{1}{2}
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+Using a parameter, we let <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1044.gif"
+ ALT="$ t=x_4$"></span>
+ to get <span class="MATH"><IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1045.gif"
+ ALT="$ x_3=2t$"></span>
+, <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1046.gif"
+ ALT="$ x_2=t$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1047.gif"
+ ALT="$ x_1=t$"></span>
+. Since <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img116.gif"
+ ALT="$ t$"></span>
+ is arbitrary, we assign <span class="MATH"><IMG
+ WIDTH="39" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1048.gif"
+ ALT="$ t=2$"></span>
+ and
+get that <span class="MATH"><IMG
+ WIDTH="50" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1049.gif"
+ ALT="$ x_1=1$"></span>
+, <span class="MATH"><IMG
+ WIDTH="50" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1050.gif"
+ ALT="$ x_2=2$"></span>
+, <span class="MATH"><IMG
+ WIDTH="50" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1051.gif"
+ ALT="$ x_3=1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="50" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1052.gif"
+ ALT="$ x_4=2$"></span>
+. This means our balanced equation would be:
+<p><!-- MATH
+ \begin{displaymath}
+\text{Cl}_2 + 2\text{NaBr} \rightarrow \text{Br}_2 + 2\text{NaCl}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+Cl<IMG
+ WIDTH="39" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1053.gif"
+ ALT="$\displaystyle _2 + 2$">NaBr<IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1012.gif"
+ ALT="$\displaystyle \rightarrow$">&nbsp; &nbsp;Br<IMG
+ WIDTH="39" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1053.gif"
+ ALT="$\displaystyle _2 + 2$">NaCl<IMG
+ WIDTH="4" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1032.gif"
+ ALT="$\displaystyle $">
+</div><p>
+</p>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">4</span>.<span class="arabic">6</span></span></big>
+
+<p>
+Balance the given chemical equations for the following exercises.
+
+<ol>
+<li><!-- MATH
+ $\text{CH}_4 +\text{O}_2 \rightarrow \text{CO}_2 + \text{H}_2\text{O}$
+ -->
+<span class="MATH">CH<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1054.gif"
+ ALT="$ _4 +$">O<IMG
+ WIDTH="32" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1055.gif"
+ ALT="$ _2 \rightarrow$">&nbsp; &nbsp;CO<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1056.gif"
+ ALT="$ _2 +$">&nbsp; &nbsp;H<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1011.gif"
+ ALT="$ _2$">O</span>
+
+</li>
+<li><!-- MATH
+ $\text{Al}_2(\text{SO}_4)_3 \rightarrow \text{AlCl}_3 + \text{CaSO}_4$
+ -->
+<span class="MATH">Al<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1057.gif"
+ ALT="$ _2($">SO<IMG
+ WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1058.gif"
+ ALT="$ _4)_3 \rightarrow$">&nbsp; &nbsp;AlCl<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1059.gif"
+ ALT="$ _3 +$">&nbsp; &nbsp;CaSO<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1060.gif"
+ ALT="$ _4$"></span>
+
+</li>
+<li><!-- MATH
+ $\text{ZnS} + \text{O}_2 \rightarrow \text{ZnO} + \text{SO}_2$
+ -->
+<span class="MATH">ZnS<IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$">&nbsp; &nbsp;O<IMG
+ WIDTH="32" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1055.gif"
+ ALT="$ _2 \rightarrow$">&nbsp; &nbsp;ZnO<IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$">&nbsp; &nbsp;SO<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1011.gif"
+ ALT="$ _2$"></span>
+
+</li>
+<li><!-- MATH
+ $\text{Ba}(\text{OH})_2 + \text{CO}_2 \rightarrow \text{BaCO}_3 + \text{H}_2\text{O}$
+ -->
+<span class="MATH">Ba<IMG
+ WIDTH="10" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1061.gif"
+ ALT="$ ($">OH<IMG
+ WIDTH="30" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1062.gif"
+ ALT="$ )_2 +$">&nbsp; &nbsp;CO<IMG
+ WIDTH="32" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1055.gif"
+ ALT="$ _2 \rightarrow$">&nbsp; &nbsp;BaCO<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1059.gif"
+ ALT="$ _3 +$">&nbsp; &nbsp;H<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1011.gif"
+ ALT="$ _2$">O</span>
+
+</li>
+<li><!-- MATH
+ $\text{HI} + \text{KMnO}_4 + \text{H}_2\text{SO}_4 \rightarrow \text{I}_2 + \text{MnSO}_4 + \text{K}_2\text{SO}_4 + \text{H}_2\text{O}$
+ -->
+<span class="MATH">HI<IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$">&nbsp; &nbsp;KMnO<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1054.gif"
+ ALT="$ _4 +$">&nbsp; &nbsp;H<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1011.gif"
+ ALT="$ _2$">SO<IMG
+ WIDTH="32" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1063.gif"
+ ALT="$ _4 \rightarrow$">&nbsp; &nbsp;I<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1056.gif"
+ ALT="$ _2 +$">&nbsp; &nbsp;MnSO<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1054.gif"
+ ALT="$ _4 +$">&nbsp; &nbsp;K<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1011.gif"
+ ALT="$ _2$">SO<IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1054.gif"
+ ALT="$ _4 +$">&nbsp; &nbsp;H<IMG
+ WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1011.gif"
+ ALT="$ _2$">O</span>
+
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html600"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html594"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html590"
+  href="node28.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html596"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html598"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html601"
+  href="node30.html">Vector Spaces</a>
+<b> Up:</b> <a name="tex2html595"
+  href="node23.html">Applications</a>
+<b> Previous:</b> <a name="tex2html591"
+  href="node28.html">Leontif Economic Models</a>
+ &nbsp; <b>  <a name="tex2html597"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html599"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

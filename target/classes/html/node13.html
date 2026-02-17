@@ -1,0 +1,726 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Gauss-Jordan Elimination</title>
+<meta name="description" content="Gauss-Jordan Elimination">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node14.html">
+<link rel="previous" href="node12.html">
+<link rel="up" href="node12.html">
+<link rel="next" href="node14.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html371"
+  href="node14.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html365"
+  href="node12.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html359"
+  href="node12.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html367"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html369"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html372"
+  href="node14.html">Row Operations and Lamp</a>
+<b> Up:</b> <a name="tex2html366"
+  href="node12.html">Row Operations</a>
+<b> Previous:</b> <a name="tex2html360"
+  href="node12.html">Row Operations</a>
+ &nbsp; <b>  <a name="tex2html368"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html370"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00510000000000000000">
+Gauss-Jordan Elimination</a>
+</h1>
+
+<p>
+As we have seen, a linear equation can be represented as a matrix
+of one row. A system of equations can be written as a matrix with
+as many rows as there are equations. For example:
+  <p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="92" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img450.gif"
+ ALT="$\displaystyle 5x + 2y + 2z$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img451.gif"
+ ALT="$\displaystyle =14$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="34" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img452.gif"
+ ALT="$\displaystyle 4x -$">&nbsp; &nbsp;&nbsp;&nbsp;<IMG
+ WIDTH="25" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img453.gif"
+ ALT="$\displaystyle y +$">&nbsp; &nbsp;&nbsp;&nbsp;<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img454.gif"
+ ALT="$\displaystyle z$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img455.gif"
+ ALT="$\displaystyle =12$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="21" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img456.gif"
+ ALT="$\displaystyle 3x$">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img457.gif"
+ ALT="$\displaystyle +$">&nbsp; &nbsp;&nbsp;&nbsp;<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img454.gif"
+ ALT="$\displaystyle z$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img458.gif"
+ ALT="$\displaystyle =9$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+could be written as
+  <p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrr}
+  5 &  2 & 2 & 14 \\
+  4 & -1 & 1 & 12 \\
+  3 &  0 & 1 &  9
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="148" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img459.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrr}
+5 &amp; 2 &amp; 2 &amp; 14 \\
+4 &amp; -1 &amp; 1 &amp; 12 \\
+3 &amp; 0 &amp; 1 &amp; 9
+\end{array}\right)$">
+</div><p>
+</p>
+Here the first column refers to the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ coefficients, the second column to the
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ coefficients, the third to the <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ z$"></span>
+ coefficients and the fourth to constant terms.
+
+<p>
+We would call a matrix made up of the first three columns a <span  class="textbf">coefficient matrix</span><a name="3594"></a> and
+the matrix made up of just the last column a <span  class="textbf">matrix of constant terms</span><a name="3596"></a>.
+
+<p>
+A general system of <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+ equations in <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ variables,
+  <p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="219" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img460.gif"
+ ALT="$\displaystyle a_{1,1}x_1 + \; a_{1,2}x_2 + \cdots + \; a_{1,n}x_n$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.gif"
+ ALT="$\displaystyle =b_1$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="219" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img462.gif"
+ ALT="$\displaystyle a_{2,1}x_1 + \; a_{2,2}x_2 + \cdots + \; a_{2,n}x_n$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img463.gif"
+ ALT="$\displaystyle =b_2$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="204" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.gif"
+ ALT="$\displaystyle \vdots \qquad \qquad \qquad \qquad \qquad \vdots \qquad$"></span></td>
+<td>&nbsp;</td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="225" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img465.gif"
+ ALT="$\displaystyle a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img466.gif"
+ ALT="$\displaystyle =b_m$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+is written as a <!-- MATH
+ $m \; \times \; (n+1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="96" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img467.gif"
+ ALT="$ m \; \times \; (n+1)$"></span>
+ matrix
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccccc}
+ a_{1,1} & a_{1,2} & \cdots & a_{1,n} & b_1 \\
+ a_{2,1} & a_{2,2} & \cdots & a_{2,n} & b_2 \\
+ \vdots &  &  &  & \vdots \\
+ a_{m,1} & a_{m,2} & \cdots & a_{m,n} & b_m \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="245" HEIGHT="102" ALIGN="MIDDLE" BORDER="0"
+ SRC="img468.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccccc}
+a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} ...
+...&amp; &amp; &amp; \vdots \\
+a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n} &amp; b_m \end{array}\right)$">
+</div><p>
+</p>
+
+<p>
+By simply making sure that coefficients for each variable are entered
+only in the column assigned to that variable we save a lot of writing. This is
+not the only good reason to do this. It also makes it much easier to perform
+the algebraic operations needed to solve a system of equations. We do this
+by defining <span  class="textbf">row operations</span><a name="3622"></a>.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">2</span>..<span class="arabic">1</span></b> &nbsp; 
+<i><span  class="textbf">Row Operations</span>
+</i><dl>
+<dt><strong>Operation (1)</strong></dt>
+<dd>Interchange any two rows.
+</dd>
+<dt><strong>Operation (2)</strong></dt>
+<dd>Multiply all entries in a row by a nonzero scalar.
+</dd>
+<dt><strong>Operation (3)</strong></dt>
+<dd>Add a multiple of one row to another row.
+</dd>
+</dl></div><p></p>
+We give some examples of these operations and show how they affect the corresponding 
+system of linear equations.
+<br>
+ 
+<br>
+<IMG
+ WIDTH="375" HEIGHT="69" ALIGN="BOTTOM" BORDER="0"
+ SRC="img469.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...
+4x - y + z &amp; =12 \\
+3x + z &amp; =9 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+We apply Operation (1) to row 1 and row 2.
+<br>
+<br>
+<IMG
+ WIDTH="375" HEIGHT="69" ALIGN="BOTTOM" BORDER="0"
+ SRC="img470.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...5x + 2y + 2z &amp; =14 \\
+3x + z &amp; =9 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+We demonstrate Operation (2) by multiplying across the
+third row by <!-- MATH
+ $\frac{1}{3}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.gif"
+ ALT="$ \frac{1}{3}$"></span>
+.
+<br>
+<br>
+<IMG
+ WIDTH="376" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img471.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...x + 2y + 2z &amp; =14 \\
+x + z/3 &amp; =3 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+We show Operation (3) by multiplying row 1 by <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ -1$"></span>
+ and adding it to row 2. 
+<span  class="textit">Note that we do <span  class="textbf">not</span> change row 1.</span>
+<br>
+<br>
+<IMG
+ WIDTH="367" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img472.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...
+x + 3y + z &amp; =2 \\
+x + z/3 &amp; =3 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+We will continue using row operations until we have the matrix of coefficients
+(the first three columns of our matrix) in the form:
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccc}
+  1 &  0 & 0 \\
+  0 &  1 & 0 \\
+  0 &  0 & 1
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="104" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img473.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}\right)$">
+</div><p>
+</p>
+One way to proceed would be to use Operation (2) and multiply
+row 1 by <!-- MATH
+ $\frac{1}{4}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img474.gif"
+ ALT="$ \frac{1}{4}$"></span>
+.
+<br>
+<br>
+<IMG
+ WIDTH="372" HEIGHT="71" ALIGN="BOTTOM" BORDER="0"
+ SRC="img475.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...
+x + 3y + z &amp; =2 \\
+x + z/3 &amp; =3 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+Now we will use Operation (3) again to add <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ -1$"></span>
+ times row 1 to row 3.
+<br>
+<br>
+<IMG
+ WIDTH="375" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img476.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+... + 3y + z &amp; =2 \\
+y/4 + z/12 &amp; =0 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+And then we'll add <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ -1$"></span>
+ times row 1 to row 2.
+<br>
+<br>
+<IMG
+ WIDTH="386" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img477.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...4 + 3z/4 &amp; =-1 \\
+y/4 + z/12 &amp; =0 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+Let's add row 3 to row 1 (we are using Operation (3) and multiplying
+row 3 by 1 before we add it).
+<br>
+<br>
+<IMG
+ WIDTH="382" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img478.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...4 + 3z/4 &amp; =-1 \\
+y/4 + z/12 &amp; =0 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+Then use Operation (2) to get a <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ in column 2 of row 3 by
+multiplying by <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.gif"
+ ALT="$ 4$"></span>
+.
+<br>
+<br>
+<IMG
+ WIDTH="379" HEIGHT="71" ALIGN="BOTTOM" BORDER="0"
+ SRC="img479.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...3y/4 + 3z/4 &amp; =-1 \\
+y + z/3 &amp; =0 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+Now we use Operation (3) and add <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img480.gif"
+ ALT="$ -3$"></span>
+ times row 3 to
+row 2.
+<br>
+<br>
+<IMG
+ WIDTH="369" HEIGHT="71" ALIGN="BOTTOM" BORDER="0"
+ SRC="img481.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...
+y/4 - z/4 &amp; =-1 \\
+y + z/3 &amp; =0 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+Now multiply row 2 by <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.gif"
+ ALT="$ 4$"></span>
+ (Operation (2)).
+<br>
+<br>
+<IMG
+ WIDTH="361" HEIGHT="71" ALIGN="BOTTOM" BORDER="0"
+ SRC="img482.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+... \\
+y - z &amp; =-4 \\
+y + z/3 &amp; =0 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+Now subtract row 2 from row 3 (i.e. multiply row 2 by <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ -1$"></span>
+ and add it
+to row 3).
+<br>
+<br>
+<IMG
+ WIDTH="361" HEIGHT="71" ALIGN="BOTTOM" BORDER="0"
+ SRC="img483.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+... =3 \\
+y - z &amp; =-4 \\
+4z/3 &amp; =4 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+Multiply row 3 by <!-- MATH
+ $\frac{3}{4}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.gif"
+ ALT="$ \frac{3}{4}$"></span>
+
+<br>
+<br>
+<IMG
+ WIDTH="361" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img484.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...3 &amp; =3 \\
+y - z &amp; =-4 \\
+z &amp; =3 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+Add row 3 to row 2
+<br>
+<br>
+<IMG
+ WIDTH="355" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img485.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...+ z/3 &amp; =3 \\
+y &amp; =-1 \\
+z &amp; =3 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+Finally, multiply row 3 by <!-- MATH
+ $\frac{-1}{3}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img486.gif"
+ ALT="$ \frac{-1}{3}$"></span>
+ and add it to row 1.
+<br>
+<br>
+<IMG
+ WIDTH="333" HEIGHT="69" ALIGN="BOTTOM" BORDER="0"
+ SRC="img487.gif"
+ ALT="\begin{picture}(30,3)
+\begin{minipage}[lb]{15em}
+\begin{displaymath}\left(\begin...
+...
+x &amp; = 2 \\
+y &amp; =-1 \\
+z &amp; = 3 \\
+\end{align*}\end{minipage}\end{picture}">
+<br>
+<br>
+<br>
+<br>
+
+<p>
+We can see that by using the row operations we have solved the system of
+equations. We check this by trying these values in our original
+equations 
+<p><!-- MATH
+ \begin{displaymath}
+5*(2)+2*(-1)+2*(3)=10-2+6=14
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="314" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img488.gif"
+ ALT="$\displaystyle 5*(2)+2*(-1)+2*(3)=10-2+6=14$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+4*2-(-1)+(3)=8+1+3=12
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="248" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img489.gif"
+ ALT="$\displaystyle 4*2-(-1)+(3)=8+1+3=12$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+3*(2)+(3)=6+3=9
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="173" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img490.gif"
+ ALT="$\displaystyle 3*(2)+(3)=6+3=9$">
+</div><p>
+</p>
+
+<p>
+Which row operations we use to follow this procedure (called <span  class="textbf">Gauss-Jordan elimination</span>)
+<a name="3937"></a>
+is mostly a matter of taste. We usually try and pick the row operations to perform that
+will minimize the amount of calculation we need to do.
+ The preceding example could certainly have been done with fewer row operations.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">2</span>.<span class="arabic">1</span></span></big>
+
+<ol>
+<li>We don't really need three row operations. Operation (1), where we interchange two
+rows, could be replaced by applying the two other row operations. Show that this is true.
+</li>
+<li>In Chapter 1 we talked about postfix notation. If we let integer numbers represent
+rows and use the binary operation symbol <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img491.gif"
+ ALT="$ \oplus$"></span>
+ to mean matrix (row) addition, use the
+result of the previous problem to invent a postfix notation to represent row operations.
+</li>
+</ol>
+
+<p>
+
+\ex
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+\begin{enumerate}
+\item See the next section for exercises based on this chapter.
+\end{enumerate}
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html371"
+  href="node14.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html365"
+  href="node12.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html359"
+  href="node12.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html367"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html369"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html372"
+  href="node14.html">Row Operations and Lamp</a>
+<b> Up:</b> <a name="tex2html366"
+  href="node12.html">Row Operations</a>
+<b> Previous:</b> <a name="tex2html360"
+  href="node12.html">Row Operations</a>
+ &nbsp; <b>  <a name="tex2html368"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html370"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

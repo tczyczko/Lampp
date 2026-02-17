@@ -1,0 +1,1037 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Linear Equations</title>
+<meta name="description" content="Linear Equations">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node9.html">
+<link rel="previous" href="node7.html">
+<link rel="up" href="node4.html">
+<link rel="next" href="node9.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html299"
+  href="node9.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html293"
+  href="node4.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html287"
+  href="node7.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html295"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html297"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html300"
+  href="node9.html">Using Lamp to Graph</a>
+<b> Up:</b> <a name="tex2html294"
+  href="node4.html">Matrices and Analytic Geometry</a>
+<b> Previous:</b> <a name="tex2html288"
+  href="node7.html">Fields</a>
+ &nbsp; <b>  <a name="tex2html296"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html298"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00440000000000000000">
+Linear Equations</a>
+</h1>
+
+<p>
+<span  class="textbf">NOTE: Unless stated otherwise, all examples, exercises and problems in this text
+can be thought of as consisting of scalars from the rational or real fields.</span>
+
+<p>
+<br>
+In this section we will put together what we learned about matrices and fields with some
+concepts of algebraic geometry.
+
+<p>
+The equation
+<p><!-- MATH
+ \begin{displaymath}
+ax+by=c
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.gif"
+ ALT="$\displaystyle ax+by=c$">
+</div><p>
+</p>
+is called a <span  class="textbf">linear equation</span><a name="669"></a> in two variables. The variables are <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+, one of which
+must not equal zero.
+ The <span  class="textbf">constants</span> are <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+,<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+. They represent numbers (scalars)<a name="671"></a>
+<a name="672"></a> that do not change.
+Some examples are:
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+2x+3y=3
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="86" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.gif"
+ ALT="$\displaystyle 2x+3y=3$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+x+y=2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.gif"
+ ALT="$\displaystyle x+y=2$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+y=-1
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="54" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.gif"
+ ALT="$\displaystyle y=-1$">
+</div><p>
+</p>
+In the first example, <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img300.gif"
+ ALT="$ a=2$"></span>
+, <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img301.gif"
+ ALT="$ b=3$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img302.gif"
+ ALT="$ c=3$"></span>
+. In the second example, <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img303.gif"
+ ALT="$ a=1$"></span>
+, <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img304.gif"
+ ALT="$ b=1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img305.gif"
+ ALT="$ c=2$"></span>
+.
+The third example has <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img306.gif"
+ ALT="$ a=0$"></span>
+, <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img304.gif"
+ ALT="$ b=1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="53" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img307.gif"
+ ALT="$ c=-1$"></span>
+. The variables <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ represent all scalars
+which make the equations true. In the second example, if <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img308.gif"
+ ALT="$ x=1$"></span>
+ then <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.gif"
+ ALT="$ y=1$"></span>
+. If <!-- MATH
+ $x=\frac{1}{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.gif"
+ ALT="$ x=\frac{1}{2}$"></span>
+ then
+<!-- MATH
+ $y=\frac{3}{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img311.gif"
+ ALT="$ y=\frac{3}{2}$"></span>
+. We can see that the solutions for these equations involve distinct pairs of
+scalars.
+
+<p>
+In geometry, all the scalars are real numbers. We write that <!-- MATH
+ $x,y,a,b,c\in \mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="103" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img312.gif"
+ ALT="$ x,y,a,b,c\in \mathbb{R}$"></span>
+.
+Furthermore, geometrically, a linear equation represents a straight line in the plane. The variables
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ refer to the two <span  class="textbf">coordinates</span> of the plane. We write <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$ (x,y)$"></span>
+ to
+refer to a particular point on the plane. The variable <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+, the <!-- MATH
+ $\mathbf{x}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ \mathbf{x}$"></span>
+<span  class="textbf">-coordinate</span>,
+ refers to the horizontal
+position of a point. The variable <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+, the <!-- MATH
+ $\mathbf{y}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img315.gif"
+ ALT="$ \mathbf{y}$"></span>
+<span  class="textbf">-coordinate</span>, refers to 
+the vertical position. 
+This is very similar to the way we refer to entries
+in matrices using row and column indices. The difference is that <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ refer to
+real numbers. Indices only use the counting numbers <!-- MATH
+ $1,2,3,\ldots$
+ -->
+<span class="MATH"><IMG
+ WIDTH="68" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.gif"
+ ALT="$ 1,2,3,\ldots$"></span>
+ or the integers (<!-- MATH
+ $\mathbb{Z}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img98.gif"
+ ALT="$ \mathbb{Z}$"></span>
+).
+
+<p>
+All the pairs of scalars which are solutions for a linear equation are called the <span  class="textbf">graph</span><a name="683"></a> of
+the linear equation. We draw graphs of linear equations by putting in as many points as we need so
+that we might distinguish one equation from any other. Some examples of drawings of graphs are given below.
+(Even though it's not technically accurate, from now on we'll use the word <span  class="textit">graph</span> to mean 
+the drawing of a graph.)
+
+<p>
+
+<div align="CENTER"><a name="fig:figure1"></a><a name="1015"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.3:</strong>
+ <span class="MATH"><IMG
+ WIDTH="86" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ 2x+3y=3$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="340" HEIGHT="340" ALIGN="BOTTOM" BORDER="0"
+ SRC="img317.gif"
+ ALT="\includegraphics[width=3in,height=3in]{Figure1.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+
+<div align="CENTER"><a name="fig:figure2"></a><a name="1016"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.4:</strong>
+ <span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ x+y=2$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="340" HEIGHT="339" ALIGN="BOTTOM" BORDER="0"
+ SRC="img318.gif"
+ ALT="\includegraphics[width=3in,height=3in]{Figure2.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+
+<div align="CENTER"><a name="fig:figure3"></a><a name="1017"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.5:</strong>
+ <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y=-1$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="340" HEIGHT="340" ALIGN="BOTTOM" BORDER="0"
+ SRC="img319.gif"
+ ALT="\includegraphics[width=3in,height=3in]{Figure3.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+The graph<a name="700"></a> in Figure&nbsp;<a href="#fig:figure1">1.3</a> on Page&nbsp;<a href="node8.html#fig:figure1"><img  align="BOTTOM" border="1" alt="[*]" src="crossref.gif"></a> represents a
+plane with the line
+formed by the linear equation <span class="MATH"><IMG
+ WIDTH="86" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ 2x+3y=3$"></span>
+. The vertical line labeled <!-- MATH
+ $\mathbf{y}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img315.gif"
+ ALT="$ \mathbf{y}$"></span>
+ is called
+the <span  class="textbf"><span  class="textit">y</span>-axis</span>. Similarly the horizontal line labeled <span  class="textbf"><span  class="textit">x</span></span> is
+called the <span  class="textbf"><span  class="textit">x</span>-axis</span>. In order to draw the line we have to use
+a few of the algebraic properties of the real number field.
+
+<p>
+We want the variable <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ to be alone on the left side of the equation.
+So first we subtract <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img320.gif"
+ ALT="$ 2x$"></span>
+ from both sides.
+<p><!-- MATH
+ \begin{displaymath}
+(-2x)+2x+3y=(-2x)+3
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="209" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img321.gif"
+ ALT="$\displaystyle (-2x)+2x+3y=(-2x)+3$">
+</div><p>
+</p>
+This gives us
+<p><!-- MATH
+ \begin{displaymath}
+3y=-2x+3
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="99" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.gif"
+ ALT="$\displaystyle 3y=-2x+3$">
+</div><p>
+</p>
+Then we multiply both sides by <!-- MATH
+ $\frac{1}{3}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.gif"
+ ALT="$ \frac{1}{3}$"></span>
+.
+<p><!-- MATH
+ \begin{displaymath}
+\frac{1}{3}*3y=\frac{1}{3}*(-2)x+\frac{1}{3}*3
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="191" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img324.gif"
+ ALT="$\displaystyle \frac{1}{3}*3y=\frac{1}{3}*(-2)x+\frac{1}{3}*3$">
+</div><p>
+</p>
+Notice that we had to use the distributive law on the right side of the equation.
+This allows us to finally write
+<p><!-- MATH
+ \begin{displaymath}
+y=\frac{-2}{3}x+1
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="94" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.gif"
+ ALT="$\displaystyle y=\frac{-2}{3}x+1$">
+</div><p>
+</p>
+
+<p>
+Putting the equation in this form makes it easier to compute a <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ value
+for a given <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ (we call this <span  class="textbf">solving for <span  class="textit">y</span></span>).
+ For instance, let <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img326.gif"
+ ALT="$ x=0$"></span>
+. Then <!-- MATH
+ $y=\frac{-2}{3}*0+1=0+1=1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="190" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.gif"
+ ALT="$ y=\frac{-2}{3}*0+1=0+1=1$"></span>
+.
+We can see that the point <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.gif"
+ ALT="$ (0,1)$"></span>
+ is on the graph of the equation. This point is
+called the <span  class="textbf"><span  class="textit">y</span>-intercept</span> of the equation because it is where
+the line cuts the <span  class="textit">y</span>-axis.
+
+<p>
+As you may have already surmised, there is also an <span  class="textbf"><span  class="textit">x</span>-intercept</span>. We
+let <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.gif"
+ ALT="$ y=0$"></span>
+ and solve either the original equation <span class="MATH"><IMG
+ WIDTH="86" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ 2x+3y=3$"></span>
+ or the altered form
+<!-- MATH
+ $y=\frac{-2}{3}x+1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.gif"
+ ALT="$ y=\frac{-2}{3}x+1$"></span>
+. Let's stick <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.gif"
+ ALT="$ y=0$"></span>
+ into the original equation.
+<p><!-- MATH
+ \begin{displaymath}
+2x+3(0)=3
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="98" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img331.gif"
+ ALT="$\displaystyle 2x+3(0)=3$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+2x=3
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="50" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img332.gif"
+ ALT="$\displaystyle 2x=3$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+x=\frac{3}{2}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="46" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img333.gif"
+ ALT="$\displaystyle x=\frac{3}{2}$">
+</div><p>
+</p>
+So the point <!-- MATH
+ $(\frac{3}{2},0)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.gif"
+ ALT="$ (\frac{3}{2},0)$"></span>
+ is the <span  class="textit">x</span>-intercept of the line. 
+
+<p>
+In order to draw a graph we first draw the <span  class="textit">x</span> and <span  class="textit">y</span> axes (the plural of axis),
+mark the points and place a ruler lined up against them to draw the line. (Or we can use
+software to do it for us, which we will do with Lamp).
+
+<p>
+Instead of writing <span class="MATH"><IMG
+ WIDTH="86" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ 2x+3y=3$"></span>
+ we could just write <!-- MATH
+ $\left( \begin{array}{ccc}2& 3& 3\end{array}\right)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.gif"
+ ALT="$ \left( \begin{array}{ccc}2&amp; 3&amp; 3\end{array}\right)$"></span>
+.
+In other words, we have a matrix with one row and three columns. All we need to keep in mind
+is that for a linear equation <span class="MATH"><IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.gif"
+ ALT="$ ax+by=c$"></span>
+, the first column would refer to <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and the second to <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+.
+The matrix <!-- MATH
+ $\left( \begin{array}{ccc}a & b & c\end{array}\right)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.gif"
+ ALT="$ \left( \begin{array}{ccc}a &amp; b &amp; c\end{array}\right)$"></span>
+ would be another way
+of representing a linear equation. (The constants <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+ are often referred to as the
+<span  class="textbf">coefficients</span> of the linear equation and the constant <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+ is called a <span  class="textbf">constant term</span>.
+The symbols <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ represent the variables.)
+
+<p>
+Of course we are not limited to two variables. A linear equation in <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ variables <!-- MATH
+ $x_1,x_2,\ldots,x_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="97" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.gif"
+ ALT="$ x_1,x_2,\ldots,x_n$"></span>
+ is
+an equation that can be written in the form
+<p><!-- MATH
+ \begin{displaymath}
+a_1x_1+a_2x_2+\cdots +a_nx_n=b
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="207" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.gif"
+ ALT="$\displaystyle a_1x_1+a_2x_2+\cdots +a_nx_n=b$">
+</div><p>
+</p>
+where <!-- MATH
+ $a_1,a_2,\ldots ,a_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="95" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.gif"
+ ALT="$ a_1,a_2,\ldots ,a_n$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+ are scalars of a field. We would write this in matrix form as
+<!-- MATH
+ $\left( \begin{array}{cccccc}a_1 & a_2 & a_3 & \cdots & a_n & b\end{array}\right)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="206" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.gif"
+ ALT="$ \left( \begin{array}{cccccc}a_1 &amp; a_2 &amp; a_3 &amp; \cdots &amp; a_n &amp; b\end{array}\right)$"></span>
+. A solution of 
+this equation would
+be a collection of scalars <!-- MATH
+ $s_1,s_2,\ldots ,s_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.gif"
+ ALT="$ s_1,s_2,\ldots ,s_n$"></span>
+ that makes the equation true. That is:
+<p><!-- MATH
+ \begin{displaymath}
+a_1 s_1+a_2 s_2 +\cdots +a_n s_n=b
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="203" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.gif"
+ ALT="$\displaystyle a_1 s_1+a_2 s_2 +\cdots +a_n s_n=b$">
+</div><p>
+</p>
+
+<p>
+We will see shortly that this method of representing linear equations is very useful. First, however,
+we will learn to use Lamp to graph lines and become familiar with this representation.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">1</span>.<span class="arabic">4</span></span></big>
+<div align="CENTER">
+</div>
+<div align="CENTER"><a name="fig:figure4"></a><a name="746"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.6:</strong>
+ <!-- MATH
+ $x^2+y^2=z^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ x^2+y^2=z^2$"></span>
+ </caption>
+<tr><td><IMG
+ WIDTH="259" HEIGHT="180" ALIGN="BOTTOM" BORDER="0"
+ SRC="img344.gif"
+ ALT="\includegraphics[width=5.74cm,height=4.00cm]{figure4.eps}"></td></tr>
+</table>
+</div>
+<div align="CENTER">
+</div>
+<ol>
+<li>Suppose we have a linear equation <span class="MATH"><IMG
+ WIDTH="84" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.gif"
+ ALT="$ ax+by=c$"></span>
+ where all the coefficients, variables and the constant
+are scalars from the rational number system. We could also draw the graph of such an equation.
+However, not all numbers on the line would be represented. One such number was discovered by
+ancient Greeks when they studied the size of the diagonal of a <span  class="textbf">unit</span> square (a square
+with sides one unit long). They already knew that the length of the
+ <span  class="textbf">diagonal</span>  of a <span  class="textbf">rectangle</span>
+ was related to the length of its 
+sides using the famous theorem of <span  class="textbf">Pythagoras</span><a name="754"></a>
+ which says that <!-- MATH
+ $x^2+y^2=z^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ x^2+y^2=z^2$"></span>
+ (see Figure&nbsp;<a href="#fig:figure4">1.6</a>).
+In other words, if <span class="MATH"><IMG
+ WIDTH="72" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.gif"
+ ALT="$ x=y=1$"></span>
+ then <span class="MATH"><IMG
+ WIDTH="105" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.gif"
+ ALT="$ z^2=1+1=2$"></span>
+. (Since <span class="MATH"><IMG
+ WIDTH="65" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img347.gif"
+ ALT="$ z*z=2$"></span>
+ we say that <!-- MATH
+ $z=\sqrt{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.gif"
+ ALT="$ z=\sqrt{2}$"></span>
+.)
+If the ratio of the diagonal to a side of a unit square was a rational
+number <!-- MATH
+ $\frac{m}{n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.gif"
+ ALT="$ \frac{m}{n}$"></span>
+ in its lowest form, we would have 
+<p><!-- MATH
+ \begin{displaymath}
+\frac{m^2}{n^2}=2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="58" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.gif"
+ ALT="$\displaystyle \frac{m^2}{n^2}=2$">
+</div><p>
+</p>
+or that 
+<p><!-- MATH
+ \begin{displaymath}
+m^2=2n^2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="71" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.gif"
+ ALT="$\displaystyle m^2=2n^2$">
+</div><p>
+</p>
+This would mean that <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+ is <span  class="textbf">even</span> (divisible by <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ 2$"></span>
+). This means we could say that
+<p><!-- MATH
+ \begin{displaymath}
+m=2p
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.gif"
+ ALT="$\displaystyle m=2p$">
+</div><p>
+</p>
+and that 
+<p><!-- MATH
+ \begin{displaymath}
+2n^2=m^2=4p^2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="115" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.gif"
+ ALT="$\displaystyle 2n^2=m^2=4p^2$">
+</div><p>
+</p>
+and ultimately
+<p><!-- MATH
+ \begin{displaymath}
+n^2=2p^2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="65" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.gif"
+ ALT="$\displaystyle n^2=2p^2$">
+</div><p>
+</p>
+This means that <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ is divisible by <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img59.gif"
+ ALT="$ 2$"></span>
+. However, we assumed that <!-- MATH
+ $\frac{m}{n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.gif"
+ ALT="$ \frac{m}{n}$"></span>
+ was
+in its lowest form, so <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ can't have a common factor. This means our assumption about
+being able to have the ratio of the diagonal to the side as a rational number is
+impossible in this case. We say that <span class="MATH"><IMG
+ WIDTH="25" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.gif"
+ ALT="$ \sqrt{2}$"></span>
+ is <span  class="textbf">irrational</span><a name="766"></a> (not a rational number).
+Give examples of other irrational numbers.
+</li>
+<li>In the preceding problem we assumed something and then showed that this assumption
+leads to a contradiction. Therefore our assumption is wrong and the opposite of what we assumed 
+must be true. Mathematicians use this type of <span  class="textbf">proof by contradiction</span><a name="768"></a>
+ all the time.
+Prove by contradiction that <!-- MATH
+ $x\ne \sqrt{x^2+1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="91" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img356.gif"
+ ALT="$ x\ne \sqrt{x^2+1}$"></span>
+. (<span  class="textbf">HINT</span>: Assume that <!-- MATH
+ $x=\sqrt{x^2+1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="91" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.gif"
+ ALT="$ x=\sqrt{x^2+1}$"></span>
+ and
+show that this leads to a contradiction.)
+</li>
+</ol>
+<div align="CENTER">
+</div>
+<p>
+<div align="CENTER"></div>
+<div align="CENTER">
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">1</span>.<span class="arabic">4</span></span></big>
+</div>
+<ol>
+<li>Let <span class="MATH"><IMG
+ WIDTH="86" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img358.gif"
+ ALT="$ 2x+4y=3$"></span>
+ be a linear equation in the reals. What is the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-intercept?
+What is the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+-intercept?
+</li>
+<li>If <span class="MATH"><IMG
+ WIDTH="112" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.gif"
+ ALT="$ ax+by+c=0$"></span>
+ is a linear equation, what would be an equation for
+the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-intercept? The <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+-intercept? (<span  class="textbf">HINT</span>: In each case we know the value of
+one of the variables. Replace that variable with this number and solve for the remaining
+variable.)
+</li>
+<li>Let <span class="MATH"><IMG
+ WIDTH="86" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img360.gif"
+ ALT="$ 3x+2y=5$"></span>
+. Solve this for <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+. (<span  class="textbf">HINT</span>: We just want <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ by itself on the
+left of the equals sign.)
+</li>
+<li>Let <span class="MATH"><IMG
+ WIDTH="112" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.gif"
+ ALT="$ ax+by+c=0$"></span>
+. Solve this for <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+. The equation you develop is called the <span  class="textbf">point-intercept</span>
+form of the linear equation. What is the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+-intercept of this line?
+</li>
+<li>Let <!-- MATH
+ $3(x-1)=\frac{1}{2}(y+2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="141" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.gif"
+ ALT="$ 3(x-1)=\frac{1}{2}(y+2)$"></span>
+. Is this a linear equation?
+</li>
+<li>A man starts up a ramp that is 10 meters long and 2 meters high at the far end. Determine
+a linear equation that will give how high the man has risen for any horizontal distance he has
+traveled from the starting point. Use this equation to show how high he has moved when he is 8 meters
+from the start of the ramp. What is the actual distance he has traveled along the surface of the ramp?
+(<span  class="textbf">HINT</span>: Use the theorem of Pythagoras.)
+</li>
+<li>A carpenter makes a wooden frame that is 3 meters by 4 meters. How can
+she use a tape measure and the theorem of Pythagoras to make certain that the frame is rectangular 
+(all interior angles are <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img362.gif"
+ ALT="$ 90^\circ$"></span>
+)?
+</li>
+</ol>
+<div align="CENTER">
+</div>
+<p>
+<div align="CENTER">
+</div>
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html299"
+  href="node9.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html293"
+  href="node4.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html287"
+  href="node7.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html295"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html297"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html300"
+  href="node9.html">Using Lamp to Graph</a>
+<b> Up:</b> <a name="tex2html294"
+  href="node4.html">Matrices and Analytic Geometry</a>
+<b> Previous:</b> <a name="tex2html288"
+  href="node7.html">Fields</a>
+ &nbsp; <b>  <a name="tex2html296"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html298"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

@@ -1,0 +1,2112 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Inner Products: the Dot Product</title>
+<meta name="description" content="Inner Products: the Dot Product">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node33.html">
+<link rel="previous" href="node31.html">
+<link rel="up" href="node30.html">
+<link rel="next" href="node33.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html649"
+  href="node33.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html643"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html637"
+  href="node31.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html645"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html647"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html650"
+  href="node33.html">The Outer Product</a>
+<b> Up:</b> <a name="tex2html644"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html638"
+  href="node31.html">Vectors and Plane Geometry</a>
+ &nbsp; <b>  <a name="tex2html646"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html648"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00820000000000000000">
+Inner Products: the Dot Product</a>
+</h1>
+
+<p>
+Often we are interested in finding, on a plane, the minimum distance from a point to a line.
+Let us look once more at the theorem of Pythagoras<a name="9744"></a> and see how it can
+used to define the shortest distance from a point to a line.
+
+<p>
+
+<div align="CENTER"><a name="fig:pyth"></a><a name="9747"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.7:</strong>
+<!-- MATH
+ $x^2+y^2=z^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ x^2+y^2=z^2$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="89" HEIGHT="108" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1195.gif"
+ ALT="\includegraphics[width=2cm,height=2.4cm]{pyth.eps}"></td></tr>
+</table>
+</div>
+If we have a right-angle triangle such as in Figure&nbsp;<a href="#fig:pyth">5.7</a> , the Pythagorean theorem gives us the equation <!-- MATH
+ $x^2+y^2=z^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ x^2+y^2=z^2$"></span>
+.
+Notice that <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ z$"></span>
+ is <span  class="textit">always</span> greater than or equal to <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+. (If <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img326.gif"
+ ALT="$ x=0$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1196.gif"
+ ALT="$ y=z$"></span>
+.) This is true because
+we are dealing with Euclidean geometry. 
+
+<p>
+If we had a line that passes through two points <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+, and a point <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+ not on the line, we can draw
+Figure&nbsp;<a href="#fig:abcd">5.8</a>. 
+Notice that the dotted line segments can represent any line segment from <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+ to the line through
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+. It should be obvious from our discussion that the line segment from <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+ to <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.gif"
+ ALT="$ d$"></span>
+ that is at a right
+angle to the line through <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+ <span  class="textit">must be the shortest line segment</span>.
+
+<div align="CENTER"><a name="fig:abcd"></a><a name="9756"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.8:</strong>
+Shortest Line Segment </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="144" HEIGHT="153" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1197.gif"
+ ALT="\includegraphics[width=3.2cm,height=3.4cm]{abcd.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+We must now get a little more complicated to show how matrix multiplication may be used to determine if a
+line segment is at a right angle to a line. Suppose we have a right-angle triangle composed of the points <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+, <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+ and
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+ as in Figure&nbsp;<a href="#fig:abcxyz">5.9</a>. We place <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+ on the origin. Then the coordinates of the points are 
+<!-- MATH
+ $a=(x_1,y_1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="84" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1198.gif"
+ ALT="$ a=(x_1,y_1)$"></span>
+, <span class="MATH"><IMG
+ WIDTH="68" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1199.gif"
+ ALT="$ b=(0,0)$"></span>
+ and <!-- MATH
+ $c=(x_2,y_2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="83" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1200.gif"
+ ALT="$ c=(x_2,y_2)$"></span>
+.
+
+<div align="CENTER"><a name="fig:abcxyz"></a><a name="9762"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.9:</strong>
+ Right-Angle Triangles</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="261" HEIGHT="208" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1201.gif"
+ ALT="\includegraphics[width=5.8cm,height=4.7cm]{abcxyz.eps}"></td></tr>
+</table>
+</div>
+The labeled distances and the theorem
+of Pythagoras gives us the following equations:
+<p><!-- MATH
+ \begin{displaymath}
+x_1^2+y_1^2=z_1^2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="92" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1202.gif"
+ ALT="$\displaystyle x_1^2+y_1^2=z_1^2$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+x_2^2+y_2^2=z_2^2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="92" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1203.gif"
+ ALT="$\displaystyle x_2^2+y_2^2=z_2^2$">
+</div><p>
+</p>
+Since <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img884.gif"
+ ALT="$ x_1$"></span>
+ is negative, we also have
+<p><!-- MATH
+ \begin{displaymath}
+(x_2-x_1)^2+(y_2-y_1)^2=z_3^2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="200" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1204.gif"
+ ALT="$\displaystyle (x_2-x_1)^2+(y_2-y_1)^2=z_3^2$">
+</div><p>
+</p>
+Since the triangle formed by <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+,<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+ is right-angle, we can also write:
+<p><!-- MATH
+ \begin{displaymath}
+z_1^2+z_2^2=z_3^2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="91" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1205.gif"
+ ALT="$\displaystyle z_1^2+z_2^2=z_3^2$">
+</div><p>
+</p>
+This allows us to create the following equation:
+<p><!-- MATH
+ \begin{displaymath}
+x_1^2+y_1^2+x_2^2+y_2^2=(x_2-x_1)^2+(y_2-y_1)^2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="307" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1206.gif"
+ ALT="$\displaystyle x_1^2+y_1^2+x_2^2+y_2^2=(x_2-x_1)^2+(y_2-y_1)^2$">
+</div><p>
+</p>
+which we expand to:
+<p><!-- MATH
+ \begin{displaymath}
+x_1^2+y_1^2+x_2^2+y_2^2=(x_2^2-2x_2x_1+x_1^2)+(y_2^2-2y_2y_1+y_1^2)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="411" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1207.gif"
+ ALT="$\displaystyle x_1^2+y_1^2+x_2^2+y_2^2=(x_2^2-2x_2x_1+x_1^2)+(y_2^2-2y_2y_1+y_1^2)$">
+</div><p>
+</p>
+After canceling like terms we get:
+<p><!-- MATH
+ \begin{displaymath}
+0=-2x_2x_1-2y_2y_1
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="143" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1208.gif"
+ ALT="$\displaystyle 0=-2x_2x_1-2y_2y_1$">
+</div><p>
+</p>
+Dividing by -2 and rearranging then gives us:
+<p><!-- MATH
+ \begin{displaymath}
+0=x_1x_2+y_1y_2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="115" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1209.gif"
+ ALT="$\displaystyle 0=x_1x_2+y_1y_2$">
+</div><p>
+</p>
+or, in matrix notation:
+<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{cc}
+	x_1 & y_1
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+x_2 \\
+y_2
+\end{array}
+\right)
+=0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="163" HEIGHT="54" BORDER="0"
+ SRC="img1210.gif"
+ ALT="\begin{displaymath}
+\left(
+\begin{array}{cc}
+x_1 &amp; y_1
+\end{array}\right)
+\left(
+\begin{array}{c}
+x_2 \\
+y_2
+\end{array}\right)
+=0
+\end{displaymath}">
+</div><p>
+</p>
+
+<p>
+This is only true when the triangle is a right-angle triangle, so we now have a way of calculating
+when two line segments which connect at a point are at <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img362.gif"
+ ALT="$ 90^\circ$"></span>
+ (<!-- MATH
+ $\frac{\pi}{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1147.gif"
+ ALT="$ \frac{\pi}{2}$"></span>
+ radians) to each other.
+
+<p>
+Notice that we defined the coordinates of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ as <span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ (x_1,y_1)$"></span>
+, a row matrix, but <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+ is given as a
+column matrix. This is necessary for the calculations to work out properly. We write the coordinates
+of <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+ as <!-- MATH
+ $(x_2, y_2)^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="65" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1211.gif"
+ ALT="$ (x_2, y_2)^T$"></span>
+ where the <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1212.gif"
+ ALT="$ ^T$"></span>
+ means the <span  class="textbf">transpose</span> of a matrix.<a name="9774"></a>
+This is a convenience which we will need.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">3</span></b> &nbsp; 
+<i>The transpose of an <!-- MATH
+ $\,m\times n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1213.gif"
+ ALT="$  m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is an <!-- MATH
+ $\,n\times m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1214.gif"
+ ALT="$  n\times m$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ such that
+<!-- MATH
+ $a_{i,j}=b_{j,i}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1215.gif"
+ ALT="$ a_{i,j}=b_{j,i}$"></span>
+. Furthermore, <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is usually written as <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1216.gif"
+ ALT="$ A^T$"></span>
+.</i></div><p></p>
+
+<p>
+Now we can use this definition to define a type of <span  class="textbf">inner product</span><a name="9780"></a> which is 
+sometimes called the <span  class="textbf">standard dot product</span>.<a name="9782"></a> This type of inner product has
+many applications and studying it will help us later when we 
+examine vector spaces  and give a formal definition of a more general inner
+product.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">4</span></b> &nbsp; 
+<i>Suppose we are given two vectors <!-- MATH
+ $\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1113.gif"
+ ALT="$ \in\mathbb{R}^n$"></span>
+, <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+. We can write these vectors as equivalent
+row matrices <!-- MATH
+ $V_{1\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1217.gif"
+ ALT="$ V_{1\times n}$"></span>
+ and <!-- MATH
+ $W_{1\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1218.gif"
+ ALT="$ W_{1\times n}$"></span>
+. Then the dot product is the scalar <!-- MATH
+ $p\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1219.gif"
+ ALT="$ p\in\mathbb{R}$"></span>
+ given by the
+formula
+</i><p><!-- MATH
+ \begin{displaymath}
+\Vec{v}\cdot\Vec{w}=VW^T=v_1w_1+v_2w_2+\ldots+v_nw_n = p
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="328" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1220.gif"
+ ALT="$\displaystyle \Vec{v}\cdot\Vec{w}=VW^T=v_1w_1+v_2w_2+\ldots+v_nw_n = p$">
+</div><p>
+</p></div><p></p>
+
+<p>
+We can see that <!-- MATH
+ $\left\|\Vec{u}\right\|=\sqrt{\Vec{u}\cdot\Vec{u}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1221.gif"
+ ALT="$ \left\Vert\Vec{u}\right\Vert=\sqrt{\Vec{u}\cdot\Vec{u}}$"></span>
+ for <!-- MATH
+ $\Vec{u}\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1118.gif"
+ ALT="$ \Vec{u}\in\mathbb{R}^n$"></span>
+. Furthermore, if <!-- MATH
+ $\Vec{v}\cdot\Vec{w}=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="65" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1222.gif"
+ ALT="$ \Vec{v}\cdot\Vec{w}=0$"></span>
+, we say that
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ are <span  class="textbf">orthogonal</span><a name="9800"></a>. Also, if <!-- MATH
+ $\left\|\Vec{v}\right\|=\left\|\Vec{w}\right\|=1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="106" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1223.gif"
+ ALT="$ \left\Vert\Vec{v}\right\Vert=\left\Vert\Vec{w}\right\Vert=1$"></span>
+,
+then <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ are <span  class="textbf">orthonormal</span><a name="9806"></a>. These definitions hold even
+if the norm is specified in some other way.
+
+<p>
+We extend the ideas of orthogonal and orthonormal to any list of vectors in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1108.gif"
+ ALT="$ \mathbb{R}^n$"></span>
+. Suppose we had a list of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ vectors
+<!-- MATH
+ $\Vec{v_1},\Vec{v_2},\ldots,\Vec{v_n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1224.gif"
+ ALT="$ \Vec{v_1},\Vec{v_2},\ldots,\Vec{v_n}$"></span>
+, and if <!-- MATH
+ $\Vec{v_i}\cdot\Vec{v_j}=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="72" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1225.gif"
+ ALT="$ \Vec{v_i}\cdot\Vec{v_j}=0$"></span>
+ for <span class="MATH"><IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img788.gif"
+ ALT="$ i\ne j$"></span>
+, then the list of vectors is
+orthogonal. If we further stipulate that <!-- MATH
+ $\left\|\Vec{v_i}\right\|=1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="62" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1226.gif"
+ ALT="$ \left\Vert\Vec{v_i}\right\Vert=1$"></span>
+, then this collection of vectors is orthonormal. 
+
+<p>
+For vectors <!-- MATH
+ $\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="38" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1105.gif"
+ ALT="$ \in\mathbb{R}^2$"></span>
+, two vectors are orthogonal if the angle <span  class="textit">between</span> them is  <!-- MATH
+ $\frac{\pi}{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1147.gif"
+ ALT="$ \frac{\pi}{2}$"></span>
+ radians and 
+they are orthonormal
+if they are unit vectors as well. 
+
+<p>
+We are almost ready to show how to find the shortest line segment from a point to a line on the plane. First, though,
+we must define the <span  class="textbf">vector equation</span><a name="9817"></a> for a line and
+the <span  class="textit">projection</span> of a vector onto a line.
+
+<p>
+
+<div align="CENTER"><a name="fig:veceq1"></a><a name="9821"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.10:</strong>
+ A Line through the Origin </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="191" HEIGHT="194" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1227.gif"
+ ALT="\includegraphics[width=4.3cm,height=4.4cm]{veceq1.eps}"></td></tr>
+</table>
+</div>
+Suppose we have a line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ passing through the origin. 
+The line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ consists of all points <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$ (x,y)$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="57" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1228.gif"
+ ALT="$ y=mx$"></span>
+.
+We can take any point on the line that is not the origin and
+make a vector <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ using this point as the vector's terminal point. Therefore any point on <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ can be given by 
+scalar
+multiplication of the vector <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ by some scalar <!-- MATH
+ $t\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img524.gif"
+ ALT="$ t\in \mathbb{R}$"></span>
+. In other words, <!-- MATH
+ $L=(x,y)=t\Vec{u}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="109" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1229.gif"
+ ALT="$ L=(x,y)=t\Vec{u}$"></span>
+ for <!-- MATH
+ $t\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img524.gif"
+ ALT="$ t\in \mathbb{R}$"></span>
+. 
+See Figure&nbsp;<a href="#fig:veceq1">5.10</a>.
+
+<p>
+If a line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ does <span  class="textit">not</span> go through the origin, we have that <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ is all points <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$ (x,y)$"></span>
+
+such that <span class="MATH"><IMG
+ WIDTH="83" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1230.gif"
+ ALT="$ y=mx+b$"></span>
+. Here we must take two different points from <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ such as <!-- MATH
+ $u=(x_1,y_1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1231.gif"
+ ALT="$ u=(x_1,y_1)$"></span>
+ and
+<!-- MATH
+ $w=(x_2,y_2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="88" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1232.gif"
+ ALT="$ w=(x_2,y_2)$"></span>
+ and create a directed line from <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1233.gif"
+ ALT="$ w$"></span>
+ to <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1234.gif"
+ ALT="$ u$"></span>
+. Then we translate this directed line segment
+to the vector <!-- MATH
+ $\Vec{v}=(x_1-x_2 , y_1-y_2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="154" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1235.gif"
+ ALT="$ \Vec{v}=(x_1-x_2 , y_1-y_2)$"></span>
+. The points <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1234.gif"
+ ALT="$ u$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1233.gif"
+ ALT="$ w$"></span>
+ can be thought of as terminal
+points of vectors <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+, respectively. We choose one of these vectors and write
+that the line <!-- MATH
+ $L=(x,y)=\Vec{w}+t\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="140" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1236.gif"
+ ALT="$ L=(x,y)=\Vec{w}+t\Vec{v}$"></span>
+ where <!-- MATH
+ $t\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img524.gif"
+ ALT="$ t\in \mathbb{R}$"></span>
+. Points on <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ are defined uniquely by
+different values of <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img116.gif"
+ ALT="$ t$"></span>
+, which is called the parameter.
+We used the fact that any line segment which can be translated to a vector is equivalent or 
+<span  class="textit">parallel</span> to that vector. It points in the same direction. Figure&nbsp;<a href="#fig:veceq2">5.11</a> illustrates this.
+
+<div align="CENTER"><a name="fig:veceq2"></a><a name="9838"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.11:</strong>
+ A Line not through the Origin </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="237" HEIGHT="193" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1237.gif"
+ ALT="\includegraphics[width=5.3cm,height=4.4cm]{veceq2.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+Notice that the vector equation for the line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ is <span  class="textit">not</span> unique. It depends on which points
+on the line we choose. Also notice that <!-- MATH
+ $\Vec{v}=\Vec{u}-\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1238.gif"
+ ALT="$ \Vec{v}=\Vec{u}-\Vec{w}$"></span>
+. This allows us to give the
+general definition for the vector equation of a line.
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">5</span></b> &nbsp; 
+<i>For a line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ composed of points from <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1108.gif"
+ ALT="$ \mathbb{R}^n$"></span>
+ and two vectors <!-- MATH
+ $\Vec{u},\Vec{w}\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="72" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1239.gif"
+ ALT="$ \Vec{u},\Vec{w}\in\mathbb{R}^n$"></span>
+ 
+with terminal points on <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+, a vector
+equation of the line can be given as <!-- MATH
+ $L=\Vec{w}+t(\Vec{u}-\Vec{w})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1240.gif"
+ ALT="$ L=\Vec{w}+t(\Vec{u}-\Vec{w})$"></span>
+ where <!-- MATH
+ $t\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img524.gif"
+ ALT="$ t\in \mathbb{R}$"></span>
+.
+Another way to write the equation would be <!-- MATH
+ $L=\Vec{u}+s(\Vec{w}-\Vec{u})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="125" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1241.gif"
+ ALT="$ L=\Vec{u}+s(\Vec{w}-\Vec{u})$"></span>
+ where <!-- MATH
+ $s\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1242.gif"
+ ALT="$ s\in\mathbb{R}$"></span>
+.</i></div><p></p>
+
+<p>
+A natural question is how does one get a vector that is orthogonal to any given vector? The following theorem shows us how to do this.
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">1</span></b> &nbsp; 
+<i>Given a vector <!-- MATH
+ $\Vec{v}\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1243.gif"
+ ALT="$ \Vec{v}\in\mathbb{R}^n$"></span>
+ such that <!-- MATH
+ $\left\|\Vec{v}\right\|\ne 0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1244.gif"
+ ALT="$ \left\Vert\Vec{v}\right\Vert\ne 0$"></span>
+, then for any other vector <!-- MATH
+ $\Vec{u}\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1118.gif"
+ ALT="$ \Vec{u}\in\mathbb{R}^n$"></span>
+, the
+vector
+</i><p><!-- MATH
+ \begin{displaymath}
+\Vec{w}=\Vec{u}-\frac{\Vec{u}\cdot\Vec{v}}{\left\|\Vec{v}\right\|^2}\Vec{v}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="109" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1245.gif"
+ ALT="$\displaystyle \Vec{w}=\Vec{u}-\frac{\Vec{u}\cdot\Vec{v}}{\left\Vert\Vec{v}\right\Vert^2}\Vec{v}$">
+</div><p>
+</p><i>
+is orthogonal to <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+.</i></div><p></p>
+
+<p>
+<p></p>
+<div><i>Proof</i>.
+
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{w}\cdot\Vec{v}=\left[\Vec{u}-\frac{(\Vec{u}\cdot\Vec{v})\Vec{v}}{\left\|\Vec{v}\right\|^2}\right]\cdot\Vec{v}=\Vec{u}\cdot\Vec{v}-
+\frac{(\Vec{u}\cdot\Vec{v})(\Vec{v}\cdot\Vec{v})}{\left\|\Vec{v}\right\|^2}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="332" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1246.gif"
+ ALT="$\displaystyle \Vec{w}\cdot\Vec{v}=\left[\Vec{u}-\frac{(\Vec{u}\cdot\Vec{v})\Vec...
+...rac{(\Vec{u}\cdot\Vec{v})(\Vec{v}\cdot\Vec{v})}{\left\Vert\Vec{v}\right\Vert^2}$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+=\Vec{u}\cdot\Vec{v}-\frac{(\Vec{u}\cdot\Vec{v})\left\|\Vec{v}\right\|^2}{\left\|\Vec{v}\right\|^2}=
+\Vec{u}\cdot\Vec{v}-\Vec{u}\cdot\Vec{v}=0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="276" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1247.gif"
+ ALT="$\displaystyle =\Vec{u}\cdot\Vec{v}-\frac{(\Vec{u}\cdot\Vec{v})\left\Vert\Vec{v}...
+...t^2}{\left\Vert\Vec{v}\right\Vert^2}=
+\Vec{u}\cdot\Vec{v}-\Vec{u}\cdot\Vec{v}=0$">
+</div><p>
+</p> <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+Using this theorem, we can now define the <span  class="textbf">projection</span><a name="9895"></a> of one vector onto another.
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">6</span></b> &nbsp; 
+<i>Given vectors <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ and <!-- MATH
+ $\Vec{v}\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1243.gif"
+ ALT="$ \Vec{v}\in\mathbb{R}^n$"></span>
+ with magnitudes not equal to zero, we say that the projection of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+
+onto <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ is a vector <!-- MATH
+ $\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1113.gif"
+ ALT="$ \in\mathbb{R}^n$"></span>
+ called <!-- MATH
+ $\text{proj}_{\Vec{v}}\Vec{u}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1248.gif"
+ ALT="$ _{\Vec{v}}\Vec{u}$"></span>
+ defined by the formula
+</i><p><!-- MATH
+ \begin{displaymath}
+\text{proj}_{\Vec{v}}\Vec{u}=\frac{\Vec{u}\cdot\Vec{v}}{\left\|\Vec{v}\right\|^2}\Vec{v}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+proj<IMG
+ WIDTH="86" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1249.gif"
+ ALT="$\displaystyle _{\Vec{v}}\Vec{u}=\frac{\Vec{u}\cdot\Vec{v}}{\left\Vert\Vec{v}\right\Vert^2}\Vec{v}$">
+</div><p>
+</p></div><p></p>
+
+<p>
+The projection of a vector  <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ onto <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ gives another vector which is a scalar multiple
+of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+. If <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ is not a scalar multiple of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+, then 
+a line from the terminal point of the projection to the terminal point of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ is
+at a right angle to the projection. If <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ <span  class="textit">is</span> a scalar multiple of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+, then
+their terminal points and the origin are on a straight line. The reader should try a few examples
+to see what vector is returned by this formula in such cases.
+
+<p>
+We now have all the machinery necessary to solve our original problem, how to find the point closest to a
+line. Of course, the ideas we developed are useful for much more than this simple task and we will
+extend them to deal with more than just points and lines on a plane. 
+
+<p>
+
+<div align="CENTER"><a name="fig:veceq3"></a><a name="9923"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.12:</strong>
+ A Line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ and a Point <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+ not on <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div><IMG
+ WIDTH="540" HEIGHT="458" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1250.gif"
+ ALT="\includegraphics[width=12.0cm,height=10.2cm]{veceq3.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+So, given a line <!-- MATH
+ $L=\Vec{w}+t(\Vec{u}-\Vec{w})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1240.gif"
+ ALT="$ L=\Vec{w}+t(\Vec{u}-\Vec{w})$"></span>
+ and a point <!-- MATH
+ $p=(x_p,y_p)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="84" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1251.gif"
+ ALT="$ p=(x_p,y_p)$"></span>
+ not on the line, we can translate
+the line so that it passes through the origin by subtracting <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ from it. 
+The vector <!-- MATH
+ $(\Vec{u}-\Vec{w})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1252.gif"
+ ALT="$ (\Vec{u}-\Vec{w})$"></span>
+ points in the same direction as this line. We can also create a vector <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1253.gif"
+ ALT="$ \Vec{p}$"></span>
+ which
+has a terminal point at <span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1254.gif"
+ ALT="$ (x_p,y_p)$"></span>
+. Then the vector <!-- MATH
+ $(\Vec{p}-\Vec{w})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1255.gif"
+ ALT="$ (\Vec{p}-\Vec{w})$"></span>
+ has a terminal point that is also translated the
+same distance. We project this vector <!-- MATH
+ $(\Vec{p}-\Vec{w})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1255.gif"
+ ALT="$ (\Vec{p}-\Vec{w})$"></span>
+ onto the vector <!-- MATH
+ $(\Vec{u}-\Vec{w})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1252.gif"
+ ALT="$ (\Vec{u}-\Vec{w})$"></span>
+.
+The projected vector is <!-- MATH
+ $\text{proj}_{(\Vec{u}-\Vec{w})}(\Vec{p}-\Vec{w})$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="94" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1256.gif"
+ ALT="$ _{(\Vec{u}-\Vec{w})}(\Vec{p}-\Vec{w})$"></span>
+. Translate this vector onto the line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ by adding the vector
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ and the result is a vector with terminal point on the line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ that is the shortest distance from
+the point <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+. This is illustrated in Figure&nbsp;<a href="#fig:veceq3">5.12</a>.
+The unlabeled vector in the bottom right graph in Figure&nbsp;<a href="#fig:veceq3">5.12</a> is the vector
+<!-- MATH
+ $\text{proj}_{(\Vec{u}-\Vec{w})}(\Vec{p}-\Vec{w})$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="94" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1256.gif"
+ ALT="$ _{(\Vec{u}-\Vec{w})}(\Vec{p}-\Vec{w})$"></span>
+. We can see that <!-- MATH
+ $\Vec{q}=\text{proj}_{(\Vec{u}-\Vec{w})}(\Vec{p}-\Vec{w})+\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1257.gif"
+ ALT="$ \Vec{q}=$">proj<IMG
+ WIDTH="125" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1258.gif"
+ ALT="$ _{(\Vec{u}-\Vec{w})}(\Vec{p}-\Vec{w})+\Vec{w}$"></span>
+.
+
+<p>
+As was mentioned previously, a physicist usually views all directed line segments as vectors so that the
+addition of vectors is accomplished by imagining one vector being placed so that its emanating point
+is the terminal point of the other vector and the sum is the directed line segment from the unconnected
+emanating point to the unconnected terminal point. As well, projections may occur on line segments that
+are not vectors emanating from the origin. Viewing things in this way can give a better feeling for
+vectors in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ and <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ but the amount of calculation required to get an answer remains the same.
+In order to illustrate a calculation, we let <!-- MATH
+ $\Vec{u}=(1,3)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1260.gif"
+ ALT="$ \Vec{u}=(1,3)$"></span>
+ and <!-- MATH
+ $\Vec{w}=(4,2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1261.gif"
+ ALT="$ \Vec{w}=(4,2)$"></span>
+. Then the line
+<span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ is given by <!-- MATH
+ $L=\Vec{w}+t(\Vec{u}-\Vec{w})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1240.gif"
+ ALT="$ L=\Vec{w}+t(\Vec{u}-\Vec{w})$"></span>
+ or <!-- MATH
+ $L=(4,2)+t(-3,1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="145" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1262.gif"
+ ALT="$ L=(4,2)+t(-3,1)$"></span>
+. We also let <!-- MATH
+ $\Vec{p}=(-2,4)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="81" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1263.gif"
+ ALT="$ \Vec{p}=(-2,4)$"></span>
+ and
+we want to find the point <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.gif"
+ ALT="$ q$"></span>
+ which is on <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ that is closest to the terminal point of <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1253.gif"
+ ALT="$ \Vec{p}$"></span>
+.
+
+<p>
+Our formula gives us
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1264.gif"
+ ALT="$\displaystyle \Vec{q}$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1016.gif"
+ ALT="$\displaystyle =$">&nbsp; &nbsp;proj<IMG
+ WIDTH="125" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1265.gif"
+ ALT="$\displaystyle _{(\Vec{u}-\Vec{w})}(\Vec{p}-\Vec{w})+\Vec{w}$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1016.gif"
+ ALT="$\displaystyle =$">&nbsp; &nbsp;proj<IMG
+ WIDTH="144" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1266.gif"
+ ALT="$\displaystyle _{(-3,1)}(-6,2)+(4,2)$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="225" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1267.gif"
+ ALT="$\displaystyle = \frac{ (\Vec{p}-\Vec{w}) \cdot (\Vec{u}-\Vec{w}) } {\left\Vert(\Vec{u}-\Vec{w})\right\Vert^2} (\Vec{u}-\Vec{w}) +\Vec{w}$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="234" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1268.gif"
+ ALT="$\displaystyle = \frac{ (-6,2) \cdot (-3,1) } {\left\Vert(-3,1)\right\Vert^2 } (-3,1) +(4,2)$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="234" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1269.gif"
+ ALT="$\displaystyle = \frac{ (-6,2) \cdot (-3,1) } {(-3,1) \cdot (-3,1) } (-3,1) +(4,2)$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="283" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1270.gif"
+ ALT="$\displaystyle = \frac{ (-6)*(-3)+(2)*(1) } {(-3)*(-3)+(1)*(1) } (-3,1) +(4,2)$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="143" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1271.gif"
+ ALT="$\displaystyle = \frac{ 20 }{10 } (-3,1) +(4,2)$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="146" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1272.gif"
+ ALT="$\displaystyle = 2*(-3,1) +(4,2)$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="69" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1273.gif"
+ ALT="$\displaystyle = (-2,4)$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+
+<p>
+We see that <!-- MATH
+ $\Vec{q}=\Vec{p}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1274.gif"
+ ALT="$ \Vec{q}=\Vec{p}$"></span>
+ which means that <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+ is on the line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+. We can check this
+by converting our equation for <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ into point-intercept form. We start with the fact that 
+<!-- MATH
+ $L=(4,2)+t(-3,1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="145" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1262.gif"
+ ALT="$ L=(4,2)+t(-3,1)$"></span>
+ is really a compact notation for two equations:
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1275.gif"
+ ALT="$\displaystyle x$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="62" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1276.gif"
+ ALT="$\displaystyle = 4-3t$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1277.gif"
+ ALT="$\displaystyle y$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="54" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1278.gif"
+ ALT="$\displaystyle = 2+t$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+These equations can be solved for <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img116.gif"
+ ALT="$ t$"></span>
+:
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="10" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img889.gif"
+ ALT="$\displaystyle t$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="61" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1279.gif"
+ ALT="$\displaystyle = \frac{4-x}{3}$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="10" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img889.gif"
+ ALT="$\displaystyle t$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="57" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1280.gif"
+ ALT="$\displaystyle = y-2$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+This gives us the linear equation:
+<p><!-- MATH
+ \begin{displaymath}
+y = \frac{-1}{3}x + \frac{10}{3}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="106" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1281.gif"
+ ALT="$\displaystyle y = \frac{-1}{3}x + \frac{10}{3} $">
+</div><p>
+</p>
+For <span class="MATH"><IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1282.gif"
+ ALT="$ x=-2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1283.gif"
+ ALT="$ y=4$"></span>
+, it is easy to show that this equation holds.
+
+<p>
+If the point <span class="MATH"><IMG
+ WIDTH="81" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1284.gif"
+ ALT="$ p=(-1,7)$"></span>
+, then 
+<!-- MATH
+ $\text{proj}_{(\Vec{u}-\Vec{w})}(\Vec{p}-\Vec{w})+\Vec{w}=\text{proj}_{(-3,1)}(-5,5)+(4,2)$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="142" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1285.gif"
+ ALT="$ _{(\Vec{u}-\Vec{w})}(\Vec{p}-\Vec{w})+\Vec{w}=$">proj<IMG
+ WIDTH="144" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1286.gif"
+ ALT="$ _{(-3,1)}(-5,5)+(4,2)$"></span>
+
+<span class="MATH"><IMG
+ WIDTH="69" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1287.gif"
+ ALT="$ =(-2,4)$"></span>
+. This means that <!-- MATH
+ $(\Vec{p}-\Vec{q})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1288.gif"
+ ALT="$ (\Vec{p}-\Vec{q})$"></span>
+, the vector equivalent to the directed line
+segment from <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.gif"
+ ALT="$ q$"></span>
+ to <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+, is orthogonal to the vector <!-- MATH
+ $(\Vec{u}-\Vec{w})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1252.gif"
+ ALT="$ (\Vec{u}-\Vec{w})$"></span>
+. It is easy to
+verify this using the standard dot product.
+
+<p>
+In this text we stated that a vector <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1069.gif"
+ ALT="$ \Vec{a}$"></span>
+ in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1108.gif"
+ ALT="$ \mathbb{R}^n$"></span>
+ can be represented by a matrix
+<!-- MATH
+ $A_{1\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1289.gif"
+ ALT="$ A_{1\times n}$"></span>
+ and that the dot product of two vectors in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1108.gif"
+ ALT="$ \mathbb{R}^n$"></span>
+, <!-- MATH
+ $\Vec{a}\cdot\Vec{b}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="31" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1290.gif"
+ ALT="$ \Vec{a}\cdot\Vec{b}$"></span>
+, is
+equivalent to the matrix multiplication <span class="MATH"><IMG
+ WIDTH="39" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1291.gif"
+ ALT="$ AB^T$"></span>
+, which returns a scalar <!-- MATH
+ $\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="31" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.gif"
+ ALT="$ \in\mathbb{R}$"></span>
+. We have also
+shown a geometric interpretation for points and lines on a plane.
+
+<p>
+It is possible to show other geometric interpretations of vectors and vector spaces. We will
+do so in the following sections not only for their utility, but also as an aid to understanding
+some of the beautiful theorems of linear algebra which may appear very abstract at first.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">5</span>.<span class="arabic">2</span></span></big>
+
+<ol>
+<li>For vectors in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1108.gif"
+ ALT="$ \mathbb{R}^n$"></span>
+, prove that <!-- MATH
+ $\Vec{u}\cdot(\Vec{v}+\Vec{w})=\Vec{u}\cdot\Vec{v}+\Vec{u}\cdot\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="175" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1292.gif"
+ ALT="$ \Vec{u}\cdot(\Vec{v}+\Vec{w})=\Vec{u}\cdot\Vec{v}+\Vec{u}\cdot\Vec{v}$"></span>
+.
+   (<span  class="textbf">HINT:</span> Replace the vectors with matrices and use the summation notation of
+   matrix multiplication.) This proves that the dot product is distributive with respect to addition.
+</li>
+<li>Suppose <!-- MATH
+ $\Vec{v},\Vec{w}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="69" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1293.gif"
+ ALT="$ \Vec{v},\Vec{w}\in\mathbb{R}^2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1128.gif"
+ ALT="$ \theta$"></span>
+ is the angle between them. Show that
+	<!-- MATH
+ $\Vec{v}\cdot\Vec{w}=\left\|\Vec{v}\right\|\left\|\Vec{w}\right\|\cos{\theta}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="146" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1294.gif"
+ ALT="$ \Vec{v}\cdot\Vec{w}=\left\Vert\Vec{v}\right\Vert\left\Vert\Vec{w}\right\Vert\cos{\theta}$"></span>
+. (<span  class="textbf">HINT:</span>  Use 
+	<!-- MATH
+ $\text{proj}_{\Vec{w}}\Vec{v}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1295.gif"
+ ALT="$ _{\Vec{w}}\Vec{v}$"></span>
+, the length of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ and the traditional definition of <!-- MATH
+ $\cos\theta$
+ -->
+<span class="MATH"><IMG
+ WIDTH="36" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1296.gif"
+ ALT="$ \cos\theta$"></span>
+.)
+</li>
+<li>Show that the <span  class="textbf">zero vector</span><a name="10044"></a>, <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1297.gif"
+ ALT="$ \Vec{0}$"></span>
+, which has components which 
+	are all zero, is orthogonal to any other vector. 
+</li>
+<li>A line <!-- MATH
+ $L=\Vec{q}+r\Vec{s}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="78" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1298.gif"
+ ALT="$ L=\Vec{q}+r\Vec{s}$"></span>
+ is considered parallel to a line <!-- MATH
+ $M=\Vec{t}+u\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="85" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1299.gif"
+ ALT="$ M=\Vec{t}+u\Vec{v}$"></span>
+
+	if <!-- MATH
+ $\Vec{s}=w\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1300.gif"
+ ALT="$ \Vec{s}=w\Vec{v}$"></span>
+ for some <!-- MATH
+ $w\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="47" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1301.gif"
+ ALT="$ w\in\mathbb{R}$"></span>
+. Show that for two non-zero vectors <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1069.gif"
+ ALT="$ \Vec{a}$"></span>
+ and
+	<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1302.gif"
+ ALT="$ \Vec{c}$"></span>
+ that a line containing <!-- MATH
+ $\text{proj}_{\Vec{c}}\Vec{a}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1303.gif"
+ ALT="$ _{\Vec{c}}\Vec{a}$"></span>
+ is parallel to 
+	a line containing <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1302.gif"
+ ALT="$ \Vec{c}$"></span>
+.
+</li>
+<li>For <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ and <!-- MATH
+ $\Vec{v}\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1243.gif"
+ ALT="$ \Vec{v}\in\mathbb{R}^n$"></span>
+, show that <!-- MATH
+ $\Vec{u}-\text{proj}_{\Vec{v}}\Vec{u}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1304.gif"
+ ALT="$ \Vec{u}-$">proj<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1248.gif"
+ ALT="$ _{\Vec{v}}\Vec{u}$"></span>
+ is
+	orthogonal to <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+.
+</li>
+<li>Suppose that <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1305.gif"
+ ALT="$ \Vec{i}$"></span>
+ and <!-- MATH
+ $\Vec{j}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1306.gif"
+ ALT="$ \Vec{j}\in\mathbb{R}^2$"></span>
+ are orthonormal. Show that for any real numbers
+	<span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.gif"
+ ALT="$ s$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img116.gif"
+ ALT="$ t$"></span>
+, the vectors <!-- MATH
+ $\Vec{u}=s\Vec{i}+t\Vec{j}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="80" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1307.gif"
+ ALT="$ \Vec{u}=s\Vec{i}+t\Vec{j}$"></span>
+ and <!-- MATH
+ $\Vec{u}=t\Vec{i}-s\Vec{j}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="80" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1308.gif"
+ ALT="$ \Vec{u}=t\Vec{i}-s\Vec{j}$"></span>
+ are orthogonal.
+</li>
+<li>Suppose that <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1305.gif"
+ ALT="$ \Vec{i}$"></span>
+ and <!-- MATH
+ $\Vec{j}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1306.gif"
+ ALT="$ \Vec{j}\in\mathbb{R}^2$"></span>
+ are orthonormal. Show that any vector <!-- MATH
+ $\Vec{u}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1187.gif"
+ ALT="$ \Vec{u}\in\mathbb{R}^2$"></span>
+
+	can be written as <!-- MATH
+ $\Vec{u}=s\Vec{i}+t\Vec{j}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="80" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1307.gif"
+ ALT="$ \Vec{u}=s\Vec{i}+t\Vec{j}$"></span>
+ for some <!-- MATH
+ $s,t\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1309.gif"
+ ALT="$ s,t\in\mathbb{R}$"></span>
+.
+</li>
+<li>Prove that <span class="MATH"><IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1310.gif"
+ ALT="$ (A^T)^T=A$"></span>
+ for any matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+.
+</li>
+<li>If <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ are both <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrices, show that <!-- MATH
+ $(A+B)^T=A^T+B^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="156" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1312.gif"
+ ALT="$ (A+B)^T=A^T+B^T$"></span>
+.
+</li>
+<li>Assume <!-- MATH
+ $A_{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img542.gif"
+ ALT="$ A_{m\times n}$"></span>
+ and <!-- MATH
+ $B_{n\times p}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img603.gif"
+ ALT="$ B_{n\times p}$"></span>
+ are two matrices over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+. Using the definition
+	of matrix multiplication, prove that <!-- MATH
+ $(AB)^T=B^TA^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="117" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1313.gif"
+ ALT="$ (AB)^T=B^TA^T$"></span>
+.
+</li>
+<li>Show that <!-- MATH
+ $(aB)^T=aB^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="100" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1314.gif"
+ ALT="$ (aB)^T=aB^T$"></span>
+ for any scalar <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+.
+</li>
+<li>Prove that if <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is a nonsingular matrix, then so is <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1216.gif"
+ ALT="$ A^T$"></span>
+ and that <!-- MATH
+ $(A^T)^{-1}=(A^{-1})^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1315.gif"
+ ALT="$ (A^T)^{-1}=(A^{-1})^T$"></span>
+.
+</li>
+<li>If <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ is an elementary matrix, show that <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1316.gif"
+ ALT="$ E^T$"></span>
+ is also an elementary matrix.
+</li>
+<li>Let <!-- MATH
+ $A_{2\times 2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img590.gif"
+ ALT="$ A_{2\times 2}$"></span>
+ with entries in <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+ be a matrix such that each column is a unit vector and the columns are
+	orthogonal. Prove that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is invertible and that <!-- MATH
+ $A^{-1}=A^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="76" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1317.gif"
+ ALT="$ A^{-1}=A^T$"></span>
+. We say that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is an <span  class="textbf">orthogonal matrix</span>
+	<a name="10086"></a>.
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">5</span>.<span class="arabic">2</span></span></big>
+
+<ol>
+<li>For vectors <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ and <!-- MATH
+ $\Vec{v}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1158.gif"
+ ALT="$ \Vec{v}\in\mathbb{R}^2$"></span>
+, compute the dot products. Calculate <!-- MATH
+ $\left\|\Vec{v}-\Vec{u}\right\|$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1318.gif"
+ ALT="$ \left\Vert\Vec{v}-\Vec{u}\right\Vert$"></span>
+.
+
+<br>
+<IMG
+ WIDTH="435" HEIGHT="54" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1319.gif"
+ ALT="\begin{parbox}\mbox{}\begin{enumerate}\begin{picture}(28,1)
+\begin{minipage}{15e...
+...{minipage}\end{minipage}\end{picture}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>For the vectors in the previous problem, find <!-- MATH
+ $\text{proj}_{\Vec{u}}\Vec{v}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1320.gif"
+ ALT="$ _{\Vec{u}}\Vec{v}$"></span>
+. Find
+<!-- MATH
+ $\text{proj}_{\Vec{v}}\Vec{u}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1248.gif"
+ ALT="$ _{\Vec{v}}\Vec{u}$"></span>
+.
+
+<p>
+</li>
+<li>In a plane, for a line <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ given by the vector equation 
+<!-- MATH
+ $L=\Vec{u}+t(\Vec{w}-\Vec{u})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="123" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1321.gif"
+ ALT="$ L=\Vec{u}+t(\Vec{w}-\Vec{u})$"></span>
+ and
+a point <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+, calculate the closest point on <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ L$"></span>
+ to <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+, given that
+
+<p>
+
+<br>
+<IMG
+ WIDTH="552" HEIGHT="73" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1322.gif"
+ ALT="\begin{parbox}\mbox{}
+\begin{enumerate}\begin{picture}(32,1)
+\begin{minipage}{17...
+...minipage}\end{picture}\newline\mbox{}\newline\mbox{}
+\end{enumerate}\end{parbox}">
+<br>
+<br></li>
+<li>Using the procedure for matrix multiplication that was developed for Lamp,
+ create a similar algorithm for calculating the projection of one vector onto another.
+
+<p>
+</li>
+<li>On a scrap of paper, write out the definition of dot product and 
+the definition of the projection of one matrix
+onto another 50 times because, my friend, you're going to need it.
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html649"
+  href="node33.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html643"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html637"
+  href="node31.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html645"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html647"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html650"
+  href="node33.html">The Outer Product</a>
+<b> Up:</b> <a name="tex2html644"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html638"
+  href="node31.html">Vectors and Plane Geometry</a>
+ &nbsp; <b>  <a name="tex2html646"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html648"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

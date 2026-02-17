@@ -1,0 +1,643 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Leontif Economic Models</title>
+<meta name="description" content="Leontif economic Models">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node29.html">
+<link rel="previous" href="node27.html">
+<link rel="up" href="node23.html">
+<link rel="next" href="node29.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html588"
+  href="node29.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html582"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html576"
+  href="node27.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html584"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html586"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html589"
+  href="node29.html">Chemical Reactions (Stoichiometry)</a>
+<b> Up:</b> <a name="tex2html583"
+  href="node23.html">Applications</a>
+<b> Previous:</b> <a name="tex2html577"
+  href="node27.html">Probability and Stochastic Matrices</a>
+ &nbsp; <b>  <a name="tex2html585"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html587"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00750000000000000000">
+Leontif Economic Models</a>
+</h1>
+
+<p>
+A mathematical <span  class="textbf">model</span><a name="8352"></a> is a set of equations which is used to mimic a real-world 
+system. A model is considered accurate or successful if it can be used to predict the behavior
+of a system as situations change. The set of equations we use to determine voltages in an electrical
+circuit is one such model. It is considered very successful as it approximates voltage measurements in
+real circuits very closely and the variables which primarily affect the system are few and well understood. Models
+in economics are rarely so successful because the number of things which can affect a market system are
+enormous and inter-relationships can be very complex. Even simple models, though, can be useful to provide
+indicators of behavior of an economic system.
+
+<p>
+The Leontif Open Production Model (often referred to as Input-Output Analysis)<a name="8353"></a> can be
+used to describe gross relationships between various industrial sectors. In particular, it can be used to
+analyze how much output each sector must produce in order to meet consumption and export demands. 
+
+<p>
+We start by dividing up an economy into a number of industries. For example, we might have transportation, 
+steel, agriculture, entertainment, etc. Each industry uses resources which we call inputs. The outputs from
+each sector are the services or manufactured goods provided by the people and technologies associated
+with the industry. The inputs to each industry are made up in part by the outputs of other sectors. The
+agriculture industry, for example, uses the output of many industries, such as transportation (trucks, tractors),
+oil (fertilizers, motor fuel) and lumber (wood). We use an <span  class="textit">input-output matrix</span> to summarize the
+interdependence among the industries we are interested in studying. An input-output matrix typically looks
+like:
+<p><!-- MATH
+ \begin{displaymath}
+\bordermatrix{&\text{Sector}\; 1&\text{Sector}\; 2& \ldots &\text{Sector}\; n\cr
+   \text{Sector}\; 1 &    &    &    &    \cr
+   \text{Sector}\; 2 &    &    &    &    \cr
+   \;\;\;\;\;\vdots  &    &    &    &    \cr
+   \text{Sector}\; n &    &    &    &    \cr}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="337" HEIGHT="143" ALIGN="MIDDLE" BORDER="0"
+ SRC="img986.gif"
+ ALT="$\displaystyle \bordermatrix{&amp;\text{Sector}\; 1&amp;\text{Sector}\; 2&amp; \ldots &amp;\text...
+...\; 2 &amp; &amp; &amp; &amp; \cr
+\;\;\;\;\;\vdots &amp; &amp; &amp; &amp; \cr
+\text{Sector}\; n &amp; &amp; &amp; &amp; \cr}
+$">
+</div><p>
+</p>
+
+<p>
+The <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img606.gif"
+ ALT="$ i,j$"></span>
+ entry of the matrix gives us the output from Sector <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ that is used as input to Sector <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+. It is usually most
+convenient to express the entries in monetary units, so that a column lists the dollar values of every input
+the sector requires to produce $1 of output.
+
+<p>
+The model must also take into account consumers who are not members of the represented industries. These
+consumer requirements are called the <span  class="textit">demand</span> on the economy. This demand is represented by a column
+matrix indicating the amount required from each industry:
+<p><!-- MATH
+ \begin{displaymath}
+\text{demand} = \left(
+\begin{array}{c}
+\text{amount from Sector}\; 1 \\
+\text{amount from Sector}\; 2 \\
+\vdots \\
+\text{amount from Sector}\; n 	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+demand<IMG
+ WIDTH="209" HEIGHT="103" BORDER="0"
+ SRC="img987.gif"
+ ALT="\begin{displaymath}= \left(
+\begin{array}{c}
+\text{amount from Sector}\; 1 \\
+\...
+...
+\vdots \\
+\text{amount from Sector}\; n
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+
+<p>
+So let us suppose that an economy was composed of only three industries. We will say these are manufacturing,
+agriculture and energy. We will say that it takes $0.20 worth of manufactured goods, $0.25 worth of
+energy production and $0.05 of food inputs in order to produce $1.00 of agricultural produce.
+Furthermore, the manufacturing sector
+requires $0.15 of agricultural produce, $0.15 of its own product 
+and $0.30 worth of energy to make $1.00 of manufactured goods. Finally, we
+stipulate that the energy industry requires $0.05 of agricultural output and $0.10 worth of manufactured
+products to stay in business and that it only consumes $0.01 of its own output.
+How much should each sector produce in order to meet the demand for exports of
+$2 billion of agricultural produce, $1 billion of manufactured goods and $3 billion worth of energy exports?
+
+<p>
+First, we set up the input-output matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+
+<p><!-- MATH
+ \begin{displaymath}
+\bordermatrix{&\text{Agriculture}&\text{Manufacturing}& \text{Energy}\cr
+   \text{Agriculture} & .05   & .15   &  .05  \cr
+   \text{Manufacturing} &  .20  & .15   & .10   \cr
+   \text{Energy} &  .25  &  .30  &  .01  \cr}=A
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="443" HEIGHT="117" ALIGN="MIDDLE" BORDER="0"
+ SRC="img988.gif"
+ ALT="$\displaystyle \bordermatrix{&amp;\text{Agriculture}&amp;\text{Manufacturing}&amp; \text{Ene...
+...t{Manufacturing} &amp; .20 &amp; .15 &amp; .10 \cr
+\text{Energy} &amp; .25 &amp; .30 &amp; .01 \cr}=A
+$">
+</div><p>
+</p>
+We let <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+ be the demand matrix (in billions of dollars)
+<p><!-- MATH
+ \begin{displaymath}
+D=\left(
+\begin{array}{c}
+	2 \\
+	1 \\
+	3
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="82" HEIGHT="74" BORDER="0"
+ SRC="img989.gif"
+ ALT="\begin{displaymath}D=\left(
+\begin{array}{c}
+2 \\
+1 \\
+3
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+We let <span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.gif"
+ ALT="$ x_1 =$"></span>
+ the amount the agricultural sector produces, <span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ x_2=$"></span>
+ the value of the manufactured goods created and
+<span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$ x_3 =$"></span>
+ the value of the energy created by the energy sector. We wish to know how much of each of these values
+is left after all of the industries satisfy their requirements. In other words, we need
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="33" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img990.gif"
+ ALT="$\displaystyle x_1 -$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH">[agricultural goods used in production]</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="33" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img991.gif"
+ ALT="$\displaystyle x_2 -$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH">[manufactured goods used in production]</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="33" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img992.gif"
+ ALT="$\displaystyle x_3 -$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH">[energy used in production]</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+We then determine formulas for the amounts used in production
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH">[agricultural goods used in production]</span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="187" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img993.gif"
+ ALT="$\displaystyle = .05x_1\;+\;.20x_2\;+\;.25x_3$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH">[manufactured goods used in production]</span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="187" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img994.gif"
+ ALT="$\displaystyle = .15x_1\;+\;.15x_2\;+\;.30x_3$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH">[energy used in production]</span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="187" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img995.gif"
+ ALT="$\displaystyle = .05x_1\;+\;.10x_2\;+\;.01x_3$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+If we let
+<p><!-- MATH
+ \begin{displaymath}
+X=\left(
+\begin{array}{c}
+	x_1 \\
+	x_2 \\
+	x_3
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="92" HEIGHT="74" BORDER="0"
+ SRC="img996.gif"
+ ALT="\begin{displaymath}X=\left(
+\begin{array}{c}
+x_1 \\
+x_2 \\
+x_3
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+then what we are asking for can be expressed simply as
+<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{c}
+	x_1 \\
+	x_2 \\
+	x_3
+\end{array}\right)-\left(
+\begin{array}{ccc}
+     .05   & .15  &  .05   \\
+     .20   & .15  &  .10   \\
+     .25   & .30  &  .01  
+\end{array}\right)
+\left(
+\begin{array}{c}
+	x_1 \\
+	x_2 \\
+	x_3
+\end{array}\right)=X-AX
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="355" HEIGHT="74" BORDER="0"
+ SRC="img997.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{c}
+x_1 \\
+x_2 \\
+x_3
+\end{array}\ri...
+...begin{array}{c}
+x_1 \\
+x_2 \\
+x_3
+\end{array}\right)=X-AX
+\end{displaymath}">
+</div><p>
+</p>
+We then equate this with our demand to get
+<p><!-- MATH
+ \begin{displaymath}
+X-AX=D
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="99" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img998.gif"
+ ALT="$\displaystyle X-AX=D$">
+</div><p>
+</p>
+To solve this equation, we substitute <!-- MATH
+ $\mathbf{I}X$
+ -->
+<span class="MATH"><IMG
+ WIDTH="26" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img999.gif"
+ ALT="$ \mathbf{I}X$"></span>
+ for <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ and then do a little manipulation
+<p><!-- MATH
+ \begin{displaymath}
+\mathbf{I}X-AX=D
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="106" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1000.gif"
+ ALT="$\displaystyle \mathbf{I}X-AX=D$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+(\mathbf{I}-A)X=D
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="104" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1001.gif"
+ ALT="$\displaystyle (\mathbf{I}-A)X=D$">
+</div><p>
+</p>
+which finally gives
+<p><!-- MATH
+ \begin{displaymath}
+X=(\mathbf{I}-A)^{-1}D
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="121" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1002.gif"
+ ALT="$\displaystyle X=(\mathbf{I}-A)^{-1}D$">
+</div><p>
+</p>
+Applying arithmetic to our example then gives us
+<p><!-- MATH
+ \begin{displaymath}
+\mathbf{I}-A=
+\left(
+\begin{array}{ccc}
+     1   & 0  &  0   \\
+     0   & 1  &  0   \\
+     0   & 0  &  1  
+\end{array}\right)-\left(
+\begin{array}{ccc}
+     .05   & .15  &  .05   \\
+     .20   & .15  &  .10   \\
+     .25   & .30  &  .01  
+\end{array}\right)=
+\left(
+\begin{array}{rrr}
+     .95   & -.15  &  -.05   \\
+     -.20   & .85  &  -.10   \\
+     -.25   & -.30  &  .99  
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="506" HEIGHT="64" BORDER="0"
+ SRC="img1003.gif"
+ ALT="\begin{displaymath}\mathbf{I}-A=
+\left(
+\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1...
+...
+-.20 &amp; .85 &amp; -.10 \\
+-.25 &amp; -.30 &amp; .99
+\end{array}\right)\end{displaymath}">
+</div><p>
+</p>
+Applying Gauss-Jordan elimination gives us
+<p><!-- MATH
+ \begin{displaymath}
+(\mathbf{I}-A)^{-1}=\frac{1}{14477}
+\left(
+\begin{array}{rrr}
+     16230   &3270  &  1150   \\
+     4460   & 18560  &  2100   \\
+     5450   & 6450  &  15550  
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="325" HEIGHT="74" BORDER="0"
+ SRC="img1004.gif"
+ ALT="\begin{displaymath}(\mathbf{I}-A)^{-1}=\frac{1}{14477}
+\left(
+\begin{array}{rrr}...
+...460 &amp; 18560 &amp; 2100 \\
+5450 &amp; 6450 &amp; 15550
+\end{array}\right)\end{displaymath}">
+</div><p>
+</p>
+Solving for our demand matrix <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+ gives us
+<p><!-- MATH
+ \begin{displaymath}
+X=(\mathbf{I}-A)^{-1}D=
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="138" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1005.gif"
+ ALT="$\displaystyle X=(\mathbf{I}-A)^{-1}D=$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+\frac{1}{14477}
+\left(
+\begin{array}{rrr}
+     16230   &3270  &  1150   \\
+     4460   & 18560  &  2100   \\
+     5450   & 6450  &  15550  
+\end{array}\right)
+\left(
+\begin{array}{c}
+	2 \\
+	1 \\
+	3
+\end{array}\right)=\frac{1}{14477}
+\left(
+\begin{array}{c}
+	39180 \\
+	33780 \\
+	64000
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="440" HEIGHT="74" BORDER="0"
+ SRC="img1006.gif"
+ ALT="\begin{displaymath}\frac{1}{14477}
+\left(
+\begin{array}{rrr}
+16230 &amp;3270 &amp; 1150...
+...begin{array}{c}
+39180 \\
+33780 \\
+64000
+\end{array}\right)\end{displaymath}">
+</div><p>
+</p>
+We round the results to two decimal places to get
+<p><!-- MATH
+ \begin{displaymath}
+X=\left(
+\begin{array}{c}
+	2.71 \\
+	2.33 \\
+	4.42
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="104" HEIGHT="74" BORDER="0"
+ SRC="img1007.gif"
+ ALT="\begin{displaymath}X=\left(
+\begin{array}{c}
+2.71 \\
+2.33 \\
+4.42
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+In other words, we need the agriculture sector to produce $2.71 billion worth of produce, manufacturing
+$2.33 billion, and energy should output $4.42 billion in order to meet the demand.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">4</span>.<span class="arabic">5</span></span></big>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>Suppose a corporation has three divisions; a plastics division, a controllers division and a 
+  semiconductor division.
+  For each dollar of production, the plastics division requires $0.10 of its own product, $0.20 worth of
+  controllers and $0.10 worth of semiconductors. The  controllers  division requires no plastics, $0.10 worth of 
+  controllers and $0.20 worth of semiconductors. The semiconductor division uses $0.10 worth of plastics and $0.10
+  of controllers. It does not use any of its own output. How much should each division produce if there is a demand
+  for $10 million of plastics, $20 million of controllers and $5 million of semiconductors?
+</li>
+<li>Suppose, for the previous problem, the demand for semiconductors doubled and the demand for controllers
+  dropped by 50%. What should the production for each division be?
+</li>
+<li>Create an economy with four sectors and solve it for three different demand matrices.
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html588"
+  href="node29.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html582"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html576"
+  href="node27.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html584"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html586"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html589"
+  href="node29.html">Chemical Reactions (Stoichiometry)</a>
+<b> Up:</b> <a name="tex2html583"
+  href="node23.html">Applications</a>
+<b> Previous:</b> <a name="tex2html577"
+  href="node27.html">Probability and Stochastic Matrices</a>
+ &nbsp; <b>  <a name="tex2html585"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html587"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

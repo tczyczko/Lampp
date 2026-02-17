@@ -1,0 +1,586 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Matrix Inverses, Part A</title>
+<meta name="description" content="Matrix Inverses, part A">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node21.html">
+<link rel="previous" href="node19.html">
+<link rel="up" href="node17.html">
+<link rel="next" href="node21.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html472"
+  href="node21.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html466"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html460"
+  href="node19.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html468"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html470"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html473"
+  href="node21.html">Elementary Matrices</a>
+<b> Up:</b> <a name="tex2html467"
+  href="node17.html">Matrix Arithmetic</a>
+<b> Previous:</b> <a name="tex2html461"
+  href="node19.html">Matrix Multiplication</a>
+ &nbsp; <b>  <a name="tex2html469"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html471"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00630000000000000000">
+Matrix Inverses, Part A</a>
+</h1>
+
+<p>
+It is common to think that jumping out of a hole is the inverse of
+jumping <span  class="textit">into</span> a hole. The problem of performing this
+ inverse action of getting out of a
+hole is usually more difficult than falling into it. Like
+most things in life, the more difficult action is the one we need
+to perform the most (or so it appears).
+The same relationship holds for finding the inverse of a matrix. 
+
+<p>
+Before arriving at the method for calculating the inverse of a matrix, let
+us look at one of the reasons we might find a matrix inverse useful.
+
+<p>
+In the previous chapter, row operations were used to solve systems of
+linear equations. For example, the system
+  <p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="119" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img735.gif"
+ ALT="$\displaystyle 10x + 10y +   15z$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img736.gif"
+ ALT="$\displaystyle =45$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="117" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img737.gif"
+ ALT="$\displaystyle 20x - \;\: 5y + \; \; 5z$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img738.gif"
+ ALT="$\displaystyle =60$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="114" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img739.gif"
+ ALT="$\displaystyle 15x \;\; \qquad + \; \; 5z$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img736.gif"
+ ALT="$\displaystyle =45$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+could be written as
+  <p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrr}
+  10 &  10 & 15 & 45 \\
+  20 & -5 & 5 & 60 \\
+  15 &  0 & 5 &  45
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="164" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img740.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrr}
+10 &amp; 10 &amp; 15 &amp; 45 \\
+20 &amp; -5 &amp; 5 &amp; 60 \\
+15 &amp; 0 &amp; 5 &amp; 45
+\end{array}\right)$">
+</div><p>
+</p>
+When Gauss-Jordan elimination is used, we end up with
+   <p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrr}
+  1 &  0 & 0 & \frac{12}{5} \\
+  0 & 1 & 0 & \frac{-3}{5} \\
+  0 &  0 & 1 &  \frac{9}{5}
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="140" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img741.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrr}
+1 &amp; 0 &amp; 0 &amp; \frac{12}{5} \\
+0 &amp; 1 &amp; 0 &amp; \frac{-3}{5} \\
+0 &amp; 0 &amp; 1 &amp; \frac{9}{5}
+\end{array}\right)$">
+</div><p>
+</p>
+This gives us the solutions <span class="MATH"><IMG
+ WIDTH="66" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img742.gif"
+ ALT="$ x=12/5$"></span>
+, <span class="MATH"><IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img743.gif"
+ ALT="$ y=-3/5$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img744.gif"
+ ALT="$ z=9/5$"></span>
+.
+
+<p>
+If we let
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+A= \left(\begin{array}{rrr}
+  10 & 10 & 15 \\
+  20 &  5 &  5 \\
+  15 &  0 &   5
+  \end{array}\right) 
+  \; X= \left(\begin{array}{r}
+  x  \\
+  y \\
+  z 
+  \end{array}\right) 
+  \; B= \left(\begin{array}{r}
+  45  \\
+  60 \\
+  45
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="357" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img745.gif"
+ ALT="$\displaystyle A= \left(\begin{array}{rrr}
+10 &amp; 10 &amp; 15 \\
+20 &amp; 5 &amp; 5 \\
+15...
+...ight)
+\; B= \left(\begin{array}{r}
+45 \\
+60 \\
+45
+\end{array}\right)
+$">
+</div><p>
+</p>
+then we can write our system of equations as
+<p><!-- MATH
+ \begin{displaymath}
+AX=B
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="65" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img746.gif"
+ ALT="$\displaystyle AX=B$">
+</div><p>
+</p>
+
+<p>
+In the section on matrix multiplication, we remarked that some square matrices (matrices
+with the same number of rows as columns) have inverses. We use the superscript <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img747.gif"
+ ALT="$ ^{-1}$"></span>
+ to
+show that a matrix is an inverse. We say that <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ A^{-1}$"></span>
+ is the inverse of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and that
+<!-- MATH
+ $A^{-1}A=AA^{-1}=\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="135" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img749.gif"
+ ALT="$ A^{-1}A=AA^{-1}=\mathbf{I}$"></span>
+. We will use this as our definition.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">3</span>..<span class="arabic">4</span></b> &nbsp; 
+<i>A square matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ has an inverse <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ A^{-1}$"></span>
+ if and only if <!-- MATH
+ $A^{-1}A=AA^{-1}=\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="135" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img749.gif"
+ ALT="$ A^{-1}A=AA^{-1}=\mathbf{I}$"></span>
+.</i></div><p></p>
+
+<p>
+We now assume that <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ A^{-1}$"></span>
+ exists for our system of equations and write
+<p><!-- MATH
+ \begin{displaymath}
+AX=B
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="65" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img746.gif"
+ ALT="$\displaystyle AX=B$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+A^{-1}AX=A^{-1}B
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="123" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img750.gif"
+ ALT="$\displaystyle A^{-1}AX=A^{-1}B$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+\mathbf{I}X=A^{-1}B
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="89" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.gif"
+ ALT="$\displaystyle \mathbf{I}X=A^{-1}B$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+X=A^{-1}B
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="82" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img752.gif"
+ ALT="$\displaystyle X=A^{-1}B$">
+</div><p>
+</p>
+
+<p>
+Since <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ is a column matrix containing the variable identifiers <span class="MATH"><IMG
+ WIDTH="44" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.gif"
+ ALT="$ x,y,z$"></span>
+, we should easily
+be able to calculate values for these variables for different values for the scalars of <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+.
+That is, if we have <span class="MATH"><IMG
+ WIDTH="33" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ A^{-1}$"></span>
+, we just use matrix multiplication to find solutions for any
+specified constant terms of our system of equations <span  class="textit">if solutions exist</span>.
+
+<p>
+If a square matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ has an inverse, then <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is called <span  class="textbf">invertible</span> or <span  class="textbf">nonsingular</span>.
+<a name="5817"></a>
+If it doesn't have an inverse, it is called <span  class="textbf">noninvertible</span> or <span  class="textbf">singular</span>. A matrix
+that is invertible is somewhat like a non-zero scalar. 
+
+<p>
+In the next section we will introduce the concept of elementary matrices which will be used to
+develop a method to determine if an inverse exists and how to calculate it.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">3</span>.<span class="arabic">3</span></span></big>
+
+<ol>
+<li>What is the inverse of <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+?
+</li>
+<li>Show that <!-- MATH
+ $\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.gif"
+ ALT="$ \mathbf{0}$"></span>
+ has no inverse.
+</li>
+<li>Assume that <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ are inverses of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+. Prove that <span class="MATH"><IMG
+ WIDTH="51" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img754.gif"
+ ALT="$ B=C$"></span>
+. (This proves that
+	the inverse of a matrix, if it exists, is <span  class="textbf">unique</span>.) 
+</li>
+<li>If <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+,<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ and the product matrix <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img705.gif"
+ ALT="$ AB$"></span>
+ are all invertible, prove that
+	<p><!-- MATH
+ \begin{displaymath}
+(AB)^{-1}=B^{-1}A^{-1}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="139" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img755.gif"
+ ALT="$\displaystyle (AB)^{-1}=B^{-1}A^{-1}$">
+</div><p>
+</p>
+</li>
+<li>Suppose we have <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ invertible matrices <span class="MATH"><IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img756.gif"
+ ALT="$ A_1$"></span>
+,<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img757.gif"
+ ALT="$ A_2$"></span>
+,<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img92.gif"
+ ALT="$ \ldots$"></span>
+,<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img758.gif"
+ ALT="$ A_n$"></span>
+. Use the result of
+	the previous problem to show that 
+	<p><!-- MATH
+ \begin{displaymath}
+(A_1A_2A_3 \cdots A_n)^{-1}=A_n^{-1}A_{n-1}^{-1} \cdots A_1^{-1}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="275" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img759.gif"
+ ALT="$\displaystyle (A_1A_2A_3 \cdots A_n)^{-1}=A_n^{-1}A_{n-1}^{-1} \cdots A_1^{-1}$">
+</div><p>
+</p>
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">3</span>.<span class="arabic">3</span></span></big>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>For the system of equations in the example of this section, show that
+	<p><!-- MATH
+ \begin{displaymath}
+A^{-1}=\left(\begin{array}{rrr}
+  \frac{-1}{45} & \frac{2}{45} & \frac{1}{45} \\
+  \frac{1}{45} &  \frac{7}{45} &  \frac{-2}{9} \\
+  \frac{1}{15} &  \frac{-2}{15} &   \frac{2}{15}
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="190" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img760.gif"
+ ALT="$\displaystyle A^{-1}=\left(\begin{array}{rrr}
+\frac{-1}{45} &amp; \frac{2}{45} &amp; \...
+...rac{-2}{9} \\
+\frac{1}{15} &amp; \frac{-2}{15} &amp; \frac{2}{15}
+\end{array}\right)$">
+</div><p>
+</p>
+</li>
+<li>For the system of equations in the example of this section, show that <span class="MATH"><IMG
+ WIDTH="82" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img761.gif"
+ ALT="$ X=A^{-1}B$"></span>
+.
+</li>
+<li>What would be the values of <span class="MATH"><IMG
+ WIDTH="44" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.gif"
+ ALT="$ x,y,z$"></span>
+ if <p><!-- MATH
+ \begin{displaymath}
+B=\left(\begin{array}{r} 3 \\4 \\3 \end{array}\right)
+  \textnormal{, if } B=\left(\begin{array}{r} 1 \\4 \\3 \end{array}\right)
+  \textnormal{, and if } B=\left(\begin{array}{r} 3 \\4 \\1 \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="346" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img762.gif"
+ ALT="$\displaystyle B=\left(\begin{array}{r} 3 \ 4 \ 3 \end{array}\right)
+\textnor...
+... \textnormal{, and if } B=\left(\begin{array}{r} 3 \ 4 \ 1 \end{array}\right)$">
+</div><p>
+</p>
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html472"
+  href="node21.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html466"
+  href="node17.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html460"
+  href="node19.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html468"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html470"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html473"
+  href="node21.html">Elementary Matrices</a>
+<b> Up:</b> <a name="tex2html467"
+  href="node17.html">Matrix Arithmetic</a>
+<b> Previous:</b> <a name="tex2html461"
+  href="node19.html">Matrix Multiplication</a>
+ &nbsp; <b>  <a name="tex2html469"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html471"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

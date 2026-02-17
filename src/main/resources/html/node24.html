@@ -1,0 +1,1345 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Graph Theory and Networks</title>
+<meta name="description" content="Graph theory and Networks">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node25.html">
+<link rel="previous" href="node23.html">
+<link rel="up" href="node23.html">
+<link rel="next" href="node25.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html532"
+  href="node25.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html526"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html520"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html528"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html530"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html533"
+  href="node25.html">Electrical Circuits</a>
+<b> Up:</b> <a name="tex2html527"
+  href="node23.html">Applications</a>
+<b> Previous:</b> <a name="tex2html521"
+  href="node23.html">Applications</a>
+ &nbsp; <b>  <a name="tex2html529"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html531"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00710000000000000000">
+Graph Theory and Networks</a>
+</h1>
+
+<p>
+Graph theory<a name="7752"></a> is a fairly new area of mathematics which is used to
+create models in economics, social sciences, traffic analysis, medicine,
+electrical engineering and
+many other fields. It has become a truly vast subject. We will try
+to give some flavor of it and show how the ideas of linear algebra are tightly connected.
+
+<p>
+
+<div align="CENTER"><a name="fig:dg0"></a><a name="7755"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 4.1:</strong>
+A Directed Graph</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="244" HEIGHT="129" ALIGN="BOTTOM" BORDER="0"
+ SRC="img829.gif"
+ ALT="\includegraphics[width=5.4cm,height=2.9cm]{dg0.eps}"></td></tr>
+</table>
+</div>
+A <span  class="textbf">directed graph</span><a name="7759"></a> is a collection of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ points called <span  class="textbf">vertices</span> and
+<a name="7761"></a>
+a finite number of <span  class="textbf">edges</span><a name="7763"></a>. Each pair of vertices is joined by one or more edges.
+Each edge is assigned a specific direction. In other words, if <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img830.gif"
+ ALT="$ V_i$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img831.gif"
+ ALT="$ V_j$"></span>
+ are
+two vertices, then they can be connected by two edges in opposite directions,
+ one going from <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img830.gif"
+ ALT="$ V_i$"></span>
+ to <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img831.gif"
+ ALT="$ V_j$"></span>
+ and
+one in the direction of <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img830.gif"
+ ALT="$ V_i$"></span>
+ with its origin at <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img831.gif"
+ ALT="$ V_j$"></span>
+. Of course, two vertices
+can also be connected by many edges going in the same direction. An example of a
+directed graph is illustrated in Figure&nbsp;<a href="#fig:dg0">4.1</a>.
+
+<p>
+Any graph can be represented by a square matrix <!-- MATH
+ $A_{n\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img832.gif"
+ ALT="$ A_{n\times n}$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img497.gif"
+ ALT="$ a_{i,j}$"></span>
+ is
+the number of edges joining vertex <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ to vertex <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+. The matrix
+representation for the directed graph illustrated in Figure&nbsp;<a href="#fig:dg0">4.1</a> is given below.
+<p><!-- MATH
+ \begin{displaymath}
+D=\left(
+\begin{array}{ccccc}
+0 & 1 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 0 & 1 & 0 	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="178" HEIGHT="112" BORDER="0"
+ SRC="img833.gif"
+ ALT="\begin{displaymath}D=\left(
+\begin{array}{ccccc}
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 1...
+...\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+
+<p>
+Notice that the row number gives us the number of the vertex we come <span  class="textit">from</span> and the column
+number corresponds to the vertex we travel <span  class="textit">to</span>. This means that <span class="MATH"><IMG
+ WIDTH="59" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img834.gif"
+ ALT="$ d_{1,5}=1$"></span>
+ means there is
+an edge connecting vertex 1 with vertex 5. Since we cannot go directly to vertex 3 from vertex 5, we
+have <span class="MATH"><IMG
+ WIDTH="59" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img835.gif"
+ ALT="$ d_{5,3}=0$"></span>
+.
+
+<p>
+A matrix representation of a directed graph <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+ that has the conditions that <span class="MATH"><IMG
+ WIDTH="57" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img836.gif"
+ ALT="$ d_{i,j}=0$"></span>
+ or <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ and that
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img837.gif"
+ ALT="$ d_{i,i}=0$"></span>
+ is called a <span  class="textbf">incidence matrix</span><a name="7778"></a>. This means that there is at most
+one edge from any vertex to any other. Also, no edge exists which connects a vertex to itself.
+
+<p>
+Incidence matrices can be used by sociologists and anthropologists to represent and study group interactions.
+These type of matrices can also be used to analyze transportation problems in exactly the same way. We
+will first look at a simple transportation system.
+
+<p>
+
+<div align="CENTER"><a name="fig:airline"></a><a name="7781"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 4.2:</strong>
+Example Airlines</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="381" HEIGHT="153" ALIGN="BOTTOM" BORDER="0"
+ SRC="img838.gif"
+ ALT="\includegraphics[width=8.5cm,height=3.4cm]{airline.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+In the sketch of the routes of our Example Airlines (Figure&nbsp;<a href="#fig:airline">4.2</a>), we used a line with
+two arrowheads to represent when vertices are connected by edges in both directions.
+The cities could be given the following numbers for rows and columns:
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Vancouver</td>
+<td align="CENTER">1</td>
+</tr>
+<tr><td align="LEFT">Edmonton</td>
+<td align="CENTER">2</td>
+</tr>
+<tr><td align="LEFT">Calgary</td>
+<td align="CENTER">3</td>
+</tr>
+<tr><td align="LEFT">Winnipeg</td>
+<td align="CENTER">4</td>
+</tr>
+<tr><td align="LEFT">Toronto</td>
+<td align="CENTER">5</td>
+</tr>
+</table>
+</div>
+The incidence
+matrix for this diagram would be:
+<p><!-- MATH
+ \begin{displaymath}
+A=\left(
+\begin{array}{ccccc}
+0 & 1 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 & 1 \\
+1 & 1 & 0 & 1 & 0 \\
+0 & 0 & 1 & 0 & 1 \\
+0 & 1 & 0 & 1 & 0 	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="176" HEIGHT="112" BORDER="0"
+ SRC="img839.gif"
+ ALT="\begin{displaymath}A=\left(
+\begin{array}{ccccc}
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 1...
+...\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0 &amp; 1 &amp; 0
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+
+<p>
+We can easily determine that it is impossible to make a direct flight from Vancouver to Winnipeg
+using Example Airlines. Intermediate stops are necessary. Suppose we wanted to know in how many
+ways we can travel from one city to another with a given number of stops. There are, for example,
+two routes a traveler can take from Vancouver to Winnipeg with two stopovers. A route from
+one vertex to another is called a <span  class="textbf">chain</span><a name="7794"></a> or <span  class="textbf">path</span><a name="7796"></a>. A path
+which is made up of exactly two edges is called a <span  class="textbf">2-chain</span>. An example would be a flight
+to Toronto from Calgary via Winnipeg. It should be very, very obvious what a 3-chain or an <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+-chain
+is composed of.
+
+<p>
+If we multiply our incidence matrix by itself, we get 
+<p><!-- MATH
+ \begin{displaymath}
+B=A^2=
+\left(
+\begin{array}{ccccc}
+2 & 1 & 1 & 1 & 1 \\
+1 & 3 & 1 & 2 & 0 \\
+1 & 1 & 3 & 0 & 2 \\
+1 & 2 & 0 & 2 & 0 \\
+1 & 0 & 2 & 0 & 2 	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="218" HEIGHT="112" BORDER="0"
+ SRC="img840.gif"
+ ALT="\begin{displaymath}B=A^2=
+\left(
+\begin{array}{ccccc}
+2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; ...
+...\
+1 &amp; 2 &amp; 0 &amp; 2 &amp; 0 \\
+1 &amp; 0 &amp; 2 &amp; 0 &amp; 2
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+We will see that <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img841.gif"
+ ALT="$ b_{i,j}$"></span>
+ gives us the number of ways we can go from city <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ to city <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+ with
+exactly one stopover. First, notice that <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img497.gif"
+ ALT="$ a_{i,j}$"></span>
+ gives us the number of edges that connect vertex
+<span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ with vertex <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+. In other words, there is one 1-chain that connects the two vertices.
+
+<p>
+We know from our definition of matrix multiplication 
+that row 2 of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ multiplied by column 4 of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ gives us <span class="MATH"><IMG
+ WIDTH="28" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img842.gif"
+ ALT="$ b_{2,4}$"></span>
+. 
+<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{ccccc}
+1 & 0 & 1 & 0 & 1 		
+\end{array}\right)
+\left(
+\begin{array}{c}
+ 0 \\
+ 0 \\
+ 1 \\
+ 0 \\
+ 1  	
+\end{array}\right)=2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="215" HEIGHT="112" BORDER="0"
+ SRC="img843.gif"
+ ALT="\begin{displaymath}\left(
+\begin{array}{ccccc}
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 1
+\end{array}\ri...
+...array}{c}
+0 \\
+0 \\
+1 \\
+0 \\
+1
+\end{array}\right)=2
+\end{displaymath}">
+</div><p>
+</p>
+The third column entry in row 2 of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ says that there is a 1-chain from Edmonton (vertex 2) to Calgary (vertex 3).
+The row three entry of column 4 informs us that Calgary (vertex 3) is connected to Winnipeg (vertex 4). Multiplying
+the ones in these entries represents the 2-chain of Edmonton-Calgary-Winnipeg. Similarly, the multiplication
+of the last ones in the row and column represents the 2-chain Edmonton-Toronto-Winnipeg. This reasoning may be
+generalized and used to prove that <span class="MATH"><IMG
+ WIDTH="28" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img844.gif"
+ ALT="$ A^m$"></span>
+ gives the number of ways to travel from city <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ to city <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+ with exactly
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img845.gif"
+ ALT="$ m-1$"></span>
+ stopovers. We omit the proof but use the result to explore our graph further.
+<p><!-- MATH
+ \begin{displaymath}
+C=A^3=
+\left(
+\begin{array}{ccccc}
+2 & 4 & 4 & 2 & 2 \\
+4 & 2 & 6 & 1 & 5 \\
+4 & 6 & 2 & 5 & 1 \\
+2 & 1 & 5 & 0 & 4 \\
+2 & 5 & 1 & 4 & 0 	
+\end{array}\right)\;\;\;
+D=A^4=
+\left(
+\begin{array}{ccccc}
+8 & 8 & 8 & 6 & 6 \\
+8 & 15 & 7 & 11 & 3 \\
+8 & 7 & 15 & 3 & 11 \\
+6 & 11 & 3 & 9 & 1 \\
+6 & 3 & 11 & 1 & 9 	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="488" HEIGHT="112" BORDER="0"
+ SRC="img846.gif"
+ ALT="\begin{displaymath}
+C=A^3=
+\left(
+\begin{array}{ccccc}
+2 &amp; 4 &amp; 4 &amp; 2 &amp; 2 \\
+4 &amp;...
+...
+6 &amp; 11 &amp; 3 &amp; 9 &amp; 1 \\
+6 &amp; 3 &amp; 11 &amp; 1 &amp; 9
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+There are exactly three ways to fly Example Airlines from Toronto to Edmonton with three stopovers. 
+They would be:
+
+<ol>
+<li>Toronto-Winnipeg-Calgary-Vancouver-Edmonton
+</li>
+<li>Toronto-Edmonton-Calgary-Vancouver-Edmonton
+</li>
+<li>Toronto-Edmonton-Vancouver-Calgary-Edmonton
+</li>
+</ol>
+Only the first 4-chain does not have Edmonton repeated. Any chain with a repeated vertex is called
+<span  class="textbf">redundant</span>.<a name="7819"></a>
+
+<p>
+Suppose an anthropologist has studied  a clan of bonobos and observed the pattern of dominance
+given in Figure&nbsp;<a href="#fig:group">4.3</a>. Each <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img830.gif"
+ ALT="$ V_i$"></span>
+ represents one member of the group.
+
+<div align="CENTER"><a name="fig:group"></a><a name="7823"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 4.3:</strong>
+Dominance Patterns in a Group</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="190" HEIGHT="118" ALIGN="BOTTOM" BORDER="0"
+ SRC="img847.gif"
+ ALT="\includegraphics[width=4.2cm,height=2.6cm]{group.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+We can see from this graph that the bonobo called <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img848.gif"
+ ALT="$ V_1$"></span>
+ directly dominates the bonobos <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img849.gif"
+ ALT="$ V_2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img850.gif"
+ ALT="$ V_3$"></span>
+
+but only indirectly dominates the others.
+The incidence matrix and some of its powers for this directed graph would be:
+<p><!-- MATH
+ \begin{displaymath}
+V=
+\left(
+\begin{array}{cccccc}
+0 & 1 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 1\\
+0 & 0 & 0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0	
+\end{array}\right)\;\;\;
+V^2=
+\left(
+\begin{array}{cccccc}
+0 & 0 & 0 & 1 & 0 & 2\\
+0 & 0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="428" HEIGHT="131" BORDER="0"
+ SRC="img851.gif"
+ ALT="\begin{displaymath}
+V=
+\left(
+\begin{array}{cccccc}
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp;...
+...0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+V^3=
+\left(
+\begin{array}{cccccc}
+0 & 0 & 0 & 0 & 2 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0	
+\end{array}\right)\;\;\;
+V^4=
+\left(
+\begin{array}{cccccc}
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="435" HEIGHT="131" BORDER="0"
+ SRC="img852.gif"
+ ALT="\begin{displaymath}
+V^3=
+\left(
+\begin{array}{cccccc}
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 2 &amp; 0\\
+0...
+...0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+
+<p>
+Notice that in row 1 of <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img853.gif"
+ ALT="$ V^2$"></span>
+ there is a one in column 4 and a two in column 6. This indicates
+that there is one way that bonobo <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img848.gif"
+ ALT="$ V_1$"></span>
+ can dominate <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img854.gif"
+ ALT="$ V_4$"></span>
+ through an intermediary and two ways
+that <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img848.gif"
+ ALT="$ V_1$"></span>
+ can dominate <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img855.gif"
+ ALT="$ V_6$"></span>
+ through exactly one intermediary. Notice that these column positions
+in the matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ V$"></span>
+ are equal to zero. This means that <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img848.gif"
+ ALT="$ V_1$"></span>
+ does not directly dominate <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img854.gif"
+ ALT="$ V_4$"></span>
+ or <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img855.gif"
+ ALT="$ V_6$"></span>
+.
+There is no 1-chain connecting the two. Similarly we observe that the two in the matrix <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img857.gif"
+ ALT="$ V^3$"></span>
+ shows
+that there are two ways that bonobo <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img848.gif"
+ ALT="$ V_1$"></span>
+ can dominate <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img858.gif"
+ ALT="$ V_5$"></span>
+ with exactly two intermediaries. Notice
+that the row 1, column 5 entries in <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ V$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img853.gif"
+ ALT="$ V^2$"></span>
+ are zeros. This means that <span  class="textit">the shortest path connecting
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img848.gif"
+ ALT="$ V_1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img858.gif"
+ ALT="$ V_5$"></span>
+ is a 2-chain</span>.
+
+<p>
+We can extend this logic to show that if we have an incidence matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img859.gif"
+ ALT="$ U$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ U^n$"></span>
+ has a non-zero <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img606.gif"
+ ALT="$ i,j$"></span>
+ entry,
+and if the <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img606.gif"
+ ALT="$ i,j$"></span>
+ entry for every <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img861.gif"
+ ALT="$ U^m$"></span>
+ is zero for <span class="MATH"><IMG
+ WIDTH="49" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img862.gif"
+ ALT="$ m&lt;n$"></span>
+, then the shortest path from vertex <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ to 
+vertex <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ j$"></span>
+ is an <span class="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img863.gif"
+ ALT="$ (m-1)$"></span>
+-chain. It should be apparent how useful this result can be.
+
+<p>
+One type of directed graph used frequently in economics, electrical engineering and traffic
+analysis is called a network.
+A <span  class="textbf">network</span><a name="7840"></a> is a directed graph such that each pair of vertices is
+connected by at most one edge and each edge is assigned a number.
+The vertices are called <span  class="textbf">junctions</span><a name="7842"></a> and the edges are called <span  class="textbf">branches</span>.
+<a name="7844"></a>
+The number assigned to each branch represents the <span  class="textbf">flow</span><a name="7846"></a> along the branch.
+In most networks it is assumed that the total flow into a junction equals the
+total flow out of that junction. These are the type of networks we will handle since this
+property allows us to write the flow through a junction using linear equations.
+A network is represented by an augmented matrix since we need an extra column
+to deal with the numbers which represent the flow through each branch.
+
+<p>
+We illustrate how to assign linear equations with reference to Figure&nbsp;<a href="#fig:fl0">4.4</a>. Since the flow
+going into the junction, labeled <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+, is equal to the flow coming out of the junction, we
+can write the linear equation <span class="MATH"><IMG
+ WIDTH="70" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img864.gif"
+ ALT="$ x+y=5$"></span>
+ to represent the flow through the junction.
+
+<p>
+
+<div align="CENTER"><a name="fig:fl0"></a><a name="7850"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 4.4:</strong>
+A Junction and 3 Branches</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="227" HEIGHT="119" ALIGN="BOTTOM" BORDER="0"
+ SRC="img865.gif"
+ ALT="\includegraphics[width=5.1cm,height=2.7cm]{fl0.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+A more complicated network is given in Figure&nbsp;<a href="#fig:fl1">4.5</a>. In this network there are four junctions and 
+nine branches. 
+
+<div align="CENTER"><a name="fig:fl1"></a><a name="7856"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 4.5:</strong>
+4 Junctions and 9 Branches</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="320" HEIGHT="139" ALIGN="BOTTOM" BORDER="0"
+ SRC="img866.gif"
+ ALT="\includegraphics[width=7.2cm,height=3.15cm]{fl1.eps}"></td></tr>
+</table>
+</div>
+We can write the linear equations for each of the four junctions. The variables (and/or numbers)
+representing flow into the junction are put on the left
+of the equality sign. The variables for flow coming out are placed on the right.
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="28" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img867.gif"
+ ALT="$\displaystyle 100$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="73" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img868.gif"
+ ALT="$\displaystyle = x_1+x_2$"></span></td>
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH">Junction 1</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img869.gif"
+ ALT="$\displaystyle x_1+x_3$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="81" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img870.gif"
+ ALT="$\displaystyle = 150+x_4$"></span></td>
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH">Junction 2</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="64" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img871.gif"
+ ALT="$\displaystyle 300+x_2$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="73" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img872.gif"
+ ALT="$\displaystyle = x_3+x_5$"></span></td>
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH">Junction 3</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img873.gif"
+ ALT="$\displaystyle x_4 + x_5$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img874.gif"
+ ALT="$\displaystyle = 250$"></span></td>
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH">Junction 4</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+We use algebra to put these equations in a more traditional form.
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img875.gif"
+ ALT="$\displaystyle x_1 + x_2$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img876.gif"
+ ALT="$\displaystyle = 100$"></span></td>
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH">Junction 1</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="92" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img877.gif"
+ ALT="$\displaystyle x_1 + x_3 - x_4$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img878.gif"
+ ALT="$\displaystyle = 150$"></span></td>
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH">Junction 2</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="104" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img879.gif"
+ ALT="$\displaystyle -x_2 + x_3 + x_5$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img880.gif"
+ ALT="$\displaystyle = 300$"></span></td>
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH">Junction 3</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img873.gif"
+ ALT="$\displaystyle x_4 + x_5$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img874.gif"
+ ALT="$\displaystyle = 250$"></span></td>
+<td>&nbsp;</td>
+<td nowrap ALIGN="LEFT"><span class="MATH">Junction 4</span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+We create an augmented matrix to hold our values.
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccccccc}
+1 & 1 & 0 & 0 & 0 &\vline & 100 \\
+1 & 0 & 1 & -1& 0 &\vline & 150 \\
+0 & -1& 1 & 0 & 1 &\vline & 300 \\
+0 & 0 & 0 & 1 & 1 &\vline & 250 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="232" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img881.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccccccc}
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp;\vline &amp; 100 \\
+...
+... &amp; 0 &amp; 1 &amp;\vline &amp; 300 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp;\vline &amp; 250
+\end{array}\right)
+$">
+</div><p>
+</p>
+Then we use Gauss-Jordan to evaluate the matrix.
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccccccr}
+1 & 0 & 1 & 0 & 1 &\vline & 400 \\
+0 & 1 & -1& 0 & -1&\vline & -300 \\
+0 & 0 & 0 & 1 & 1 &\vline & 250 \\
+0 & 0 & 0 & 0 & 0 &\vline & 0 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="245" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img882.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccccccr}
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp;\vline &amp; 400 \\
+...
+... 0 &amp; 1 &amp; 1 &amp;\vline &amp; 250 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;\vline &amp; 0
+\end{array}\right)
+$">
+</div><p>
+</p>
+The rank of the coefficient matrix is 3 and since we have 5 variables we need 2 parameters. We'll
+call them <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.gif"
+ ALT="$ s$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img116.gif"
+ ALT="$ t$"></span>
+. This gives us a solution matrix:
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{c}
+ 400-s-t\\
+-300+s+t \\
+ s \\
+ 250-t \\
+ t 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="136" HEIGHT="111" ALIGN="MIDDLE" BORDER="0"
+ SRC="img883.gif"
+ ALT="$\displaystyle \left(\begin{array}{c}
+400-s-t\\
+-300+s+t \\
+s \\
+250-t \\
+t
+\end{array}\right)
+$">
+</div><p>
+</p>
+Notice that <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.gif"
+ ALT="$ s$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img116.gif"
+ ALT="$ t$"></span>
+ cannot be any scalar <!-- MATH
+ $\in \mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="31" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.gif"
+ ALT="$ \in\mathbb{R}$"></span>
+. In order for the flow to follow the direction of
+the arrows, the values for each variable <span  class="textit">must be positive</span>. So we must have <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$ s&gt; 0$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="39" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ t&gt;0$"></span>
+.
+Also, from row 1 of the solution matrix, we must have <span class="MATH"><IMG
+ WIDTH="82" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ s+t&lt;400$"></span>
+. This will assure us a positive value for <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img884.gif"
+ ALT="$ x_1$"></span>
+.
+From row 2 we have that <span class="MATH"><IMG
+ WIDTH="82" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ s+t&gt;300$"></span>
+ for <span class="MATH"><IMG
+ WIDTH="50" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img885.gif"
+ ALT="$ x_2&gt; 0$"></span>
+ and from row 4 we have that <span class="MATH"><IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img886.gif"
+ ALT="$ t&lt; 250$"></span>
+. Putting all these
+inequalities together, we have
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img887.gif"
+ ALT="$\displaystyle s$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img888.gif"
+ ALT="$\displaystyle &gt; 0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="10" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img889.gif"
+ ALT="$\displaystyle t$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img888.gif"
+ ALT="$\displaystyle &gt; 0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img890.gif"
+ ALT="$\displaystyle s+t$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img891.gif"
+ ALT="$\displaystyle &lt; 400$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img890.gif"
+ ALT="$\displaystyle s+t$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img892.gif"
+ ALT="$\displaystyle &gt; 300$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+
+<p>
+We can then draw a graph to indicate the region containing all pairs <span class="MATH"><IMG
+ WIDTH="37" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img893.gif"
+ ALT="$ (s,t)$"></span>
+ which give solutions
+which assure us of positive flow through the network. (Negative flow would be like having a toilet backing
+up, not a very desirable solution to a water flow problem.)
+
+<div align="CENTER"><a name="fig:net0"></a><a name="7885"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 4.6:</strong>
+ <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$ s&gt; 0$"></span>
+,<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ t&gt;0$"></span>
+,<span class="MATH"><IMG
+ WIDTH="82" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ s+t&lt;400$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="82" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ s+t&gt;300$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="281" HEIGHT="292" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="\includegraphics[width=6.3cm,height=6.5cm]{net0.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">4</span>.<span class="arabic">1</span></span></big>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>What would be the incidence matrix for the following diagram?
+
+<div align="CENTER">
+  <div align="CENTER">
+
+</div>  <IMG
+ WIDTH="263" HEIGHT="157" ALIGN="BOTTOM" BORDER="0"
+ SRC="img895.gif"
+ ALT="\includegraphics[width=5.9cm,height=3.5cm]{dg1.eps}">
+
+</div> 
+</li>
+<li>What would be the incidence matrix for the following sketch?
+
+<div align="CENTER">
+  <div align="CENTER">
+
+</div>  <IMG
+ WIDTH="269" HEIGHT="129" ALIGN="BOTTOM" BORDER="0"
+ SRC="img896.gif"
+ ALT="\includegraphics[width=6cm,height=2.9cm]{dg2.eps}">
+
+</div>
+</li>
+<li>Sketch the diagrams for the following incidence matrices
+<p><!-- MATH
+ \begin{displaymath}
+A=\left(
+\begin{array}{cccc}
+0 & 1 & 1 & 0  \\
+1 & 0 & 1 & 1  \\
+1 & 1 & 0 & 1  \\
+0 & 1 & 1 & 0  	
+\end{array}\right)\;\;\;\;
+B=\left(
+\begin{array}{ccccc}
+0 & 1 & 0 & 1 & 0 \\
+1 & 0 & 1 & 0 & 1 \\
+0 & 1 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 & 1 \\
+0 & 1 & 1 & 0 & 0 	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="354" HEIGHT="112" BORDER="0"
+ SRC="img897.gif"
+ ALT="\begin{displaymath}A=\left(
+\begin{array}{cccc}
+0 &amp; 1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1 &amp; 1 ...
+...\\
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0
+\end{array}\right)\end{displaymath}">
+</div><p>
+</p>
+</li>
+<li>How many ways are there of traveling from vertex 3 to vertex 4 with exactly two
+  stopovers for the directed graph given by the matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ in the previous problem? 
+  (<span  class="textbf">HINT</span>: There is an undocumented (until now) feature in Lamp which allows<a name="7902"></a>
+  for the quick multiplication of square matrices. First, create the square matrix. Then
+  use the STORE feature in the MATRIX menu item. Then use the MULTIPLY item in the same
+  menu to multiply the stored matrix with the displayed matrix. The displayed matrix is
+  replaced with the result. In other words, if <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+ is the displayed matrix and <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ is the
+  stored matrix, then the MULTIPLY option gives us <span class="MATH"><IMG
+ WIDTH="62" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img898.gif"
+ ALT="$ SD=R$"></span>
+, and the matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ replaces
+  the matrix <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+.) What is the shortest path from vertex 5 to vertex 4 in the directed graph
+  represented by the incidence matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+? What is this path?
+</li>
+<li>Sketch the network for the following augmented matrix
+  <p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rrrrrr}
+ 1 & -1& 1 & 0 & \vline & -1 \\
+ 1 & 1 & 1 & 1 & \vline & 2 \\
+ 1 & 1 & 1 &-1 & \vline & 0  \\
+ 0 &-1 &-1 & 1 & \vline & -3 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="217" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img899.gif"
+ ALT="$\displaystyle \left(\begin{array}{rrrrrr}
+1 &amp; -1&amp; 1 &amp; 0 &amp; \vline &amp; -1 \\
+1 &amp;...
+... &amp; 1 &amp; 1 &amp;-1 &amp; \vline &amp; 0 \\
+0 &amp;-1 &amp;-1 &amp; 1 &amp; \vline &amp; -3
+\end{array}\right)
+$">
+</div><p>
+</p>
+</li>
+<li>Find all solutions for the network in the previous problem. 
+</li>
+<li>Solve for the network for the following diagram.
+
+<div align="CENTER">
+  <div align="CENTER">
+
+</div>  <IMG
+ WIDTH="267" HEIGHT="267" ALIGN="BOTTOM" BORDER="0"
+ SRC="img900.gif"
+ ALT="\includegraphics[width=6cm,height=6cm]{fl2.eps}">
+
+</div>
+</li>
+<li>Find all solutions for the network for the following diagram.
+
+<div align="CENTER">
+  <div align="CENTER">
+
+</div>  <IMG
+ WIDTH="161" HEIGHT="153" ALIGN="BOTTOM" BORDER="0"
+ SRC="img901.gif"
+ ALT="\includegraphics[width=3.6cm,height=3.4cm]{fl3.eps}">
+
+</div>
+
+<p>
+</li>
+<li>Solve for the network for the following diagram.
+
+<div align="CENTER">
+  <div align="CENTER">
+
+</div>  <IMG
+ WIDTH="296" HEIGHT="111" ALIGN="BOTTOM" BORDER="0"
+ SRC="img902.gif"
+ ALT="\includegraphics[width=6.6cm,height=2.5cm]{fl4.eps}">
+
+</div>
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html532"
+  href="node25.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html526"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html520"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html528"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html530"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html533"
+  href="node25.html">Electrical Circuits</a>
+<b> Up:</b> <a name="tex2html527"
+  href="node23.html">Applications</a>
+<b> Previous:</b> <a name="tex2html521"
+  href="node23.html">Applications</a>
+ &nbsp; <b>  <a name="tex2html529"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html531"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

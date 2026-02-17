@@ -1,0 +1,482 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Cryptography</title>
+<meta name="description" content="Cryptography">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node27.html">
+<link rel="previous" href="node25.html">
+<link rel="up" href="node23.html">
+<link rel="next" href="node27.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html560"
+  href="node27.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html554"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html548"
+  href="node25.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html556"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html558"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html561"
+  href="node27.html">Probability and Stochastic Matrices</a>
+<b> Up:</b> <a name="tex2html555"
+  href="node23.html">Applications</a>
+<b> Previous:</b> <a name="tex2html549"
+  href="node25.html">Electrical Circuits</a>
+ &nbsp; <b>  <a name="tex2html557"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html559"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00730000000000000000">
+Cryptography</a>
+</h1>
+
+<p>
+Cryptography<a name="7973"></a> is the art of encoding and decoding secret messages. The use of publicly accessible
+communication lines and the need to ensure information privacy has created a surge of interest
+in this area. In cryptography, coding algorithms are referred to as <span  class="textit">ciphers</span>.<a name="7975"></a> Ciphers are used
+to change readable text (<span  class="textit">plaintext</span>)<a name="7977"></a> to coded text (<span  class="textit">ciphertext</span>). This process is
+called <span  class="textit">enciphering</span> and the inverse action, creating plaintext from ciphertext, is called
+<span  class="textit">deciphering</span>.
+
+<p>
+<br><p></p>
+<div align="CENTER"><a name="8011"></a>
+<table>
+<caption><strong>Table 4.1:</strong>
+ A Simple Cipher </caption>
+<tr><td>
+<div align="CENTER">
+<table cellpadding=3 border="1" align="CENTER">
+<tr><td align="CENTER">A</td>
+<td align="CENTER">B</td>
+<td align="CENTER">C</td>
+<td align="CENTER">D</td>
+<td align="CENTER">E</td>
+<td align="CENTER">F</td>
+<td align="CENTER">G</td>
+<td align="CENTER">H</td>
+<td align="CENTER">I</td>
+<td align="CENTER">J</td>
+<td align="CENTER">K</td>
+<td align="CENTER">L</td>
+<td align="CENTER">M</td>
+<td align="CENTER">N</td>
+<td align="CENTER">O</td>
+</tr>
+<tr><td align="CENTER">0</td>
+<td align="CENTER">1</td>
+<td align="CENTER">2</td>
+<td align="CENTER">3</td>
+<td align="CENTER">4</td>
+<td align="CENTER">5</td>
+<td align="CENTER">6</td>
+<td align="CENTER">7</td>
+<td align="CENTER">8</td>
+<td align="CENTER">9</td>
+<td align="CENTER">10</td>
+<td align="CENTER">11</td>
+<td align="CENTER">12</td>
+<td align="CENTER">13</td>
+<td align="CENTER">14</td>
+</tr>
+</table>
+<br></div>
+<p>
+<br>
+<div align="CENTER"><table cellpadding=3 border="1" align="CENTER">
+<tr><td align="CENTER">P</td>
+<td align="CENTER">Q</td>
+<td align="CENTER">R</td>
+<td align="CENTER">S</td>
+<td align="CENTER">T</td>
+<td align="CENTER">U</td>
+<td align="CENTER">V</td>
+<td align="CENTER">W</td>
+<td align="CENTER">X</td>
+<td align="CENTER">Y</td>
+<td align="CENTER">Z</td>
+<td align="CENTER">!</td>
+<td align="CENTER">?</td>
+<td align="CENTER">*</td>
+<td align="CENTER">&nbsp;</td>
+</tr>
+<tr><td align="CENTER">15</td>
+<td align="CENTER">16</td>
+<td align="CENTER">17</td>
+<td align="CENTER">18</td>
+<td align="CENTER">19</td>
+<td align="CENTER">20</td>
+<td align="CENTER">21</td>
+<td align="CENTER">22</td>
+<td align="CENTER">23</td>
+<td align="CENTER">24</td>
+<td align="CENTER">25</td>
+<td align="CENTER">26</td>
+<td align="CENTER">27</td>
+<td align="CENTER">28</td>
+<td align="CENTER">&nbsp;</td>
+</tr>
+</table>
+</div>
+
+  <a name="tab:cipher"></a></td></tr>
+</table>
+</div><p></p>
+<br>
+One of the simplest ciphers is to replace letters of the alphabet with other letters or numbers. 
+Suppose we had the correspondence of letters to numbers seen in Table&nbsp;<a href="#tab:cipher">4.1</a>.
+
+<p>
+Using this simple cipher, we can encode the message:
+<div align="CENTER">
+<big class="LARGE">WHAT*IS*THE*FREQUENCY?</big>
+</div>
+into
+<div align="CENTER">
+22 7 0 19 28 8 18 28 19 7 4 28 5 17 4 16 20 4 13 2 24 27
+
+</div>
+or, more likely, into
+<div align="CENTER">
+22070019280818281907042805170416200413022427
+
+</div>
+where each number is made two digits wide by preceding it with a zero if necessary.
+
+<p>
+This is the same procedure as performed by a computer when something is typed on the keyboard. The
+symbols on the keyboard are mapped onto unique numbers. The reverse happens when these numbers are
+sent to the monitor or printer for display.
+
+<p>
+This simple cipher is obviously too simple for serious secrecy. A more secure cipher system can
+be obtained by separating the plaintext into groups of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ letters and replacing each group with
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ cipher letters. This is called a <span  class="textit">polygraphic system</span>.<a name="8022"></a>
+ We will look at one such method,
+which uses matrix multiplication, called <span  class="textit">Hill ciphers</span>.<a name="8024"></a>
+
+<p>
+The most basic form of a Hill cipher involves breaking up a plaintext message into pairs of letters.
+An extra letter may be added to the plaintext to make an even number of characters. Our message would
+be grouped as
+<div align="CENTER">
+<big class="LARGE">WH   AT   *I   S*   TH   E*   FR   EQ 
+  UE   NC   Y?</big>
+</div>
+which gives us the following pairs of numbers
+<div align="CENTER">
+22,7   0,19   28,8   18,28   19,7   4,28   5,17   4,16 
+  20,4   13,2   24,27
+
+</div>
+We then choose an arbitrary <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img933.gif"
+ ALT="$ 2\times 2$"></span>
+ matrix of non-zero integer numbers <span  class="textit">modulo 29</span>. The reason
+we choose to work in <!-- MATH
+ $\mathbb{Z}_{29}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="28" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img934.gif"
+ ALT="$ \mathbb{Z}_{29}$"></span>
+ is because that is how many characters we need (and the
+field <!-- MATH
+ $\mathbb{Z}_{29}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="28" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img934.gif"
+ ALT="$ \mathbb{Z}_{29}$"></span>
+ is available in Lamp).
+Suppose we choose the following matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+
+<p><!-- MATH
+ \begin{displaymath}
+A=
+\left(
+\begin{array}{cc}
+7 & 2 \\
+3 & 10 	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="109" HEIGHT="54" BORDER="0"
+ SRC="img935.gif"
+ ALT="\begin{displaymath}A=
+\left(
+\begin{array}{cc}
+7 &amp; 2 \\
+3 &amp; 10
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+We then write each pair of numbers as column matrices and multiply each matrix by <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+. For example,
+for the first pair of numbers we would have
+<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{cc}
+7 & 2 \\
+3 & 10 	
+\end{array}\right)
+\left(
+\begin{array}{c}
+22 \\
+7  	
+\end{array}\right)=
+\left(
+\begin{array}{cc}
+23  \\
+20  	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="208" HEIGHT="54" BORDER="0"
+ SRC="img936.gif"
+ ALT="\begin{displaymath}
+\left(
+\begin{array}{cc}
+7 &amp; 2 \\
+3 &amp; 10
+\end{array}\right...
+...right)=
+\left(
+\begin{array}{cc}
+23 \\
+20
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+We continue the process to get all the pairs of numbers for our ciphertext.
+<div align="CENTER">
+23,20   9,16   9,19   8,15   2,11   26,2   11,11   12,27 
+  3,13   8,1   19,23
+
+</div>
+This corresponds to the following pairs of characters
+<div align="CENTER">
+<big class="LARGE">XU  JQ  JT  IP  CL  !C  LL  M?  DN  IB  TX
+</big>
+</div>
+which we would type up as
+<div align="CENTER">
+<big class="LARGE">XUJQJTIPCL!CLLM?DNIBTX
+</big>
+</div>
+and send off to our Fearless Leader at Secret Headquarters in Potsylvania.
+
+<p>
+To decipher the message, the ciphertext is broken up into pairs, translated into numbers and then
+each pair of numbers is multiplied by the inverse of the enciphering matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+. Simply, <span class="MATH"><IMG
+ WIDTH="62" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img937.gif"
+ ALT="$ AP=C$"></span>
+ implies
+that <!-- MATH
+ $A^{-1}AP=A^{-1}C$
+ -->
+<span class="MATH"><IMG
+ WIDTH="120" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img938.gif"
+ ALT="$ A^{-1}AP=A^{-1}C$"></span>
+, which gives us <span class="MATH"><IMG
+ WIDTH="79" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img939.gif"
+ ALT="$ P=A^{-1}C$"></span>
+, where <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is the enciphering matrix, <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img822.gif"
+ ALT="$ P$"></span>
+ is the matrix
+containing the pairs of plaintext numbers and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ contains the pairs of ciphertext numbers. Of course, one
+must be careful that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ <span  class="textit">has</span> an inverse. We will look at this more closely in the chapter on determinants.
+
+<p>
+It is <span  class="textit">fairly</span> easy to decipher a Hill cipher where the letters are grouped in pairs even if the
+encoding matrix is unknown (it would mean trying out 736  2<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img392.gif"
+ ALT="$ \times$"></span>
+2 matrices over <!-- MATH
+ $\mathbb{Z}_{29}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="28" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img934.gif"
+ ALT="$ \mathbb{Z}_{29}$"></span>
+). However, the
+difficulty of breaking a Hill cipher through trial-and-error increases enormously when larger groupings
+are used and the modulus is unknown.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">4</span>.<span class="arabic">3</span></span></big>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>What is the inverse of the enciphering matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ in our example of a Hill cipher.
+	(<span  class="textbf">HINT</span>: Use Lamp and select the INTEGER MOD P option in the FIELD menu and enter a
+modulus of 29 when prompted.)<a name="8099"></a> 
+</li>
+<li>Decode the following Hill ciphertext given that the enciphering matrix is
+<p><!-- MATH
+ \begin{displaymath}
+A=
+\left(
+\begin{array}{cc}
+12 & 16 \\
+25 & 7 	
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="117" HEIGHT="54" BORDER="0"
+ SRC="img940.gif"
+ ALT="\begin{displaymath}A=
+\left(
+\begin{array}{cc}
+12 &amp; 16 \\
+25 &amp; 7
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+<div align="CENTER">
+<big class="XLARGE">OCVALDDG*GY?Y!OMD*KSRWREY*KI
+</big>
+</div>
+Assume that the characters are grouped in pairs and encoded into numbers with the simple cipher of
+this section. (<span  class="textbf">HINT</span>: It is possible to use the MULTIPLY option in the MATRIX menu of Lamp to
+ease a lot of the computation. We can only multiply square matrices, 
+so we need to group the cipher
+column matrix in pairs to form square, augmented matrices. If you don't know how to use the MULTIPLY
+option, read the exercises in the section on graph theory in this chapter. Better yet, do the
+exercises.)
+
+<p>
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html560"
+  href="node27.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html554"
+  href="node23.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html548"
+  href="node25.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html556"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html558"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html561"
+  href="node27.html">Probability and Stochastic Matrices</a>
+<b> Up:</b> <a name="tex2html555"
+  href="node23.html">Applications</a>
+<b> Previous:</b> <a name="tex2html549"
+  href="node25.html">Electrical Circuits</a>
+ &nbsp; <b>  <a name="tex2html557"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html559"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

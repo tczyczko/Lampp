@@ -1,0 +1,1083 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Derivation of </title>
+<meta name="description" content="Derivation of ">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="previous" href="node56.html">
+<link rel="up" href="node52.html">
+<link rel="next" href="node58.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html1005"
+  href="node58.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html999"
+  href="node52.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html995"
+  href="node56.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html1001"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html1003"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html1006"
+  href="node58.html">Answers to Selected Problems</a>
+<b> Up:</b> <a name="tex2html1000"
+  href="node52.html">More Applications</a>
+<b> Previous:</b> <a name="tex2html996"
+  href="node56.html">3D Computer Graphics</a>
+ &nbsp; <b>  <a name="tex2html1002"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html1004"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION001250000000000000000">
+Derivation of <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1829.gif"
+ ALT="$ \sum n^k$"></span>
+</a>
+</h1>
+
+<p>
+Occasionally we will find that we must evaluate equations like <!-- MATH
+ $y=1^2+2^2+3^2+4^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="152" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1830.gif"
+ ALT="$ y=1^2+2^2+3^2+4^2$"></span>
+ or 
+<!-- MATH
+ $x=1^k+2^k+3^k+\cdots +n^k$
+ -->
+<span class="MATH"><IMG
+ WIDTH="196" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1831.gif"
+ ALT="$ x=1^k+2^k+3^k+\cdots +n^k$"></span>
+. It would be useful to have functions which would give us exact answers
+for arbitrary values of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.gif"
+ ALT="$ k$"></span>
+ without having to perform expansions and huge amounts of
+arithmetic. We will show a method for finding such functions in this section.
+
+<p>
+For our purposes we define a <span  class="textbf">sequence</span><a name="19760"></a> as an ordered list of scalars. In other words, there
+is a first scalar, a second, and so on. An <span  class="textbf">infinite sequence</span><a name="19762"></a>
+ is one that continues forever.
+Sequences are often represented by an algorithm which generates the next term in the sequence.
+
+<p>
+A <span  class="textbf">series</span><a name="19764"></a> is the sum of the members of a sequence. 
+An <span  class="textbf">infinite series</span><a name="19766"></a> is the sum
+of an infinite sequence. We can write an infinite series using the symbols
+<!-- MATH
+ $\sum^\infty$
+ -->
+<span class="MATH"><IMG
+ WIDTH="34" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1832.gif"
+ ALT="$ \sum^\infty$"></span>
+.
+If the members of a sequence tend to become smaller as we continue down the list, then sometimes the infinite series
+made from an infinite sequence of this kind <span  class="textbf">converges</span> to a value. Calculus is needed to understand
+infinite series. We are only interested in finite series in this text, all of which obviously can be
+evaluated as a finite number.
+
+<p>
+Given a positive integer <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ we define <!-- MATH
+ $n!=n*(n-1)*(n-2)*\cdots *3*2*1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="280" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1833.gif"
+ ALT="$ n!=n*(n-1)*(n-2)*\cdots *3*2*1$"></span>
+. We say <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1834.gif"
+ ALT="$ n!$"></span>
+ is <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ <span  class="textbf">factorial</span>.
+Thus, <span class="MATH"><IMG
+ WIDTH="46" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1835.gif"
+ ALT="$ 1!=1$"></span>
+, <span class="MATH"><IMG
+ WIDTH="98" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1836.gif"
+ ALT="$ 2!=2*1=2$"></span>
+, <!-- MATH
+ $3!=3*2*1=6$
+ -->
+<span class="MATH"><IMG
+ WIDTH="121" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1837.gif"
+ ALT="$ 3!=3*2*1=6$"></span>
+, <!-- MATH
+ $4!=4*3*2*1=24$
+ -->
+<span class="MATH"><IMG
+ WIDTH="152" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1838.gif"
+ ALT="$ 4!=4*3*2*1=24$"></span>
+, and so on. We also define <span class="MATH"><IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1839.gif"
+ ALT="$ 0!=1$"></span>
+. Factorials are
+used to calculate the number of ways objects may be arranged in order. For the letters <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+, <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+, <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+ there are
+<span class="MATH"><IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1840.gif"
+ ALT="$ 3!=6$"></span>
+ ways to arrange them. They are <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1841.gif"
+ ALT="$ abc$"></span>
+, <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1842.gif"
+ ALT="$ acb$"></span>
+, <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1843.gif"
+ ALT="$ bac$"></span>
+, <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1844.gif"
+ ALT="$ bca$"></span>
+, <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1845.gif"
+ ALT="$ cab$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1846.gif"
+ ALT="$ cba$"></span>
+.
+Each arrangement is called a <span  class="textbf">permutation</span>. <a name="19770"></a>
+
+<p>
+If we have 4 letters, <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+, <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+, <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.gif"
+ ALT="$ d$"></span>
+, the number of ways we can arrange them is <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1847.gif"
+ ALT="$ 4!=24$"></span>
+. How many ways
+are there to take the four letters two at a time? We supply the list below.
+<p><!-- MATH
+ \begin{displaymath}
+\begin{array}{cccc}
+ab & ba & ca & da \\
+ac & bc & cb & db \\
+ad & bd & cd & dc	
+\end{array}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="111" HEIGHT="74" BORDER="0"
+ SRC="img1848.gif"
+ ALT="\begin{displaymath}
+\begin{array}{cccc}
+ab &amp; ba &amp; ca &amp; da \\
+ac &amp; bc &amp; cb &amp; db \\
+ad &amp; bd &amp; cd &amp; dc
+\end{array}\end{displaymath}">
+</div><p>
+</p>
+
+<p>
+The formula to calculate the number of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ distinct objects taken <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ r$"></span>
+ at a time is
+<p><!-- MATH
+ \begin{displaymath}
+\frac{n!}{(n-r)!}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="61" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1849.gif"
+ ALT="$\displaystyle \frac{n!}{(n-r)!}$">
+</div><p>
+</p>
+
+<p>
+In the list of permutations we gave, notice that we have <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1850.gif"
+ ALT="$ ab$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1851.gif"
+ ALT="$ ba$"></span>
+ counted separately. This is because
+order is important. If order is not important, and we wish to know how many <span  class="textbf">combinations</span> we can have, then
+the formula is <a name="19777"></a>
+<p><!-- MATH
+ \begin{displaymath}
+\binom{n}{r} =  \frac{n!}{r!(n-r)!}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="128" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1852.gif"
+ ALT="$\displaystyle \binom{n}{r} = \frac{n!}{r!(n-r)!} $">
+</div><p>
+</p>
+
+<p>
+Please note that the use of braces in the left part of the equation <span  class="textit">does not specify a matrix</span>. In this
+context it stands for the <span  class="textbf">choose function</span>.<a name="19784"></a>
+ It means we require the number of combinations of
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ distinct objects chosen <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ r$"></span>
+ at a time. We read it as <span  class="textit"> <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ choose <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ r$"></span>
+</span>. 
+A table listing the combinations of choices of two letters from
+the four letters <span class="MATH"><IMG
+ WIDTH="35" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1853.gif"
+ ALT="$ abcd$"></span>
+ is
+<p><!-- MATH
+ \begin{displaymath}
+\begin{array}{ccc}
+ab &    &       \\
+ac & bc &       \\
+ad & bd & cd  	
+\end{array}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="80" HEIGHT="74" BORDER="0"
+ SRC="img1854.gif"
+ ALT="\begin{displaymath}
+\begin{array}{ccc}
+ab &amp; &amp; \\
+ac &amp; bc &amp; \\
+ad &amp; bd &amp; cd
+\end{array}\end{displaymath}">
+</div><p>
+</p>
+
+<p>
+The number of combinations is given by
+<p><!-- MATH
+ \begin{displaymath}
+\binom{4}{2}=\frac{4!}{2!(4-2)!}=\frac{4*3*2*1}{2*1*2*1}=6
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="256" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1855.gif"
+ ALT="$\displaystyle \binom{4}{2}=\frac{4!}{2!(4-2)!}=\frac{4*3*2*1}{2*1*2*1}=6
+$">
+</div><p>
+</p>
+
+<p>
+We will be interested in acquiring the coefficients when we expand <span class="MATH"><IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1856.gif"
+ ALT="$ (x+y)^k$"></span>
+ for <!-- MATH
+ $x,y\in \mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="60" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.gif"
+ ALT="$ x,y\in \mathbb{R}$"></span>
+ and
+some positive integer <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.gif"
+ ALT="$ k$"></span>
+. We will use the choose function to state the <span  class="textbf">binomial theorem</span>.
+<a name="19796"></a>
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+(x+y)^k=\sum_{j=0}^k\binom{k}{j }x^jy^{k-j}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="188" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1857.gif"
+ ALT="$\displaystyle (x+y)^k=\sum_{j=0}^k\binom{k}{j }x^jy^{k-j}$">
+</div><p>
+</p>
+
+<p>
+We will not prove this theorem here. We are interested in the case when <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1858.gif"
+ ALT="$ x=i$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.gif"
+ ALT="$ y=1$"></span>
+ for some
+<!-- MATH
+ $i\in \mathbb{Z}^+$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1859.gif"
+ ALT="$ i\in \mathbb{Z}^+$"></span>
+ (<span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ is a positive integer). The theorem then gives us
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+(i+1)^k=\sum_{j=0}^k\binom{k}{j}i^j
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="149" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1860.gif"
+ ALT="$\displaystyle (i+1)^k=\sum_{j=0}^k\binom{k}{j}i^j$">
+</div><p>
+</p>
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+\textnormal{But}\;\binom{k}{0 }i^0=1\; \textnormal{ and }\; 
+\binom{k}{k }i^k=i^k
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="234" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1861.gif"
+ ALT="$\displaystyle \textnormal{But}\;\binom{k}{0 }i^0=1\; \textnormal{ and }\;
+\binom{k}{k }i^k=i^k$">
+</div><p>
+</p>
+
+<p>
+So we can simplify and write
+<p><!-- MATH
+ \begin{displaymath}
+(i+1)^k=1+\sum_{j=1}^{k-1}
+\binom{k}{j }i^j+i^k
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="209" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1862.gif"
+ ALT="$\displaystyle (i+1)^k=1+\sum_{j=1}^{k-1}
+\binom{k}{j }i^j+i^k$">
+</div><p>
+</p>
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+(i+1)^k-i^k=1+\sum_{j=1}^{k-1}
+\binom{k}{j }i^j
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="209" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1863.gif"
+ ALT="$\displaystyle (i+1)^k-i^k=1+\sum_{j=1}^{k-1}
+\binom{k}{j }i^j$">
+</div><p>
+</p>
+
+<p>
+We can sum both sides of the equation with <span class="MATH"><IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ i$"></span>
+ from <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ to <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ m$"></span>
+.
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^m\Big( (i+1)^k-i^k\Big) =\sum_{i=1}^m \Big( 1+\sum_{j=1}^{k-1}
+\binom{k}{ j }i^j\Big)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="298" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1864.gif"
+ ALT="$\displaystyle \sum_{i=1}^m\Big( (i+1)^k-i^k\Big) =\sum_{i=1}^m \Big( 1+\sum_{j=1}^{k-1}
+\binom{k}{ j }i^j\Big)$">
+</div><p>
+</p>
+
+<p>
+Because we are adding and subtracting many of the same quantities, the left side of the
+equation can be simplified to
+<p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^m\Big( (i+1)^k-i^k\Big) = (m+1)^k - 1
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="245" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1865.gif"
+ ALT="$\displaystyle \sum_{i=1}^m\Big( (i+1)^k-i^k\Big) = (m+1)^k - 1 $">
+</div><p>
+</p>
+
+<p>
+The right side of the equation can also be rewritten as
+<p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^m \Big( 1+\sum_{j=1}^{k-1}
+\binom{k}{ j }i^j\Big)=\sum_{i=1}^m 1 + \sum_{i=1}^m\sum_{j=1}^{k-1}
+\binom{k}{ j }i^j =
+m + \sum_{j=1}^{k-1}\binom{k}{j }\sum_{i=1}^m
+i^j
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="470" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1866.gif"
+ ALT="$\displaystyle \sum_{i=1}^m \Big( 1+\sum_{j=1}^{k-1}
+\binom{k}{ j }i^j\Big)=\sum...
+...1}^{k-1}
+\binom{k}{ j }i^j =
+m + \sum_{j=1}^{k-1}\binom{k}{j }\sum_{i=1}^m
+i^j
+$">
+</div><p>
+</p>
+
+<p>
+Replacing the simplified sections back into the original equation gives us
+<p><!-- MATH
+ \begin{displaymath}
+(m+1)^k - 1 = m +
+\sum_{j=1}^{k-1}\binom{k}{j }\sum_{i=1}^m
+i^j
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="247" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1867.gif"
+ ALT="$\displaystyle (m+1)^k - 1 = m +
+\sum_{j=1}^{k-1}\binom{k}{j }\sum_{i=1}^m
+i^j
+$">
+</div><p>
+</p>
+
+<p>
+If we let <span class="MATH"><IMG
+ WIDTH="76" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1868.gif"
+ ALT="$ m=n-1$"></span>
+, then we have
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+n^k=n+\sum_{j=1}^{k-1}\binom{k}{ j }\sum_{i=1}^{n-1}
+i^j
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="172" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1869.gif"
+ ALT="$\displaystyle n^k=n+\sum_{j=1}^{k-1}\binom{k}{ j }\sum_{i=1}^{n-1}
+i^j
+$">
+</div><p>
+</p>
+
+<p>
+If we define a function <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1870.gif"
+ ALT="$ S_p(n)$"></span>
+ as
+<p><!-- MATH
+ \begin{displaymath}
+S_p(n)=\sum_{i=1}^n i^p
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="103" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1871.gif"
+ ALT="$\displaystyle S_p(n)=\sum_{i=1}^n i^p$">
+</div><p>
+</p>
+we can then, finally, write the equation we would like to use 
+<p><!-- MATH
+ \begin{displaymath}
+n^k=n+ \sum_{j=1}^{k-1}\binom{k}{j }S_j(n-1)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="196" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1872.gif"
+ ALT="$\displaystyle n^k=n+ \sum_{j=1}^{k-1}\binom{k}{j }S_j(n-1)$">
+</div><p>
+</p>
+
+<p>
+Let us use the above formula to write out a system for the first few equations. 
+<br>
+<div align="CENTER" class="mathdisplay">
+<!-- MATH
+ \begin{eqnarray}
+k\;\;\; &  \nonumber\\
+	1\;\;\; & n      & = n \nonumber\\
+	2\;\;\; & n^2    & = n + 2S_1(n-1)\nonumber\\
+	3\;\;\; & n^3    & = n + 3S_1(n-1)+3S_2(n-1)\nonumber\\
+	4\;\;\; & n^4    & = n + 4S_1(n-1)+6S_2(n-1)+4S_3(n-1)\nonumber\\
+	5\;\;\; & n^5    & = n + 5S_1(n-1)+10S_2(n-1)+10S_3(n-1)+5S_4(n-1)\nonumber\\
+	\vdots\;\;\;\;  & \nonumber
+\end{eqnarray}
+ -->
+<table cellpadding="0" align="CENTER" width="100%">
+<tr valign="MIDDLE"><td nowrap WIDTH="50%" align="RIGHT"><IMG
+ WIDTH="26" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1873.gif"
+ ALT="$\displaystyle k\;\;\;$"></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="eqno" width=10 align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap WIDTH="50%" align="RIGHT"><IMG
+ WIDTH="25" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1874.gif"
+ ALT="$\displaystyle 1\;\;\;$"></td>
+<td width="10" align="CENTER" nowrap><IMG
+ WIDTH="14" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1875.gif"
+ ALT="$\displaystyle n$"></td>
+<td align="LEFT" nowrap WIDTH="50%"><IMG
+ WIDTH="31" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1876.gif"
+ ALT="$\displaystyle = n$"></td>
+<td class="eqno" width=10 align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap WIDTH="50%" align="RIGHT"><IMG
+ WIDTH="25" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1877.gif"
+ ALT="$\displaystyle 2\;\;\;$"></td>
+<td width="10" align="CENTER" nowrap><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1878.gif"
+ ALT="$\displaystyle n^2$"></td>
+<td align="LEFT" nowrap WIDTH="50%"><IMG
+ WIDTH="124" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1879.gif"
+ ALT="$\displaystyle = n + 2S_1(n-1)$"></td>
+<td class="eqno" width=10 align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap WIDTH="50%" align="RIGHT"><IMG
+ WIDTH="25" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1880.gif"
+ ALT="$\displaystyle 3\;\;\;$"></td>
+<td width="10" align="CENTER" nowrap><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1881.gif"
+ ALT="$\displaystyle n^3$"></td>
+<td align="LEFT" nowrap WIDTH="50%"><IMG
+ WIDTH="218" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1882.gif"
+ ALT="$\displaystyle = n + 3S_1(n-1)+3S_2(n-1)$"></td>
+<td class="eqno" width=10 align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap WIDTH="50%" align="RIGHT"><IMG
+ WIDTH="25" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1883.gif"
+ ALT="$\displaystyle 4\;\;\;$"></td>
+<td width="10" align="CENTER" nowrap><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1884.gif"
+ ALT="$\displaystyle n^4$"></td>
+<td align="LEFT" nowrap WIDTH="50%"><IMG
+ WIDTH="311" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1885.gif"
+ ALT="$\displaystyle = n + 4S_1(n-1)+6S_2(n-1)+4S_3(n-1)$"></td>
+<td class="eqno" width=10 align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap WIDTH="50%" align="RIGHT"><IMG
+ WIDTH="25" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1886.gif"
+ ALT="$\displaystyle 5\;\;\;$"></td>
+<td width="10" align="CENTER" nowrap><IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1887.gif"
+ ALT="$\displaystyle n^5$"></td>
+<td align="LEFT" nowrap WIDTH="50%"><IMG
+ WIDTH="421" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1888.gif"
+ ALT="$\displaystyle = n + 5S_1(n-1)+10S_2(n-1)+10S_3(n-1)+5S_4(n-1)$"></td>
+<td class="eqno" width=10 align="RIGHT">
+&nbsp;</td></tr>
+<tr valign="MIDDLE"><td nowrap WIDTH="50%" align="RIGHT"><IMG
+ WIDTH="26" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1889.gif"
+ ALT="$\displaystyle \vdots\;\;\;\;$"></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="eqno" width=10 align="RIGHT">
+&nbsp;</td></tr>
+</table></div>
+<br clear="ALL">
+
+<p>
+For <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1890.gif"
+ ALT="$ k=4$"></span>
+, we can write the matrix equation for the above system as
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{c}
+n \\n^2 \\n^3 \\n^4 
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cccc}
+1  & 0  & 0  & 0  \\
+1  & 2  & 0  & 0  \\
+1  & 3  & 3  & 0  \\
+1  & 4  & 6  & 4  
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+n \\S_1(n-1) \\S_2(n-1) \\S_3(n-1) 
+\end{array}
+\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="310" HEIGHT="92" BORDER="0"
+ SRC="img1891.gif"
+ ALT="\begin{displaymath}
+\left(
+\begin{array}{c}
+n \ n^2 \ n^3 \ n^4
+\end{array}\...
+...}{c}
+n \ S_1(n-1) \ S_2(n-1) \ S_3(n-1)
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+
+<p>
+The <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1460.gif"
+ ALT="$ 4\times 4$"></span>
+ matrix is triangular and all the diagonal entries are non-zero 
+so we can compute the inverse and write
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{c}
+n \\S_1(n-1) \\S_2(n-1) \\S_3(n-1)
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cccc}
+1  & 0  & 0  & 0  \\
+-\frac{1}{2}  & \frac{1}{2}  & 0  & 0 \\
+\frac{1}{6}  & -\frac{1}{2}  & \frac{1}{3}  & 0 \\
+0  & \frac{1}{4}  & -\frac{1}{2}  & \frac{1}{4} 
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+n \\n^2 \\n^3 \\n^4 
+\end{array}
+\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="356" HEIGHT="93" BORDER="0"
+ SRC="img1892.gif"
+ ALT="\begin{displaymath}
+\left(
+\begin{array}{c}
+n \ S_1(n-1) \ S_2(n-1) \ S_3(n-1...
+...t(
+\begin{array}{c}
+n \ n^2 \ n^3 \ n^4
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+
+<p>
+<span class="MATH"><IMG
+ WIDTH="68" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1893.gif"
+ ALT="$ S_i(n-1)$"></span>
+ gives us sums of <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1894.gif"
+ ALT="$ (n-1)$"></span>
+ terms. We'd like <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ terms so we will use the
+fact that <!-- MATH
+ $S_k(n)=S_k(n-1)+n^k$
+ -->
+<span class="MATH"><IMG
+ WIDTH="169" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1895.gif"
+ ALT="$ S_k(n)=S_k(n-1)+n^k$"></span>
+. If we call the <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1896.gif"
+ ALT="$ k\times k$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+, then this means 
+we will add 1 to <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1897.gif"
+ ALT="$ a_{i+1,i}$"></span>
+ (the number
+immediately below the main diagonal scalars).
+
+<p>
+<p><!-- MATH
+ \begin{displaymath}
+\left(
+\begin{array}{c}
+n \\S_1(n) \\S_2(n) \\S_3(n) 	
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cccc}
+1  & 0  & 0  & 0  \\
+\frac{1}{2}  & \frac{1}{2}  & 0  & 0  \\
+\frac{1}{6}  & \frac{1}{2}  & \frac{1}{3}  & 0 \\
+0  & \frac{1}{4}  & \frac{1}{2}  & \frac{1}{4} 
+\par
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+n \\n^2 \\n^3 \\n^4 	
+\end{array}
+\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="291" HEIGHT="93" BORDER="0"
+ SRC="img1898.gif"
+ ALT="\begin{displaymath}
+\left(
+\begin{array}{c}
+n \ S_1(n) \ S_2(n) \ S_3(n)
+\en...
+...t(
+\begin{array}{c}
+n \ n^2 \ n^3 \ n^4
+\end{array}\right)
+\end{displaymath}">
+</div><p>
+</p>
+
+<p>
+From our definition  <!-- MATH
+ $S_2(3)=\sum_{i=1}^{3}i^2=1^2+2^2+3^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="221" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1899.gif"
+ ALT="$ S_2(3)=\sum_{i=1}^{3}i^2=1^2+2^2+3^2$"></span>
+. 
+By matrix multiplication we find that <!-- MATH
+ $S_2(n)=\frac{1}{6}n+\frac{1}{2}n^2+\frac{1}{3}n^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="177" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1900.gif"
+ ALT="$ S_2(n)=\frac{1}{6}n+\frac{1}{2}n^2+\frac{1}{3}n^3$"></span>
+.
+So then <!-- MATH
+ $S_2(3)=\frac{1}{6}*3+\frac{1}{2}*3^2+\frac{1}{3}*3^3=14$
+ -->
+<span class="MATH"><IMG
+ WIDTH="252" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1901.gif"
+ ALT="$ S_2(3)=\frac{1}{6}*3+\frac{1}{2}*3^2+\frac{1}{3}*3^3=14$"></span>
+. Obviously for large values
+of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ there is significantly less arithmetic involved in computing the sum using the
+formulae generated by the matrix inverse.
+
+<p>
+The numbers in the first column of the final form of <!-- MATH
+ $A_{k\times k}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img955.gif"
+ ALT="$ A_{k\times k}$"></span>
+ are the first <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.gif"
+ ALT="$ k$"></span>
+ Bernoulli numbers.
+<a name="19934"></a>
+These numbers appear in many applications. For example, using calculus, these numbers
+are used to generate an infinite series which represents the cotangent function.
+Euler applied these numbers to calculate exact values for infinite series of the form
+<p><!-- MATH
+ \begin{displaymath}
+\sum_{n=1}^\infty \frac{1}{n^{2k}}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="58" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1902.gif"
+ ALT="$\displaystyle \sum_{n=1}^\infty \frac{1}{n^{2k}}$">
+</div><p>
+</p>
+No one has yet to show exact values for
+<p><!-- MATH
+ \begin{displaymath}
+\sum_{n=1}^\infty \frac{1}{n^{k}}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="52" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1903.gif"
+ ALT="$\displaystyle \sum_{n=1}^\infty \frac{1}{n^{k}}$">
+</div><p>
+</p>
+when <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.gif"
+ ALT="$ k$"></span>
+ is odd and greater than 1.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">9</span>.<span class="arabic">5</span></span></big>
+
+<center>
+<object tabindex="0" type="application/x-java-applet" height="210" width="320">
+  <!--Generic parameters for all Java applets. -->
+  <param name="codebase" value="./LampApp" >
+  <param name="code"     value="LampApp" >
+  <!--Specific parameters. -->
+  <param name="img" value="lamp0+lamp1+lamp2+lamp3+lamp4+lamp5+lamp6+lamp7+lamp8+lamp9+lamp10" >
+<param name = "firstrate" value =50>
+<param name = "lastrate" value =50>
+<param name = "framerate" value =50>
+<param name = "random" value =1>
+  Your browser needs Java to view projects.
+</object>
+</center>
+
+<ol>
+<li>Calculate <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1904.gif"
+ ALT="$ S_4(n)$"></span>
+ and use the resulting equation to evaluate <!-- MATH
+ $\sum_{n=1}^{10}n^4$
+ -->
+<span class="MATH"><IMG
+ WIDTH="65" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1905.gif"
+ ALT="$ \sum_{n=1}^{10}n^4$"></span>
+.
+</li>
+</ol>
+
+<p>
+
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html1005"
+  href="node58.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html999"
+  href="node52.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html995"
+  href="node56.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html1001"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html1003"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html1006"
+  href="node58.html">Answers to Selected Problems</a>
+<b> Up:</b> <a name="tex2html1000"
+  href="node52.html">More Applications</a>
+<b> Previous:</b> <a name="tex2html996"
+  href="node56.html">3D Computer Graphics</a>
+ &nbsp; <b>  <a name="tex2html1002"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html1004"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

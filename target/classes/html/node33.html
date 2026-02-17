@@ -1,0 +1,1102 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>The Outer Product</title>
+<meta name="description" content="The outer Product">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node34.html">
+<link rel="previous" href="node32.html">
+<link rel="up" href="node30.html">
+<link rel="next" href="node34.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html663"
+  href="node34.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html657"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html651"
+  href="node32.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html659"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html661"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html664"
+  href="node34.html">Subspaces</a>
+<b> Up:</b> <a name="tex2html658"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html652"
+  href="node32.html">Inner Products: the Dot</a>
+ &nbsp; <b>  <a name="tex2html660"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html662"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00830000000000000000">
+The Outer Product</a>
+</h1>
+
+<p>
+Just as we have directed line segments, it is possible to define <span  class="textit">directed areas</span>. This may seem
+a strange concept at first, but it is really quite straightforward. First, let us consider what we
+really mean when we talk about area. If we have a rectangle 2 meters wide and 3 meters in height, we
+say that its area is <span class="MATH"><IMG
+ WIDTH="64" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1323.gif"
+ ALT="$ 2*3=6$"></span>
+ square meters. In other words, it has an area <span  class="textit">equivalent to 6 unit squares</span>.
+Since ordinary multiplication is commutative, the order in which we multiply doesn't matter, so <span class="MATH"><IMG
+ WIDTH="116" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1324.gif"
+ ALT="$ 2*3=3*2=6$"></span>
+.
+When we give an area as a simple real number, we have lost the information about the order in which we multiplied. 
+Sometimes this information is valuable, as we shall see. One way to keep this information in our calculations
+is to use <span  class="textbf">unit bivectors</span><a name="10204"></a>. Look at Figure&nbsp;<a href="#fig:xwedgey">5.13</a> and match it to the following definition.
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">7</span></b> &nbsp; 
+<i>A unit bivector is the area of the square created by two orthonormal vectors and a sign indicating the
+order in which the area was calculated. If <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1325.gif"
+ ALT="$ \Vec{x}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1326.gif"
+ ALT="$ \Vec{y}$"></span>
+ are two orthogonal unit vectors, 
+then two unit bivectors
+may be created. They are called <!-- MATH
+ $\Vec{x}\wedge\Vec{y}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1327.gif"
+ ALT="$ \Vec{x}\wedge\Vec{y}$"></span>
+ and <!-- MATH
+ $\Vec{y}\wedge\Vec{x}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1328.gif"
+ ALT="$ \Vec{y}\wedge\Vec{x}$"></span>
+. Furthermore,
+<!-- MATH
+ $\Vec{x}\wedge\Vec{y}=-(\Vec{y}\wedge\Vec{x})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="120" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1329.gif"
+ ALT="$ \Vec{x}\wedge\Vec{y}=-(\Vec{y}\wedge\Vec{x})$"></span>
+.</i></div><p></p>
+
+<p>
+
+<div align="CENTER"><a name="fig:xwedgey"></a><a name="11927"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure:</strong>
+ <!-- MATH
+ $\Vec{x}\wedge\Vec{y}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1327.gif"
+ ALT="$ \Vec{x}\wedge\Vec{y}$"></span>
+ and <!-- MATH
+ $\Vec{y}\wedge\Vec{x}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1328.gif"
+ ALT="$ \Vec{y}\wedge\Vec{x}$"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="381" HEIGHT="324" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1330.gif"
+ ALT="\includegraphics[width=8.48cm,height=7.2cm]{xwedgey.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+The bottom two sketches in Figure&nbsp;<a href="#fig:xwedgey">5.13</a> show an easy way of remembering the orientation (direction) of
+a unit bivector. 
+
+<p>
+The symbol <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1331.gif"
+ ALT="$ \wedge$"></span>
+ is used to denote the <span  class="textbf">outer product</span><a name="10228"></a>, sometimes referred to
+as the <span  class="textbf">wedge product</span><a name="10230"></a>, so that <!-- MATH
+ $\Vec{u}\wedge\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1332.gif"
+ ALT="$ \Vec{u}\wedge\Vec{w}$"></span>
+ would be spoken as <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1234.gif"
+ ALT="$ u$"></span>
+ <span  class="textit">wedge</span> <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1233.gif"
+ ALT="$ w$"></span>
+.
+
+<p>
+When we have drawn lines and planes, we have made use of a coordinate system. It is not always necessary or even
+desirable to do so. The definition of a unit bivector refers to two orthonormal vectors, which do not have to be
+parallel to the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ axes. When we refer to unit vectors, we will adopt the convention of representing them
+as <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1333.gif"
+ ALT="$ \Vec{e}_1$"></span>
+, <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1334.gif"
+ ALT="$ \Vec{e}_2$"></span>
+, etc. A unit bivector made from the two unit vectors <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1333.gif"
+ ALT="$ \Vec{e}_1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1334.gif"
+ ALT="$ \Vec{e}_2$"></span>
+ will
+be represented by <!-- MATH
+ $\Vec{e}_{12}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1335.gif"
+ ALT="$ \Vec{e}_{12}$"></span>
+ or <!-- MATH
+ $\Vec{e}_{21}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1336.gif"
+ ALT="$ \Vec{e}_{21}$"></span>
+ such that
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{e}_{1}\wedge\Vec{e}_{2}=\Vec{e}_{12}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1337.gif"
+ ALT="$\displaystyle \Vec{e}_{1}\wedge\Vec{e}_{2}=\Vec{e}_{12}$">
+</div><p>
+</p> 
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{e}_{2}\wedge\Vec{e}_{1}=\Vec{e}_{21}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1338.gif"
+ ALT="$\displaystyle \Vec{e}_{2}\wedge\Vec{e}_{1}=\Vec{e}_{21}$">
+</div><p>
+</p>
+It should be apparent from the previous definition that <!-- MATH
+ $\Vec{e}_{12}=-\Vec{e}_{21}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="80" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1339.gif"
+ ALT="$ \Vec{e}_{12}=-\Vec{e}_{21}$"></span>
+.
+
+<p>
+Our purpose in adopting this notation is to give a geometric interpretation to many of the ideas
+which we will encounter in the rest of this text
+(and to save some typing). We will construct geometric objects in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+
+and show how to represent these objects using the definitions and theorems of linear algebra. We will 
+manipulate these objects using matrix arithmetic in order to shrink them, expand them, rotate them and alter 
+them in other ways. We will then use the methods we develop to apply to solving problems in other areas.
+We start with a discussion of the use of unit vectors and unit bivectors on a plane and then extend
+these concepts to <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+. 
+
+<p>
+A <span  class="textbf">parallelogram</span><a name="10259"></a> is a four-sided object on the plane such that the length
+of opposite sides are equal. This also means that opposite angles are equal.
+The simplest kinds of parallelograms are squares and rectangles. The area
+of a rectangle is easy to calculate and we would like a formula which will give us the area of a 
+parallelogram. We will use Figure&nbsp;<a href="#fig:parallelogram">5.14</a> as a guide to develop a formula.
+
+<p>
+
+<div align="CENTER"><a name="fig:parallelogram"></a><a name="10263"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.14:</strong>
+ A Parallelogram and its Equivalent Rectangle </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="461" HEIGHT="162" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1340.gif"
+ ALT="\includegraphics[width=10.2cm,height=3.6cm]{parallelogram.eps}"></td></tr>
+</table>
+</div>
+
+<div align="CENTER"><a name="fig:parallelogram3"></a><a name="10268"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.15:</strong>
+ Arranging a Parallelogram into its Equivalent Rectangle </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="316" HEIGHT="198" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1341.gif"
+ ALT="\includegraphics[width=7.0cm,height=4.4cm]{parallelogram3.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+Figure&nbsp;<a href="#fig:parallelogram">5.14</a> does not encompass situations such as Figure&nbsp;<a href="#fig:parallelogram3">5.15</a>.
+Figure&nbsp;<a href="#fig:parallelogram3">5.15</a> shows how such a parallelogram can be cut up and rearranged into
+an equivalent rectangle. These two diagrams represent all parallelograms.
+The parallelogram in yellow at the top of Figure&nbsp;<a href="#fig:parallelogram3">5.15</a> is similar to the
+parallelogram given in Figure&nbsp;<a href="#fig:parallelogram">5.14</a>. 
+From the definition of <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1136.gif"
+ ALT="$ \sin$"></span>
+ we have that <!-- MATH
+ $\sin\theta=y/z$
+ -->
+<span class="MATH"><IMG
+ WIDTH="80" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1342.gif"
+ ALT="$ \sin\theta=y/z$"></span>
+ or <!-- MATH
+ $y=z\sin\theta$
+ -->
+<span class="MATH"><IMG
+ WIDTH="75" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ y=z\sin\theta$"></span>
+. This lets us use algebra to give
+the formula that
+<p><!-- MATH
+ \begin{displaymath}
+\text{The area of a parallelogram} = xy = xz\sin\theta
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+&nbsp; &nbsp;The area of a parallelogram<IMG
+ WIDTH="110" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1344.gif"
+ ALT="$\displaystyle = xy = xz\sin\theta$">
+</div><p>
+</p>
+
+<p>
+The area of the parallelogram we calculated is <span  class="textit">not</span> a directed area. In order to use this
+result to talk about directed areas, we need to reformulate our geometrical exercise
+into the language of vectors and bivectors. If we replace the line segments in our diagrams
+with vectors, we have three vectors <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1325.gif"
+ ALT="$ \Vec{x}$"></span>
+, <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1345.gif"
+ ALT="$ \Vec{z}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1326.gif"
+ ALT="$ \Vec{y}$"></span>
+. The norms of the
+vectors are equal to the lengths we stipulated in the geometrical diagrams so that
+<!-- MATH
+ $\left\|\Vec{x}\right\|=\;$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1346.gif"
+ ALT="$ \left\Vert\Vec{x}\right\Vert=\;$"></span>
+x, etc.
+
+<p>
+We have seen previously that scalar multiplication of a vector results in a change in the magnitude
+of the vector but does not affect its direction. If we have a vector in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+, for example, that is
+parallel to a unit vector <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1333.gif"
+ ALT="$ \Vec{e}_1$"></span>
+, then this vector is <!-- MATH
+ $\Vec{x}=\left\|\Vec{x}\right\|\Vec{e}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1347.gif"
+ ALT="$ \Vec{x}=\left\Vert\Vec{x}\right\Vert\Vec{e}_1$"></span>
+. The vector
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1325.gif"
+ ALT="$ \Vec{x}$"></span>
+ is a scalar multiple of a unit vector. We can now see that the outer product of two vectors
+on a plane is a scalar multiple of a unit bivector. This gives us a directed area. Notice that
+the unit vectors used to define unit bivectors are not necessarily parallel to coordinate axes.
+We do need to adopt the convention that <!-- MATH
+ $\Vec{e}_{12}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1335.gif"
+ ALT="$ \Vec{e}_{12}$"></span>
+ is a unit bivector that has a counter-clockwise
+orientation. This means, of course, that <!-- MATH
+ $\Vec{e}_{21}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1336.gif"
+ ALT="$ \Vec{e}_{21}$"></span>
+ has a clockwise direction.
+Given two vectors, <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1069.gif"
+ ALT="$ \Vec{a}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1302.gif"
+ ALT="$ \Vec{c}$"></span>
+, both in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+, and two unit 
+bivectors, then <!-- MATH
+ $\Vec{a}\wedge\Vec{b}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="37" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1348.gif"
+ ALT="$ \Vec{a}\wedge\Vec{b}$"></span>
+ will either
+equal <!-- MATH
+ $\left\|\Vec{a}\right\|\left\|\Vec{c}\right\|\sin\theta\Vec{e}_{12}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="108" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1349.gif"
+ ALT="$ \left\Vert\Vec{a}\right\Vert\left\Vert\Vec{c}\right\Vert\sin\theta\Vec{e}_{12}$"></span>
+ if the angle between
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1069.gif"
+ ALT="$ \Vec{a}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1302.gif"
+ ALT="$ \Vec{c}$"></span>
+ is measured in the same direction as <!-- MATH
+ $\Vec{e}_{12}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1335.gif"
+ ALT="$ \Vec{e}_{12}$"></span>
+ or 
+it will equal <!-- MATH
+ $\left\|\Vec{a}\right\|\left\|\Vec{c}\right\|\sin\theta\Vec{e}_{21}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="108" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1350.gif"
+ ALT="$ \left\Vert\Vec{a}\right\Vert\left\Vert\Vec{c}\right\Vert\sin\theta\Vec{e}_{21}$"></span>
+. Remembering that <!-- MATH
+ $\sin 0 = 0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="64" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1351.gif"
+ ALT="$ \sin 0 = 0$"></span>
+ shows us
+that <!-- MATH
+ $\Vec{e}_{11}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1352.gif"
+ ALT="$ \Vec{e}_{11}$"></span>
+ and <!-- MATH
+ $\Vec{e}_{22}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1353.gif"
+ ALT="$ \Vec{e}_{22}$"></span>
+ always have zero magnitude.
+
+<p>
+Using parallelograms, we can convince ourselves that the outer product of unit vectors in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ is
+distributive with respect to vector addition. In other words, that 
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{e}_1\wedge(\Vec{e}_1+\Vec{e}_2)= \Vec{e}_{1}\wedge\Vec{e}_{1} + \Vec{e}_{1}\wedge\Vec{e}_{2} = \Vec{e}_{1}\wedge\Vec{e}_{2} =\Vec{e}_{12}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="342" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1354.gif"
+ ALT="$\displaystyle \Vec{e}_1\wedge(\Vec{e}_1+\Vec{e}_2)= \Vec{e}_{1}\wedge\Vec{e}_{1} + \Vec{e}_{1}\wedge\Vec{e}_{2} = \Vec{e}_{1}\wedge\Vec{e}_{2} =\Vec{e}_{12}$">
+</div><p>
+</p>
+
+<div align="CENTER"><a name="fig:commute"></a><a name="11934"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure:</strong>
+ <!-- MATH
+ $\Vec{e}_1\wedge(\Vec{e}_1+\Vec{e}_2)= \Vec{e}_{1}\wedge\Vec{e}_{1} + \Vec{e}_{1}\wedge\Vec{e}_{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="232" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1355.gif"
+ ALT="$ \Vec{e}_1\wedge(\Vec{e}_1+\Vec{e}_2)= \Vec{e}_{1}\wedge\Vec{e}_{1} + \Vec{e}_{1}\wedge\Vec{e}_{2} $"></span>
+ </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="346" HEIGHT="238" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1356.gif"
+ ALT="\includegraphics[width=7.65cm,height=5.2875cm]{commute.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+Notice that since <!-- MATH
+ $\Vec{e}_{1}\wedge\Vec{e}_{1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1357.gif"
+ ALT="$ \Vec{e}_{1}\wedge\Vec{e}_{1} $"></span>
+ has zero magnitude, we remove it from the final expression on the right.
+(We haven't really proved anything in a formal sense. We will do so later when we introduce
+more general definitions of the inner and outer product. Our purpose here is to show how geometric
+insights can lead to conjectures which we can then strengthen into theorems.)
+
+<p>
+For any two vectors <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+, we can use one of the vectors to
+define a unit vector, so that <!-- MATH
+ $\left\|\Vec{u}\right\|\Vec{e}_1=\Vec{u}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1358.gif"
+ ALT="$ \left\Vert\Vec{u}\right\Vert\Vec{e}_1=\Vec{u}$"></span>
+, for instance. Then the second vector
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ can be written in terms of the angle between it and the other vector and two orthonormal vectors.
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{w}=\left\|\Vec{w}\right\|\cos\theta\Vec{e}_1 + \left\|\Vec{w}\right\|\sin\theta\Vec{e}_2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="208" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1359.gif"
+ ALT="$\displaystyle \Vec{w}=\left\Vert\Vec{w}\right\Vert\cos\theta\Vec{e}_1 + \left\Vert\Vec{w}\right\Vert\sin\theta\Vec{e}_2$">
+</div><p>
+</p>
+Figure&nbsp;<a href="#fig:component">5.17</a> shows an example of two such vectors. Notice that the angle <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1128.gif"
+ ALT="$ \theta$"></span>
+ is
+measured in the same direction as <!-- MATH
+ $\Vec{e}_{12}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1335.gif"
+ ALT="$ \Vec{e}_{12}$"></span>
+.
+We say that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ is a <span  class="textbf">linear combination</span><a name="10363"></a> of the
+orthonormal vectors <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1333.gif"
+ ALT="$ \Vec{e}_1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1334.gif"
+ ALT="$ \Vec{e}_2$"></span>
+. 
+
+<div align="CENTER"><a name="fig:component"></a><a name="10368"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.17:</strong>
+ Two Vectors in Reference to Two Orthonormal Vectors </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="357" HEIGHT="271" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1360.gif"
+ ALT="\includegraphics[width=8.0cm,height=6.0cm]{component.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">8</span></b> &nbsp; 
+<i>A vector <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1069.gif"
+ ALT="$ \Vec{a}$"></span>
+ from a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ over a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ is a linear combination of
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ vectors <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1361.gif"
+ ALT="$ \Vec{c}_i$"></span>
+ from <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ if
+</i><p><!-- MATH
+ \begin{displaymath}
+\Vec{a}=b_1\Vec{c}_1+b_2\Vec{c}_2+\cdots+b_n\Vec{c}_n
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="198" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1362.gif"
+ ALT="$\displaystyle \Vec{a}=b_1\Vec{c}_1+b_2\Vec{c}_2+\cdots+b_n\Vec{c}_n$">
+</div><p>
+</p><i> where <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1363.gif"
+ ALT="$ b_i$"></span>
+ are scalars <!-- MATH
+ $\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="29" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1364.gif"
+ ALT="$ \in\mathbb{F}$"></span>
+.</i></div><p></p>
+
+<p>
+Letting <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ be a scalar multiple of a unit vector, writing <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ as a linear combination
+of two orthonormal unit vectors 
+and using the distributive property of the outer product for unit vectors 
+allows us to write the outer product of two vectors in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ as
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{u}\wedge\Vec{w}=\left\|\Vec{u}\right\|\Vec{e}_1\wedge(\left\|\Vec{w}\right\|\cos\theta\Vec{e}_1 + \left\|\Vec{w}\right\|\sin\theta\Vec{e}_2)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="307" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1365.gif"
+ ALT="$\displaystyle \Vec{u}\wedge\Vec{w}=\left\Vert\Vec{u}\right\Vert\Vec{e}_1\wedge(...
+...ight\Vert\cos\theta\Vec{e}_1 + \left\Vert\Vec{w}\right\Vert\sin\theta\Vec{e}_2)$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+=  \left\|\Vec{u}\right\|\Vec{e}_1\wedge\left\|\Vec{w}\right\|\cos\theta\Vec{e}_1 + \left\|\Vec{u}\right\|\Vec{e}_1\wedge\left\|\Vec{w}\right\|\sin\theta\Vec{e}_2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="312" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1366.gif"
+ ALT="$\displaystyle = \left\Vert\Vec{u}\right\Vert\Vec{e}_1\wedge\left\Vert\Vec{w}\ri...
+...Vec{u}\right\Vert\Vec{e}_1\wedge\left\Vert\Vec{w}\right\Vert\sin\theta\Vec{e}_2$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+=  \left\|\Vec{u}\right\|\left\|\Vec{w}\right\|\cos\theta\Vec{e}_1\wedge\Vec{e}_1 + \left\|\Vec{u}\right\|\left\|\Vec{w}\right\|\sin\theta\Vec{e}_1\wedge\Vec{e}_2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="312" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1367.gif"
+ ALT="$\displaystyle = \left\Vert\Vec{u}\right\Vert\left\Vert\Vec{w}\right\Vert\cos\th...
+...Vec{u}\right\Vert\left\Vert\Vec{w}\right\Vert\sin\theta\Vec{e}_1\wedge\Vec{e}_2$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+= \left\|\Vec{u}\right\|\left\|\Vec{w}\right\|\sin\theta\Vec{e}_1\wedge\Vec{e}_2
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="156" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1368.gif"
+ ALT="$\displaystyle = \left\Vert\Vec{u}\right\Vert\left\Vert\Vec{w}\right\Vert\sin\theta\Vec{e}_1\wedge\Vec{e}_2$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+= \left\|\Vec{u}\right\|\left\|\Vec{w}\right\|\sin\theta\Vec{e}_{12}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="130" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1369.gif"
+ ALT="$\displaystyle = \left\Vert\Vec{u}\right\Vert\left\Vert\Vec{w}\right\Vert\sin\theta\Vec{e}_{12}$">
+</div><p>
+</p>
+
+<p>
+We can extend the ideas of unit bivectors to unit <span  class="textbf">trivectors</span><a name="10414"></a> and further
+on into unit <span  class="textbf">multivectors</span><a name="10416"></a>. As we are interested only in developing
+enough ideas to motivate a basic understanding of linear algebra, we will confine ourselves to three
+dimensions and the trivector. The following definition makes use of the properties of the unit
+bivector.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">9</span></b> &nbsp; 
+<i>A unit trivector is the volume of the cube created by three orthonormal vectors 
+and a sign indicating an orientation or direction of
+the volume. If <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1333.gif"
+ ALT="$ \Vec{e}_1$"></span>
+, <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1334.gif"
+ ALT="$ \Vec{e}_2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1370.gif"
+ ALT="$ \Vec{e}_3$"></span>
+ are 
+three orthogonal unit vectors in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+, 
+then two unit trivectors
+may be created using the outer product. 
+They are called <!-- MATH
+ $\Vec{e}_{1}\wedge\Vec{e}_{2} \wedge\Vec{e}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="83" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1371.gif"
+ ALT="$ \Vec{e}_{1}\wedge\Vec{e}_{2} \wedge\Vec{e}_3$"></span>
+, written as <!-- MATH
+ $\Vec{e}_{123}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1372.gif"
+ ALT="$ \Vec{e}_{123}$"></span>
+,
+ and <!-- MATH
+ $\Vec{e}_{3}\wedge\Vec{e}_{2} \wedge\Vec{e}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="83" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1373.gif"
+ ALT="$ \Vec{e}_{3}\wedge\Vec{e}_{2} \wedge\Vec{e}_1$"></span>
+, written as <!-- MATH
+ $\Vec{e}_{321}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="31" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1374.gif"
+ ALT="$ \Vec{e}_{321}$"></span>
+. Furthermore,
+<!-- MATH
+ $\Vec{e}_{123}=-\Vec{e}_{321}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1375.gif"
+ ALT="$ \Vec{e}_{123}=-\Vec{e}_{321}$"></span>
+.</i></div><p></p>
+
+<p>
+A unit trivector is a bit of three-dimensional space with a potential twist or spin. One analogy
+is a screw, which can be threaded right-handed or left-handed. The direction one turns a screw to
+get it to screw into a surface does not change with the position of the screw. 
+
+<p>
+One can think of a unit bivector as the area swept out by moving a unit vector's originating point
+along the another unit vector from its originating point to its terminal point. The same can
+be said for a unit trivector, where a unit bivector composed of two unit vectors is swept along the third
+unit vector to give a volume. In this way we can see geometrically that the outer product of
+unit vectors is associative, that
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{e}_{1}\wedge\Vec{e}_{2} \wedge\Vec{e}_3 = ( \Vec{e}_{1}\wedge\Vec{e}_{2} )\wedge\Vec{e}_3 = \Vec{e}_1\wedge( \Vec{e}_{2}\wedge\Vec{e}_{3} )
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="308" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1376.gif"
+ ALT="$\displaystyle \Vec{e}_{1}\wedge\Vec{e}_{2} \wedge\Vec{e}_3 = ( \Vec{e}_{1}\wedge\Vec{e}_{2} )\wedge\Vec{e}_3 = \Vec{e}_1\wedge( \Vec{e}_{2}\wedge\Vec{e}_{3} )$">
+</div><p>
+</p>
+
+<p>
+
+<div align="CENTER"><a name="fig:trivector"></a><a name="10457"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.18:</strong>
+ A Trivector and Bivector Components </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="470" HEIGHT="230" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1377.gif"
+ ALT="\includegraphics[width=10.4cm,height=5.1cm]{trivector.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+Every time we use the outer product on orthonormal vectors,
+we are creating an object that is one dimension greater than the
+previous object. So, <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1333.gif"
+ ALT="$ \Vec{e}_1$"></span>
+ is a directed line segment, <!-- MATH
+ $\Vec{e}_{1}\wedge\Vec{e}_{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1378.gif"
+ ALT="$ \Vec{e}_{1}\wedge\Vec{e}_{2} $"></span>
+ is a directed area and
+<!-- MATH
+ $\Vec{e}_{1}\wedge\Vec{e}_{2} \wedge\Vec{e}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="83" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1371.gif"
+ ALT="$ \Vec{e}_{1}\wedge\Vec{e}_{2} \wedge\Vec{e}_3$"></span>
+ gives a directed volume.
+
+<p>
+We will leave these geometrical constructions for now and return to them from time to time in order
+to illustrate general theorems in linear algebra. 
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">5</span>.<span class="arabic">3</span></span></big>
+
+<ol>
+<li>If <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+, <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ are vectors in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ such that <!-- MATH
+ $\Vec{u}=\Vec{v}+c\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="81" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1379.gif"
+ ALT="$ \Vec{u}=\Vec{v}+c\Vec{w}$"></span>
+
+  for <!-- MATH
+ $c\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1380.gif"
+ ALT="$ c\in\mathbb{R}$"></span>
+, prove that <!-- MATH
+ $\Vec{u}\wedge\Vec{w}=\Vec{v}\wedge\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="102" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1381.gif"
+ ALT="$ \Vec{u}\wedge\Vec{w}=\Vec{v}\wedge\Vec{w}$"></span>
+. 
+</li>
+<li>Show that for any two vectors <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ that
+  <!-- MATH
+ $\Vec{v}\wedge\Vec{w}=-\Vec{w}\wedge\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="113" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1382.gif"
+ ALT="$ \Vec{v}\wedge\Vec{w}=-\Vec{w}\wedge\Vec{v}$"></span>
+. 
+</li>
+<li>Assume <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1383.gif"
+ ALT="$ \Vec{e}_i$"></span>
+ are <span  class="textit">orthogonal</span> vectors in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+, 
+	<!-- MATH
+ $\Vec{u}=u_1\Vec{e}_1 +u_2\Vec{e}_2+u_3\Vec{e}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="166" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1384.gif"
+ ALT="$ \Vec{u}=u_1\Vec{e}_1 +u_2\Vec{e}_2+u_3\Vec{e}_3$"></span>
+
+	and that <!-- MATH
+ $\Vec{w}=w_1\Vec{e}_1 +w_2\Vec{e}_2+w_3\Vec{e}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="175" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1385.gif"
+ ALT="$ \Vec{w}=w_1\Vec{e}_1 +w_2\Vec{e}_2+w_3\Vec{e}_3$"></span>
+, where <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1386.gif"
+ ALT="$ u_i$"></span>
+ and <!-- MATH
+ $w_i\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1387.gif"
+ ALT="$ w_i\in\mathbb{R}$"></span>
+.
+	Show that <!-- MATH
+ $\Vec{u}\wedge\Vec{w}=(u_1w_2-u_2w_1) \Vec{e}_{1}\wedge\Vec{e}_{2}  + (u_2w_3-u_3w_2) \Vec{e}_{2}\wedge\Vec{e}_{3} +
+	 (u_3w_1-u_1w_3) \Vec{e}_{3}\wedge\Vec{e}_{1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="547" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1388.gif"
+ ALT="$ \Vec{u}\wedge\Vec{w}=(u_1w_2-u_2w_1) \Vec{e}_{1}\wedge\Vec{e}_{2} + (u_2w_3-u_...
+...) \Vec{e}_{2}\wedge\Vec{e}_{3} +
+(u_3w_1-u_1w_3) \Vec{e}_{3}\wedge\Vec{e}_{1} $"></span>
+. Take for granted that the outer product for orthogonal
+	 vectors in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ is distributive.
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html663"
+  href="node34.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html657"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html651"
+  href="node32.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html659"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html661"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html664"
+  href="node34.html">Subspaces</a>
+<b> Up:</b> <a name="tex2html658"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html652"
+  href="node32.html">Inner Products: the Dot</a>
+ &nbsp; <b>  <a name="tex2html660"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html662"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

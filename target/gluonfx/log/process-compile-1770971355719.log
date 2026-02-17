@@ -1,0 +1,79 @@
+Process
+=======
+compile
+
+Command Line
+============
+/home/tom/NetBeansJDKs/graalvm-jdk-25.0.2+10.1/bin/native-image -Djdk.internal.lambda.eagerlyInitialize=false --no-server -H:+SharedLibrary -H:+AddAllCharsets -H:+ReportExceptionStackTraces -H:-DeadlockWatchdogExitOnTimeout -H:DeadlockWatchdogInterval=0 -H:+RemoveSaturatedTypeFlows --add-exports=org.graalvm.nativeimage.builder/com.oracle.svm.core.jdk=ALL-UNNAMED -H:+ExitAfterRelocatableImageWrite --features=com.gluonhq.substrate.feature.GluonFeature -H:TempDirectory=/home/tom/Lampp/target/gluonfx/x86_64-linux/gvm/tmp -H:EnableURLProtocols=http,https -H:ReflectionConfigurationFiles=/home/tom/Lampp/target/gluonfx/x86_64-linux/gvm/reflectionconfig-x86_64-linux.json -H:JNIConfigurationFiles=/home/tom/Lampp/target/gluonfx/x86_64-linux/gvm/jniconfig-x86_64-linux.json -H:ResourceConfigurationFiles=/home/tom/Lampp/target/gluonfx/x86_64-linux/gvm/resourceconfig-x86_64-linux.json -H:IncludeResourceBundles=com/sun/javafx/scene/control/skin/resources/controls,com/sun/javafx/scene/control/skin/resources/controls-nt,com.sun.javafx.tk.quantum.QuantumMessagesBundle,com.sun.media.jfxmedia.MediaErrors,com.sun.webkit.graphics.Images,com.sun.webkit.LocalizedStrings,javafx.scene.web.HTMLEditorSkin,com.sun.org.apache.xerces.internal.impl.msg.XMLMessages -Dsvm.platform=org.graalvm.nativeimage.Platform$LINUX_AMD64 -cp /home/tom/.m2/repository/com/gluonhq/substrate/0.0.67/substrate-0.0.67.jar:/home/tom/Lampp/target/gluonfx/x86_64-linux/gvm/tmp/classpathJar.jar ca.linalg.lampp.Lampp
+
+Output
+======
+Warning: Ignoring server-mode native-image argument --no-server.
+Warning: The option '-H:ReflectionConfigurationFiles=/home/tom/Lampp/target/gluonfx/x86_64-linux/gvm/reflectionconfig-x86_64-linux.json' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:JNIConfigurationFiles=/home/tom/Lampp/target/gluonfx/x86_64-linux/gvm/jniconfig-x86_64-linux.json' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:TempDirectory=/home/tom/Lampp/target/gluonfx/x86_64-linux/gvm/tmp' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:ResourceConfigurationFiles=/home/tom/Lampp/target/gluonfx/x86_64-linux/gvm/resourceconfig-x86_64-linux.json' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:-DeadlockWatchdogExitOnTimeout' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:+ExitAfterRelocatableImageWrite' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:EnableURLProtocols=http,https' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:+SharedLibrary' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:DeadlockWatchdogInterval=0' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:IncludeResourceBundles=com/sun/javafx/scene/control/skin/resources/controls,com/sun/javafx/scene/control/skin/resources/controls-nt,com.sun.javafx.tk.quantum.QuantumMessagesBundle,com.sun.media.jfxmedia.MediaErrors,com.sun.webkit.graphics.Images,com.sun.webkit.LocalizedStrings,javafx.scene.web.HTMLEditorSkin,com.sun.org.apache.xerces.internal.impl.msg.XMLMessages' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: The option '-H:+RemoveSaturatedTypeFlows' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: Please re-evaluate whether any experimental option is required, and either remove or unlock it. The build output lists all active experimental options, including where they come from and possible alternatives. If you think an experimental option should be considered as stable, please file an issue.
+Warning: Option 'DynamicProxyConfigurationResources' is deprecated and might be removed in a future release: This can be caused by a proxy-config.json file in your META-INF directory. Consider including proxy configuration in the reflection section of reachability-metadata.md instead.. Please refer to the GraalVM release notes.
+========================================================================================================================
+GraalVM Native Image: Generating 'ca.linalg.lampp.lampp.so' (shared library)...
+========================================================================================================================
+For detailed information and explanations on the build output, visit:
+https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+------------------------------------------------------------------------------------------------------------------------
+[GluonFeature] enabled for config com.oracle.svm.hosted.FeatureImpl$IsInConfigurationAccessImpl@344344fa
+
+[1/8] Initializing...                                                                                    (0.0s @ 0.16GB)
+Error: Error parsing JNI configuration in file:/home/tom/Lampp/target/classes/META-INF/native-image/jni-config.json:
+Missing attribute(s) [name] in reflection class descriptor object
+Verify that the configuration matches the corresponding schema at https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/assets/
+Internal exception: com.oracle.svm.core.util.UserError$UserException: Error parsing JNI configuration in file:/home/tom/Lampp/target/classes/META-INF/native-image/jni-config.json:
+Missing attribute(s) [name] in reflection class descriptor object
+Verify that the configuration matches the corresponding schema at https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/assets/
+	at org.graalvm.nativeimage.builder/com.oracle.svm.core.util.UserError.abort(UserError.java:54)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.config.ConfigurationParserUtils.doParseAndRegister(ConfigurationParserUtils.java:155)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.config.ConfigurationParserUtils.lambda$parseAndRegisterConfigurations$2(ConfigurationParserUtils.java:135)
+	at java.base/java.util.stream.ReferencePipeline$4$1.accept(ReferencePipeline.java:231)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.config.ConfigurationParserUtils$1.tryAdvance(ConfigurationParserUtils.java:128)
+	at java.base/java.util.Spliterator.forEachRemaining(Spliterator.java:332)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:803)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:293)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:315)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.IntPipeline.reduce(IntPipeline.java:517)
+	at java.base/java.util.stream.IntPipeline.sum(IntPipeline.java:475)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.config.ConfigurationParserUtils.parseAndRegisterConfigurations(ConfigurationParserUtils.java:137)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.config.ConfigurationParserUtils.parseAndRegisterConfigurations(ConfigurationParserUtils.java:89)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.jni.JNIAccessFeature.afterRegistration(JNIAccessFeature.java:221)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.NativeImageGenerator.lambda$setupNativeImage$0(NativeImageGenerator.java:981)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.FeatureHandler.forEachFeature(FeatureHandler.java:93)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.NativeImageGenerator.setupNativeImage(NativeImageGenerator.java:981)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.NativeImageGenerator.doRun(NativeImageGenerator.java:567)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.NativeImageGenerator.run(NativeImageGenerator.java:534)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.NativeImageGeneratorRunner.buildImage(NativeImageGeneratorRunner.java:548)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.NativeImageGeneratorRunner.build(NativeImageGeneratorRunner.java:761)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.NativeImageGeneratorRunner.start(NativeImageGeneratorRunner.java:163)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.hosted.NativeImageGeneratorRunner.main(NativeImageGeneratorRunner.java:111)
+------------------------------------------------------------------------------------------------------------------------
+                       0.1s (4.3% of total time) in 7 GCs | Peak RSS: 917.38MB | CPU load: 10.71
+========================================================================================================================
+Failed generating 'ca.linalg.lampp.lampp' after 1.8s.
+
+
+Result
+======
+result: 1

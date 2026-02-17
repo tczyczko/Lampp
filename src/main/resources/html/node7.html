@@ -1,0 +1,1658 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Fields</title>
+<meta name="description" content="Fields">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node8.html">
+<link rel="previous" href="node6.html">
+<link rel="up" href="node4.html">
+<link rel="next" href="node8.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html285"
+  href="node8.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html279"
+  href="node4.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html273"
+  href="node6.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html281"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html283"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html286"
+  href="node8.html">Linear Equations</a>
+<b> Up:</b> <a name="tex2html280"
+  href="node4.html">Matrices and Analytic Geometry</a>
+<b> Previous:</b> <a name="tex2html274"
+  href="node6.html">Number Systems</a>
+ &nbsp; <b>  <a name="tex2html282"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html284"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00430000000000000000"></a><a name="489"></a>
+<br>
+Fields
+</h1>
+
+<p>
+The numbers in a number system are sometimes referred to as <span  class="textbf">scalars</span><a name="491"></a>
+<a name="492"></a>.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">1</span>..<span class="arabic">3</span></b> &nbsp; 
+<i>A <span  class="textbf">field</span><a name="495"></a> <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ is a collection of scalars closed under two binary compositions <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$"></span>
+
+and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.gif"
+ ALT="$ *$"></span>
+ such that
+</i>
+<ol>
+<li>If <span class="MATH"><IMG
+ WIDTH="44" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.gif"
+ ALT="$ x,y,z$"></span>
+ are in the field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ then <!-- MATH
+ $(x+y)+z=x+(y+z)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="179" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.gif"
+ ALT="$ (x+y)+z = x+(y+z)$"></span>
+.
+</li>
+<li>Given <!-- MATH
+ $x,y,z\in \mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="73" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ x,y,z\in \mathbb{F}$"></span>
+ then we have <!-- MATH
+ $x*(y*z)=(x*y)*z$
+ -->
+<span class="MATH"><IMG
+ WIDTH="161" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$ x*(y*z)=(x*y)*z$"></span>
+.
+</li>
+<li>Given <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.gif"
+ ALT="$ x,y$"></span>
+ in the field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ then <span class="MATH"><IMG
+ WIDTH="99" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.gif"
+ ALT="$ x+y=y+x$"></span>
+.
+</li>
+<li>If <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ are in <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ then <span class="MATH"><IMG
+ WIDTH="60" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ xy=yx$"></span>
+.
+</li>
+<li>If the three scalars <span class="MATH"><IMG
+ WIDTH="44" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.gif"
+ ALT="$ x,y,z$"></span>
+ are in the field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ then we must have
+that
+<br><!-- MATH
+ $x*(y+z)=x*y+x*z$
+ -->
+<span class="MATH"><IMG
+ WIDTH="182" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.gif"
+ ALT="$ x*(y+z)=x*y+x*z$"></span>
+ and <!-- MATH
+ $(y+z)*x=y*x+z*x$
+ -->
+<span class="MATH"><IMG
+ WIDTH="182" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.gif"
+ ALT="$ (y+z)*x=y*x+z*x$"></span>
+.
+</li>
+<li>For any <!-- MATH
+ $x\in \mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.gif"
+ ALT="$ x\in \mathbb{F}$"></span>
+ there exists a unique <span class="MATH">0</span>
+ such that <span class="MATH"><IMG
+ WIDTH="129" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.gif"
+ ALT="$ 0+x=x+0=x$"></span>
+.
+</li>
+<li>The field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ must contain a unique scalar called <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ 1\ne 0$"></span>
+ and
+<span class="MATH"><IMG
+ WIDTH="120" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img215.gif"
+ ALT="$ x*1=1*x=x$"></span>
+ for any <!-- MATH
+ $x\in \mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.gif"
+ ALT="$ x\in \mathbb{F}$"></span>
+.
+</li>
+<li>If <!-- MATH
+ $x\in \mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.gif"
+ ALT="$ x\in \mathbb{F}$"></span>
+ then this implies that there is a unique <!-- MATH
+ $(-x)\in \mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img216.gif"
+ ALT="$ (-x)\in \mathbb{F}$"></span>
+ such
+that <!-- MATH
+ $x+(-x)=(-x)+x=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="179" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.gif"
+ ALT="$ x+(-x)=(-x)+x=0$"></span>
+.
+</li>
+<li>For any <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.gif"
+ ALT="$ x\ne 0$"></span>
+ in <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ there is a unique <!-- MATH
+ $x^{-1}\in \mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="59" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.gif"
+ ALT="$ x^{-1}\in \mathbb{F}$"></span>
+ such that
+<br><!-- MATH
+ $x*x^{-1}=x^{-1}*x=1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="155" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img219.gif"
+ ALT="$ x*x^{-1}=x^{-1}*x=1$"></span>
+.
+
+<p>
+</li>
+</ol></div><p></p>
+
+<p>
+<span  class="textbf">All</span> of these properties are necessary in order for <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ to be a field. These
+same properties are used to define other systems like <span  class="textbf">groups</span><a name="504"></a> and <span  class="textbf">rings</span><a name="506"></a>.
+Students who will go on to take more mathematics courses are well advised to
+commit these properties to memory.<a name="tex2html4"
+  href="#foot1013"><sup><span class="arabic">1</span>.<span class="arabic">1</span></sup></a>
+<p>
+It is important to realize that the two binary compositions can be different for
+different fields. This should not be surprising. We already know that adding two rationals
+involves more work than adding two integers. The binary composition <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$"></span>
+ is different for the
+integers and the rationals. A list of some different fields is given below:
+
+<ol>
+<li>The rational number system <!-- MATH
+ $\mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \mathbb{Q}$"></span>
+
+</li>
+<li>The real number system <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+
+</li>
+<li>The <span  class="textbf">complex</span><a name="511"></a>
+<a name="512"></a> number system <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+. These are all numbers that can be written in the form 
+<span class="MATH"><IMG
+ WIDTH="59" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.gif"
+ ALT="$ (x+yi)$"></span>
+ where <!-- MATH
+ $x,y\in \mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="60" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.gif"
+ ALT="$ x,y\in \mathbb{R}$"></span>
+ and <!-- MATH
+ $i=\sqrt{-1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="64" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.gif"
+ ALT="$ i=\sqrt{-1}$"></span>
+. Here the composition <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$"></span>
+ is defined to be
+<p><!-- MATH
+ \begin{displaymath}
+(a+bi)+(c+di)=(a+c)+(b+d)i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="269" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.gif"
+ ALT="$\displaystyle (a+bi)+(c+di)=(a+c)+(b+d)i$">
+</div><p>
+</p>
+and the composition <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.gif"
+ ALT="$ *$"></span>
+ is defined as
+<p><!-- MATH
+ \begin{displaymath}
+(a+bi)*(c+di)=(ac-bd)+(bc+ad)i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="295" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.gif"
+ ALT="$\displaystyle (a+bi)*(c+di)=(ac-bd)+(bc+ad)i$">
+</div><p>
+</p>
+Examples would be <!-- MATH
+ $(3+4i)+(1+2i)=(4+6i)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="205" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img226.gif"
+ ALT="$ (3+4i)+(1+2i)=(4+6i)$"></span>
+ and <!-- MATH
+ $(3+4i)*(1+2i)=(-5+10i)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="220" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img227.gif"
+ ALT="$ (3+4i)*(1+2i)=(-5+10i)$"></span>
+.
+</li>
+<li>The <span  class="textbf">binary</span><a name="515"></a> number system which is composed of the two numbers <span class="MATH">0</span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ and
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$"></span>
+ is defined as <span class="MATH"><IMG
+ WIDTH="69" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.gif"
+ ALT="$ 0+0=0$"></span>
+, <span class="MATH"><IMG
+ WIDTH="125" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.gif"
+ ALT="$ 0+1=1+0=1$"></span>
+ and <!-- MATH
+ $\mathbf{1+1=0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="72" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.gif"
+ ALT="$ \mathbf{1+1=0}$"></span>
+. The composition <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.gif"
+ ALT="$ *$"></span>
+ is defined
+as <!-- MATH
+ $0*0=0*1=1*0=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="169" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img231.gif"
+ ALT="$ 0*0=0*1=1*0=0$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="64" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img232.gif"
+ ALT="$ 1*1=1$"></span>
+.
+</li>
+</ol>
+
+<p>
+All the rational numbers are part of the reals and all the reals are part of the complex numbers.
+The compositions for each of these fields can be viewed as extensions of the compositions for the
+fields they contain. Adding two complex numbers that are also real numbers using the complex <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$"></span>
+
+composition will give the same result as using the real <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$"></span>
+ composition. This is not true for
+the field of binary numbers since <span class="MATH"><IMG
+ WIDTH="69" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.gif"
+ ALT="$ 1+1\ne 0$"></span>
+ in the rational, real and complex number systems.
+
+<p>
+A field that is composed of at least two of the scalars from another field and has exactly the same
+binary compositions is called a <span  class="textbf">subfield</span><a name="519"></a> of that field. An example of a subfield
+of the complex field would be all numbers of the form <span class="MATH"><IMG
+ WIDTH="59" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.gif"
+ ALT="$ (x+yi)$"></span>
+ where <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ are rational (not real)
+numbers. This subfield and the rational field are two of the fields which are represented in the
+Lamp program, which accompanies this text. Very interesting results and applications
+are in store for the patient and careful reader. We begin this exploration with a theorem.
+
+<p>
+A <span  class="textbf">theorem</span><a name="521"></a> is a statement which we <span  class="textbf">prove</span> to be true. Most of mathematics is involved
+with developing theorems and proving them. Students learn to do this by studying existing theorems
+and examining their proofs, just as artists learn by making copies of masterpieces or children become
+skilled at computer games by watching how more advanced players do things and trying to emulate them.
+
+<p>
+The theorem we will examine has to do with trying to know what conditions we need to ensure that we have
+the correct scalars from a field to form a subfield. (Do not expect to read through the proof in one go.
+Take your time and make sure you understand each line before proceeding to the next. Write out
+the proof on scrap paper without looking at the text. This theorem is not especially easy and,
+if you can master it, you should be able to master every other proof in the text. If you still have
+difficulties then try rereading this section. If that doesn't help just go to the next section
+and come back here later.)
+
+<p>
+Suppose we have a collection of scalars <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+ which we believe to be a subfield of 
+a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+. We must have that
+all of the nine properties from the definition of a field hold. The first five properties hold for
+ all scalars
+ in <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ so they must hold for the scalars in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+. They are, after all, the same scalars,
+ just fewer
+of them, and the binary compositions are exactly the same. We must make sure, though,
+that the compositions result in scalars that are also in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+. (We must make sure that
+<!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+ is closed under the two binary compositions.)
+The remaining properties must also be checked
+because they involve assertions that certain scalars must exist in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+. We can do all of this
+ by using the following theorem.
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">1</span>..<span class="arabic">1</span></b> &nbsp; 
+<i>Two or more scalars from a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ can form a subfield <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+ if and only
+if whenever <span class="MATH"><IMG
+ WIDTH="58" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ x,y\ne 0$"></span>
+ are in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+, then so are <span class="MATH"><IMG
+ WIDTH="66" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img236.gif"
+ ALT="$ x+(-y)$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="39" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ xy^{-1}$"></span>
+.<a name="532"></a></i></div><p></p>
+
+<p>
+<p></p>
+<div><i>Proof</i>.
+ We start with the situation where we know that if we have <!-- MATH
+ $x,y\ne 0 \in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="86" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img239.gif"
+ ALT="$ x,y\ne 0 \in \mathbb{S}$"></span>
+ then
+we also have that <!-- MATH
+ $x+(-y)\in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="94" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img240.gif"
+ ALT="$ x+(-y)\in \mathbb{S}$"></span>
+ and <!-- MATH
+ $xy^{-1}\in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="67" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img241.gif"
+ ALT="$ xy^{-1}\in \mathbb{S}$"></span>
+. In other words, we know that if
+we have two scalars, one of which is not zero, from <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+ (and they could even be the same scalar)
+ then the scalars
+we get from evaluating the two expressions are also in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+. We need to show that this implies that
+properties 6-9 are true.
+
+<p>
+We have that <!-- MATH
+ $x+(-y)\in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="94" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img240.gif"
+ ALT="$ x+(-y)\in \mathbb{S}$"></span>
+. There is nothing to prevent us from saying that <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ refer to
+the same scalar, as long as that scalar is not zero. So let's do that. Let us say that <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img242.gif"
+ ALT="$ x=y$"></span>
+. Then we know
+that <!-- MATH
+ $x+(-x)\in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="95" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.gif"
+ ALT="$ x+(-x)\in \mathbb{S}$"></span>
+. But <span class="MATH"><IMG
+ WIDTH="96" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.gif"
+ ALT="$ x+(-x)=0$"></span>
+ so <span class="MATH">0</span>
+ must be in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+. Similarly, <!-- MATH
+ $x*x^{-1}=1\in
+ \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="112" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img244.gif"
+ ALT="$ x*x^{-1}=1\in
+\mathbb{S}$"></span>
+.
+Since <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ 1$"></span>
+ is in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+, we can then have that <!-- MATH
+ $1*x^{-1}=x^{-1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="101" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img245.gif"
+ ALT="$ 1*x^{-1}=x^{-1}$"></span>
+ is also in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+. Also,
+<span class="MATH"><IMG
+ WIDTH="108" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.gif"
+ ALT="$ 0+(-x)=-x$"></span>
+ is in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+. So we have shown that <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.gif"
+ ALT="$ 0,1,-x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="30" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img178.gif"
+ ALT="$ x^{-1}$"></span>
+ belong to <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+, which shows
+that properties 6-9 are true. As we have already seen, the other properties are inherited from
+<!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ so we only need to show that <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+ is closed under <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$ +$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.gif"
+ ALT="$ *$"></span>
+. We now know that if
+ <!-- MATH
+ $x,y\in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.gif"
+ ALT="$ x,y\in \mathbb{S}$"></span>
+
+then we must have <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="30" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.gif"
+ ALT="$ y^{-1}$"></span>
+ in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+. And this means that <!-- MATH
+ $x(y^{-1})^{-1}=xy$
+ -->
+<span class="MATH"><IMG
+ WIDTH="107" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.gif"
+ ALT="$ x(y^{-1})^{-1}=xy$"></span>
+ is in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+.
+So if we have <!-- MATH
+ $x,y\ne 0\in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="86" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img239.gif"
+ ALT="$ x,y\ne 0 \in \mathbb{S}$"></span>
+ then we must have <!-- MATH
+ $xy\in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.gif"
+ ALT="$ xy\in \mathbb{S}$"></span>
+, which is what we mean when we say 
+<!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+ is closed under multiplication. Similarly, <!-- MATH
+ $x,y\in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.gif"
+ ALT="$ x,y\in \mathbb{S}$"></span>
+ implies <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="25" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.gif"
+ ALT="$ -y$"></span>
+ are in
+<!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+ which implies that <!-- MATH
+ $x-(-y)=x+y\in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="152" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.gif"
+ ALT="$ x-(-y)=x+y\in \mathbb{S}$"></span>
+ so <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+ is closed under addition. This is
+enough to show that the expressions listed in the first five properties all produce scalars that are in
+<!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+. (You may have noticed that we only proved things for <span class="MATH"><IMG
+ WIDTH="58" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ x,y\ne 0$"></span>
+ and not about <span class="MATH">0</span>
+ itself,
+ except for its
+existence. That's okay because we already know all about <span class="MATH">0</span>
+ because its properties are inherited from <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+.)
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+Theorems are usually of the form:<a name="569"></a>
+<br>
+
+<p>
+<!-- MATH
+ $\fbox{ Given \textit{Condition 1} then we will have \textit{Condition 2}. }$
+ -->
+<span class="MATH"><IMG
+ WIDTH="377" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img254.gif"
+ ALT="\fbox{ Given \textit{Condition 1} then we will have \textit{Condition 2}. }"></span>
+<br>
+
+<p>
+The <span  class="textit">Condition 1</span> of our theorem was that whenever we had any two variables <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.gif"
+ ALT="$ x,y$"></span>
+ such that
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ is not equal to zero and both represent scalars from <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+,
+then it was always true that <span class="MATH"><IMG
+ WIDTH="66" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img236.gif"
+ ALT="$ x+(-y)$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="39" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ xy^{-1}$"></span>
+ are in <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+.
+If this were true then we would also have <span  class="textit">Condition 2</span>, that <!-- MATH
+ $\mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img234.gif"
+ ALT="$ \mathbb{S}$"></span>
+,
+made up of two or more scalars from <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+,  would form a subfield of
+<!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+. 
+
+<p>
+The theorem says nothing about how we would get <span  class="textit">Condition 1</span>. To use the theorem we
+would have to show that a collection of scalars has this condition. Then we would know that
+ it was a subfield <span  class="textbf">without having to show that each property of a field held</span>.
+
+<p>
+When we try to prove a theorem it is often helpful to rewrite the theorem in this form. We
+also have to be very sure of what each term means. Writing out the definitions of each term
+often leads directly to a proof. 
+
+<p>
+There also must be justification for each line in the proof. For example, when we said
+<blockquote>
+Then we know
+that <!-- MATH
+ $x+(-x)\in \mathbb{S}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="95" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.gif"
+ ALT="$ x+(-x)\in \mathbb{S}$"></span>
+.
+
+</blockquote>
+we could do so because we knew this from <span  class="textit">Condition 1</span>, which we assume to be true.
+All we did was change <span class="MATH"><IMG
+ WIDTH="25" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.gif"
+ ALT="$ -y$"></span>
+ to <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img174.gif"
+ ALT="$ -x$"></span>
+. We could do this because the condition did not say
+`for any two <span  class="textbf">unique</span> scalars <span class="MATH"><IMG
+ WIDTH="58" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ x,y\ne 0$"></span>
+'.
+
+<p>
+Let's examine another theorem and its proof. This theorem allows us to extend the distributive law
+which we have referred to as the fifth condition for the scalars we need to form a field. What we
+would like to do is show that <!-- MATH
+ $c(x_1+x_2+x_3)=cx_1+cx_2+cx_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="240" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img255.gif"
+ ALT="$ c(x_1+x_2+x_3)=cx_1+cx_2+cx_3$"></span>
+ for scalars <!-- MATH
+ $c,x_1,x_2,x_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="81" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.gif"
+ ALT="$ c,x_1,x_2,x_3$"></span>
+ in a field.
+Actually, we would like to show this for <span  class="textit">any</span> number of scalars. To do this, we will need a method
+of proof called <span  class="textbf">induction</span><a name="589"></a>.
+
+<p>
+Induction is easy to understand and usually straigtforward to use. It is a very good technique to have
+in one's mathematical toolkit. It can be illustrated using the small blocks called dominoes. If we line
+up a row of dominoes along the floor so that each domino is close to another, then we can tip over the
+entire line of dominoes by pushing over the first one. Such a row of dominoes is shown in Figure&nbsp;<a href="#fig:domino1">1.1</a>.
+
+<div align="CENTER"><a name="fig:domino1"></a><a name="593"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.1:</strong>
+ A Row of Dominoes </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="343" HEIGHT="72" ALIGN="BOTTOM" BORDER="0"
+ SRC="img257.gif"
+ ALT="\includegraphics[width=7.6cm,height=1.6cm]{domino1.eps}"></td></tr>
+</table>
+</div>
+Notice that we do not show all the dominoes, just the first three, three somewhere in the middle and the
+last two. 
+
+<p>
+Induction works on a list of <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ statements. Each statement is undeniably true or false.
+Also, each statement depends on its order in the list. One such statement might be that if we
+knock over the first domino, then the second will tip over. More generally, we might say
+that if domino <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.gif"
+ ALT="$ k$"></span>
+ is knocked over, then it will knock over domino <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.gif"
+ ALT="$ k+1$"></span>
+. Induction works in two steps.
+
+<ol>
+<li>[<span  class="textit">Step 1.</span>] Show that statement 1 is true.
+</li>
+<li>[<span  class="textit">Step 2.</span>] Show that if statement <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.gif"
+ ALT="$ k$"></span>
+ is true, then statement <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.gif"
+ ALT="$ k+1$"></span>
+ is true.
+</li>
+</ol>
+If both of these steps are satisified, then we know that all <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ statements <span  class="textit">must</span> be true.
+
+<p>
+
+<div align="CENTER"><a name="fig:domino2"></a><a name="603"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 1.2:</strong>
+ The Steps in Induction </caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="343" HEIGHT="74" ALIGN="BOTTOM" BORDER="0"
+ SRC="img260.gif"
+ ALT="\includegraphics[width=7.6cm,height=1.65cm]{domino2.eps}"></td></tr>
+</table>
+</div>
+If we show that if we knock over the first domino, the second domino will fall, we have shown Step 1.
+If we then show that <span  class="textit">any</span> domino tipping over will cause the next in line to be knocked over, then
+we have satisfied Step 2 and we then know that all of the dominoes will be knocked over when we tip over
+the first one. Figure&nbsp;<a href="#fig:domino2">1.2</a> illustrates these two steps.
+
+<p>
+Now we can use induction to prove our theorem.
+<p>
+<div><b>Theorem  <span class="arabic">1</span>..<span class="arabic">2</span></b> &nbsp; 
+<i>Given a scalar <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ scalars <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x_i$"></span>
+ from a field, then
+</i><p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^n cx_i=c\sum_{i=1}^n x_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="122" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$\displaystyle \sum_{i=1}^n cx_i=c\sum_{i=1}^n x_i$">
+</div><p>
+</p></div><p></p>
+
+<p>
+<p></p>
+<div><i>Proof</i>.
+We will accomplish the proof using the two steps of induction. 
+
+<ol>
+<li>[<span  class="textit">Step 1.</span>] This is easy. From the distributive law we have that <!-- MATH
+ $cx_1+cx_2=c(x_1+x_2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="162" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.gif"
+ ALT="$ cx_1+cx_2=c(x_1+x_2)$"></span>
+. Or
+	<p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^2 cx_i=c\sum_{i=1}^2 x_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="122" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img263.gif"
+ ALT="$\displaystyle \sum_{i=1}^2 cx_i=c\sum_{i=1}^2 x_i$">
+</div><p>
+</p>
+</li>
+<li>[<span  class="textit">Step 2.</span>] We must show that if <p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^k cx_i=c\sum_{i=1}^k x_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="122" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img264.gif"
+ ALT="$\displaystyle \sum_{i=1}^k cx_i=c\sum_{i=1}^k x_i$">
+</div><p>
+</p>
+is true, then
+	<p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^{k+1} cx_i=c\sum_{i=1}^{k+1} x_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="122" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.gif"
+ ALT="$\displaystyle \sum_{i=1}^{k+1} cx_i=c\sum_{i=1}^{k+1} x_i$">
+</div><p>
+</p>
+is true. We assume the first equation is true
+	 and add <span class="MATH"><IMG
+ WIDTH="44" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img266.gif"
+ ALT="$ cx_{k+1}$"></span>
+ to both sides.
+	<p><!-- MATH
+ \begin{displaymath}
+cx_{k+1}+\sum_{i=1}^k cx_i=cx_{k+1}+c\sum_{i=1}^k x_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="241" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.gif"
+ ALT="$\displaystyle cx_{k+1}+\sum_{i=1}^k cx_i=cx_{k+1}+c\sum_{i=1}^k x_i$">
+</div><p>
+</p>
+which is the same as
+	<p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^{k+1} cx_i=c\sum_{i=1}^{k+1} x_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="122" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.gif"
+ ALT="$\displaystyle \sum_{i=1}^{k+1} cx_i=c\sum_{i=1}^{k+1} x_i$">
+</div><p>
+</p>
+which is what we wanted to show.
+</li>
+</ol>
+By induction we have shown that <p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^n cx_i=c\sum_{i=1}^n x_i
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="122" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$\displaystyle \sum_{i=1}^n cx_i=c\sum_{i=1}^n x_i$">
+</div><p>
+</p> <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">1</span>.<span class="arabic">3</span></span></big>
+
+<ol>
+<li>Show that <!-- MATH
+ $\mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \mathbb{Q}$"></span>
+ has no subfield other than itself. 
+(We say that <!-- MATH
+ $\mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \mathbb{Q}$"></span>
+ has
+no <span  class="textbf">proper</span> subfields, i.e. subfields that have less scalars than <!-- MATH
+ $\mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \mathbb{Q}$"></span>
+.)
+</li>
+<li>If you are really ambitious, show that the collection of scalars of the form <span class="MATH"><IMG
+ WIDTH="59" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.gif"
+ ALT="$ (x+yi)$"></span>
+
+ where <!-- MATH
+ $x,y\in \mathbb{Q}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="60" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.gif"
+ ALT="$ x,y\in \mathbb{Q}$"></span>
+ is
+a subfield of <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+. Use Theorem 1.1.
+</li>
+<li>Suppose <!-- MATH
+ $y\in \mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.gif"
+ ALT="$ y\in \mathbb{C}$"></span>
+. Is <!-- MATH
+ $\sqrt{y}\in \mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.gif"
+ ALT="$ \sqrt{y}\in \mathbb{C}$"></span>
+?
+</li>
+<li>Suppose we have two scalars <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+ from a field. We can define scalar subtraction
+to be the binary composition of adding <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ a$"></span>
+ to the additive inverse of <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ b$"></span>
+. In other words,
+<!-- MATH
+ $a-b=a+(-b)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="119" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.gif"
+ ALT="$ a-b=a+(-b)$"></span>
+. Since <!-- MATH
+ $1\in \mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.gif"
+ ALT="$ 1\in \mathbb{F}$"></span>
+ and <!-- MATH
+ $-1\in \mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.gif"
+ ALT="$ -1\in \mathbb{F}$"></span>
+ for any field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, we can show that <!-- MATH
+ $(-1)(-1)=1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="99" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.gif"
+ ALT="$ (-1)(-1)=1$"></span>
+ in
+any field.
+
+<p>
+<p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="52" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.gif"
+ ALT="$\displaystyle (1-1)$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.gif"
+ ALT="$\displaystyle = 0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="109" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img276.gif"
+ ALT="$\displaystyle (-1)(1+(-1))$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="74" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.gif"
+ ALT="$\displaystyle = (-1)(0)$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="142" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.gif"
+ ALT="$\displaystyle (-1)(1)+(-1)(-1)$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.gif"
+ ALT="$\displaystyle = 0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="109" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.gif"
+ ALT="$\displaystyle -1 + (-1)(-1)$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.gif"
+ ALT="$\displaystyle = 0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="124" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.gif"
+ ALT="$\displaystyle 1-1+(-1)(-1)$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="56" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.gif"
+ ALT="$\displaystyle = 1+0$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="97" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.gif"
+ ALT="$\displaystyle 0+(-1)(-1)$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.gif"
+ ALT="$\displaystyle =1$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.gif"
+ ALT="$\displaystyle (-1)(-1)$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.gif"
+ ALT="$\displaystyle =1$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Show that <!-- MATH
+ $(-a)(-a)=a^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="107" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.gif"
+ ALT="$ (-a)(-a)=a^2$"></span>
+ in any field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+.
+</li>
+<li>Show that if we have a matrix <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.gif"
+ ALT="$ C_n$"></span>
+ and a matrix <!-- MATH
+ $X_{n\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.gif"
+ ALT="$ X_{n\times n}$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, then
+<p><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^{n}\sum_{j=1}^{n} c_ix_{i,j}=\sum_{i=1}^{n}c_i\sum_{j=1}^{n} x_{i,j}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="203" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.gif"
+ ALT="$\displaystyle \sum_{i=1}^{n}\sum_{j=1}^{n} c_ix_{i,j}=\sum_{i=1}^{n}c_i\sum_{j=1}^{n} x_{i,j}$">
+</div><p>
+</p>
+(<span  class="textbf">HINT</span>: Use the theorem we proved that generalized the distributive law.)
+</li>
+</ol>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">1</span>.<span class="arabic">3</span></span></big>
+
+<ol>
+<li>Evaluate <!-- MATH
+ $(2+5i)*(2-5i)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img289.gif"
+ ALT="$ (2+5i)*(2-5i)$"></span>
+. (<span  class="textbf">HINT</span>: <!-- MATH
+ $i=\sqrt{-1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="64" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.gif"
+ ALT="$ i=\sqrt{-1}$"></span>
+ so <!-- MATH
+ $i*i=\sqrt{-1}*\sqrt{-1}=(\sqrt{-1})^2=-1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="249" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img290.gif"
+ ALT="$ i*i=\sqrt{-1}*\sqrt{-1}=(\sqrt{-1})^2=-1$"></span>
+)
+</li>
+<li>Given the product <!-- MATH
+ $(3+xi)(1+4i)=y$
+ -->
+<span class="MATH"><IMG
+ WIDTH="141" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img291.gif"
+ ALT="$ (3+xi)(1+4i)=y$"></span>
+ where <!-- MATH
+ $x\in \mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.gif"
+ ALT="$ x\in \mathbb{R}$"></span>
+, what value must <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ have for <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ to be
+<!-- MATH
+ $\in \mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="31" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.gif"
+ ALT="$ \in\mathbb{R}$"></span>
+ ? What value must <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ have for <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ to be <!-- MATH
+ $\notin \mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$ \notin \mathbb{R}$"></span>
+ ? (We call any number <span class="MATH"><IMG
+ WIDTH="48" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img294.gif"
+ ALT="$ x=ai$"></span>
+ where <!-- MATH
+ $a \in \mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.gif"
+ ALT="$ a\in\mathbb{R}$"></span>
+ a
+purely complex or <span  class="textbf">imaginary</span> number. The term imaginary is used for historical reasons and has absolutely
+nothing to do with the actual existence of such numbers. All numbers exist in the minds of people.)
+</li>
+</ol>
+
+<p>
+<br><hr><h4>Footnotes</h4>
+<dl>
+<dt><a name="foot1013">... memory.</a><A
+ HREF="node7.html#tex2html4"><sup><span class="arabic">1</span>.<span class="arabic">1</span></sup></a></dt>
+<dd>Mathematicians work very hard to reduce the amount of 
+memorization to a bare minimum. Like most people, they <span  class="textbf">hate</span> to sit and learn
+things by rote. Therefore we can be assured that <span  class="textbf">everything</span> in a university-level course is
+important.
+
+</dd>
+</dl>
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html285"
+  href="node8.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html279"
+  href="node4.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html273"
+  href="node6.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html281"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html283"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html286"
+  href="node8.html">Linear Equations</a>
+<b> Up:</b> <a name="tex2html280"
+  href="node4.html">Matrices and Analytic Geometry</a>
+<b> Previous:</b> <a name="tex2html274"
+  href="node6.html">Number Systems</a>
+ &nbsp; <b>  <a name="tex2html282"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html284"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

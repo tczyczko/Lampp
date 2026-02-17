@@ -1,0 +1,8 @@
+%Lampp version 1.0
+%last run 2026-02-12 at 00:52:44.868632904
+%LEVEL 1
+%* execution levels
+%* LEVEL=1 - base: no file saving
+%* LEVEL=2 - matrix manipulation: read/write matrices to storage, matrix addition, matrix multiplication, transpose, inverse
+%* LEVEL=2 - replace M (showing matrix) with MA, MB, MC, AM, BM or CM
+%* LEVEL=3 - calculate determinant and send to edit pane. Multiply M by edit pane scalar value.

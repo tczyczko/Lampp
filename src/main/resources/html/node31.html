@@ -1,0 +1,1768 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Vectors and Plane Geometry</title>
+<meta name="description" content="Vectors and Plane Geometry">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node32.html">
+<link rel="previous" href="node30.html">
+<link rel="up" href="node30.html">
+<link rel="next" href="node32.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html635"
+  href="node32.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html629"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html623"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html631"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html633"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html636"
+  href="node32.html">Inner Products: the Dot</a>
+<b> Up:</b> <a name="tex2html630"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html624"
+  href="node30.html">Vector Spaces</a>
+ &nbsp; <b>  <a name="tex2html632"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html634"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00810000000000000000">
+Vectors and Plane Geometry</a>
+</h1>
+
+<p>
+
+<div align="CENTER"><a name="fig:vec1"></a><a name="9455"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.1:</strong>
+Examples of Vectors</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="191" HEIGHT="193" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1064.gif"
+ ALT="\includegraphics[width=4.3cm,height=4.4cm]{vec1.eps}"></td></tr>
+</table>
+</div>
+As was stated in the preface, a <span  class="textbf">vector</span><a name="9459"></a> can be thought of as an ordered list of
+scalars from a field. 
+We cannot in this text properly define what is meant by a space.
+However, we can think of a <span  class="textbf">linear space</span><a name="9461"></a> as being defined by 
+an ordered list of variables representing chosen types of scalars.
+We say that, for instance, <span  class="textbf">two-dimensional Euclidean space</span><a name="9463"></a> is the
+space of all ordered
+pairs <span class="MATH"><IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1065.gif"
+ ALT="$ (x_1,x_2)$"></span>
+ of real numbers. We refer to this space as <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ and usually represent it as a plane. 
+Geometrically we may think of a vector in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+
+as defining a directed line segment from the <span  class="textit">origin</span> of a chosen axis to a point
+on a plane. Figure&nbsp;<a href="#fig:vec1">5.1</a> shows three examples
+of vectors in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+. 
+
+<p>
+A point on a plane (or in a linear space) will be a given as a character and an ordered list of scalars.
+For example, <span class="MATH"><IMG
+ WIDTH="69" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1067.gif"
+ ALT="$ p=(1,0)$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="81" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1068.gif"
+ ALT="$ q=(-5,2)$"></span>
+ would be two points in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+.
+We will use a character with a diacritical arrow like <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1069.gif"
+ ALT="$ \Vec{a}$"></span>
+ to refer to a vector. We can then
+write <!-- MATH
+ $\Vec{a}=(-1,1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="82" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1070.gif"
+ ALT="$ \Vec{a}=(-1,1)$"></span>
+, <!-- MATH
+ $\Vec{u}=(2,3)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1071.gif"
+ ALT="$ \Vec{u}=(2,3)$"></span>
+, etc. We will talk more of vectors in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ but first
+we will give a formal definition of a <span  class="textbf">vector space</span><a name="9470"></a><a name="9471"></a>.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">1</span></b> &nbsp; 
+<i>A space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ is called a vector space over a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ if it contains vectors such that:
+</i>
+<ol>
+<li>There is a binary composition called vector addition which satisfies
+
+<ol>
+<li><!-- MATH
+ $\Vec{u}+\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="72" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1073.gif"
+ ALT="$ \Vec{u}+\Vec{v}\in{\cal{V}}$"></span>
+ for any two vectors <!-- MATH
+ $\Vec{u},\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1074.gif"
+ ALT="$ \Vec{u},\Vec{v}\in{\cal{V}}$"></span>
+
+</li>
+<li><!-- MATH
+ $\Vec{u}+\Vec{v}=\Vec{v}+\Vec{u}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="99" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1075.gif"
+ ALT="$ \Vec{u}+\Vec{v}=\Vec{v}+\Vec{u}$"></span>
+ for any two vectors <!-- MATH
+ $\Vec{u},\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1074.gif"
+ ALT="$ \Vec{u},\Vec{v}\in{\cal{V}}$"></span>
+
+</li>
+<li><!-- MATH
+ $\Vec{u}+(\Vec{v}+\Vec{w})=(\Vec{u}+\Vec{v})+\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="186" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1076.gif"
+ ALT="$ \Vec{u}+(\Vec{v}+\Vec{w})=(\Vec{u}+\Vec{v})+\Vec{w}$"></span>
+ for any three vectors <!-- MATH
+ $\Vec{u},\Vec{v},\Vec{w}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="78" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1077.gif"
+ ALT="$ \Vec{u},\Vec{v},\Vec{w}\in{\cal{V}}$"></span>
+
+</li>
+<li>there is a unique <!-- MATH
+ $\Vec{0}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1078.gif"
+ ALT="$ \Vec{0}\in{\cal{V}}$"></span>
+ such that <!-- MATH
+ $\Vec{0}+\Vec{v}=\Vec{v}+\Vec{0}=\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="126" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1079.gif"
+ ALT="$ \Vec{0}+\Vec{v}=\Vec{v}+\Vec{0}=\Vec{v}$"></span>
+ for any vector <!-- MATH
+ $\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1080.gif"
+ ALT="$ \Vec{v}\in{\cal{V}}$"></span>
+
+</li>
+<li>for any <!-- MATH
+ $\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1080.gif"
+ ALT="$ \Vec{v}\in{\cal{V}}$"></span>
+ there is a unique vector <!-- MATH
+ $-\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="55" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1081.gif"
+ ALT="$ -\Vec{v}\in{\cal{V}}$"></span>
+ such that <!-- MATH
+ $\Vec{v}+(-\Vec{v})=\Vec{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="94" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1082.gif"
+ ALT="$ \Vec{v}+(-\Vec{v})=\Vec{0}$"></span>
+
+</li>
+</ol>
+</li>
+<li>For <!-- MATH
+ $c\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1083.gif"
+ ALT="$ c\in\mathbb{F}$"></span>
+ and <!-- MATH
+ $\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1080.gif"
+ ALT="$ \Vec{v}\in{\cal{V}}$"></span>
+, the scalar product <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1084.gif"
+ ALT="$ c\Vec{v}$"></span>
+ satisfies
+
+<ol>
+<li><!-- MATH
+ $c\Vec{u}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1085.gif"
+ ALT="$ c\Vec{u}\in{\cal{V}}$"></span>
+ for any scalar <!-- MATH
+ $c\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1083.gif"
+ ALT="$ c\in\mathbb{F}$"></span>
+ and for any <!-- MATH
+ $\Vec{u}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1086.gif"
+ ALT="$ \Vec{u}\in{\cal{V}}$"></span>
+
+</li>
+<li><!-- MATH
+ $c(\Vec{u}+\Vec{v})=c\Vec{u}+c\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="132" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1087.gif"
+ ALT="$ c(\Vec{u}+\Vec{v})=c\Vec{u}+c\Vec{v}$"></span>
+ for any scalar <!-- MATH
+ $c\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1083.gif"
+ ALT="$ c\in\mathbb{F}$"></span>
+ and for any <!-- MATH
+ $\Vec{u},\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1074.gif"
+ ALT="$ \Vec{u},\Vec{v}\in{\cal{V}}$"></span>
+
+</li>
+<li><!-- MATH
+ $(a+b)\Vec{v}=a\Vec{v}+b\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="132" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1088.gif"
+ ALT="$ (a+b)\Vec{v}=a\Vec{v}+b\Vec{v}$"></span>
+ for any <!-- MATH
+ $a,b\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1089.gif"
+ ALT="$ a,b\in\mathbb{F}$"></span>
+ and for any vector <!-- MATH
+ $\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1080.gif"
+ ALT="$ \Vec{v}\in{\cal{V}}$"></span>
+
+</li>
+<li><!-- MATH
+ $(ab)\Vec{v}=a(b\Vec{v})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="97" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1090.gif"
+ ALT="$ (ab)\Vec{v}=a(b\Vec{v})$"></span>
+ for any <!-- MATH
+ $a,b\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="56" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1089.gif"
+ ALT="$ a,b\in\mathbb{F}$"></span>
+ and for any vector <!-- MATH
+ $\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1080.gif"
+ ALT="$ \Vec{v}\in{\cal{V}}$"></span>
+
+</li>
+<li><!-- MATH
+ $1\Vec{v}=\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1091.gif"
+ ALT="$ 1\Vec{v}=\Vec{v}$"></span>
+ for any vector <!-- MATH
+ $\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1080.gif"
+ ALT="$ \Vec{v}\in{\cal{V}}$"></span>
+
+</li>
+</ol>
+</li>
+</ol></div><p></p>
+
+<p>
+Committing these properties to memory is greatly facilitated by examining vectors in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ over <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+.
+(Proving that <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ is a vector space is given as a problem at the end of this section. We
+will take it on faith for the moment.) 
+These vectors have a very natural geometric interpretation.
+Let us look at vector addition after a brief mention of how `vectors' are sometimes given 
+different interpretations. 
+A vector, to a mathematician, is a very general object and could even be a matrix.
+To an epidemiologist, a vector is the agent of transmission of a disease. 
+A disease vector has nothing in common with the vectors we will study.
+To a physicist or engineer, a vector is a physical quantity which has a direction and a magnitude, so it is often
+drawn as an arrow on a plane.
+However, a physicist is often also interested in the point
+of application so the directed line segment (arrow) which represents the quantity does not usually
+emanate from the origin. We will use vector subtraction to show how to translate such arrows into vectors
+which <span  class="textit">do</span> emanate from the origin. 
+
+<div align="CENTER"><a name="fig:vec2"></a><a name="9534"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.2:</strong>
+Vector Addition and Subtraction</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="410" HEIGHT="180" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1092.gif"
+ ALT="\includegraphics[width=9.2cm,height=4.1cm]{vec2.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+If there are two vectors <!-- MATH
+ $\Vec{u}=(x_1,y_1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1093.gif"
+ ALT="$ \Vec{u}=(x_1,y_1)$"></span>
+ and <!-- MATH
+ $\Vec{v}=(x_2,y_2)\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="122" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1094.gif"
+ ALT="$ \Vec{v}=(x_2,y_2)\in\mathbb{R}^2$"></span>
+, then <!-- MATH
+ $\Vec{u}+\Vec{v}=\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1095.gif"
+ ALT="$ \Vec{u}+\Vec{v}=\Vec{w}$"></span>
+
+is defined as <!-- MATH
+ $\Vec{w}=(x_1+x_2,y_1+y_2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="158" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1096.gif"
+ ALT="$ \Vec{w}=(x_1+x_2,y_1+y_2)$"></span>
+. Also, <!-- MATH
+ $\Vec{u}-\Vec{v}=(x_1-x_2,y_1-y_2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="183" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1097.gif"
+ ALT="$ \Vec{u}-\Vec{v}=(x_1-x_2,y_1-y_2)$"></span>
+. This is illustrated in
+Figure&nbsp;<a href="#fig:vec2">5.2</a>. If we have a directed line segment which starts at the point <span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ (x_1,y_1)$"></span>
+ and has
+its terminal point at <span class="MATH"><IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1099.gif"
+ ALT="$ (x_2,y_2)$"></span>
+, then a vector which has the same magnitude and direction and which
+emanates from the origin can be given as <!-- MATH
+ $(x_2-x_1,y_2-y_1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="125" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1100.gif"
+ ALT="$ (x_2-x_1,y_2-y_1)$"></span>
+. In this way we <span  class="textit">translate</span> the directed line segment
+to the origin. Any directed line segment which can be translated to a given vector is said to be 
+<span  class="textbf">equivalent</span> to that vector.<a name="9548"></a> We can see in Figure&nbsp;<a href="#fig:vec2">5.2</a> that
+the directed line segment from the terminal point of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ to the terminal point of <!-- MATH
+ $\Vec{u}+\Vec{v}=\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1095.gif"
+ ALT="$ \Vec{u}+\Vec{v}=\Vec{w}$"></span>
+
+is equivalent to <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+. Similarly, the directed line segment from the terminal point of <!-- MATH
+ $\Vec{v}-\Vec{u}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1103.gif"
+ ALT="$ \Vec{v}-\Vec{u}$"></span>
+ to the
+terminal point of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ is equivalent to <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+.
+
+<p>
+Multiplying a non-zero vector by -1 will give a vector of the same magnitude which points in the opposite
+direction of the original vector. Multiplying a non-zero vector by a positive scalar will expand or compress
+the original vector, depending if the scalar is greater than one or less than one, respectively. The
+vector is <span  class="textit">scaled</span>, hence the term <span  class="textit">scalar</span>. Figure&nbsp;<a href="#fig:vec3">5.3</a>
+shows these three scalar multiplications.
+
+<div align="CENTER"><a name="fig:vec3"></a><a name="9564"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.3:</strong>
+Scalar Multiplication of Vectors</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="430" HEIGHT="132" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1104.gif"
+ ALT="\includegraphics[width=9.6cm,height=3cm]{vec3.eps}"></td></tr>
+</table>
+</div>
+
+<p>
+A vector <!-- MATH
+ $\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="38" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1105.gif"
+ ALT="$ \in\mathbb{R}^2$"></span>
+ can be said to have 2 <span  class="textbf">components</span><a name="9568"></a>. In the case
+of a vector <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.gif"
+ ALT="$ (x,y)$"></span>
+, the components
+are the two real numbers <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+. 
+
+<p>
+We have mentioned directed line segments, the direction of arrows 
+and the magnitude of a vector but have not been precise by what we
+mean. We will review a little <span  class="textbf">trigonometry</span><a name="9570"></a> and then give
+a precise definition of the magnitude and direction of a vector.
+
+<p>
+Suppose we have <!-- MATH
+ $\Vec{v}=(a,b)\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="106" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1106.gif"
+ ALT="$ \Vec{v}=(a,b)\in\mathbb{R}^2$"></span>
+ such that both its components are positive. We represent this situation
+in Figure. The length or <span  class="textbf">magnitude</span><a name="9573"></a> of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ is given as <!-- MATH
+ $\sqrt{a^2+b^2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="66" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1107.gif"
+ ALT="$ \sqrt{a^2+b^2}$"></span>
+ by the
+Pythagorean theorem. We can extend this definition to give the magnitude
+of any vector in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1108.gif"
+ ALT="$ \mathbb{R}^n$"></span>
+ where <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ is a positive integer. 
+We call this operation the <span  class="textbf">norm</span><a name="9577"></a> of a vector in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1108.gif"
+ ALT="$ \mathbb{R}^n$"></span>
+.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">2</span></b> &nbsp; 
+<i>For any vector <!-- MATH
+ $\Vec{w}=(w_1,w_2,\ldots,w_n)\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="189" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1109.gif"
+ ALT="$ \Vec{w}=(w_1,w_2,\ldots,w_n)\in\mathbb{R}^n$"></span>
+, we define the norm of the vector <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ to be
+<!-- MATH
+ $\left\|\Vec{w}\right\|=\sqrt{w_1^2+w_2^2+\cdots+w_n^2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="204" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1111.gif"
+ ALT="$ \left\Vert\Vec{w}\right\Vert=\sqrt{w_1^2+w_2^2+\cdots+w_n^2}$"></span>
+.</i></div><p></p>
+
+<p>
+For <!-- MATH
+ $\Vec{v}=(a,b)\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="106" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1106.gif"
+ ALT="$ \Vec{v}=(a,b)\in\mathbb{R}^2$"></span>
+, we have  <!-- MATH
+ $\left\|\Vec{v}\right\|=\sqrt{a^2+b^2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="112" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1112.gif"
+ ALT="$ \left\Vert\Vec{v}\right\Vert=\sqrt{a^2+b^2}$"></span>
+. Notice that we were careful to
+say that this definition of norm only relates to vectors <!-- MATH
+ $\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1113.gif"
+ ALT="$ \in\mathbb{R}^n$"></span>
+. It is possible to define the norm
+in other ways for different spaces (even for <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1108.gif"
+ ALT="$ \mathbb{R}^n$"></span>
+). 
+
+<p>
+
+<div align="CENTER"><a name="fig:vec4"></a><a name="9589"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.4:</strong>
+Unit Vectors in a Unit Circle</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="191" HEIGHT="178" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1114.gif"
+ ALT="\includegraphics[width=4.3cm,height=4cm]{vec4.eps}"></td></tr>
+</table>
+</div>
+If we had a vector <!-- MATH
+ $\Vec{r}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1115.gif"
+ ALT="$ \Vec{r}\in\mathbb{R}^2$"></span>
+ such that <!-- MATH
+ $\left\|\Vec{r}\right\|=1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1116.gif"
+ ALT="$ \left\Vert\Vec{r}\right\Vert=1$"></span>
+, then the terminal point of <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1117.gif"
+ ALT="$ \Vec{r}$"></span>
+ could be
+any point on a circle of radius 1 centered at the origin. See Figure&nbsp;<a href="#fig:vec4">5.4</a>. Such a circle is called a <span  class="textit">unit circle</span>.
+Any vector <!-- MATH
+ $\Vec{u}\in\mathbb{R}^n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1118.gif"
+ ALT="$ \Vec{u}\in\mathbb{R}^n$"></span>
+ such that <!-- MATH
+ $\left\|\Vec{u}\right\|=1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1119.gif"
+ ALT="$ \left\Vert\Vec{u}\right\Vert=1$"></span>
+ is called a <span  class="textbf">unit vector</span><a name="9600"></a>, so
+<span class="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1117.gif"
+ ALT="$ \Vec{r}$"></span>
+ is a unit vector <!-- MATH
+ $\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="38" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1105.gif"
+ ALT="$ \in\mathbb{R}^2$"></span>
+.
+
+<p>
+
+<div align="CENTER"><a name="fig:vec5"></a><a name="9604"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.5:</strong>
+Some Radian Measurements</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="436" HEIGHT="335" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1120.gif"
+ ALT="\includegraphics[width=9.65cm,height=7.45cm]{vec5.eps}"></td></tr>
+</table>
+</div>
+The circumference <span class="MATH"><IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ c$"></span>
+ of a circle is given by the equation <span class="MATH"><IMG
+ WIDTH="58" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1121.gif"
+ ALT="$ c=2\pi r$"></span>
+ where <!-- MATH
+ $\pi=3.1415926\ldots$
+ -->
+<span class="MATH"><IMG
+ WIDTH="124" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1122.gif"
+ ALT="$ \pi=3.1415926\ldots$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ r$"></span>
+ is
+the radius of the circle. For a unit circle, the circumference is exactly equal to <span class="MATH"><IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1123.gif"
+ ALT="$ 2\pi$"></span>
+. We define the angle
+that a unit vector on a plane makes with the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis as a proportion of the circumference of the unit circle
+taken from the point <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1124.gif"
+ ALT="$ (1,0)$"></span>
+ in a counter-clockwise direction. Figure&nbsp;<a href="#fig:vec5">5.5</a> gives examples of different measurements
+of angles. We say that these angles are given in <span  class="textbf">radians</span><a name="9609"></a>. If the measurement is taken
+in a clockwise direction, then the angle is given as a negative quantity. 
+
+<p>
+Sometimes angles are given in degrees, where <!-- MATH
+ $180^{\circ}=\pi$
+ -->
+<span class="MATH"><IMG
+ WIDTH="66" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1125.gif"
+ ALT="$ 180^{\circ}=\pi$"></span>
+ radians. In this text we will almost always
+use radian measurement. 
+
+<p>
+Notice that an angle of <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1126.gif"
+ ALT="$ \;2\pi$"></span>
+ radians is the same as an angle of 0 radians or <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1127.gif"
+ ALT="$ -2\pi$"></span>
+ radians. For our
+purposes we will always rewrite an angle <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1128.gif"
+ ALT="$ \theta$"></span>
+ as the remainder after dividing by <span class="MATH"><IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1123.gif"
+ ALT="$ 2\pi$"></span>
+ in a similar
+manner to how we calculate the residue of an integer modulus a prime. This means that <!-- MATH
+ $-2\pi \le \theta \le 2\pi$
+ -->
+<span class="MATH"><IMG
+ WIDTH="102" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1129.gif"
+ ALT="$ -2\pi \le \theta \le 2\pi$"></span>
+
+for any angle <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1128.gif"
+ ALT="$ \theta$"></span>
+. We use the Greek letters <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1128.gif"
+ ALT="$ \theta$"></span>
+ (theta), <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1130.gif"
+ ALT="$ \phi$"></span>
+ (phi) and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1131.gif"
+ ALT="$ \rho$"></span>
+ (rho)
+to stand for angles. This is a common convention.
+
+<p>
+The angle of a unit vector in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ is related to ratios of its components and its norm. These relations
+are so important that they are given special names and are listed below. Suppose we have <!-- MATH
+ $\Vec{r}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1115.gif"
+ ALT="$ \Vec{r}\in\mathbb{R}^2$"></span>
+ such that <!-- MATH
+ $\left\|\Vec{r}\right\|=1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1116.gif"
+ ALT="$ \left\Vert\Vec{r}\right\Vert=1$"></span>
+ and <!-- MATH
+ $\Vec{r}=(x,y)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1132.gif"
+ ALT="$ \Vec{r}=(x,y)$"></span>
+ which makes an angle <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1128.gif"
+ ALT="$ \theta$"></span>
+ with the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis. We define:
+<p><!-- MATH
+ \begin{displaymath}
+\sin\theta =  \frac{y}{\left\|\Vec{r}\right\|}=y
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="112" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1133.gif"
+ ALT="$\displaystyle \sin\theta = \frac{y}{\left\Vert\Vec{r}\right\Vert}=y$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+\cos\theta =  \frac{x}{\left\|\Vec{r}\right\|}=x
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="115" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1134.gif"
+ ALT="$\displaystyle \cos\theta = \frac{x}{\left\Vert\Vec{r}\right\Vert}=x$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+\tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{y}{x}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="129" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1135.gif"
+ ALT="$\displaystyle \tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{y}{x} $">
+</div><p>
+</p>
+
+<p>
+The spoken form of these ratios are usually <span  class="textit">sine theta</span>, <span  class="textit">cosine theta</span> and <span  class="textit">tangent theta</span>
+(although usually the last ratio is simply read as <span  class="textit">tan theta</span>). When one works with a coordinate system (an
+<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ axis, for instance), then one is doing <span  class="textbf">analytic geometry</span>. <span  class="textbf">Trigonometry</span> involves
+the use of the <span class="MATH"><IMG
+ WIDTH="24" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1136.gif"
+ ALT="$ \sin$"></span>
+, <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1137.gif"
+ ALT="$ \cos$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1138.gif"
+ ALT="$ \tan$"></span>
+ ratios.
+
+<p>
+Suppose we have <!-- MATH
+ $\Vec{u}=(a,b)\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="107" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1139.gif"
+ ALT="$ \Vec{u}=(a,b)\in\mathbb{R}^2$"></span>
+.
+Since <!-- MATH
+ $\left\|\Vec{u}\right\|$
+ -->
+<span class="MATH"><IMG
+ WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1140.gif"
+ ALT="$ \left\Vert\Vec{u}\right\Vert$"></span>
+ is a scalar, then any vector <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ can be written as 
+<p><!-- MATH
+ \begin{displaymath}
+\left\|\Vec{u}\right\|\frac{1}{\left\|\Vec{u}\right\|}\Vec{u} \;\;\;\;\text{where}\;\;
+\frac{1}{\left\|\Vec{u}\right\|}\Vec{u} \;\;\text{is a unit vector.}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="87" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1141.gif"
+ ALT="$\displaystyle \left\Vert\Vec{u}\right\Vert\frac{1}{\left\Vert\Vec{u}\right\Vert}\Vec{u} \;\;\;\;$">where<IMG
+ WIDTH="60" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1142.gif"
+ ALT="$\displaystyle \;\;
+\frac{1}{\left\Vert\Vec{u}\right\Vert}\Vec{u} \;\;$">is a unit vector.
+</div><p>
+</p>
+The angle this unit vector makes is taken to be the angle of the vector <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+. The trigonometric ratios
+hold and are:
+<p><!-- MATH
+ \begin{displaymath}
+\sin\theta =  \frac{b}{\left\|\Vec{u}\right\|}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="84" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1143.gif"
+ ALT="$\displaystyle \sin\theta = \frac{b}{\left\Vert\Vec{u}\right\Vert}$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+\cos\theta =  \frac{a}{\left\|\Vec{u}\right\|}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="86" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1144.gif"
+ ALT="$\displaystyle \cos\theta = \frac{a}{\left\Vert\Vec{u}\right\Vert}$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+\tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{b}{a}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="128" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1145.gif"
+ ALT="$\displaystyle \tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{b}{a} $">
+</div><p>
+</p>
+
+<p>
+
+<div align="CENTER"><a name="fig:trig"></a><a name="9651"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 5.6:</strong>
+Traditional Names of the Sides of a Right-angle Triangle</caption>
+<tr><td>
+<div align="CENTER">
+
+</div>  <IMG
+ WIDTH="180" HEIGHT="180" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1146.gif"
+ ALT="\includegraphics[width=4.0cm,height=4.0cm]{trig.eps}"></td></tr>
+</table>
+</div>
+Traditionally these ratios are defined using the lengths of the sides of a right-angle triangle, a triangle
+with one angle equal to <!-- MATH
+ $\frac{\pi}{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1147.gif"
+ ALT="$ \frac{\pi}{2}$"></span>
+ or <!-- MATH
+ $90^{\circ}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1148.gif"
+ ALT="$ 90^{\circ}$"></span>
+ (see Figure&nbsp;<a href="#fig:trig">5.6</a>). The ratios are
+then defined using these lengths:
+<p><!-- MATH
+ \begin{displaymath}
+\sin\theta =  \frac{\text{opposite}}{\text{hypotenuse}}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="137" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1149.gif"
+ ALT="$\displaystyle \sin\theta = \frac{\text{opposite}}{\text{hypotenuse}}$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+\cos\theta =  \frac{\text{adjacent}}{\text{hypotenuse}}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="139" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1150.gif"
+ ALT="$\displaystyle \cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}}$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+\tan\theta = \frac{\text{opposite}}{\text{adjacent}}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="121" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1151.gif"
+ ALT="$\displaystyle \tan\theta = \frac{\text{opposite}}{\text{adjacent}}$">
+</div><p>
+</p>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">5</span>.<span class="arabic">1</span></span></big>
+
+<ol>
+<li>If <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ is a vector space over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, prove that 
+  
+<ol>
+<li><!-- MATH
+ $c\Vec{0} = \Vec{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="48" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1152.gif"
+ ALT="$ c\Vec{0} = \Vec{0}$"></span>
+ for <!-- MATH
+ $\Vec{0}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1078.gif"
+ ALT="$ \Vec{0}\in{\cal{V}}$"></span>
+ and <!-- MATH
+ $c\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1083.gif"
+ ALT="$ c\in\mathbb{F}$"></span>
+.
+</li>
+<li><!-- MATH
+ $0\Vec{a} = \Vec{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1153.gif"
+ ALT="$ 0\Vec{a} = \Vec{0}$"></span>
+ for <!-- MATH
+ $\Vec{a}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1154.gif"
+ ALT="$ \Vec{a}\in{\cal{V}}$"></span>
+, <!-- MATH
+ $\Vec{0}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1078.gif"
+ ALT="$ \Vec{0}\in{\cal{V}}$"></span>
+ and <!-- MATH
+ $0\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1155.gif"
+ ALT="$ 0\in\mathbb{F}$"></span>
+.
+</li>
+<li><!-- MATH
+ $(-1)\Vec{a}=-\Vec{a}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="87" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1156.gif"
+ ALT="$ (-1)\Vec{a}=-\Vec{a}$"></span>
+ for any <!-- MATH
+ $\Vec{a}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1154.gif"
+ ALT="$ \Vec{a}\in{\cal{V}}$"></span>
+.
+  
+</li>
+</ol>
+</li>
+<li>Show that any field is a vector space over itself using the definitions of field and vector space
+  and using the scalars of the field as vectors of the vector space.
+</li>
+<li>Show that <!-- MATH
+ $\mathbb{Z}_p$
+ -->
+<span class="MATH"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img815.gif"
+ ALT="$ \mathbb{Z}_p$"></span>
+, where <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ p$"></span>
+ is a prime, is a vector space over itself. 
+</li>
+<li>Show that for <!-- MATH
+ $\Vec{u}=(a,b)\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="107" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1139.gif"
+ ALT="$ \Vec{u}=(a,b)\in\mathbb{R}^2$"></span>
+ <p><!-- MATH
+ \begin{displaymath}
+\frac{1}{\left\|\Vec{u}\right\|}\Vec{u} \;\;\;\text{ is a unit vector.}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="55" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1157.gif"
+ ALT="$\displaystyle \frac{1}{\left\Vert\Vec{u}\right\Vert}\Vec{u} \;\;\;$"> is a unit vector.
+</div><p>
+</p>
+</li>
+<li>For <!-- MATH
+ $\Vec{v}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1158.gif"
+ ALT="$ \Vec{v}\in\mathbb{R}^2$"></span>
+, the coordinates of its terminal point are 
+	<!-- MATH
+ $(\left\|\Vec{v}\right\|\cos\theta ,\left\|\Vec{v}\right\|\sin\theta )$
+ -->
+<span class="MATH"><IMG
+ WIDTH="139" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1159.gif"
+ ALT="$ (\left\Vert\Vec{v}\right\Vert\cos\theta ,\left\Vert\Vec{v}\right\Vert\sin\theta )$"></span>
+. Suppose there are two directed line segments emanating
+	from <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1160.gif"
+ ALT="$ (1,1)$"></span>
+ and having terminal points at <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1161.gif"
+ ALT="$ (2,1)$"></span>
+ and <!-- MATH
+ $(\frac{1+\sqrt{2}}{\sqrt{2}},\frac{1+\sqrt{2}}{\sqrt{2}})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="97" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1162.gif"
+ ALT="$ (\frac{1+\sqrt{2}}{\sqrt{2}},\frac{1+\sqrt{2}}{\sqrt{2}})$"></span>
+.
+	What is the angle <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1128.gif"
+ ALT="$ \theta$"></span>
+ between these two line segments? (<span  class="textbf">HINT:</span> First translate the line segments so
+	that they are vectors.)
+</li>
+<li>If <!-- MATH
+ $\left\|\Vec{w}+\Vec{w}\right\|= 2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ \left\Vert\Vec{w}+\Vec{w}\right\Vert= 2$"></span>
+, what are the components of <!-- MATH
+ $\Vec{w}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1164.gif"
+ ALT="$ \Vec{w}\in\mathbb{R}^2$"></span>
+?
+</li>
+<li>If the <!-- MATH
+ $\Vec{u}=(a,b)\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="107" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1139.gif"
+ ALT="$ \Vec{u}=(a,b)\in\mathbb{R}^2$"></span>
+ is at an angle <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1128.gif"
+ ALT="$ \theta$"></span>
+ from the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis, what are the components
+	of a vector of the same magnitude that is <!-- MATH
+ $\theta + \pi$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1165.gif"
+ ALT="$ \theta + \pi$"></span>
+ radians from the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis? What about
+	at an angle of <!-- MATH
+ $\;\theta + \frac{\pi}{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1166.gif"
+ ALT="$ \;\theta + \frac{\pi}{2}$"></span>
+?
+</li>
+<li>If <!-- MATH
+ $\Vec{v}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1158.gif"
+ ALT="$ \Vec{v}\in\mathbb{R}^2$"></span>
+ is at an angle <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1128.gif"
+ ALT="$ \theta$"></span>
+ from the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis and 
+	<!-- MATH
+ $\Vec{w}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1164.gif"
+ ALT="$ \Vec{w}\in\mathbb{R}^2$"></span>
+ is at an angle <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1130.gif"
+ ALT="$ \phi$"></span>
+ from the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis, the angle <span  class="textit">between</span> them is
+	given as <!-- MATH
+ $\rho=|\theta-\phi|$
+ -->
+<span class="MATH"><IMG
+ WIDTH="79" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1167.gif"
+ ALT="$ \rho=\vert\theta-\phi\vert$"></span>
+ or <!-- MATH
+ $\rho=2\pi-|\theta-\phi|$
+ -->
+<span class="MATH"><IMG
+ WIDTH="116" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1168.gif"
+ ALT="$ \rho=2\pi-\vert\theta-\phi\vert$"></span>
+, whichever is smaller.
+	In radians, what is the angle between <!-- MATH
+ $\Vec{v}=(1,0)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="69" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1169.gif"
+ ALT="$ \Vec{v}=(1,0)$"></span>
+ and  <!-- MATH
+ $\Vec{w}=(0,1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \Vec{w}=(0,1)$"></span>
+?
+	If <!-- MATH
+ $\Vec{v}=(\frac{5}{\sqrt{2}},0)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1171.gif"
+ ALT="$ \Vec{v}=(\frac{5}{\sqrt{2}},0)$"></span>
+ and  <!-- MATH
+ $\Vec{w}=(0,\frac{1}{\sqrt{2}})$
+ -->
+<span class="MATH"><IMG
+ WIDTH="85" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1172.gif"
+ ALT="$ \Vec{w}=(0,\frac{1}{\sqrt{2}})$"></span>
+? What values can the angle
+	between any two vectors have?
+</li>
+<li>Let <!-- MATH
+ $\mathbb{F}^{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1173.gif"
+ ALT="$ \mathbb{F}^{m\times n}$"></span>
+ be all <!-- MATH
+ ${m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1174.gif"
+ ALT="$ {m\times n}$"></span>
+ matrices with scalars from a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+. Go through
+	the definition and prove that <!-- MATH
+ $\mathbb{F}^{m\times n}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1173.gif"
+ ALT="$ \mathbb{F}^{m\times n}$"></span>
+ is a vector space. Use matrix addition for vector
+	addition and the product of a scalar and a matrix for the scalar product for vectors.
+</li>
+<li>Prove that <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+ over <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+ is a vector space. Is <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+ over <!-- MATH
+ $\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.gif"
+ ALT="$ \mathbb{R}$"></span>
+ also a vector space?
+</li>
+<li>A <span  class="textbf">polynomial</span><a name="9711"></a> is any equation of the form
+	<p><!-- MATH
+ \begin{displaymath}
+a_0+a_1x+a_2x^2+\ldots+a_nx^n=\sum_{i=0}^na_ix^i=0
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="312" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1175.gif"
+ ALT="$\displaystyle a_0+a_1x+a_2x^2+\ldots+a_nx^n=\sum_{i=0}^na_ix^i=0$">
+</div><p>
+</p>
+where <!-- MATH
+ $n\in\mathbb{Z}\ge 0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="73" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1176.gif"
+ ALT="$ n\in\mathbb{Z}\ge 0$"></span>
+ and <!-- MATH
+ $a_i\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="47" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1177.gif"
+ ALT="$ a_i\in\mathbb{F}$"></span>
+.
+	(Remember that <span class="MATH"><IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1178.gif"
+ ALT="$ x^0=1$"></span>
+ for any <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+.) Let <!-- MATH
+ $\mathbb{P}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1179.gif"
+ ALT="$ \mathbb{P}$"></span>
+ be all polynomials. Prove that
+	 <!-- MATH
+ $\mathbb{P}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1179.gif"
+ ALT="$ \mathbb{P}$"></span>
+ is a vector space. 
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">5</span>.<span class="arabic">1</span></span></big>
+
+<ol>
+<li>What is <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img362.gif"
+ ALT="$ 90^\circ$"></span>
+ in radians? What is <span class="MATH"><IMG
+ WIDTH="35" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1180.gif"
+ ALT="$ 135^\circ$"></span>
+?
+</li>
+<li>What are the magnitudes of the vectors <!-- MATH
+ $\Vec{u}=(1,1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1181.gif"
+ ALT="$ \Vec{u}=(1,1)$"></span>
+, <!-- MATH
+ $\Vec{v}=(3,4)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="69" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1182.gif"
+ ALT="$ \Vec{v}=(3,4)$"></span>
+ and <!-- MATH
+ $\Vec{w}=(-4,3)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1183.gif"
+ ALT="$ \Vec{w}=(-4,3)$"></span>
+?
+</li>
+<li>What are the components of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ if <!-- MATH
+ $\left\|\Vec{v}\right\|=5$
+ -->
+<span class="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1184.gif"
+ ALT="$ \left\Vert\Vec{v}\right\Vert=5$"></span>
+ and <!-- MATH
+ $\Vec{v}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1158.gif"
+ ALT="$ \Vec{v}\in\mathbb{R}^2$"></span>
+ is at an angle of
+	<!-- MATH
+ $-\frac{\pi}{2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="28" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1185.gif"
+ ALT="$ -\frac{\pi}{2}$"></span>
+ radians from the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis?
+</li>
+<li>What are the components of <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ if <!-- MATH
+ $\left\|\Vec{u}\right\|=5$
+ -->
+<span class="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1186.gif"
+ ALT="$ \left\Vert\Vec{u}\right\Vert=5$"></span>
+ and <!-- MATH
+ $\Vec{u}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1187.gif"
+ ALT="$ \Vec{u}\in\mathbb{R}^2$"></span>
+ is at an angle of
+	<!-- MATH
+ $\frac{7}{4}\pi$
+ -->
+<span class="MATH"><IMG
+ WIDTH="24" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1188.gif"
+ ALT="$ \frac{7}{4}\pi$"></span>
+ radians from the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis?
+</li>
+<li>If <!-- MATH
+ $\Vec{u}=(3,4)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1189.gif"
+ ALT="$ \Vec{u}=(3,4)$"></span>
+ and <!-- MATH
+ $\Vec{v}=(4,3)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="69" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1190.gif"
+ ALT="$ \Vec{v}=(4,3)$"></span>
+, find <!-- MATH
+ $\Vec{u}+\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1191.gif"
+ ALT="$ \Vec{u}+\Vec{v}$"></span>
+ and <!-- MATH
+ $\Vec{u}-\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1192.gif"
+ ALT="$ \Vec{u}-\Vec{v}$"></span>
+.
+</li>
+<li>If <!-- MATH
+ $\left\|\Vec{u}\right\|=3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1193.gif"
+ ALT="$ \left\Vert\Vec{u}\right\Vert=3$"></span>
+, <!-- MATH
+ $\Vec{u}\in\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1187.gif"
+ ALT="$ \Vec{u}\in\mathbb{R}^2$"></span>
+ is at an angle of
+	<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.gif"
+ ALT="$ \pi$"></span>
+ radians from the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+-axis and <!-- MATH
+ $\Vec{v}=(1,-1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="81" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1194.gif"
+ ALT="$ \Vec{v}=(1,-1)$"></span>
+, find <!-- MATH
+ $\Vec{u}+\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1191.gif"
+ ALT="$ \Vec{u}+\Vec{v}$"></span>
+ and <!-- MATH
+ $\Vec{u}-\Vec{v}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1192.gif"
+ ALT="$ \Vec{u}-\Vec{v}$"></span>
+.
+</li>
+</ol>
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html635"
+  href="node32.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html629"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html623"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html631"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html633"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html636"
+  href="node32.html">Inner Products: the Dot</a>
+<b> Up:</b> <a name="tex2html630"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html624"
+  href="node30.html">Vector Spaces</a>
+ &nbsp; <b>  <a name="tex2html632"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html634"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

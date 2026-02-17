@@ -1,0 +1,10 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Exec=gnome-terminal --disable-factory -e "/bin/bash /home/tom/Lampp/Lampp.sh"
+Icon=/home/tom/Lampp/lampp_icon.png
+Name=Lampp
+# For PopOs (and other Gnome guis) this file should be placed in:
+#> /home/tom/.local/share/applications/Lampp.desktop
+# then refresh desktop database:
+#> update-desktop-database ~/.local/share/applications/

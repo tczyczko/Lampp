@@ -1,0 +1,2810 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Linear Spans</title>
+<meta name="description" content="Linear Spans">
+<meta name="keywords" content="linalg">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="linalg.css">
+
+<link rel="next" href="node36.html">
+<link rel="previous" href="node34.html">
+<link rel="up" href="node30.html">
+<link rel="next" href="node36.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html691"
+  href="node36.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html685"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html679"
+  href="node34.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html687"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html689"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html692"
+  href="node36.html">Bases, Linear Independence, Matrix</a>
+<b> Up:</b> <a name="tex2html686"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html680"
+  href="node34.html">Subspaces</a>
+ &nbsp; <b>  <a name="tex2html688"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html690"
+  href="node62.html">Index</a></b> 
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION00850000000000000000">
+Linear Spans</a>
+</h1>
+
+<p>
+It would be very convenient to have a method of describing a vector space in such a way
+that we can find vectors that belong to it. Since a vector space is a very general thing,
+it is not possible to give a good method that encompasses every vector space. However, there
+is a method based on the linear combination of vectors that is a very good method of giving
+a description of all the vectors in certain types of vector spaces.
+It is called the <span  class="textbf">span</span><a name="10716"></a> of a vector space. The word <span  class="textit">span</span> will be used
+as both a verb and a noun. Each usage will have a distinct, although related, interpretation.
+We will start with a definition of the verb span.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">11</span></b> &nbsp; 
+<i>A finite list of vectors <!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$"></span>
+ in a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ spans <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+
+if every vector in <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ can be written as a linear combination of these vectors. In other words,
+if we have <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, for every <!-- MATH
+ $\Vec{v}\in{\cal{V}}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1080.gif"
+ ALT="$ \Vec{v}\in{\cal{V}}$"></span>
+, there are <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ scalars <!-- MATH
+ $a_i\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="47" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1177.gif"
+ ALT="$ a_i\in\mathbb{F}$"></span>
+ such that
+</i><p><!-- MATH
+ \begin{displaymath}
+\Vec{v}=a_1\Vec{v}_1+a_2\Vec{v}_2+\ldots+a_n\Vec{v}_n
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="205" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1482.gif"
+ ALT="$\displaystyle \Vec{v}=a_1\Vec{v}_1+a_2\Vec{v}_2+\ldots+a_n\Vec{v}_n$">
+</div><p>
+</p></div><p></p>
+
+<p>
+We say that a list of vectors spans a vector space. This is slightly different from <span  class="textit">the</span> span
+of a list of vectors. In this case we use span as a noun.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">12</span></b> &nbsp; 
+<i>The span of a finite list of vectors <!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$"></span>
+ in a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ 
+over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+
+is all vectors that can be formed from a linear combination of these vectors using scalars in <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+.
+Let <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ stand for a list of vectors <!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$"></span>
+ in a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ 
+over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, then <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+ (span of <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+) are all vectors <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$ \Vec{v}$"></span>
+ such that 
+</i><p><!-- MATH
+ \begin{displaymath}
+\Vec{v}=a_1\Vec{v}_1+a_2\Vec{v}_2+\ldots+a_n\Vec{v}_n
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="205" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1482.gif"
+ ALT="$\displaystyle \Vec{v}=a_1\Vec{v}_1+a_2\Vec{v}_2+\ldots+a_n\Vec{v}_n$">
+</div><p>
+</p><i>
+for any <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1484.gif"
+ ALT="$ \;n$"></span>
+ scalars <!-- MATH
+ $\;a_i\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="51" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1485.gif"
+ ALT="$ \;a_i\in\mathbb{F}$"></span>
+.</i></div><p></p>
+
+<p>
+Theorem&nbsp;<a href="node34.html#thm:sublin">5.2</a> from page&nbsp;<a href="node34.html#thm:sublin"><img  align="BOTTOM" border="1" alt="[*]" src="crossref.gif"></a> can easily be used to demonstrate that if <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ is a
+collection of vectors from a subspace <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+, then <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+ is a subspace of <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+.
+
+<p>
+We have already worked with the span of a set (a collection) of vectors. The following example
+illustrates this.
+
+<p>
+Suppose we have four vectors <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1333.gif"
+ ALT="$ \Vec{e}_1$"></span>
+,<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1334.gif"
+ ALT="$ \Vec{e}_2$"></span>
+,<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1370.gif"
+ ALT="$ \Vec{e}_3$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1486.gif"
+ ALT="$ \Vec{e}_4$"></span>
+ from <!-- MATH
+ $\mathbb{F}^{4\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1487.gif"
+ ALT="$ \mathbb{F}^{4\times 1}$"></span>
+ such that
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{e}_1=\left(\begin{array}{c}
+  1 \\
+  0 \\
+  0 \\
+  0
+  \end{array}\right),\;\;\; \Vec{e}_2=\left(\begin{array}{c}
+  0 \\
+  1 \\
+  0 \\
+  0
+  \end{array}\right),\;\;\; \Vec{e}_3=\left(\begin{array}{c}
+  0 \\
+  0 \\
+  1 \\
+  0
+  \end{array}\right),\;\;\; \Vec{e}_4=\left(\begin{array}{c}
+  0 \\
+  0 \\
+  0 \\
+  4
+  \end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="423" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1488.gif"
+ ALT="$\displaystyle \Vec{e}_1=\left(\begin{array}{c}
+1 \\
+0 \\
+0 \\
+0
+\end{ar...
+...; \Vec{e}_4=\left(\begin{array}{c}
+0 \\
+0 \\
+0 \\
+4
+\end{array}\right) $">
+</div><p>
+</p>
+We can say that these vectors span <!-- MATH
+ $\mathbb{F}^{4\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1487.gif"
+ ALT="$ \mathbb{F}^{4\times 1}$"></span>
+ since any vector in <!-- MATH
+ $\mathbb{F}^{4\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1487.gif"
+ ALT="$ \mathbb{F}^{4\times 1}$"></span>
+ is of the form
+ <p><!-- MATH
+ \begin{displaymath}
+\Vec{f}=\left(\begin{array}{c}
+  a_1 \\
+  a_2 \\
+  a_3 \\
+  a_4
+  \end{array}\right)=a_1\Vec{e}_1+a_2\Vec{e}_2+a_3\Vec{e}_3+a_4\Vec{e}_4
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="294" HEIGHT="92" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1489.gif"
+ ALT="$\displaystyle \Vec{f}=\left(\begin{array}{c}
+a_1 \\
+a_2 \\
+a_3 \\
+a_4
+\end{array}\right)=a_1\Vec{e}_1+a_2\Vec{e}_2+a_3\Vec{e}_3+a_4\Vec{e}_4$">
+</div><p>
+</p>
+The vectors <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1333.gif"
+ ALT="$ \Vec{e}_1$"></span>
+,<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1334.gif"
+ ALT="$ \Vec{e}_2$"></span>
+,<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1370.gif"
+ ALT="$ \Vec{e}_3$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1486.gif"
+ ALT="$ \Vec{e}_4$"></span>
+ are often called the standard unit vectors 
+of <!-- MATH
+ $\mathbb{F}^{4\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="37" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1487.gif"
+ ALT="$ \mathbb{F}^{4\times 1}$"></span>
+.
+
+<p>
+It is possible to find out if a particular vector is in a given span. Suppose we
+had three vectors in <!-- MATH
+ $\mathbb{R}^{1\times 3}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1490.gif"
+ ALT="$ \mathbb{R}^{1\times 3}$"></span>
+, <!-- MATH
+ $\Vec{r}_1=(1 ,-1 ,1)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="102" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1491.gif"
+ ALT="$ \Vec{r}_1=(1 ,-1 ,1)$"></span>
+, <!-- MATH
+ $\Vec{r}_2=(3, 7 ,8)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1492.gif"
+ ALT="$ \Vec{r}_2=(3, 7 ,8)$"></span>
+ and <!-- MATH
+ $\Vec{r}_3=(2, 5 ,6)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1493.gif"
+ ALT="$ \Vec{r}_3=(2, 5 ,6)$"></span>
+.
+Call this collection of vectors <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+. We would like to know if <!-- MATH
+ $\Vec{s}=(2 ,3 ,-2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="96" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1494.gif"
+ ALT="$ \Vec{s}=(2 ,3 ,-2)$"></span>
+ is in <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+.
+
+<p>
+To answer this, we need to know if <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1495.gif"
+ ALT="$ \Vec{s}$"></span>
+ is a linear combination of the vectors that make up <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+.
+Do scalars <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1496.gif"
+ ALT="$ a_1, a_2$"></span>
+ and <!-- MATH
+ $a_3\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="51" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1497.gif"
+ ALT="$ a_3\in\mathbb{R}$"></span>
+ exist such that
+<!-- MATH
+ $\Vec{s}=a_1\Vec{r}_1+a_12\Vec{r}_2+a_3\Vec{r}_3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="169" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1498.gif"
+ ALT="$ \Vec{s}=a_1\Vec{r}_1+a_12\Vec{r}_2+a_3\Vec{r}_3$"></span>
+? We can write this as a vector equation.
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccc} 2 & 3 &-2\end{array}\right)=
+   a_1\left(\begin{array}{ccc} 1 & -1 &1\end{array}\right)+
+   a_2\left(\begin{array}{ccc} 3 & 7 &8\end{array}\right)+
+   a_3\left(\begin{array}{ccc} 2 & 5 &6\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="488" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1499.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccc} 2 &amp; 3 &amp;-2\end{array}\right)=
+a_1\left(\...
+...7 &amp;8\end{array}\right)+
+a_3\left(\begin{array}{ccc} 2 &amp; 5 &amp;6\end{array}\right)$">
+</div><p>
+</p>
+<p><!-- MATH
+ \begin{displaymath}
+=\left(\begin{array}{ccc} a_1+3a_2+2a_3 & -a_1+7a_2+5a_3 &a_1+8a_2+6a_3\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="400" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1500.gif"
+ ALT="$\displaystyle =\left(\begin{array}{ccc} a_1+3a_2+2a_3 &amp; -a_1+7a_2+5a_3 &amp;a_1+8a_2+6a_3\end{array}\right)$">
+</div><p>
+</p>
+This last vector is equivalent to the system
+ <p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="110" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1501.gif"
+ ALT="$\displaystyle a_1+ 3a_2+ 2a_3\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1477.gif"
+ ALT="$\displaystyle = 2$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="122" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1502.gif"
+ ALT="$\displaystyle -a_1+ 7a_2+ 5a_3\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1503.gif"
+ ALT="$\displaystyle = 3$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="110" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1504.gif"
+ ALT="$\displaystyle a_1+ 8a_2+ 6a_3\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1505.gif"
+ ALT="$\displaystyle = -2$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+To decide if this system has a solution, we row reduce the associated augmented matrix.
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rccr}
+ 1 & 3 & 2 & 2\\
+ -1 & 7 & 5 & 3\\
+ 1 & 8 & 6 & -2
+\end{array}\right)\text{ is row equivalent to }
+ \left(\begin{array}{ccrr}
+ 1 & 3 & 2 & 2\\
+ 0 & 1 & \frac{4}{5} & -\frac{4}{5} \\
+ 0 & 0 &-1 & 13
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="152" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1506.gif"
+ ALT="$\displaystyle \left(\begin{array}{rccr}
+1 &amp; 3 &amp; 2 &amp; 2\\
+-1 &amp; 7 &amp; 5 &amp; 3\\
+1 &amp; 8 &amp; 6 &amp; -2
+\end{array}\right)$"> is row equivalent to&nbsp;<IMG
+ WIDTH="154" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1507.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccrr}
+1 &amp; 3 &amp; 2 &amp; 2\\
+0 &amp; 1 &amp; \frac{4}{5} &amp; -\frac{4}{5} \\
+0 &amp; 0 &amp;-1 &amp; 13
+\end{array}\right)
+$">
+</div><p>
+</p>
+This is enough reduction to show that this system is solvable so <!-- MATH
+ $\Vec{s}=(2 ,3 ,-2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="96" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1494.gif"
+ ALT="$ \Vec{s}=(2 ,3 ,-2)$"></span>
+ is in <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+.
+If we continue the reduction to row reduced echelon form, we find that
+<!-- MATH
+ $a_1=-\frac{4}{5}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1508.gif"
+ ALT="$ a_1=-\frac{4}{5}$"></span>
+, <!-- MATH
+ $a_2=\frac{48}{5}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1509.gif"
+ ALT="$ a_2=\frac{48}{5}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="69" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1510.gif"
+ ALT="$ a_3=-13$"></span>
+ so that
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{s}=-\frac{4}{5}\Vec{r}_1+\frac{48}{5}\Vec{r}_2-13\Vec{r}_3
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="174" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1511.gif"
+ ALT="$\displaystyle \Vec{s}=-\frac{4}{5}\Vec{r}_1+\frac{48}{5}\Vec{r}_2-13\Vec{r}_3$">
+</div><p>
+</p>
+
+<p>
+Sometimes we need to compare two subspaces. We would like to know when they are equal. The
+following definition gives one way of defining the equality of subspaces.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">13</span></b> &nbsp; 
+<i>Two subspaces, <!-- MATH
+ ${{\cal{S}}}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.gif"
+ ALT="$ {{\cal{S}}}_1$"></span>
+ and <!-- MATH
+ ${{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1402.gif"
+ ALT="$ {{\cal{S}}}_2$"></span>
+, in a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, are equal if
+<!-- MATH
+ ${{\cal{S}}}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.gif"
+ ALT="$ {{\cal{S}}}_1$"></span>
+ is a subspace of <!-- MATH
+ ${{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1402.gif"
+ ALT="$ {{\cal{S}}}_2$"></span>
+ and <!-- MATH
+ ${{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1402.gif"
+ ALT="$ {{\cal{S}}}_2$"></span>
+ is a subspace of <!-- MATH
+ ${{\cal{S}}}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.gif"
+ ALT="$ {{\cal{S}}}_1$"></span>
+.</i></div><p></p>
+
+<p>
+A consequence of this definition means that, if <!-- MATH
+ ${{\cal{S}}}_1={{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="59" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1512.gif"
+ ALT="$ {{\cal{S}}}_1={{\cal{S}}}_2$"></span>
+, then
+<!-- MATH
+ ${{\cal{S}}}_1\cap{{\cal{S}}}_2={{\cal{S}}}_2\cap{{\cal{S}}}_1={{\cal{S}}}_1={{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="204" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1513.gif"
+ ALT="$ {{\cal{S}}}_1\cap{{\cal{S}}}_2={{\cal{S}}}_2\cap{{\cal{S}}}_1={{\cal{S}}}_1={{\cal{S}}}_2$"></span>
+. Both <!-- MATH
+ ${{\cal{S}}}_1$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.gif"
+ ALT="$ {{\cal{S}}}_1$"></span>
+ and <!-- MATH
+ ${{\cal{S}}}_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1402.gif"
+ ALT="$ {{\cal{S}}}_2$"></span>
+
+contain exactly the same vectors and no others.
+
+<p>
+Suppose we want to know if the vectors <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1514.gif"
+ ALT="$ \Vec{r}_1$"></span>
+, <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1515.gif"
+ ALT="$ \Vec{r}_2$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1516.gif"
+ ALT="$ \Vec{r}_3$"></span>
+ from the preceding
+example span <!-- MATH
+ $\mathbb{R}^{1\times 3}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1490.gif"
+ ALT="$ \mathbb{R}^{1\times 3}$"></span>
+. Can the calculations we did be carried out for any <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1117.gif"
+ ALT="$ \Vec{r}$"></span>
+ in <!-- MATH
+ $\mathbb{R}^{1\times 3}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1490.gif"
+ ALT="$ \mathbb{R}^{1\times 3}$"></span>
+?
+In general, a vector <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1117.gif"
+ ALT="$ \Vec{r}$"></span>
+ in <!-- MATH
+ $\mathbb{R}^{1\times 3}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1490.gif"
+ ALT="$ \mathbb{R}^{1\times 3}$"></span>
+ can be written <!-- MATH
+ $(r_1,r_2,r_3)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1517.gif"
+ ALT="$ (r_1,r_2,r_3)$"></span>
+, where each <!-- MATH
+ $r_i\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1518.gif"
+ ALT="$ r_i\in\mathbb{R}$"></span>
+.
+This leads to the system
+ <p></p>
+<div align="CENTER" class="mathdisplay"><table cellpadding="0" width="100%" align="CENTER">
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="110" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1501.gif"
+ ALT="$\displaystyle a_1+ 3a_2+ 2a_3\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1519.gif"
+ ALT="$\displaystyle = r_1$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="122" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1502.gif"
+ ALT="$\displaystyle -a_1+ 7a_2+ 5a_3\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1520.gif"
+ ALT="$\displaystyle = r_2$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+<tr valign="MIDDLE">
+<td nowrap ALIGN="RIGHT"><span class="MATH"><IMG
+ WIDTH="110" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1504.gif"
+ ALT="$\displaystyle a_1+ 8a_2+ 6a_3\;$"></span></td>
+<td nowrap ALIGN="LEFT"><span class="MATH"><IMG
+ WIDTH="35" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1521.gif"
+ ALT="$\displaystyle = r_3$"></span></td>
+<td nowrap CLASS="eqno" width="10" align="RIGHT">
+&nbsp;&nbsp;&nbsp;</td></tr>
+</table></div>
+<br clear="ALL"><p></p>
+We have already shown that the coefficient matrix for this system is nonsingular and therefore
+the system has a unique solution for any <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1117.gif"
+ ALT="$ \Vec{r}$"></span>
+ in <!-- MATH
+ $\mathbb{R}^{1\times 3}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1490.gif"
+ ALT="$ \mathbb{R}^{1\times 3}$"></span>
+. Ergo, <!-- MATH
+ ${\cal{SP}}(S)=\mathbb{R}^{1\times 3}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="107" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1522.gif"
+ ALT="$ {\cal{SP}}(S)=\mathbb{R}^{1\times 3}$"></span>
+.
+
+<p>
+Since <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ is Euclidean 3-space, we can have a geometrical interpretation of the span of two
+vectors in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+. Let <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ be the two vectors <!-- MATH
+ $\Vec{s}_1=(1,-1,3)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="103" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1523.gif"
+ ALT="$ \Vec{s}_1=(1,-1,3)$"></span>
+ and <!-- MATH
+ $\Vec{s}_2=(6,1,2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1524.gif"
+ ALT="$ \Vec{s}_2=(6,1,2)$"></span>
+.
+Then <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+ is all vectors <!-- MATH
+ $\Vec{s}=a_1(1,-1,3)+a_2(6,1,2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="197" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1525.gif"
+ ALT="$ \Vec{s}=a_1(1,-1,3)+a_2(6,1,2)$"></span>
+ with <!-- MATH
+ $a_i\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1526.gif"
+ ALT="$ a_i\in\mathbb{R}$"></span>
+. In terms of
+a coordinate system for <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+, we have <!-- MATH
+ $x=a_1+6a_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1527.gif"
+ ALT="$ x=a_1+6a_2$"></span>
+, <!-- MATH
+ $y=-a_1+a_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="97" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1528.gif"
+ ALT="$ y=-a_1+a_2$"></span>
+ and <!-- MATH
+ $z=3a_1+2a_2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="100" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1529.gif"
+ ALT="$ z=3a_1+2a_2$"></span>
+. We think
+of <span class="MATH"><IMG
+ WIDTH="44" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.gif"
+ ALT="$ x,y,z$"></span>
+ as being fixed so we have three equations in the two unknowns <span class="MATH"><IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1496.gif"
+ ALT="$ a_1, a_2$"></span>
+. We solve
+this using an augmented matrix where the columns refer to coefficients for <!-- MATH
+ $a_1,a_2,x,y$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1530.gif"
+ ALT="$ a_1,a_2,x,y$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ z$"></span>
+, respectively.
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{rc|ccc}
+ 1 & 6 & 1 & 0 & 0 \\
+ -1 & 1 & 0 & 1 & 0 \\
+ 3 & 2 & 0 & 0 & 1 
+\end{array}\right)
+\text{ which row reduces to }
+\left(\begin{array}{cc|rrr}
+ 1 & 0 & \frac{1}{7} & -\frac{6}{7} & 0 \\
+ 0 & 1 & \frac{1}{7} & \frac{1}{7} & 0 \\
+ 0 & 0 & {5}         & -16 & -7 
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="164" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1531.gif"
+ ALT="$\displaystyle \left(\begin{array}{rc\vert ccc}
+1 &amp; 6 &amp; 1 &amp; 0 &amp; 0 \\
+-1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
+3 &amp; 2 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)$">&nbsp; &nbsp; which row reduces to&nbsp;<IMG
+ WIDTH="186" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1532.gif"
+ ALT="$\displaystyle \left(\begin{array}{cc\vert rrr}
+1 &amp; 0 &amp; \frac{1}{7} &amp; -\frac{6}...
+... \frac{1}{7} &amp; \frac{1}{7} &amp; 0 \\
+0 &amp; 0 &amp; {5} &amp; -16 &amp; -7
+\end{array}\right)
+$">
+</div><p>
+</p>
+
+<p>
+This system is only consistent when <!-- MATH
+ $5x-16y-7z=0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="130" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1533.gif"
+ ALT="$ 5x-16y-7z=0$"></span>
+, which is an equation of a plane in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+.
+If <!-- MATH
+ $5x-16y-7z\ne 0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="130" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1534.gif"
+ ALT="$ 5x-16y-7z\ne 0$"></span>
+, then the system is inconsistent, because <span class="MATH"><IMG
+ WIDTH="71" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1535.gif"
+ ALT="$ 0a_1+0a_2$"></span>
+ must equal <span class="MATH">0</span>
+ for any
+values of <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1536.gif"
+ ALT="$ a_1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img372.gif"
+ ALT="$ a_2$"></span>
+. There could be no solutions for this system. It is possible to check
+this answer by substituting the values for <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1537.gif"
+ ALT="$ \Vec{s}_1$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1538.gif"
+ ALT="$ \Vec{s}_2$"></span>
+ into the equation for the plane.
+
+<p>
+Besides the null space, there are two other important subspaces concerning matrices which we will define.
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">14</span></b> &nbsp; 
+<i>If <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is an <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, then <!-- MATH
+ ${\cal{RS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1539.gif"
+ ALT="$ {\cal{RS}}(A)$"></span>
+, the row space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+, is the subspace<a name="10891"></a>
+spanned by the rows of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+.</i></div><p></p>
+
+<p>
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">15</span></b> &nbsp; 
+<i>If <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is an <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+, then <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+, the column space of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+, is the subspace<a name="10895"></a>
+spanned by the columns of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+.</i></div><p></p>
+
+<p>
+The column space of a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is related to the idea of <span  class="textbf">column equivalence</span><a name="10898"></a>
+of two matrices. A matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is column equivalent to a matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ if one can make <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ from <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ using
+a finite number of column operations. A column operation on a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ can be represented by multiplying
+one of the three elementary matrices <span  class="textit">on the right</span>. In order to refresh our memory of row equivalence
+and other theorems from long past pages,
+we will look a bit at column equivalence.
+<p>
+<div><b>Definition  <span class="arabic">5</span>..<span class="arabic">16</span></b> &nbsp; 
+<i><span  class="textbf">Elementary Matrices for Column Operations</span>
+</i><dl>
+<dt><strong><!-- MATH
+ $\mathbf{E}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img763.gif"
+ ALT="$ \mathbf{E}$"></span>
+ Type (1)</strong></dt>
+<dd>Interchange any two columns of <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+.
+</dd>
+<dt><strong><!-- MATH
+ $\mathbf{E}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img763.gif"
+ ALT="$ \mathbf{E}$"></span>
+ Type (2)</strong></dt>
+<dd>Multiply any column of <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ by a nonzero scalar.
+</dd>
+<dt><strong><!-- MATH
+ $\mathbf{E}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img763.gif"
+ ALT="$ \mathbf{E}$"></span>
+ Type (3)</strong></dt>
+<dd>Add a scalar multiple of any column of <!-- MATH
+ $\mathbf{I}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ \mathbf{I}$"></span>
+ to a different column.
+</dd>
+</dl></div><p></p>
+
+(1)and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is a matrix, then <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img692.gif"
+ ALT="$ AE$"></span>
+ would have the effect of interchanging two columns of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+.
+
+<p>
+All the theorems involving row operations can be used for column operations by noting that column operations
+on a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ are the same as row operations on <span class="MATH"><IMG
+ WIDTH="26" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1216.gif"
+ ALT="$ A^T$"></span>
+. To see this we need to recall two theorems
+which were assigned as problems. We need that if <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img693.gif"
+ ALT="$ E$"></span>
+ is an elementary matrix, then <span class="MATH"><IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1316.gif"
+ ALT="$ E^T$"></span>
+ is an elementary
+matrix. We also need that the transpose of the product of two matrices is the product of the transpose of the second
+matrix by the first, that <!-- MATH
+ $(EA)^T=A^TE^T$
+ -->
+<span class="MATH"><IMG
+ WIDTH="117" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1541.gif"
+ ALT="$ (EA)^T=A^TE^T$"></span>
+. This shows that the transpose of one type of elementary matrix
+(interchanging two rows, for instance) is the same type of elementary matrix for columns (interchanging
+two columns). (Can you see why?)
+
+<p>
+We say that a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is <span  class="textbf">equivalent</span><a name="10909"></a> to a matrix <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+ if one can
+use a finite number of row and/or column operations to create <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+ from <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+. Since any nonsingular matrix can be
+made up of the product of elementary matrices, saying that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is equivalent to <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+ means that there
+must be two nonsingular matrices <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="76" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ BAC=D$"></span>
+. The matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ would be a product of elementary
+row operation matrices and <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ would be the product of elementary column operations.
+
+<p>
+One way to look at this is to use partitioned matrices. Suppose <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is an <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix, <!-- MATH
+ $\mathbf{I}_m$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1543.gif"
+ ALT="$ \mathbf{I}_m$"></span>
+ is
+an <span class="MATH"><IMG
+ WIDTH="52" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img769.gif"
+ ALT="$ m\times m$"></span>
+ identity matrix and <!-- MATH
+ $\mathbf{I}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1544.gif"
+ ALT="$ \mathbf{I}_n$"></span>
+ is an <span class="MATH"><IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1438.gif"
+ ALT="$ n\times n$"></span>
+ identity matrix. If <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is equivalent to <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+.
+we can write two <!-- MATH
+ $(m+n)\times (m+n)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="134" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1545.gif"
+ ALT="$ (m+n)\times (m+n)$"></span>
+ matrices to illustrate this:
+<p><!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{ccc}
+ A  &\vline & \mathbf{I}_m \\
+\hline
+ \mathbf{I}_n &\vline &\mathbf{0}
+\end{array}\right)\text{ is equivalent to }\left(\begin{array}{ccc}
+ D  &\vline & B \\
+\hline
+ C &\vline &\mathbf{0}
+\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="111" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1546.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccc}
+A &amp;\vline &amp; \mathbf{I}_m \\
+\hline
+\mathbf{I}_n &amp;\vline &amp;\mathbf{0}
+\end{array}\right)$"> is equivalent to&nbsp;<IMG
+ WIDTH="102" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1547.gif"
+ ALT="$\displaystyle \left(\begin{array}{ccc}
+D &amp;\vline &amp; B \\
+\hline
+C &amp;\vline &amp;\mathbf{0}
+\end{array}\right)$">
+</div><p>
+</p>
+In other words, <span class="MATH"><IMG
+ WIDTH="76" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ BAC=D$"></span>
+, because multiplying <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ on the left is equivalent to all the
+row operations used to change <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ into <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+ and multiplying <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ on the right is equivalent
+to all the column operations used to change <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ into <span class="MATH"><IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img512.gif"
+ ALT="$ D$"></span>
+.
+
+<p>
+Please note that if <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is row equivalent to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is equivalent to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+.
+Similarly, if <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is column equivalent to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+, then <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is equivalent to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+.
+If <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is equivalent to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+, we cannot say only from this that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is row equivalent to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+. Neither
+can we conclude that <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ is column equivalent to <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+.
+
+<p>
+We now return to discussions of the column space of a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+, <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+, by first noting that
+the columns of an <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ over a field <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ can be considered as <span class="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ n$"></span>
+ vectors
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1361.gif"
+ ALT="$ \Vec{c}_i$"></span>
+ in <!-- MATH
+ $\mathbb{F}^{m\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1548.gif"
+ ALT="$ \mathbb{F}^{m\times 1}$"></span>
+. A typical vector <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1069.gif"
+ ALT="$ \Vec{a}$"></span>
+ in <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+ would then have the form
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{a}=x_1\Vec{c}_1+x_2\Vec{c}_2+\cdots+x_n\Vec{c}_n
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="205" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1549.gif"
+ ALT="$\displaystyle \Vec{a}=x_1\Vec{c}_1+x_2\Vec{c}_2+\cdots+x_n\Vec{c}_n$">
+</div><p>
+</p>
+where <!-- MATH
+ $x_i\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1550.gif"
+ ALT="$ x_i\in\mathbb{F}$"></span>
+. Using the algebra of matrices, we can rewrite this as
+<p><!-- MATH
+ \begin{displaymath}
+\Vec{a}=\left(\begin{array}{cccc}\Vec{c}_1 &\Vec{c}_2 &\ldots &\Vec{c}_n\end{array}\right)
+\left(\begin{array}{c}x_1 \\x_2 \\\vdots \\x_n\end{array}\right)=A
+\left(\begin{array}{c}x_1 \\x_2 \\\vdots \\x_n\end{array}\right)
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="336" HEIGHT="102" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1551.gif"
+ ALT="$\displaystyle \Vec{a}=\left(\begin{array}{cccc}\Vec{c}_1 &amp;\Vec{c}_2 &amp;\ldots &amp;\V...
+...y}\right)=A
+\left(\begin{array}{c}x_1 \ x_2 \ \vdots \ x_n\end{array}\right)$">
+</div><p>
+</p>
+This leads us to conclude that 
+<p><!-- MATH
+ \begin{displaymath}
+{\cal{CS}}(A)=\text{ all matrices }AX\text{ such that }X\in\mathbb{F}^{n\times 1}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="65" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1552.gif"
+ ALT="$\displaystyle {\cal{CS}}(A)=$"> all matrices&nbsp;<IMG
+ WIDTH="31" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1553.gif"
+ ALT="$\displaystyle AX$"> such that&nbsp;<IMG
+ WIDTH="73" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1554.gif"
+ ALT="$\displaystyle X\in\mathbb{F}^{n\times 1}$">
+</div><p>
+</p>
+When doing work with vectors, we could rephrase this, using <!-- MATH
+ $\Vec{x}\in\mathbb{F}^{n\times 1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="67" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1555.gif"
+ ALT="$ \Vec{x}\in\mathbb{F}^{n\times 1}$"></span>
+, as
+<p><!-- MATH
+ \begin{displaymath}
+{\cal{CS}}(A)=\text{ all vectors }\Vec{s}\in\mathbb{F}^{1\times m}\text{ such that }A\Vec{x}=\Vec{s}\text{ has a solution.}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="65" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1552.gif"
+ ALT="$\displaystyle {\cal{CS}}(A)=$"> all vectors&nbsp;<IMG
+ WIDTH="69" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1556.gif"
+ ALT="$\displaystyle \Vec{s}\in\mathbb{F}^{1\times m}$"> such that&nbsp;<IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1557.gif"
+ ALT="$\displaystyle A\Vec{x}=\Vec{s}$"> has a solution.
+</div><p>
+</p>
+
+<p>
+Similarly it can be shown that the row space of a matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+ is
+<p><!-- MATH
+ \begin{displaymath}
+{\cal{RS}}(A)=\text{ all matrices } {YA} \text{ such that }Y\in\mathbb{F}^{1\times m}
+\end{displaymath}
+ -->
+</p>
+<div align="CENTER" class="mathdisplay">
+<IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1558.gif"
+ ALT="$\displaystyle {\cal{RS}}(A)=$"> all matrices&nbsp;<IMG
+ WIDTH="29" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1559.gif"
+ ALT="$\displaystyle {YA}$">&nbsp; &nbsp; such that&nbsp;<IMG
+ WIDTH="74" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1560.gif"
+ ALT="$\displaystyle Y\in\mathbb{F}^{1\times m}$">
+</div><p>
+</p>
+
+<p>
+When we want to prove something about all matrices of a certain type, we start
+by giving a representative of all these matrices  and use this  representative
+to acquire the proof. Since the representative could be any matrix of this type, then the
+proof must hold for all matrices of this type. This method of proof can be used in
+many situations and, of course, for more than just matrices. 
+
+<p>
+We can now write two simple, but useful, theorems.
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">4</span></b> &nbsp; 
+<i>Given an <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and any matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img609.gif"
+ ALT="$ BA$"></span>
+ is defined, then
+<span class="MATH"><IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1561.gif"
+ ALT="$ NS(A)$"></span>
+ is a subspace of <span class="MATH"><IMG
+ WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1562.gif"
+ ALT="$ NS(BA)$"></span>
+ and <!-- MATH
+ $NS(A)=NS(BA)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="137" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1563.gif"
+ ALT="$ NS(A)=NS(BA)$"></span>
+ if <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1564.gif"
+ ALT="$ B^{-1}$"></span>
+ exists.</i></div><p></p>
+
+<p></p>
+<div><i>Proof</i>.
+
+Suppose <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ is in <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1561.gif"
+ ALT="$ NS(A)$"></span>
+. This means that <!-- MATH
+ $AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$ AX=\mathbf{0}$"></span>
+. Therefore <!-- MATH
+ $(BA)X=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="86" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1565.gif"
+ ALT="$ (BA)X=\mathbf{0}$"></span>
+ which implies that
+<span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ is in <span class="MATH"><IMG
+ WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1562.gif"
+ ALT="$ NS(BA)$"></span>
+. 
+
+<p>
+If <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1564.gif"
+ ALT="$ B^{-1}$"></span>
+ exists, then <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ in <span class="MATH"><IMG
+ WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1562.gif"
+ ALT="$ NS(BA)$"></span>
+ implies that <!-- MATH
+ $(BA)X=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="86" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1565.gif"
+ ALT="$ (BA)X=\mathbf{0}$"></span>
+ which
+lets us write that <!-- MATH
+ $B^{-1}(BA)X=AX=\mathbf{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="164" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1566.gif"
+ ALT="$ B^{-1}(BA)X=AX=\mathbf{0}$"></span>
+. This shows that <span class="MATH"><IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ X$"></span>
+ is in <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1561.gif"
+ ALT="$ NS(A)$"></span>
+, so that
+<span class="MATH"><IMG
+ WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1562.gif"
+ ALT="$ NS(BA)$"></span>
+ is a subspace of <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1561.gif"
+ ALT="$ NS(A)$"></span>
+. Therefore, <!-- MATH
+ $NS(A)=NS(BA)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="137" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1563.gif"
+ ALT="$ NS(A)=NS(BA)$"></span>
+.
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+<p>
+<div><b>Theorem  <span class="arabic">5</span>..<span class="arabic">5</span></b> &nbsp; 
+<i>Given an <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and any matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img609.gif"
+ ALT="$ BA$"></span>
+ is defined, then
+<!-- MATH
+ ${\cal{RS}}(BA)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="66" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1567.gif"
+ ALT="$ {\cal{RS}}(BA)$"></span>
+ is a subspace of <!-- MATH
+ ${\cal{RS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1539.gif"
+ ALT="$ {\cal{RS}}(A)$"></span>
+ and <!-- MATH
+ ${\cal{RS}}(BA)={\cal{RS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="136" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1568.gif"
+ ALT="$ {\cal{RS}}(BA)={\cal{RS}}(A)$"></span>
+ if <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1564.gif"
+ ALT="$ B^{-1}$"></span>
+ exists.</i></div><p></p>
+
+<p></p>
+<div><i>Proof</i>.
+
+We start with the fact that, if <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="$ B$"></span>
+ is <span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1569.gif"
+ ALT="$ r\times m$"></span>
+,
+ <!-- MATH
+ ${\cal{RS}}(BA)=$
+ -->
+<span class="MATH"><IMG
+ WIDTH="82" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1570.gif"
+ ALT="$ {\cal{RS}}(BA)=$"></span>
+ all matrices <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1571.gif"
+ ALT="$ Y(BA)$"></span>
+ such that <!-- MATH
+ $Y\in\mathbb{F}^{1\times r}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="69" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1572.gif"
+ ALT="$ Y\in\mathbb{F}^{1\times r}$"></span>
+.
+The commutative law of matrix multiplication allows us to rewrite this as 
+<!-- MATH
+ ${\cal{RS}}(BA)=$
+ -->
+<span class="MATH"><IMG
+ WIDTH="82" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1570.gif"
+ ALT="$ {\cal{RS}}(BA)=$"></span>
+ all matrices <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1573.gif"
+ ALT="$ (YB)A$"></span>
+ such that <!-- MATH
+ $Y\in\mathbb{F}^{1\times r}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="69" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1572.gif"
+ ALT="$ Y\in\mathbb{F}^{1\times r}$"></span>
+.
+The product <span class="MATH"><IMG
+ WIDTH="30" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1574.gif"
+ ALT="$ YB$"></span>
+ is a <span class="MATH"><IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1575.gif"
+ ALT="$ 1\times m$"></span>
+ matrix and <!-- MATH
+ ${\cal{RS}}(A)=$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1576.gif"
+ ALT="$ {\cal{RS}}(A)=$"></span>
+ all matrices <span class="MATH"><IMG
+ WIDTH="28" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1577.gif"
+ ALT="$ ZA$"></span>
+ such that <!-- MATH
+ $Z\in\mathbb{F}^{1\times m}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="74" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1578.gif"
+ ALT="$ Z\in\mathbb{F}^{1\times m}$"></span>
+.
+Therefore <!-- MATH
+ ${\cal{RS}}(BA)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="66" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1567.gif"
+ ALT="$ {\cal{RS}}(BA)$"></span>
+ is a subspace of <!-- MATH
+ ${\cal{RS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1539.gif"
+ ALT="$ {\cal{RS}}(A)$"></span>
+.
+
+<p>
+If <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1579.gif"
+ ALT="$ r=m$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1564.gif"
+ ALT="$ B^{-1}$"></span>
+ exists, then from the last result we know that
+<!-- MATH
+ ${\cal{RS}}(A)={\cal{RS}}(B^{-1}(BA))$
+ -->
+<span class="MATH"><IMG
+ WIDTH="178" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1580.gif"
+ ALT="$ {\cal{RS}}(A)={\cal{RS}}(B^{-1}(BA))$"></span>
+ and therefore that <!-- MATH
+ ${\cal{RS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="53" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1539.gif"
+ ALT="$ {\cal{RS}}(A)$"></span>
+ is a subspace of <!-- MATH
+ ${\cal{RS}}(BA)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="66" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1567.gif"
+ ALT="$ {\cal{RS}}(BA)$"></span>
+.
+From the definition of equality of subspaces, we have <!-- MATH
+ ${\cal{RS}}(BA)={\cal{RS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="136" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1568.gif"
+ ALT="$ {\cal{RS}}(BA)={\cal{RS}}(A)$"></span>
+.
+ <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \qedsymbol$">
+</div><p></p>
+
+<p>
+The span of <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1581.gif"
+ ALT="$ \;\Vec{0}$"></span>
+ in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ is just the point at the origin.
+The span of a single vector <!-- MATH
+ $\Vec{u}\ne\Vec{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1582.gif"
+ ALT="$ \Vec{u}\ne\Vec{0}$"></span>
+ (<span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ <span  class="textit">not equal to</span> the zero vector)
+in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ is all scalar multiples of this vector, <span class="MATH"><IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1583.gif"
+ ALT="$ a\Vec{u}$"></span>
+.
+It is simply the line through the origin
+containing the vector <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+. The span of two such vectors, <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+, 
+is any vector in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ that is a linear combination of  <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+.
+Such a linear combination determines a plane
+through the origin as long as <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ is not a scalar multiple of <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+. 
+We will examine the situation where we have the span of three or more of these type of vectors in the next section.
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Problems <span class="arabic">5</span>.<span class="arabic">5</span></span></big>
+
+<ol>
+<li>Prove that the transpose of an elementary matrix of one type of row operation corresponds to 
+	to the same type of column operation.
+</li>
+<li>Prove that <!-- MATH
+ ${\cal{RS}}(A)=\text{ all matrices }YA\text{ such that }Y\in\mathbb{F}^{1\times m}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1576.gif"
+ ALT="$ {\cal{RS}}(A)=$"> all matrices&nbsp;<IMG
+ WIDTH="29" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1584.gif"
+ ALT="$ YA$"> such that&nbsp;<IMG
+ WIDTH="74" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1585.gif"
+ ALT="$ Y\in\mathbb{F}^{1\times m}$"></span>
+.
+</li>
+<li>Prove that <!-- MATH
+ ${\cal{RS}}(A)={\cal{CS}}(A^T)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1586.gif"
+ ALT="$ {\cal{RS}}(A)={\cal{CS}}(A^T)$"></span>
+.
+</li>
+<li>Prove that, given an <span class="MATH"><IMG
+ WIDTH="47" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$ m\times n$"></span>
+ matrix <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="$ A$"></span>
+ and any matrix <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ such that <span class="MATH"><IMG
+ WIDTH="29" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1587.gif"
+ ALT="$ AC$"></span>
+ is defined, then
+  <!-- MATH
+ ${\cal{CS}}(AC)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="61" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1588.gif"
+ ALT="$ {\cal{CS}}(AC)$"></span>
+ is a subspace of <!-- MATH
+ ${\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1540.gif"
+ ALT="$ {\cal{CS}}(A)$"></span>
+ and <!-- MATH
+ ${\cal{CS}}(AC)={\cal{CS}}(A)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="127" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1589.gif"
+ ALT="$ {\cal{CS}}(AC)={\cal{CS}}(A)$"></span>
+ if <span class="MATH"><IMG
+ WIDTH="34" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1590.gif"
+ ALT="$ C^{-1}$"></span>
+ exists.
+</li>
+<li>Show that the two complex numbers, <span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1591.gif"
+ ALT="$ 1+i$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1592.gif"
+ ALT="$ 1-i$"></span>
+, spans <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+.
+</li>
+<li>Let <!-- MATH
+ $\Vec{v}_1, \Vec{v}_2, \ldots , \Vec{v}_n, \Vec{v}_{n+1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="132" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1593.gif"
+ ALT="$ \Vec{v}_1, \Vec{v}_2, \ldots , \Vec{v}_n, \Vec{v}_{n+1}$"></span>
+ be <span class="MATH"><IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1594.gif"
+ ALT="$ (n+1)$"></span>
+ vectors in
+  a vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+. Suppose <!-- MATH
+ $\Vec{v}_1, \Vec{v}_2, \ldots , \Vec{v}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$"></span>
+ spans <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+. Prove that
+  <!-- MATH
+ $\Vec{v}_1, \Vec{v}_2, \ldots , \Vec{v}_n, \Vec{v}_{n+1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="132" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1593.gif"
+ ALT="$ \Vec{v}_1, \Vec{v}_2, \ldots , \Vec{v}_n, \Vec{v}_{n+1}$"></span>
+ also spans <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+.
+</li>
+<li>What is the minimum number of vectors one would need to span <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+? (<span  class="textbf">HINT</span>:
+  First find three vectors that span <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ and show that none of them can be written as
+  a linear combination of the others.)
+</li>
+<li>Prove that two polynomials cannot span <!-- MATH
+ $\mathbb{P}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1595.gif"
+ ALT="$ \mathbb{P}^2$"></span>
+.
+</li>
+<li>Show that <!-- MATH
+ $\mathbb{R}^{2\times 2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1596.gif"
+ ALT="$ \mathbb{R}^{2\times 2}$"></span>
+ can be spanned by nonsingular matrices.
+</li>
+<li>Let <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ stand for a list of vectors <!-- MATH
+ $\Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$
+ -->
+<span class="MATH"><IMG
+ WIDTH="93" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \Vec{v}_1,\Vec{v}_2,\ldots,\Vec{v}_n$"></span>
+ in a 
+  vector space <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ {\cal{V}}$"></span>
+ over <!-- MATH
+ $\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ \mathbb{F}$"></span>
+. If <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ \Vec{u}$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$ \Vec{w}$"></span>
+ are in <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+, prove that
+  <!-- MATH
+ $\Vec{u}+\Vec{w}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1390.gif"
+ ALT="$ \Vec{u}+\Vec{w}$"></span>
+ is in <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+. Prove that <span class="MATH"><IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1583.gif"
+ ALT="$ a\Vec{u}$"></span>
+, <!-- MATH
+ $a\in\mathbb{F}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1597.gif"
+ ALT="$ a\in\mathbb{F}$"></span>
+, is also in <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+.
+</li>
+<li>Let <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ stand for any vector of the form <!-- MATH
+ $\Vec{c}=bi$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1598.gif"
+ ALT="$ \Vec{c}=bi$"></span>
+, where <!-- MATH
+ $b\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1599.gif"
+ ALT="$ b\in\mathbb{R}$"></span>
+ and <!-- MATH
+ $i=\sqrt{-1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="64" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.gif"
+ ALT="$ i=\sqrt{-1}$"></span>
+.
+  Show that <!-- MATH
+ ${\cal{SP}}(C)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1600.gif"
+ ALT="$ {\cal{SP}}(C)$"></span>
+ is a proper subspace of <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+. If <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ is any vector of the form 
+  <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1601.gif"
+ ALT="$ \Vec{r}=a$"></span>
+, where <!-- MATH
+ $a\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.gif"
+ ALT="$ a\in\mathbb{R}$"></span>
+, show that <!-- MATH
+ ${\cal{SP}}(R)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1602.gif"
+ ALT="$ {\cal{SP}}(R)$"></span>
+ is a proper subspace of <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+.
+</li>
+<li>Using <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ S$"></span>
+ from the previous problem, show that <!-- MATH
+ ${\cal{SP}}(R)\cap {\cal{SP}}(C)=\Vec{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="147" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1603.gif"
+ ALT="$ {\cal{SP}}(R)\cap {\cal{SP}}(C)=\Vec{0}$"></span>
+.
+  (<span  class="textbf">HINT</span>: Assume that there exists a vector <!-- MATH
+ $\Vec{v}\ne \Vec{0}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1604.gif"
+ ALT="$ \Vec{v}\ne \Vec{0}$"></span>
+ in <!-- MATH
+ ${\cal{SP}}(R)\cap {\cal{SP}}(C)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="118" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1605.gif"
+ ALT="$ {\cal{SP}}(R)\cap {\cal{SP}}(C)$"></span>
+
+  and use proof by contradiction to show that it cannot exist.)
+</li>
+</ol>
+
+<p>
+<br clear="ALL">
+<hr>
+<br><big class="LARGE"><span  class="textbf">Exercises <span class="arabic">5</span>.<span class="arabic">5</span></span></big>
+
+<ol>
+<li>List two vectors that span <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1066.gif"
+ ALT="$ \mathbb{R}^2$"></span>
+.
+</li>
+<li>List matrices that span <!-- MATH
+ $\mathbb{R}^{2\times 2}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1596.gif"
+ ALT="$ \mathbb{R}^{2\times 2}$"></span>
+.
+</li>
+<li>A <span  class="textbf">monomial</span><a name="11058"></a> is the product of a scalar and a variable <span class="MATH"><IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1606.gif"
+ ALT="$ x^n$"></span>
+ for <!-- MATH
+ $n\in\mathbb{Z}>0$
+ -->
+<span class="MATH"><IMG
+ WIDTH="73" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1607.gif"
+ ALT="$ n\in\mathbb{Z}&gt;0$"></span>
+.
+	List the monomials you would need to span <!-- MATH
+ ${\mathbb{P}}^5$
+ -->
+<span class="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1608.gif"
+ ALT="$ {\mathbb{P}}^5$"></span>
+.
+</li>
+<li>Let <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+ be the subspace of <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ spanned by the 
+	two vectors <!-- MATH
+ $\Vec{s}_1=(1,-1,3)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="103" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1523.gif"
+ ALT="$ \Vec{s}_1=(1,-1,3)$"></span>
+ and <!-- MATH
+ $\Vec{s}_2=(6,1,2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1524.gif"
+ ALT="$ \Vec{s}_2=(6,1,2)$"></span>
+. Is <span class="MATH"><IMG
+ WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1609.gif"
+ ALT="$ (4,3,-4)$"></span>
+ in this span?
+	What about <span class="MATH"><IMG
+ WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1610.gif"
+ ALT="$ (3,2,-3)$"></span>
+?
+</li>
+<li>Let <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+ be the subspace of <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ spanned by the 
+	three vectors <!-- MATH
+ $\Vec{s}_1=(1,-1,3)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="103" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1523.gif"
+ ALT="$ \Vec{s}_1=(1,-1,3)$"></span>
+, <!-- MATH
+ $\Vec{s}_2=(6,1,2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1524.gif"
+ ALT="$ \Vec{s}_2=(6,1,2)$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1609.gif"
+ ALT="$ (4,3,-4)$"></span>
+.
+	Find an equation for this subspace.
+</li>
+<li>Let <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+ be the subspace of <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ \mathbb{R}^3$"></span>
+ spanned by the 
+	three vectors <!-- MATH
+ $\Vec{s}_1=(-1,1,3)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="103" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1611.gif"
+ ALT="$ \Vec{s}_1=(-1,1,3)$"></span>
+, <!-- MATH
+ $\Vec{s}_2=(2,1,2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1612.gif"
+ ALT="$ \Vec{s}_2=(2,1,2)$"></span>
+ and <span class="MATH"><IMG
+ WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1609.gif"
+ ALT="$ (4,3,-4)$"></span>
+.
+	Geometrically, what is this subspace?
+</li>
+<li>Let <!-- MATH
+ ${\cal{SP}}(S)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ {\cal{SP}}(S)$"></span>
+ be the subspace of <!-- MATH
+ $\mathbb{C}^2$
+ -->
+<span class="MATH"><IMG
+ WIDTH="23" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1613.gif"
+ ALT="$ \mathbb{C}^2$"></span>
+ spanned by the 
+	two vectors <!-- MATH
+ $\Vec{s}_1=(-1,i)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1614.gif"
+ ALT="$ \Vec{s}_1=(-1,i)$"></span>
+, and <!-- MATH
+ $\Vec{s}_2=(2+i,2)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="100" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1615.gif"
+ ALT="$ \Vec{s}_2=(2+i,2)$"></span>
+. Is <span class="MATH"><IMG
+ WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1616.gif"
+ ALT="$ (3,4)$"></span>
+ in this span?
+	What about <span class="MATH"><IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1617.gif"
+ ALT="$ (3i,4i)$"></span>
+? What about <span class="MATH"><IMG
+ WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1618.gif"
+ ALT="$ (3,4i)$"></span>
+?
+</li>
+<li>There is a geometrical interpretation of the vector space <!-- MATH
+ $\mathbb{C}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ \mathbb{C}$"></span>
+. If one has an
+	<span class="MATH"><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.gif"
+ ALT="$ x,y$"></span>
+ coordinate system on a plane, one can define the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ x$"></span>
+ coordinate to be <!-- MATH
+ ${\cal{SP}}(R)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1602.gif"
+ ALT="$ {\cal{SP}}(R)$"></span>
+,
+	where <span class="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img504.gif"
+ ALT="$ R$"></span>
+ is any vector of the form 
+  <span class="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1601.gif"
+ ALT="$ \Vec{r}=a$"></span>
+, for <!-- MATH
+ $a\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.gif"
+ ALT="$ a\in\mathbb{R}$"></span>
+. Similarly, the <span class="MATH"><IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.gif"
+ ALT="$ y$"></span>
+ coordinate can be defined to be
+  <!-- MATH
+ ${\cal{SP}}(C)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="52" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1600.gif"
+ ALT="$ {\cal{SP}}(C)$"></span>
+, where <span class="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img753.gif"
+ ALT="$ C$"></span>
+ stands for any vector of the form <!-- MATH
+ $\Vec{c}=bi$
+ -->
+<span class="MATH"><IMG
+ WIDTH="45" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1598.gif"
+ ALT="$ \Vec{c}=bi$"></span>
+, where <!-- MATH
+ $b\in\mathbb{R}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1599.gif"
+ ALT="$ b\in\mathbb{R}$"></span>
+ and <!-- MATH
+ $i=\sqrt{-1}$
+ -->
+<span class="MATH"><IMG
+ WIDTH="64" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.gif"
+ ALT="$ i=\sqrt{-1}$"></span>
+.
+  Draw this coordinate system. Plot the vectors 
+  <!-- MATH
+ $\Vec{e}_1=(1,0)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="75" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1619.gif"
+ ALT="$ \Vec{e}_1=(1,0)$"></span>
+, <!-- MATH
+ $\Vec{e}_2=(0,i)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1620.gif"
+ ALT="$ \Vec{e}_2=(0,i)$"></span>
+, <!-- MATH
+ $\Vec{u}=(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}i)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1621.gif"
+ ALT="$ \Vec{u}=(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}i)$"></span>
+
+  and <!-- MATH
+ $\Vec{w}=(\frac{4}{5},\frac{3}{5}i)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1622.gif"
+ ALT="$ \Vec{w}=(\frac{4}{5},\frac{3}{5}i)$"></span>
+.
+  Circle the subspace <!-- MATH
+ ${\cal{SP}}(R)\cap {\cal{SP}}(C)$
+ -->
+<span class="MATH"><IMG
+ WIDTH="118" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1605.gif"
+ ALT="$ {\cal{SP}}(R)\cap {\cal{SP}}(C)$"></span>
+. Calculate the coordinates for and plot the vectors 
+  <!-- MATH
+ $\text{proj}_{\Vec{e}_1}\Vec{u}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1623.gif"
+ ALT="$ _{\Vec{e}_1}\Vec{u}$"></span>
+, <!-- MATH
+ $\text{proj}_{\Vec{e}_2}\Vec{u}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1624.gif"
+ ALT="$ _{\Vec{e}_2}\Vec{u}$"></span>
+,
+  <!-- MATH
+ $\text{proj}_{\Vec{e}_1}\Vec{w}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1625.gif"
+ ALT="$ _{\Vec{e}_1}\Vec{w}$"></span>
+, <!-- MATH
+ $\text{proj}_{\Vec{e}_2}\Vec{w}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1626.gif"
+ ALT="$ _{\Vec{e}_2}\Vec{w}$"></span>
+,
+  <!-- MATH
+ $\text{proj}_{\Vec{u}}\Vec{w}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1627.gif"
+ ALT="$ _{\Vec{u}}\Vec{w}$"></span>
+ and <!-- MATH
+ $\text{proj}_{\Vec{w}}\Vec{u}$
+ -->
+<span class="MATH">proj<IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1628.gif"
+ ALT="$ _{\Vec{w}}\Vec{u}$"></span>
+. 
+</li>
+</ol>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html691"
+  href="node36.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="next" src="screw_next.gif"></a> 
+<a name="tex2html685"
+  href="node30.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="up" src="screw_up.gif"></a> 
+<a name="tex2html679"
+  href="node34.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="previous" src="unscrew_prev.gif"></a> 
+<a name="tex2html687"
+  href="node2.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="contents" src="screw_contents.gif"></a> 
+<a name="tex2html689"
+  href="node62.html">
+<img width="70" height="70" align="BOTTOM" border="0" alt="index" src="screw_index.gif"></a> 
+<br>
+<b> Next:</b> <a name="tex2html692"
+  href="node36.html">Bases, Linear Independence, Matrix</a>
+<b> Up:</b> <a name="tex2html686"
+  href="node30.html">Vector Spaces</a>
+<b> Previous:</b> <a name="tex2html680"
+  href="node34.html">Subspaces</a>
+ &nbsp; <b>  <a name="tex2html688"
+  href="node2.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html690"
+  href="node62.html">Index</a></b> </div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+https://www.learningaboutelectronics.com/Articles/How-to-create-multiple-scenes-and-switch-between-scenes-in-JavaFX.php
+Above is link to code for HOWTO set scenes after different button combinations are pushed OR on startup when file information is read.
+
+Have to figure out how to write and read startup and matrix information.
+
+
+
+
+
+
+when looking at selected elements of 3d graphs:
+
+1. when zooming out of range of a piece, the program resets number of piece to be shown as 1 BUT button still shows last number. Reset button number. --- zooming back in reshows piece. what is logical? - fixed.
+2. Show 1 of xxx on button for number of pieces showing. - fixed
+Do Not reset pieces showing when doing row/col ops OR have (secret?) button that will not show any piece that intersects bounding box. - not logical?
+
+a. add option to store matrix as A, B or C
+b. add option to get transpose
+c. add option to get inverse
+d. add option to replace M (showing matrix) with MA, MB or MC
+e. add option to replace M with AM, BM or CM
+f. add option to calculate determinant and send to edit pane
+g. add option to multiply M by scalar in edit pane ? necessary ?
+
+3. find out how to set persistent traits (write to disk?) and write matrix files in LaTeX format so user may access them. - lamppdata.txt file now  added to keep persistance of user information. Same classes and methods will be used for simple matrix IO
+
+4. plot polynomials
+
+Exercises 4.1
+1. Choose three points from the following list and find a 2 degree polynomial
+to fit them (as in the example). Do the same for a different set of three
+points. What can you say about the two equations? (Hint: It is possible to
+plot polynomials using Lampp. Either middle click the mouse icon at the
+bottom right or down-swipe it. This will activate the polynomial plotter for
+the Graph panel. Select the use of columns by right-clicking or tapping the
+row-or-column toggle button near the top right. Then select the column
+of values you wish to use as the coefficients for the polynomial in a single
+indeterminate x you wish to graph.)
+(1, 2)
+(2, 5)
+(4, 2)
+(6, 2)
+
+
+5. Multiply matrices
+
+Exercise 4.2.4
+  {HINT}: There is an undocumented (until now) feature in Lampp which allows Lampp to do quick multiplication of matrices. First, create a matrix $A$ and populate it with the desired entries. Then press the $B$ button on the bottom left.   Accept the option to switch with $A$. Then create a matrix $B$ and populate it with the desired entries. Now, swipe down (or middle-button-click) on the mouse icon at the bottom right corner. This activates the matrix Multiply options in the Matrix panel. Bring up the Matrix panel and select the button to multiply $A$ with $B$ and send the result to $C$. Note that the order of multiplication is given as $AB=C$. To get $BA=C$, you only need to select the appropriate button. After multiplication, the resultant matrix $C$ is automatically displayed.) 
