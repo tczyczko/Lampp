@@ -83,6 +83,11 @@ Note that index.html is a copy of linalg.html for default access by a browser
 |       
 
 
+BASH commands for uncompressing png files used in help html file
+cd $PATH_TO_PROJ/src/main/resources/html
+tar -xvzf img.tar.gz
+cd $PATH_TO_PROJ/target/classes/html
+tar -xvzf img.tar.gz
 
 
 * in the java source code for each class, use the following package instruction to set the directory tree:
