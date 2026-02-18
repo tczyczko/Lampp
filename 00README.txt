@@ -73,12 +73,13 @@ Note that index.html is a copy of linalg.html for default access by a browser
 |                   index.html
 |                   linalg.css
 |                   linalg.html
+                    img.tar.gz   ---  needs to be uncompressed here [tar -xvzf img.tar.gz] or [7-Zip] --- too many files for GitHub directory
 |
 +---android
 |       Lampp.apk
 |
 +---shade
-|       Lampp-project.jar
+|       Lampp-project.jar  ---  too large to include in GitHub directory -- see 000readme.txt for fatpom file to create with maven
 |       
 
 

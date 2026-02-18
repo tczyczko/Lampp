@@ -46,11 +46,13 @@ Please ⭐️ this repo and share it with others
 
        git clone https://github.com/tczyczko/Lampp.git
 
-3. Use the POM file with Maven to run or build the java program. See 000README.txt for specific and more detailed setup instructions. 
+3. Note that there are two copies of img.tar.gz given, one in **target/classes/htm**l and one in **src/main/resources/html**. These must be uncompressed locally using tar (Linux) or 7-Zip (Windows) before running or compiling the program. They were compressed because of GitHub's limit on the number of files. See 000readme.txt for more details. The target/Lampp-0.0.1-SNAPSHOT.jar file WILL run without access to these files. Again, see oooreadme.txt for details on how to run the program.
 
-4. The accompanying textbook (a work in progress) is given as a PDF, an epub and HTML files. It is written in ![LaTeX](LICENSE/latex-logo.png) , and processed using [LaTeXML](https://math.nist.gov/~BMiller/LaTeXML/), so it uses the most basic and necessary LaTeX that can be processed into epub and HTML by LaTeXML. 
+4. Use the POM file with Maven to run or build the java program. See 000README.txt for specific and more detailed setup instructions. 
 
-5. An old Android apk file is included that was created long ago using Gluon and Java 8. It can still be side-loaded on many Android tablets.
+5. The accompanying textbook (a work in progress) is given as a PDF, an epub and HTML files. It is written in ![LaTeX](LICENSE/latex-logo.png) , and processed using [LaTeXML](https://math.nist.gov/~BMiller/LaTeXML/), so it uses the most basic and necessary LaTeX that can be processed into epub and HTML by LaTeXML. 
+
+6. An old Android apk file is included that was created long ago using Gluon and Java 8. It can still be side-loaded on many Android tablets.
 
 ## Contributing 💡
 If you want to contribute to this project (by adding other number fields perhaps? Or suggesting problems that need the Integer Modulus a Prime number field?), your pull request will be welcomed.
