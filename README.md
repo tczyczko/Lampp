@@ -7,7 +7,7 @@
 
 The two are designed to be used together in that the LAMPP app capabilities are unlocked from keys given in the book. For example, matrix inverses are evaluated using row operations before the necessary information is given to allow LAMPP to calculate inverses with one button.
 
- The LAMPP app is designed to use several different number fields: the rational, the gaussian (complex with rational coefficients) and integers modulus a specified prime. Initially students use row operations to accomplish tasks. A limited graphing capability is also included to give a "rough" idea of how one might associate geometry with matrices. The impetus is to eliminate the mistake-prone arithmetic used when doing matrix calculations by hand.
+ The LAMPP app is designed to use subsets of several different number fields: the Rational, the Gaussian (complex with rational coefficients) and Integers modulus a specified Prime. Initially students use row operations to accomplish tasks. A limited graphing capability is also included to give a "rough" idea of how one might associate geometry with matrices. The impetus is to eliminate the mistake-prone arithmetic used when doing matrix calculations by hand.
 
  HTML files kept here are intended as an extra source of pictures and animations to illustrate some of the concepts introduced in the LAMPP book. This site may be accessed by a browser or by activating the mouse icon on the lower right of the LAMPP app screen. 
 
@@ -37,7 +37,7 @@ Please ⭐️ this repo and share it with others
 
 ## Requirements 🔧
 
-* Java 22 or higher, JavaFX 20.0.2 at highest (for HTML animated GIFs to show properly in Browser Help Panel.) Actually, Java 8 would probably compile and execute without need for separate JavaFX.
+* [Java](https://github.com/graalvm/graalvm-ce-builds/releases/) SDK 22 or higher, [JavaFX](https://gluonhq.com/products/javafx/) 20.0.2 at highest (for HTML animated GIFs to show properly in Browser Help Panel.) Actually, Java 8 would probably still compile and execute without need for separate JavaFX modules. A [Maven](https://maven.apache.org/) installation would be very useful, though not strictly necessary.
 
 ## Installation 🔌
 1. Press the **Fork** button (top right the page) to save copy of this project on your account.
@@ -46,14 +46,14 @@ Please ⭐️ this repo and share it with others
 
        git clone https://github.com/tczyczko/Lampp.git
 
-3. Note that there are two copies of img.tar.gz given, one in **target/classes/htm**l and one in **src/main/resources/html**. These must be uncompressed locally using tar (Linux) or 7-Zip (Windows) before running or compiling the program. They were compressed because of GitHub's limit on the number of files. See 000readme.txt for more details. The target/Lampp-0.0.1-SNAPSHOT.jar file WILL run without access to these files. Again, see oooreadme.txt for details on how to run the program.
+3. Note that there are two copies of img.tar.gz given, one in **target/classes/htm**l and one in **src/main/resources/html**. These must be uncompressed locally using tar (Linux) or 7-Zip (Windows) before running or compiling the program. They were compressed because of GitHub's limit on the number of files. See 000readme.txt for more details. The target/Lampp-0.0.1-SNAPSHOT.jar file WILL run without access to these files, but will be missing images. Again, see 000readme.txt for details on how to run the program. [java --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.web -jar target\Lampp-0.0.1-SNAPSHOT.jar]
 
 4. Use the POM file with Maven to run or build the java program. See 000README.txt for specific and more detailed setup instructions. 
 
 5. The accompanying textbook (a work in progress) is given as a PDF, an epub and HTML files. It is written in ![LaTeX](LICENSE/latex-logo.png) , and processed using [LaTeXML](https://math.nist.gov/~BMiller/LaTeXML/), so it uses the most basic and necessary LaTeX that can be processed into epub and HTML by LaTeXML. 
 
-6. An old Android apk file is included that was created long ago using Gluon and Java 8. It can still be side-loaded on many Android tablets.
+6. An old Android debug apk file is included that was created long ago using an early Gluon netbeans plugin and Java 8. It can still be side-loaded on many Android tablets to demonstrate the use of touch gestures.
 
 ## Contributing 💡
-If you want to contribute to this project (by adding other number fields perhaps? Or suggesting problems that need the Integer Modulus a Prime number field?), your pull request will be welcomed.
-If you find any issue just put it in the repository issue section. Suggestions for directions for further development will also be welcomed. Remember, though, Lampp is for very low level (though strictly correct) instruction and it should allow a student to "play" with the ideas of elementary Linear Algebra which should, really, be introduced even before calculus.
+If you want to contribute to this project (by adding other number fields perhaps? Or suggesting problems that need the Integer Modulus a Prime number field?), your pull request or comments will be welcomed.
+If you find any issue just put it in the repository issue section. Suggestions for directions for further development will also be welcomed. Remember, though, Lampp is for very low level (though strictly correct) instruction . It was created to allow a student to "play" with the ideas of elementary Linear Algebra (which should, really, be introduced even before calculus.)
