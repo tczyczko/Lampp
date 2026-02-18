@@ -12,6 +12,13 @@ The two are designed to be used together in that the LAMPP app capabilities are 
  The LAMPP app is designed to use several different number fields: the rational, the gaussian (complex with rational coefficients) and integers modulus a specified prime. Initially students use row operations to accomplish tasks. A limited graphing capability is also included to give a "rough" idea of how one might associate geometry with matrices. The impetus is to eliminate the mistake-prone arithmetic used when doing matrix calculations by hand.
  
  HTML files kept here are intended as an extra source of pictures and animations to illustrate some of the concepts introduced in the LAMPP book. This site may be accessed by a browser or by activating the mouse icon on the lower right of the LAMPP app screen.
+ 
+TODO: set up easy download and setup of working program
+    : create native image versions for Linux and Windows
+    : create versions for Mac
+    : create Android version and despatch to Google store
+    : create iPad version and despatch to Apple store
+
 
 Minimum source directory structure and files needed to create Lampp.
 Note that index.html is a copy of linalg.html for default access by a browser
@@ -74,6 +81,7 @@ Note that index.html is a copy of linalg.html for default access by a browser
 |                   linalg.css
 |                   linalg.html
                     img.tar.gz   ---  needs to be uncompressed here [tar -xvzf img.tar.gz] or [7-Zip] --- too many files for GitHub directory
+                                 ---  other html and png files
 |
 +---android
 |       Lampp.apk
@@ -84,11 +92,13 @@ Note that index.html is a copy of linalg.html for default access by a browser
 
 
 BASH commands for uncompressing png files used in help html file
+cd to created Lampp directory
+PATH_TO_PROJ=$PWD
 cd $PATH_TO_PROJ/src/main/resources/html
 tar -xvzf img.tar.gz
 cd $PATH_TO_PROJ/target/classes/html
 tar -xvzf img.tar.gz
-
+cd $PATH_TO_PROJ
 
 * in the java source code for each class, use the following package instruction to set the directory tree:
 package ca.linalg.lampp;
@@ -97,7 +107,7 @@ package ca.linalg.lampp;
 
 * follow directory structure for IntelliJ IDEa IdeaProjects
 * choose project directory, for example:
-set PATH_TO_PROJ="C:\Users\tom\Lampp"
+set PATH_TO_PROJ=%cd%
 
 * to edit, compile and execute
 * cd to the project directory top level
@@ -120,7 +130,7 @@ set PATH_TO_FX="C:\Program Files\Java\javafx-sdk-21\lib"
 
 * to build and execute from the command line interface (CLI):
 * from Lampp directory (eg. in Windows "cd %PATH_TO_PROJ%"):
-javac -d target\classes --module-path "c:\program files\java\javafx-sdk-21\lib" --add-modules javafx.controls,javafx.web src\main\java\ca\linalg\lampp\*.java
+javac -d target\classes --module-path "C:\Program Files\Java\javafx-sdk-21\lib" --add-modules javafx.controls,javafx.web src\main\java\ca\linalg\lampp\*.java
 java -cp target\classes --module-path "C:\Program Files\Java\javafx-sdk-21\lib" --add-modules javafx.controls,javafx.web  ca.linalg.lampp.Lampp
 
 *
@@ -156,23 +166,23 @@ java -cp target/classes --module-path $PATH_TO_FX --add-modules javafx.controls,
 
 ### Windows - use zulu java binary with builtin javafx modules (no need to add-modules or specify PATH_TO_FX)
 
-    set JAVA_HOME=C:\Users\tom\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin
+    set JAVA_HOME="C:\Program Files\Java\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin"
     cd %PATH_TO_PROJ%
     set PATH_TO_FX="C:\Program Files\Java\javafx-sdk-21\lib"
     set out="target\classes"
 
     dir /s /b src\main\java\ca\lampp\*.java > sources.txt
 
-    C:\Users\tom\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin\javac.exe -d %out% @sources.txt
+    "C:\Program Files\Java\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin\javac.exe" -d %out% @sources.txt
     del sources.txt
 
-    C:\Users\tom\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin\java.exe -cp %PATH_TO_PROJ%\target\classes ca.linalg.lampp.Lampp
-    C:\Users\tom\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin\java.exe -cp %PATH_TO_PROJ%\target\classes ca.linalg.lampp.LamppLauncher
+    "C:\Program Files\Java\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin\java.exe" -cp %PATH_TO_PROJ%\target\classes ca.linalg.lampp.Lampp
+    "C:\Program Files\Java\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin\java.exe" -cp %PATH_TO_PROJ%\target\classes ca.linalg.lampp.LamppLauncher
 
     cd %PATH_TO_PROJ%\target
 
-    C:\Users\tom\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin\jar --create --file=lampp.jar --main-class=ca.linalg.lampp.Lampp -C classes .
-    C:\Users\tom\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin\java.exe -jar lampp.jar
+    "C:\Program Files\Java\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin\jar" --create --file=lampp.jar --main-class=ca.linalg.lampp.Lampp -C classes .
+    "C:\Program Files\Java\zulu17.40.19-ca-fx-jdk17.0.6-win_x64\bin\java.exe" -jar lampp.jar
 
 ### Windows - not using zulu
 ### java --module-path %PATH_TO_FX% --add-modules=javafx.controls,javafx.web -jar lampp.jar
@@ -185,12 +195,12 @@ java -cp target/classes --module-path $PATH_TO_FX --add-modules javafx.controls,
 mvn clean package -Pshade
 * Executing this jar does not require listing the JavaFX modules used by Lampp.
 * TO use this LAMPP JAR file:
-cd cd /home/tom/Lampp/shade
+cd $PATH_TO_PROJ/shade
 java -jar --enable-native-access=ALL-UNNAMED Lampp-project.jar
 * jlink and/or jpackage should be used instead of fat jars (shade) 
 
 * using Eclipse to create jar file, then run:
-set PATH_TO_PROJ="C:\Users\tom\eclipse-workspace\Lampp"
+set PATH_TO_PROJ="%cd%\eclipse-workspace\Lampp"
 cd %PATH_TO_PROJ%
 java --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.web -jar target\Lampp-0.0.1-SNAPSHOT.jar
 * run the batch file run_jar.bat
@@ -224,11 +234,11 @@ mvn package
 java --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.graphics,javafx.web -jar .\target\Lampp-0.0.1-SNAPSHOT.jar
 java  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED,javafx.graphics,javafx.web --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.graphics,javafx.web -jar ./target/Lampp-0.0.1-SNAPSHOT.jar
 
-/home/tom/NetBeansJDKs/graalvm-jdk-25.0.2+10.1/bin/java -cp target/classes  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web --module-path /home/tom/NetBeansJDKs/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.web ca.linalg.lampp.Lampp
+/home/JDKs/graalvm-jdk-25.0.2+10.1/bin/java -cp target/classes  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web --module-path /home/JDKs/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.web ca.linalg.lampp.Lampp
 
 # Any javafx higher than 22.0.2 and up to 27 (so far) will NOT allow animated gifs in webview. Possibly this will NEVER be fixed as webkit is being deprecated in favor of forcing developers to access the machine's (phone's) default browser.
-cd /home/tom/Lampp
-/home/tom/NetBeansJDKs/graalvm-jdk-25.0.2+10.1/bin/java -cp target/classes  --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web --module-path /home/tom/NetBeansJDKs/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.web ca.linalg.lampp.Lampp
+cd ./Lampp
+/home/JDKs/graalvm-jdk-25.0.2+10.1/bin/java -cp target/classes  --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web --module-path /home/JDKs/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.web ca.linalg.lampp.Lampp
 
 * to create an executable jar for windows:
 rename pom.xml to old_pom.xml
@@ -237,7 +247,7 @@ mvn package
 * the new file will be in the shade subdirectory
 * REMEMBER to switch pom files back
 * TO run fat jar file:
-cd /home/tom/Lampp/shade
+cd /home/Lampp/shade
 java --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED,javafx.graphics,javafx.web -jar Lampp-project.jar
 * or, accepting warnings
 java  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED -jar shade/Lampp-project.jar
@@ -310,15 +320,15 @@ package ca.linalg.lampp;
 
 LINUX version:
 
-LamppDir="/home/tom/Lampp"
-LamppJavac="/home/tom/NetBeansJDKs/graalvm-jdk-25.0.2+10.1/bin/javac"
-LamppJava="/home/tom/NetBeansJDKs/graalvm-jdk-25.0.2+10.1/bin/java  --sun-misc-unsafe-memory-access=allow"
-LamppPathToFX="/home/tom/NetBeansJDKs/javafx-sdk-22.0.2/lib"
+LamppDir="/home/Lampp"
+LamppJavac="/home/JDKs/graalvm-jdk-25.0.2+10.1/bin/javac"
+LamppJava="/home/JDKs/graalvm-jdk-25.0.2+10.1/bin/java  --sun-misc-unsafe-memory-access=allow"
+LamppPathToFX="/home/JDKs/javafx-sdk-22.0.2/lib"
 LamppJavaModules="javafx.controls,javafx.graphics"
 LamppJavaModulesWeb="javafx.controls,javafx.graphics,javafx.web"
 LamppCP="target/classes"
-LamppModulePath="/home/tom/NetBeansJDKs/javafx-sdk-22.0.2/lib"
-LamppSrc="/home/tom/Lampp/src/main/java/ca/linalg/lampp/"
+LamppModulePath="/home/JDKs/javafx-sdk-22.0.2/lib"
+LamppSrc="/home/Lampp/src/main/java/ca/linalg/lampp/"
 
 cd $LamppDir
 
@@ -384,6 +394,6 @@ cp -a $LamppDir"/src/main/resources"/. $LamppDir"/target/classes"/
 
 
 USE THE HELLOGLUON directory to create Lampp with free gluon maven plugin.
-cd /home/tom/HelloGluon
+cd /home/HelloGluon
 
 
