@@ -555,12 +555,12 @@ root.getChildren().addAll(matrixPane,lrcb,lbA,lbB,lbC,lspv,lvb,lob,lbe,lsph,lbm,
 //*******************************************************************************************************************************************
     void setShowpoly(){
         if(graphType==3||graphType==4){
-            showpoly[0]=new boolean[rP[0].size];
-            for (int i=0;i<rP[0].size;i++){showpoly[0][i]=true;}
+            showpoly[0]=new boolean[rP[0].size+1];
+            for (int i=0;i<rP[0].size+1;i++){showpoly[0][i]=true;}
         }
         if(graphType==4){
-            showpoly[1]=new boolean[rP[1].size];
-            for (int i=0;i<rP[1].size;i++){
+            showpoly[1]=new boolean[rP[1].size+1];
+            for (int i=0;i<rP[1].size+1;i++){
                 showpoly[1][i]=true;
             }
         }

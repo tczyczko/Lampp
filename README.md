@@ -1,4 +1,6 @@
 # LAMPP - A Package for Introducing Linear Algebra
+ ![](screenshots/flickering_lampp.gif) ![pen_n_mouse](screenshots/pnm-emoji.gif) 
+
 **LAMPP** is two things:
 
 **Linear Algebra Matrix aPP**: an application that runs on Linux, Windows, Android (soon?), and iOS (eventually?). It is used to work out LA problems and exercises. The UI was designed to resemble an old-fashioned lecture room whiteboard.
@@ -15,40 +17,45 @@ The two are designed to be used together in that the LAMPP app capabilities are 
 
 
 
-## Thank You!
+## Thank You! 
 
-Please ⭐️ this repo and share it with others
+This repo is just starting out (after over 20 years!) I hope to be able to have more easily installed versions available **RSN** (Real Soon Now.) After I make the program modular, I have to figure out why jpackage (which, even for a simple test case) is **not** working on my pop-os Linux machine.)
 
-## Screenshots
+## Screenshots 
+
 
 
 
 |                    Lampp with 4X4 matrix                     |            Help Browser Panel Selected            |
-| :----------------------------------------------------------: | :-----------------------------------------------: |
+| :-------------------------------------------------: | :-------------------------------------------------: |
 | ![4X4 Rational Matrix](screenshots/Lampp1_4X4_rational_matrix.png) | ![Help Browser](screenshots/Lampp2_HelpMouse.png) |
 
 |              Edit Panel Opened              |             Rows and Row Operation Selected              |
-| :-----------------------------------------: | :------------------------------------------------------: |
+| :-------------------------------------------------: | :-------------------------------------------------: |
 | ![Edit Matrix](screenshots/Lampp3_Edit.png) | ![Operations Selected](screenshots/Lampp4_Operation.png) |
 
 |             4X4 Rational Matrix Shown as Graph             |         Number Field Selections          |
-| :--------------------------------------------------------: | :--------------------------------------: |
+| :------------------------------------------------: | :------------------------------------------------: |
 | ![4X4 Rational Matrix Graph](screenshots/Lampp5_Graph.png) | ![Fields](screenshots/Lampp6_Fields.png) |
 
-## Requirements 🔧
+## Requirements ✅
 
 * [Java](https://github.com/graalvm/graalvm-ce-builds/releases/) SDK 22 or higher, [JavaFX](https://gluonhq.com/products/javafx/) 20.0.2 at highest (for HTML animated GIFs to show properly in Browser Help Panel.) Actually, Java 8 would probably still compile and execute without need for separate JavaFX modules. A [Maven](https://maven.apache.org/) installation would be very useful, though not strictly necessary.
 
-## Installation 🔌
-1. Press the **Fork** button (top right the page) to save copy of this project on your account.
+## Installation 🛠️
+1. Press the **Fork** button (top right the page) to save copy of this project on your account. In Linux, your local Lampp directory should be under your Home directory to use the batch script as written in 000README.txt.
 
 2. Download the repository files (project) from the download section or clone this project by typing in the bash the following command:
 
        git clone https://github.com/tczyczko/Lampp.git
 
-3. Note that there are two copies of img.tar.gz given, one in **target/classes/htm**l and one in **src/main/resources/html**. These must be uncompressed locally using tar (Linux) or 7-Zip (Windows) before running or compiling the program. They were compressed because of GitHub's limit on the number of files. See 000readme.txt for more details. The target/Lampp-0.0.1-SNAPSHOT.jar file WILL run without access to these files, but will be missing images. Again, see 000readme.txt for details on how to run the program. [java --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.web -jar target\Lampp-0.0.1-SNAPSHOT.jar]
+3. Note that there are two copies of img.tar.gz given, one in **target/classes/html** and one in **src/main/resources/html**. These must be uncompressed locally using tar (Linux) or 7-Zip (Windows) before running or compiling the program. They were compressed because of GitHub's limit on the number of files. See 000readme.txt for more details. The target/Lampp-0.0.1-SNAPSHOT.jar file WILL run without access to these files, but will be missing images. Again, see 000readme.txt for details on how to run the program. [java --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.web -jar target\Lampp-0.0.1-SNAPSHOT.jar] --- I intend to fix this RSN.
 
-4. Use the POM file with Maven to run or build the java program. See 000README.txt for specific and more detailed setup instructions. 
+4. Use the POM file with Maven to run or build the java program. See 000README.txt for specific and more detailed setup instructions.   After installing Maven, a JDK and JavaFX (pointed to by $PATH_TO_FX), the simplest two commands (to create a jar file and run it without warnings in Linux) are:
+
+   $mvn package
+
+   $java  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED,javafx.graphics,javafx.web --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.graphics,javafx.web -jar ./target/Lampp-0.0.1-SNAPSHOT.jar
 
 5. The accompanying textbook (a work in progress) is given as a PDF, an epub and HTML files. It is written in ![LaTeX](LICENSE/latex-logo.png) , and processed using [LaTeXML](https://math.nist.gov/~BMiller/LaTeXML/), so it uses the most basic and necessary LaTeX that can be processed into epub and HTML by LaTeXML. 
 

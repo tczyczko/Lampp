@@ -12,7 +12,11 @@ The two are designed to be used together in that the LAMPP app capabilities are 
  The LAMPP app is designed to use several different number fields: the rational, the gaussian (complex with rational coefficients) and integers modulus a specified prime. Initially students use row operations to accomplish tasks. A limited graphing capability is also included to give a "rough" idea of how one might associate geometry with matrices. The impetus is to eliminate the mistake-prone arithmetic used when doing matrix calculations by hand.
  
  HTML files kept here are intended as an extra source of pictures and animations to illustrate some of the concepts introduced in the LAMPP book. This site may be accessed by a browser or by activating the mouse icon on the lower right of the LAMPP app screen.
- 
+  
+ After installing Maven, a JDK and JavaFX, the simplest two commands (to create a jar file and run it without warnings in Linux) are:
+mvn package
+java  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED,javafx.graphics,javafx.web --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.graphics,javafx.web -jar ./target/Lampp-0.0.1-SNAPSHOT.jar
+
 TODO: set up easy download and setup of working program
     : create native image versions for Linux and Windows
     : create versions for Mac
@@ -234,11 +238,12 @@ mvn package
 java --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.graphics,javafx.web -jar .\target\Lampp-0.0.1-SNAPSHOT.jar
 java  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED,javafx.graphics,javafx.web --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.graphics,javafx.web -jar ./target/Lampp-0.0.1-SNAPSHOT.jar
 
-/home/JDKs/graalvm-jdk-25.0.2+10.1/bin/java -cp target/classes  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web --module-path /home/JDKs/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.web ca.linalg.lampp.Lampp
+~/JDKs/graalvm-jdk-25.0.2+10.1/bin/java -cp target/classes  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web --module-path /home/JDKs/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.web ca.linalg.lampp.Lampp
 
 # Any javafx higher than 22.0.2 and up to 27 (so far) will NOT allow animated gifs in webview. Possibly this will NEVER be fixed as webkit is being deprecated in favor of forcing developers to access the machine's (phone's) default browser.
 cd ./Lampp
-/home/JDKs/graalvm-jdk-25.0.2+10.1/bin/java -cp target/classes  --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web --module-path /home/JDKs/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.web ca.linalg.lampp.Lampp
+~/JDKs/graalvm-jdk-25.0.2+10.1/bin/java -cp target/classes  --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web --module-path /home/JDKs/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.web ca.linalg.lampp.Lampp
+
 
 * to create an executable jar for windows:
 rename pom.xml to old_pom.xml
@@ -247,7 +252,7 @@ mvn package
 * the new file will be in the shade subdirectory
 * REMEMBER to switch pom files back
 * TO run fat jar file:
-cd /home/Lampp/shade
+cd ~/Lampp/shade
 java --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED,javafx.graphics,javafx.web -jar Lampp-project.jar
 * or, accepting warnings
 java  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED -jar shade/Lampp-project.jar
@@ -255,7 +260,6 @@ java  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED -
 
 * To create a native image (on Linux only), execute the following command:
 mvn gluonfx:build gluonfx:nativerun
-
 
 
 
@@ -320,15 +324,17 @@ package ca.linalg.lampp;
 
 LINUX version:
 
-LamppDir="/home/Lampp"
-LamppJavac="/home/JDKs/graalvm-jdk-25.0.2+10.1/bin/javac"
-LamppJava="/home/JDKs/graalvm-jdk-25.0.2+10.1/bin/java  --sun-misc-unsafe-memory-access=allow"
-LamppPathToFX="/home/JDKs/javafx-sdk-22.0.2/lib"
+
+LamppDir=~/Lampp
+HomeDir=~
+LamppJavac="$HomeDir/JDKs/graalvm-jdk-25.0.2+10.1/bin/javac"
+LamppJava="$HomeDir/JDKs/graalvm-jdk-25.0.2+10.1/bin/java  --sun-misc-unsafe-memory-access=allow"
+LamppPathToFX="$HomeDir/JDKs/javafx-sdk-22.0.2/lib"
 LamppJavaModules="javafx.controls,javafx.graphics"
 LamppJavaModulesWeb="javafx.controls,javafx.graphics,javafx.web"
 LamppCP="target/classes"
-LamppModulePath="/home/JDKs/javafx-sdk-22.0.2/lib"
-LamppSrc="/home/Lampp/src/main/java/ca/linalg/lampp/"
+LamppModulePath="$HomeDir/JDKs/javafx-sdk-22.0.2/lib"
+LamppSrc="$LamppDir/Lampp/src/main/java/ca/linalg/lampp/"
 
 cd $LamppDir
 
@@ -385,6 +391,9 @@ $LamppJavac -d $LamppCP -cp $LamppCP --module-path $LamppModulePath --add-module
 
 $LamppJava -cp $LamppCP --module-path $LamppModulePath --add-modules $LamppJavaModulesWeb --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web ca.linalg.lampp.Lampp
 
+
+
+
 THE ENTIRE CONTENTS of    $LamppDir"/src/main/resources"
 should be copied to       $LamppDir"/target/classes"
 11 files and the directory html
@@ -394,6 +403,6 @@ cp -a $LamppDir"/src/main/resources"/. $LamppDir"/target/classes"/
 
 
 USE THE HELLOGLUON directory to create Lampp with free gluon maven plugin.
-cd /home/HelloGluon
+cd ~/HelloGluon
 
 
