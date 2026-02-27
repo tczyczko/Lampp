@@ -1,46 +1,46 @@
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppKey.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppGlobal.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.web src/main/java/ca/lampp/LamppBrowser.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.web src/main/java/ca/lampp/LamppBrowserWrapper.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppButton.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppAMCEButton.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppKey.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppGlobal.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls,javafx.web src/main/java/ca/lampp/LamppBrowser.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls,javafx.web src/main/java/ca/lampp/LamppBrowserWrapper.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppButton.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppAMCEButton.java
 
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppViewElement.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppViewText.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppViewElement.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppViewText.java
 
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppTextFieldNumerator.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppTextFieldDenominator.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppTextFieldNumerator.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppTextFieldDenominator.java
 
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppHelpPane.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppKey.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppKeyboard.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppHelpPane.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppKey.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppKeyboard.java
 
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppMatrixButton.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppOpButton.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppOpSelect.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppRCSelectButton.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppRCViewButton.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppVectorButton.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppVerticalButton.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppMatrixButton.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppOpButton.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppOpSelect.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppRCSelectButton.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppRCViewButton.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppVectorButton.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppVerticalButton.java
 
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppEditList.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppEditList.java
 
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppElementRational.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppElementRational3tuple.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppElementGaussian.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppElementIntModP.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppElementRational.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppElementRational3tuple.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppElementGaussian.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppElementIntModP.java
 
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppScrollPane.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppSlidingPaneH.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppSlidingPaneV.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppScrollPane.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppSlidingPaneH.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppSlidingPaneV.java
 
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppConvexPolygon.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppCuboid.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppConvexPolygon.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppCuboid.java
 
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppViewElement.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppViewText.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppViewRational.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppViewIntModP.java
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls src/main/java/ca/lampp/LamppViewGaussian.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppViewElement.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppViewText.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppViewRational.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppViewIntModP.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls src/main/java/ca/lampp/LamppViewGaussian.java
 
-javac -d target/classes --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.web src/main/java/ca/lampp/Lampp.java
+javac -d target/classes --module-path $PATH_TO_FX_MODS --add-modules javafx.controls,javafx.web src/main/java/ca/lampp/Lampp.java
