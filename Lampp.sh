@@ -2,7 +2,10 @@
 # Execute Lampp java program
 # Can be used directly in the BASH terminal
 # Is also called by the desktop GUI launcher Lampp.desktop
-cd $HOME/Lampp
+cd $HOME/Lampp_old
+# The following line added as new Cosmic desktop for Pop OS displays Java app too large
+export GDK_SCALE=2.0
+#export GDK_DPI_SCALE=0.5
 $HOME/JDKs/graalvm-jdk-25.0.2+10.1/bin/java -cp target/classes  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web --module-path $HOME/JDKs/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.web ca.linalg.lampp.Lampp
 
 #$HOME/JDKs/graalvm-svm-java17-linux-gluon-22.1.0.1-Final/bin/java -cp target/classes  --enable-native-access=ALL-UNNAMED --enable-native-access=javafx.graphics --enable-native-access=javafx.web --module-path $HOME/JDKs/javafx-sdk-22.0.2/lib --add-modules javafx.controls,javafx.web ca.linalg.lampp.Lampp

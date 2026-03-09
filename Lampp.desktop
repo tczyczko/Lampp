@@ -1,15 +1,15 @@
 [Desktop Entry]
 Terminal=false
 Type=Application
-Exec=gnome-terminal --disable-factory -- /bin/bash $HOME/Lampp/Lampp.sh
+Exec=gnome-terminal --disable-factory -- /bin/bash $HOME/Lampp/LAMPP_LINUX_RUN.sh
 Icon=$HOME/Lampp/lampp_icon.png
 Name=Lampp
 # For PopOs (and other Gnome guis) this file should be placed in:
 #> $HOME/.local/share/applications/Lampp_development_working.desktop
 # then refresh desktop database:
 #> update-desktop-database $HOME/.local/share/applications/
-# THE PROGRAM MAY FAIL to load due to errors from the calling shell script Lampp.sh
+# THE PROGRAM MAY FAIL to load due to errors from the calling shell script LAMPP_LINUX_RUN.sh
 # likely due to errors from invoking the JDK, which may need to be fixed
 # The JDK and JavaFX directories containing the correct versions either:
 # 1. be in $HOME/JDKs directory, OR
-# 2. the Lampp.sh must be altered to use the system Java installations, if they exist
+# 2. the LAMPP_LINUX_RUN.sh must be altered to use the system Java installations, if they exist

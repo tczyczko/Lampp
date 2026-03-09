@@ -3,7 +3,7 @@
 
 **LAMPP** is two things:
 
-**Linear Algebra Matrix aPP**: an application that runs on Linux, Windows, Android (soon?), and iOS (eventually?). It is used to work out LA problems and exercises. The UI was designed to resemble an old-fashioned lecture room whiteboard.
+**Linear Algebra Matrix aPP**: an application that runs on Linux, Windows, Android (soon?), and iOS (eventually?). It is used to work out LA exercises. The UI was designed to resemble an old-fashioned lecture room whiteboard.
 
 **Linear Algebra for Mouse, Pad and Pen**: a textbook on Linear Algebra designed for high school students and people who have been away from mathematics for awhile. Knowledge of calculus or analytic geometry is not assumed.
 
@@ -40,26 +40,46 @@ This repo is just starting out (after over 20 years!) I hope to be able to have 
 
 ## Requirements ✅
 
-* [Java](https://github.com/graalvm/graalvm-ce-builds/releases/) SDK 22 or higher, [JavaFX](https://gluonhq.com/products/javafx/) 20.0.2 at highest (for HTML animated GIFs to show properly in Browser Help Panel.) Actually, Java 8 would probably still compile and execute without need for separate JavaFX modules. A [Maven](https://maven.apache.org/) installation would be very useful, though not strictly necessary.
+* [Java](https://github.com/graalvm/graalvm-ce-builds/releases/) SDK 22 or higher, [JavaFX](https://gluonhq.com/products/javafx/) 20.0.2 at highest (for HTML animated GIFs to show properly in Browser Help Panel.) Actually, Java 8 would probably still compile and execute without need for separate JavaFX modules. A [Maven](https://maven.apache.org/) installation should be installed.
 
 ## Installation 🛠️
-1. Press the **Fork** button (top right the page) to save copy of this project on your account. In Linux, your local Lampp directory should be under your Home directory to use the batch script as written in 000README.txt.
+1. Press the **Fork** button (top right the page) to save copy of this project on your account. In Linux, your local Lampp directory should be under your Home directory to use the batch script as written in *000README.txt*.
 
 2. Download the repository files (project) from the download section or clone this project by typing in the bash the following command:
 
        git clone https://github.com/tczyczko/Lampp.git
 
-3. Note that there are two copies of img.tar.gz given, one in **target/classes/html** and one in **src/main/resources/html**. These must be uncompressed locally using tar (Linux) or 7-Zip (Windows) before running or compiling the program. They were compressed because of GitHub's limit on the number of files. See 000readme.txt for more details. The target/Lampp-0.0.1-SNAPSHOT.jar file WILL run without access to these files, but will be missing images. Again, see 000readme.txt for details on how to run the program. [java --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.web -jar target\Lampp-0.0.1-SNAPSHOT.jar] --- I intend to fix this RSN.
+3. For Windows:
 
-4. Use the POM file with Maven to run or build the java program. See 000README.txt for specific and more detailed setup instructions.   After installing Maven, a JDK and JavaFX (pointed to by $PATH_TO_FX), the simplest two commands (to create a jar file and run it without warnings in Linux) are:
+       cd %USERPROFILE%\Lampp
 
-   $mvn package
+   For Linux:
 
-   $java  --sun-misc-unsafe-memory-access=allow --enable-native-access=ALL-UNNAMED,javafx.graphics,javafx.web --module-path $PATH_TO_FX --add-modules javafx.controls,javafx.graphics,javafx.web -jar ./target/Lampp-0.0.1-SNAPSHOT.jar
+       cd $PWD/Lampp
 
-5. The accompanying textbook (a work in progress) is given as a PDF, an epub and HTML files. It is written in ![LaTeX](LICENSE/latex-logo.png) , and processed using [LaTeXML](https://math.nist.gov/~BMiller/LaTeXML/), so it uses the most basic and necessary LaTeX that can be processed into epub and HTML by LaTeXML. 
+4. After installing Maven, a JDK and JavaFX (pointed to by $PATH_TO_FX or %PATH_TO_FX%), use the provided Windows *bat* file or the Linux *sh* file to get Maven to execute the POM file to build the java program. See *000README.txt* for specific and more detailed setup instructions, if necessary. **NOTE:** It may be necessary to give the proper permissions to allow a bat or sh file to execute as a program.
 
-6. An old Android debug apk file is included that was created long ago using an early Gluon netbeans plugin and Java 8. It can still be side-loaded on many Android tablets to demonstrate the use of touch gestures.
+   For Windows:
+
+       LAMPP_WINDOWS_COMPILE.bat
+
+   For Linux:
+
+       ./LAMPP_LINUX_COMPILE.sh
+
+5. After compiling, use the provided Windows *bat* file or the Linux *sh* file to run the Lampp java program. See *000README.txt* for specific and more detailed use instructions, if necessary.
+
+   For Windows:
+
+       LAMPP_WINDOWS_RUN.bat
+
+   For Linux:
+
+       ./LAMPP_LINUX_RUN.sh
+
+6. The accompanying textbook (a work in progress) is given in PDF and [HTML](https://tczyczko.github.io/Lampp/) (in the docs subdirectory). It is written in ![LaTeX](LICENSE/latex-logo.png) , and processed using [LaTeXML](https://math.nist.gov/~BMiller/LaTeXML/), so it uses the most basic and necessary LaTeX that can be processed into epub and HTML by LaTeXML. 
+
+7. An old Android debug apk file is included that was created long ago using an early Gluon netbeans plugin and Java 8. It can still be side-loaded on many Android tablets to demonstrate the use of touch gestures.
 
 ## Contributing 💡
 If you want to contribute to this project (by adding other number fields perhaps? Or suggesting problems that need the Integer Modulus a Prime number field?), your pull request or comments will be welcomed.

@@ -1,0 +1,59 @@
+1.) Install Maven  https://maven.apache.org/index.html
+
+2.) download or git Lampp directory from GitHub to the top of your user directories. This becomes something like 
+    "C:\user\userfolk\Lampp" where %USERPROFILE%="C:\user\userfolk" on Windows
+
+3.) install Java 22.0.2 (or greater, https://jdk.java.net/25/  , but 22.0.2 recommended) 
+    Get Java SE Development Kit 22.0.2  https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html
+    or install GraalVM   https://docs.oracle.com/en/graalvm/jdk/25/docs/getting-started/
+
+JavaFX is available for Windows,Linux and macOS from GLUON https://gluonhq.com/products/javafx/ 
+Remember to check the box to Include archived versions to get 22.0.2
+Specific downloads from the GLUON website are given here:
+
+For Windows x64
+4.) install JavaFX 22.0.2    https://download2.gluonhq.com/openjfx/22.0.2/openjfx-22.0.2_windows-x64_bin-sdk.zip
+5.) install JavaFX jmods (PATH_TO_FX_MODS) https://download2.gluonhq.com/openjfx/22.0.2/openjfx-22.0.2_linux-x64_bin-jmods.zip
+
+
+Usually the directories for the JavaFX sdk, the JavaFX jmods, and any alternative JDK are placed into a directory called JDKs and variables like JAVA_HOME, PATH_TO_FX and PATH_TO_FX_MODS
+(or GRAALVMHOME, if GraalVM was downloaded to use as the Java SDK) are set to point to these new directories.
+
+6.) To finish setting up the directory and to compile Lampp, click on LAMPP_WINDOWS_COMPILE.bat 
+OR open a command console and run the following two commands:
+
+cd %USERPROFILE%\Lampp
+mvn clean package
+
+7.)  To run Lampp, click on LAMPP_WINDOWS_RUN.bat
+OR execute the following command in a console:
+
+java --module-path %PATH_TO_FX% --add-modules javafx.graphics,javafx.web -jar target\Lampp-0.0.1-SNAPSHOT.jar
+
+
+
+REM contents of LAMPP_WINDOWS_COMPILE.bat :
+
+@echo off
+cd %USERPROFILE%\Lampp
+REM Show Java version
+echo Java version should be 22 or higher.
+java -version
+echo JavaFX version should be 22.0.2 for gif animation to work and given in system variable PATH_TO_FX
+echo PATH_TO_FX=%PATH_TO_FX%
+
+
+echo Running Maven to create jar file.
+
+mvn clean package
+
+echo Lampp can be run using:
+echo java  --enable-native-access=ALL-UNNAMED,javafx.graphics,javafx.web  --module-path %PATH_TO_FX% --add-modules javafx.graphics,javafx.web -jar target\Lampp-0.0.1-SNAPSHOT.jar
+echo or using:
+echo java --module-path %PATH_TO_FX% --add-modules javafx.graphics,javafx.web -jar target\Lampp-0.0.1-SNAPSHOT.jar
+echo or using:
+echo LAMPP_WINDOWS_RUN.bat
+pause
+
+
+
