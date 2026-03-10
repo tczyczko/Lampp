@@ -202,8 +202,9 @@ public class Lampp extends Application implements PropertyChangeListener, LamppG
     //set production or test for location of help html files
     //production uses absolute URL string
     //test should use html subdirectory of project's src.main.resources directory
-    private final boolean production=false;
-    private final String helpURL1P="http://www.artmath.ca/Linalg/index.html";
+    //private final boolean production=false;
+    private final boolean production=true;
+    private final String helpURL1P="https://tczyczko.github.io/Lampp/index.html";
     private final String helpURL1T="/html/index.html";
     private String helpURL1;
 	//name of text file used to save tool access level and access previously stored matrix values
